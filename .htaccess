@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} =www.muzaiko.info [OR,NC]
+RewriteCond %{HTTP_HOST} =www.muzaiko.org [OR,NC]
+RewriteCond %{HTTP_HOST} =www.muzaiko.net [OR,NC]
+RewriteCond %{HTTP_HOST} =www.muzaiko.com [OR,NC]
+RewriteCond %{HTTP_HOST} =muzaiko.org [OR,NC]
+RewriteCond %{HTTP_HOST} =muzaiko.net [OR,NC]
+RewriteCond %{HTTP_HOST} =muzaiko.com [NC]
+RewriteRule ^.*$ http://muzaiko.info/$0 [R]
