@@ -6,6 +6,7 @@ exec rsync \
     --exclude=/alsxuti.sh \
     --cvs-exclude \
     --exclude=/admin \
+    --exclude=/.gitignore \
     --rsh=ssh \
     --delete \
     "$@" \
