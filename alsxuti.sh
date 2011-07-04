@@ -2,6 +2,7 @@
 
 exec rsync \
     -a \
+    -v \
     --exclude=/alsxuti.sh \
     --cvs-exclude \
     --exclude=/admin \
