@@ -3,7 +3,7 @@ include('inc/inc.php');
 page_header('Subtenu');
 ?>
 <p>
-Kiel ĉio projekto en la mondo, la Muzaiko projekto ankaŭ bezonas vastan
+Kiel ĉiu projekto en la mondo, la Muzaiko projekto ankaŭ bezonas vastan
 subtenon por granda sukceso. Se vi ŝatus diri bonajn aĵojn pri Muzaiko al
 viaj konatuloj, aŭ skribi belan artikolon pri ĝi, vi estas tre bonvena! :)
 </p>
