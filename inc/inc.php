@@ -15,6 +15,3 @@ define('TRIGGERCLOCKDIR', '/radio/trigger.clock/');
 require_once('inc/db.php');
 require_once('inc/www.php');
 require_once('inc/utils.php');
-
-require_once('admin/inc/clock.php');
-

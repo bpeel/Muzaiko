@@ -1,7 +1,5 @@
 <?php
 include('inc/inc.php');
-include('admin/inc/utils.php');
-include('admin/inc/playlist.php');
 page_header('Muziko');
 ?>
 <p>
@@ -10,15 +8,16 @@ page_header('Muziko');
 </p>
 <div class="title">La A-Listo</div>
 <?php
-	$playlist = (read_playlist('default_a'));
-	foreach ($playlist as $item)
-		print '<b>'.$item['artist'].'</b>&nbsp; - '.$item['title'].'<br />';
+# this doesn't work because the admin files have been removed
+#	$playlist = (read_playlist('default_a'));
+#	foreach ($playlist as $item)
+#		print '<b>'.$item['artist'].'</b>&nbsp; - '.$item['title'].'<br />';
 ?>
 <div class="title">La B-Listo</div>
 <?php
-	$playlist = (read_playlist('default_b'));
-	foreach ($playlist as $item)
-		print '<b>'.$item['artist'].'</b>&nbsp; - '.$item['title'].'<br />';
+#	$playlist = (read_playlist('default_b'));
+#	foreach ($playlist as $item)
+#		print '<b>'.$item['artist'].'</b>&nbsp; - '.$item['title'].'<br />';
 ?>
 <?php
 right();
