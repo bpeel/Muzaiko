@@ -3,7 +3,7 @@
 mysql_pconnect('localhost', 'root', 'zamenhof');
 mysql_select_db('muzaiko');
 
-set_include_path('/var/www');
+set_include_path($_SERVER["DOCUMENT_ROOT"]);
 
 define('AUDIODIR', '/radio/audio/');
 define('PLAYLISTDIR', '/radio/playlist/');

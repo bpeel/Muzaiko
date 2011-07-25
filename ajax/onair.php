@@ -1,5 +1,5 @@
 <?php
-	include_once('/var/www/inc/inc.php');
+	include_once($_SERVER["DOCUMENT_ROOT"] . '/inc/inc.php');
 	$show_data = current_show();
 ?>
 <p class="showtitle"><?=$show_data['title']?></p>
