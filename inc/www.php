@@ -32,7 +32,7 @@ function dodates() {
 	<li><a class="current" href="/" title="">hejmo</a></li>
 	<li><a href="/auxskultu" title="">aŭskultu</a></li>
 	<li><a href="/programeroj" title="">programeroj</a></li>
-	<li><a href="/muziko" title="">muziko</a></li>
+	<!--<li><a href="/muziko" title="">muziko</a></li>-->
 	<li><a href="/subtenu" title="">subtenu</a></li>
 	<li><a href="/reklamu" title="">reklamu</a></li>
 	<li><a href="/partoprenu" title="">partoprenu</a></li>
