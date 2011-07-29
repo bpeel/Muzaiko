@@ -52,7 +52,22 @@ function right($title='') {
 
 <div class="right_content">
 <a href="/auxskultu"><img src="images/listen_live_eo.jpg" alt="" title="" class="listen_live" border="0" /></a>
-<div class="title"><?=$title?></div>
+<!--<div class="title"><?=$title?></div>-->
+<div>
+Eksciu pli pri Muzaiko ĉe:
+<ul>
+	<li><a href="http://www.esperanto-junularo.hu/2011/06/nova-projekto-kreos-tuttempan-radion-en.html">la retpaĝo de HEJ</a></li>
+	<li><a href="http://tejo.org/tejo-aktuale/index.php?num=2011-06-15">TEJO-aktuale</a></li>
+	<li><a href="http://esperanto.cri.cn/641/2011/06/17/1s125271.htm">Ĉina Radio Internacia</a></li>
+</ul>
+aŭ vervive dum aranĝoj kiel
+<a href="http://www.kongreso2011.org/">TAKE</a>,
+<a href="http://www.ijk-67.retejo.info/">IJK</a>,
+<a href="http://eo.lernu.net/pri_lernu/renkontighoj/SES/2011/index.php">SES</a>,
+<a href="http://www.festo.lautre.net/">FESTO</a>
+aŭ <a href="http://ijs.hu/eo">IJS</a>.
+</div>
+
 <?php
 }
 
