@@ -125,7 +125,7 @@ function page_footer($homelink=true) {
 <a href="/" title="">hejmo</a>
 <a href="/auxskultu" title="">aŭskultu</a>
 <a href="/programeroj" title="">programeroj</a>
-<a href="/muziko" title="">muziko</a>
+<!-- <a href="/muziko" title="">muziko</a> -->
 <a href="/subtenu" title="">subtenu</a>
 <a href="/reklamu" title="">reklamu</a>
 <a href="/partoprenu" title="">partoprenu</a>
