@@ -1,6 +1,8 @@
 #!/bin/bash
+set -eux
 
-exec rsync \
+#exec 
+rsync \
     -a \
     -v \
     --exclude=/alsxuti.sh \
@@ -8,8 +10,12 @@ exec rsync \
     --cvs-exclude \
     --exclude=/admin \
     --exclude=/.gitignore \
+    --exclude=/drupal7 \
     --rsh=ssh \
     --delete \
     "$@" \
     . \
     /var/www
+
+chown -R www-data:www-data /var/www/ 
+
