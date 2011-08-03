@@ -8,8 +8,10 @@ exec rsync \
     --cvs-exclude \
     --exclude=/admin \
     --exclude=/.gitignore \
+    --exclude=/drupal7 \
     --rsh=ssh \
     --delete \
     "$@" \
     . \
     root@muzaiko.info:/var/www
+
