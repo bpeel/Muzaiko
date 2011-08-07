@@ -33,7 +33,7 @@ Novaĵoj el la tuta mondo por la tuta mondo, kiun redaktas por vi nia teamo ĉe 
   </tr>
   <tr>
     <td>2a–3a UTC</td>
-    <td>inter la 2a kaj la 3a laŭ UTC: Universitat(sistem)oj tra la mondo prezentas la valonan sistemon en Belgio</td>
+    <td>Universitat(sistem)oj tra la mondo prezentas la valonan sistemon en Belgio</td>
   </tr>
 </table>
 
