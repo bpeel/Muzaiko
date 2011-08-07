@@ -28,11 +28,11 @@ Novaĵoj el la tuta mondo por la tuta mondo, kiun redaktas por vi nia teamo ĉe 
     <td>Raportoj el eventoj prezentas raportojn pri IJK, JuSKA kaj TAKE</td>
   </tr>
   <tr>
-    <td>1a-2a UTC</td>
+    <td>1a–2a UTC</td>
     <td>Saluton Radiemuloj prezentas la Polan retradion en Esperanto</td>
   </tr>
   <tr>
-    <td>2a-3a UTC</td>
+    <td>2a–3a UTC</td>
     <td>inter la 2a kaj la 3a laŭ UTC: Universitat(sistem)oj tra la mondo prezentas la valonan sistemon en Belgio</td>
   </tr>
 </table>
