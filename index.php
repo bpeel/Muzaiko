@@ -8,6 +8,14 @@ page_header('Bonvenon al Muzaiko!', '');
 </p>
 <p>Nia retejo ankoraŭ ne tute pretas - sed se vi volas scii pli aŭ ŝatus kunlabori, bonvolu kontakti nun ĉe <b>info (ĉe) muzaiko.info</b>!</p>
 <div class="title">La hodiaŭa programo</div>
+Ekde hodiaŭ (07/08/2011) aŭskulteblas la tria provelsendo kun noveta enhavo:
+<ul>
+<li>00:00-01:00 UTC: Raportoj el eventoj prezentas raportojn pri IJK, JuSKA kaj TAKE</li>
+<li>01:00-02:00 UTC: <i>Saluton, Radiemuloj!</i> prezentas la Polan retradion en Esperanto</li>
+<li>02:00-03:00 UTC: Universitataj sistemoj tra la mondo prezentas la valonan sistemon en Belgio</li>
+</ul>
+kaj poste tiuj tri horoj ripetiĝos dum la tuta tago
+
 <?php
 	function print_show($hour, $title, $desc, $num=0) {
 		?>
@@ -32,7 +40,7 @@ page_header('Bonvenon al Muzaiko!', '');
 	$time = time()-120;
 	$show = current_show($time);
 	$seen = array($show['clock']);
-	print_show('nun', $show['title'], $show['desc']);
+/*	print_show('nun', $show['title'], $show['desc']);
 	
 	while (true) {
 		$time += 3600;
@@ -44,7 +52,7 @@ page_header('Bonvenon al Muzaiko!', '');
 		$hour = date('H:00', $time+$offset);
 		if ($utc) $hour .= ' UTC';
 		print_show($hour, $show['title'], $show['desc'], $time.'000');
-	}
+	}*/
 	
 right();
 right_contents();

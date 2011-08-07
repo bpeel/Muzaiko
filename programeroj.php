@@ -11,9 +11,11 @@ Novaĵoj el la tuta mondo por la tuta mondo, kiun redaktas por vi nia teamo ĉe 
 <div class="title">Babilaj programeroj</div>
 <ul>
 <li>Esperantistoj aktivas</li>
-<li>Fabelo</li>
+<li>Fabeloj</li>
 <li>Esperantistaj muzikistoj</li>
 <li>Raportoj el eventoj</li>
+<li>Saluton, Radiemuloj!</li>
+<li>Universitataj sistemoj tra la mondo</li>
 </ul>
 
 <div class="title">Reklamoj</div>
