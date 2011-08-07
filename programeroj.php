@@ -18,27 +18,6 @@ Novaĵoj el la tuta mondo por la tuta mondo, kiun redaktas por vi nia teamo ĉe 
 <li>Universitataj sistemoj tra la mondo</li>
 </ul>
 
-<table class="agenda">
-  <tr>
-    <th>Horaro</th>
-    <th>Programero</th>
-  </tr>
-  <tr>
-    <td>0a–1a UTC</td>
-    <td>Raportoj el eventoj prezentas raportojn pri IJK, JuSKA kaj TAKE</td>
-  </tr>
-  <tr>
-    <td>1a–2a UTC</td>
-    <td>Saluton Radiemuloj prezentas la Polan retradion en Esperanto</td>
-  </tr>
-  <tr>
-    <td>2a–3a UTC</td>
-    <td>Universitat(sistem)oj tra la mondo prezentas la valonan sistemon en Belgio</td>
-  </tr>
-</table>
-
-<div>kaj poste tiuj tri horoj ripetiĝos dum la tuta tago.</div>
-
 <div class="title">Reklamoj</div>
 
 <div class="title">Muziko</div>
