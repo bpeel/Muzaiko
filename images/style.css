@@ -217,5 +217,10 @@ text-decoration:underline;
 color: #a90329;
 }
 
-
+table.agenda {
+  border-collapse: collapse;
+}
+table.agenda th, table.agenda td {
+  border: solid black 1px;
+}
 
