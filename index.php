@@ -10,9 +10,9 @@ page_header('Bonvenon al Muzaiko!', '');
 <div class="title">La hodiaŭa programo</div>
 Ekde hodiaŭ (07/08/2011) aŭskulteblas la tria provelsendo kun noveta enhavo:
 <ul>
-<li>00:00-01:00 UTC: Raportoj el eventoj prezentas raportojn pri IJK, JuSKA kaj TAKE</li>
+<li>00:00-01:00 UTC: <i>Raportoj el eventoj</i> prezentas raportojn pri IJK, JuSKA kaj TAKE</li>
 <li>01:00-02:00 UTC: <i>Saluton, Radiemuloj!</i> prezentas la Polan retradion en Esperanto</li>
-<li>02:00-03:00 UTC: Universitataj sistemoj tra la mondo prezentas la valonan sistemon en Belgio</li>
+<li>02:00-03:00 UTC: <i>Universitataj sistemoj tra la mondo</i> prezentas la valonan sistemon en Belgio</li>
 </ul>
 kaj poste tiuj tri horoj ripetiĝos dum la tuta tago
 
