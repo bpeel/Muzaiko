@@ -47,6 +47,17 @@ text-align:right;
 .listenlive {
 text-align:right;
 }
+#onair-block {
+text-align: right;
+font-weight: bold;
+}
+#onair {
+text-size: 1.2em;
+}
+#onair-title {
+color: #990000;
+}
+
 /*----------------------menu-------------------------*/
 #menu{
 width:856px;
@@ -216,11 +227,3 @@ padding-left:10px;
 text-decoration:underline;
 color: #a90329;
 }
-
-table.agenda {
-  border-collapse: collapse;
-}
-table.agenda th, table.agenda td {
-  border: solid black 1px;
-}
-
