@@ -9,7 +9,11 @@ function updateCurrentSong(){
 }
 setInterval("updateCurrentSong()", 5000);
 </script>
-<div id="onair-block"><span id="onair-title">Ludita:</span><br /><span id="onair"><?php include('ajax/current_song.php'); ?></span></div>
-<p class="showtitle"><?=$show_data['title']?></p>
+<div id="now-playing">
+<h1>Nun estas ludita…</h1>
+<div><?php include('ajax/current_song.php'); ?></div>
+</div>
+
+<!--<p class="showtitle"><?=$show_data['title']?></p>
 <p class="nowplaying"><?=current_song()?></p>
-<p class="listenlive">Aŭskultu nun!</p>
+<p class="listenlive">Aŭskultu nun!</p>-->
