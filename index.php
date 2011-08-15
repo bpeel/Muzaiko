@@ -14,7 +14,7 @@ Ekde hodiaŭ (16/08/2011) aŭskulteblas la kvara provelsendo kun noveta enhavo:
 <li>01:00-02:00 UTC: <i>TEJO Tutmonde</i> prezentas intervjuon de Dan Mrázek kun la novelektita prezidento de TEJO, Łukasz Żebrowski</li>
 <li>02:00-03:00 UTC: <i>Universitataj sistemoj tra la mondo</i> prezentas la valonan sistemon en Belgio</li>
 </ul>
-kaj poste tiuj tri horoj ripetiĝos dum la tuta tago
+kaj poste tiuj tri horoj ripetiĝos dum la tuta tago.
 
 <div class="title">Antaŭa programo</div>
 07/08/2011 - 15/08/2011: Tria provelsendo:
