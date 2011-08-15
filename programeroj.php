@@ -7,6 +7,8 @@ page_header('');
 Novaĵoj el la tuta mondo por la tuta mondo, kiun redaktas por vi nia teamo ĉe <a target="_blank" href="https://groups.google.com/group/retradio-novajxoj">Retradio-novaĵoj</a>.
 <!--<a target="_blank" href="https://docs.google.com/document/d/1tEKmKe_OTNb_ZAZ1Dm3eVEXJ3K9sNeSy_yMPbwygCWY/edit?hl=en&authkey=CK7Hq6cH">Kiel verki radio-novaĵojn</a>
 -->
+<!--artefarita acxa spaco por Avizo #3 ;) -->
+<ul></ul>
 
 <div class="title">Babilaj programeroj</div>
 <ul>
@@ -16,6 +18,7 @@ Novaĵoj el la tuta mondo por la tuta mondo, kiun redaktas por vi nia teamo ĉe 
 <li>Raportoj el eventoj</li>
 <li>Saluton, Radiemuloj!</li>
 <li>Universitataj sistemoj tra la mondo</li>
+<li>TEJO Tutmonde</li>
 </ul>
 
 <div class="title">Reklamoj</div>
