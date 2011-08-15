@@ -8,7 +8,7 @@ page_header('Bonvenon al Muzaiko!', '');
 </p>
 <p>Nia retejo ankoraŭ ne tute pretas - sed se vi volas scii pli aŭ ŝatus kunlabori, bonvolu kontakti nun ĉe <b>info (ĉe) muzaiko.info</b>!</p>
 <div class="title">La hodiaŭa programo</div>
-Ekde hodiaŭ (16/08/2011) aŭskulteblas la tria provelsendo kun noveta enhavo:
+Ekde hodiaŭ (16/08/2011) aŭskulteblas la kvara provelsendo kun noveta enhavo:
 <ul>
 <li>00:00-01:00 UTC: <i>Raportoj el eventoj</i> prezentas raportojn pri IJK, JuSKA kaj TAKE</li>
 <li>01:00-02:00 UTC: <i>TEJO Tutmonde</i> prezentas intervjuon de Dan Mrázek kun la novelektita prezidento de TEJO, Łukasz Żebrowski</li>
