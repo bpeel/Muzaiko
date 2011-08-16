@@ -16,8 +16,8 @@ else {
 
     include('/etc/datumbazensalutiloj.php');
 
-    $artists = malcxapeligu($xml->track->artists);
-    $title = malcxapeligu($xml->track->title);
+    $artists = addslashes(malcxapeligu($xml->track->artists));
+    $title = addslashes(malcxapeligu($xml->track->title));
 
     mysql_connect($servilo,$username,$password);
     @mysql_select_db($database) or die( "Unable to select database");
