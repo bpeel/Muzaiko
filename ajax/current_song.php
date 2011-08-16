@@ -47,8 +47,8 @@ else {
       $ligilo_vk = 'http://vinilkosmo.com';
       $myFile = "nekonata.log";
       $fh = fopen($myFile, 'a') or die("can't open file");
-      fwrite($fh, '== ligilo_vk ne trovata ==', '\n');
-      fwrite($fh, $xml->track->artists . " - " . $xml->track->title, '\n');
+      fwrite($fh, "== ligilo_vk ne trovata ==\n");
+      fwrite($fh, $xml->track->artists . " - " . $xml->track->title . "\n");
       fwrite($fh, $query_vk . ";\n");
       fclose($fh);
     }
@@ -56,8 +56,8 @@ else {
       $ligilo_vk_mp3 = 'http://vinilkosmo-mp3.com';
       $myFile = "nekonata.log";
       $fh = fopen($myFile, 'a') or die("can't open file");
-      fwrite($fh, '== ligilo_vk_mp3 ne trovata ==', '\n');
-      fwrite($fh, $xml->track->artists . " - " . $xml->track->title, '\n');
+      fwrite($fh, "== ligilo_vk_mp3 ne trovata ==\n");
+      fwrite($fh, $xml->track->artists . " - " . $xml->track->title . "\n");
       fwrite($fh, $query_vk_mp3 . ";\n");
       fclose($fh);
     }
