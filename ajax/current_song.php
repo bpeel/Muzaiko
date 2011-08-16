@@ -2,6 +2,11 @@
 $url = 'http://api.radionomy.com/currentsong.cfm?radiouid=14694a7d-9023-4db1-86b4-d85d96cba181&type=xml';
 $xml = simplexml_load_file($url);
 
+// include('inc/utils.php');
+include_once($_SERVER["DOCUMENT_ROOT"] . '/inc/inc.php');
+
+// echo cxapeligu('cx gx hx jx sx ux Cx Gx Hx Jx Sx Ux</br>');
+
 if (empty($xml->track->artists)) {
   echo $xml->track->title;
 }
