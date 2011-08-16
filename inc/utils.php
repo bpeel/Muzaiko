@@ -1,8 +1,9 @@
 <?php
 
-function current_song() {
-	return trim(file_get_contents('/radio/playing.txt'));
-}
+//  ne funkcias cxar mankas la dosiero
+// function current_song() {
+// 	return trim(file_get_contents('/radio/playing.txt'));
+// }
 
 function current_show($time=-1, $error_on_missing=false) {
         // FIXME: This function no longer works because the admin files

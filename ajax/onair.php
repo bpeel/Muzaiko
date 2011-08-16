@@ -17,6 +17,6 @@ setInterval("updateCurrentSong()", 5000);
 updateCurrentSong();
 </script>
 
-<!--<p class="showtitle"><?=$show_data['title']?></p>
-<p class="nowplaying"><?=current_song()?></p>
+<!--<p class="showtitle">< ?=$show_data['title']?></p>
+<p class="nowplaying">< ?=current_song()?></p>
 <p class="listenlive">Aŭskultu nun!</p>-->
