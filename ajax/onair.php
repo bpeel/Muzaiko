@@ -10,7 +10,7 @@ function updateCurrentSong(){
 setInterval("updateCurrentSong()", 5000);
 </script>
 <div id="now-playing">
-<h1>Nun estas ludita…</h1>
+<h1>Nun estas ludata…</h1>
 <div id="kanto"></div>
 </div>
 <script type="text/javascript">
