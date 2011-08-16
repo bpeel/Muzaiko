@@ -11,6 +11,7 @@ rsync \
     --exclude=/admin \
     --exclude=/.gitignore \
     --exclude=/drupal7 \
+    --exclude=/datumbazensalutiloj.php \
     --rsh=ssh \
     --delete \
     "$@" \
