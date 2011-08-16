@@ -46,4 +46,23 @@ function cxapeligu($signocxeno) {
   return $signocxeno;
 }
 
+function malcxapeligu($signocxeno) {
+  
+  $signocxeno = str_replace('ĉ', 'cx', $signocxeno);
+  $signocxeno = str_replace('ĝ', 'gx', $signocxeno);
+  $signocxeno = str_replace('ĥ', 'hx', $signocxeno);
+  $signocxeno = str_replace('ĵ', 'jx', $signocxeno);
+  $signocxeno = str_replace('ŝ', 'sx', $signocxeno);
+  $signocxeno = str_replace('ŭ', 'ux', $signocxeno);
+
+  $signocxeno = str_replace('Ĉ', 'Cx', $signocxeno);
+  $signocxeno = str_replace('Ĝ', 'Gx', $signocxeno);
+  $signocxeno = str_replace('Ĥ', 'Hx', $signocxeno);
+  $signocxeno = str_replace('Ĵ', 'Jx', $signocxeno);
+  $signocxeno = str_replace('Ŝ', 'Sx', $signocxeno);
+  $signocxeno = str_replace('Ŭ', 'Ux', $signocxeno);
+  
+  return $signocxeno;
+}
+
 ?>

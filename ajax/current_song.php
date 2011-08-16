@@ -16,29 +16,50 @@ else {
 
     include('/etc/datumbazensalutiloj.php');
 
-    $artists = $xml->track->artists;
-    $title = $xml->track->title;
+    $artists = malcxapeligu($xml->track->artists);
+    $title = malcxapeligu($xml->track->title);
 
     mysql_connect($servilo,$username,$password);
     @mysql_select_db($database) or die( "Unable to select database");
 
-    $query="SELECT Ligoj_al_diskoservo FROM vinilkosmo_tabelo WHERE Noms_albums_complets_et_Titres_par_piste_unitaire='$title' AND Artistoj='$artists' AND REF NOT LIKE 'VKK%' AND Ligoj_al_diskoservo!='0'";
-    $result=mysql_query($query);
-    $ligilo_vk = mysql_fetch_row($result);
-    $ligilo_vk = $ligilo_vk[0]; // mysql_fetch_row returns an array. we only want the Name so we just set it excluseively.
+    $ligilo_vk='';
+    $ligilo_vk_mp3='';
 
-    $query="SELECT Ligoj_al_la_elsxutejo FROM vinilkosmo_tabelo WHERE Noms_albums_complets_et_Titres_par_piste_unitaire='$title' AND Artistoj='$artists' AND REF NOT LIKE 'VKK%' AND Ligoj_al_la_elsxutejo!='0'";
-    $result=mysql_query($query);
-    $ligilo_vk_mp3 = mysql_fetch_row($result);
-    $ligilo_vk_mp3 = $ligilo_vk_mp3[0]; // mysql_fetch_row returns an array. we only want the Name so we just set it excluseively.
+    $query_vk="SELECT Ligoj_al_diskoservo FROM vinilkosmo_tabelo WHERE Noms_albums_complets_et_Titres_par_piste_unitaire='$title' AND Artistoj='$artists' AND REF NOT LIKE 'VKK%' AND Ligoj_al_diskoservo!='0'";
+    $result=mysql_query($query_vk);
+    if($result)
+    {
+      $ligilo_vk = mysql_fetch_row($result);
+      $ligilo_vk = $ligilo_vk[0]; // mysql_fetch_row returns an array. we only want the Name so we just set it excluseively.
+    }
+
+    $query_vk_mp3="SELECT Ligoj_al_la_elsxutejo FROM vinilkosmo_tabelo WHERE Noms_albums_complets_et_Titres_par_piste_unitaire='$title' AND Artistoj='$artists' AND REF NOT LIKE 'VKK%' AND Ligoj_al_la_elsxutejo!='0'";
+    $result=mysql_query($query_vk_mp3);
+    if($result)
+    {
+      $ligilo_vk_mp3 = mysql_fetch_row($result);
+      $ligilo_vk_mp3 = $ligilo_vk_mp3[0]; // mysql_fetch_row returns an array. we only want the Name so we just set it excluseively.
+    }
 
     mysql_close();
 
     if (empty($ligilo_vk)) {
       $ligilo_vk = 'http://vinilkosmo.com';
+      $myFile = "nekonata.log";
+      $fh = fopen($myFile, 'a') or die("can't open file");
+      fwrite($fh, '== ligilo_vk ne trovata ==', '\n');
+      fwrite($fh, $xml->track->artists . " - " . $xml->track->title, '\n');
+      fwrite($fh, $query_vk . ";\n");
+      fclose($fh);
     }
     if (empty($ligilo_vk_mp3)) {
       $ligilo_vk_mp3 = 'http://vinilkosmo-mp3.com';
+      $myFile = "nekonata.log";
+      $fh = fopen($myFile, 'a') or die("can't open file");
+      fwrite($fh, '== ligilo_vk_mp3 ne trovata ==', '\n');
+      fwrite($fh, $xml->track->artists . " - " . $xml->track->title, '\n');
+      fwrite($fh, $query_vk_mp3 . ";\n");
+      fclose($fh);
     }
 
     echo '</br><a target="_blank" href="' . $ligilo_vk . '">Fizikan albumon</a> - <a target="_blank" href="' . $ligilo_vk_mp3 . '">MP3</a>';
