@@ -9,15 +9,12 @@ else {
   if (!empty($xml->track->artists) && !empty($xml->track->title)) {
     echo $xml->track->artists . " - " . $xml->track->title;
 
-    $username="vk_uzanto";
-    $password="vinilkosmo_pasvorto";
-    $database="vinilkosmo";
-    $table="vinilkosmo_tabelo";
+    include('/etc/datumbazensalutiloj.php');
 
     $artists = $xml->track->artists;
     $title = $xml->track->title;
 
-    mysql_connect('127.0.0.1:3306',$username,$password);
+    mysql_connect($servilo,$username,$password);
     @mysql_select_db($database) or die( "Unable to select database");
 
     $query="SELECT Ligoj_al_diskoservo FROM vinilkosmo_tabelo WHERE Noms_albums_complets_et_Titres_par_piste_unitaire='$title' AND Artistoj='$artists' AND REF NOT LIKE 'VKK%' AND Ligoj_al_diskoservo!='0'";
@@ -42,5 +39,4 @@ else {
     echo '</br><a target="_blank" href="' . $ligilo_vk . '">Fizikan albumon</a> - <a target="_blank" href="' . $ligilo_vk_mp3 . '">MP3</a>';
   }
 }
-
 ?>
