@@ -7,7 +7,7 @@ if (empty($xml->track->artists)) {
 }
 else {
   echo $xml->track->artists . " - " . $xml->track->title;
-  echo '</br><a target="_blank" href="http://vinilkosmo.com">Aĉetu fizikan albumon</a> aŭ <a target="_blank" href="http://vinilkosmo-mp3.com">elŝutu MP3</a>';
+  echo '</br><a target="_blank" href="http://vinilkosmo.com">Fizikan albumon</a> - <a target="_blank" href="http://vinilkosmo-mp3.com">MP3</a>';
 }
 
 ?>
