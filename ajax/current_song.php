@@ -44,7 +44,7 @@ else {
     mysql_close();
 
     if (empty($ligilo_vk)) {
-      $ligilo_vk = 'http://vinilkosmo.com';
+//       $ligilo_vk = 'http://vinilkosmo.com';
       $myFile = "nekonata.log";
       $fh = fopen($myFile, 'a') or die("can't open file");
       fwrite($fh, "== ligilo_vk ne trovata ==\n");
@@ -53,7 +53,7 @@ else {
       fclose($fh);
     }
     if (empty($ligilo_vk_mp3)) {
-      $ligilo_vk_mp3 = 'http://vinilkosmo-mp3.com';
+//       $ligilo_vk_mp3 = 'http://vinilkosmo-mp3.com';
       $myFile = "nekonata.log";
       $fh = fopen($myFile, 'a') or die("can't open file");
       fwrite($fh, "== ligilo_vk_mp3 ne trovata ==\n");
@@ -62,7 +62,16 @@ else {
       fclose($fh);
     }
 
-    echo '</br><a target="_blank" href="' . $ligilo_vk . '">Fizika albumo</a> - <a target="_blank" href="' . $ligilo_vk_mp3 . '">MP3</a>';
+    if ( !empty($ligilo_vk) && !empty($ligilo_vk_mp3) ) {
+      echo '</br><a target="_blank" href="' . $ligilo_vk . '">Fizika albumo</a> - <a target="_blank" href="' . $ligilo_vk_mp3 . '">MP3</a>';
+    }
+    if ( !empty($ligilo_vk) && empty($ligilo_vk_mp3) ) {
+      echo '</br><a target="_blank" href="' . $ligilo_vk . '">Fizika albumo</a>';
+    }
+    if ( empty($ligilo_vk) && !empty($ligilo_vk_mp3) ) {
+      echo '</br><a target="_blank" href="' . $ligilo_vk_mp3 . '">MP3</a>';
+    }
+
   }
 }
 ?>
