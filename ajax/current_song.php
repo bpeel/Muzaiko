@@ -25,7 +25,7 @@ else {
     $ligilo_vk='';
     $ligilo_vk_mp3='';
 
-    $query_vk="SELECT Ligoj_al_diskoservo FROM vinilkosmo_tabelo WHERE Noms_albums_complets_et_Titres_par_piste_unitaire='$title' AND Artistoj='$artists' AND REF NOT LIKE 'VKK%' AND Ligoj_al_diskoservo!='0'";
+    $query_vk="SELECT Ligoj_al_diskoservo FROM vinilkosmo_tabelo WHERE Noms_albums_complets_et_Titres_par_piste_unitaire='$title' AND Artistoj='$artists' AND REF NOT LIKE 'VK%' AND Ligoj_al_diskoservo!='0'";
     $result=mysql_query($query_vk);
     if($result)
     {
@@ -33,7 +33,7 @@ else {
       $ligilo_vk = $ligilo_vk[0]; // mysql_fetch_row returns an array. we only want the Name so we just set it excluseively.
     }
 
-    $query_vk_mp3="SELECT Ligoj_al_la_elsxutejo FROM vinilkosmo_tabelo WHERE Noms_albums_complets_et_Titres_par_piste_unitaire='$title' AND Artistoj='$artists' AND REF NOT LIKE 'VKK%' AND Ligoj_al_la_elsxutejo!='0'";
+    $query_vk_mp3="SELECT Ligoj_al_la_elsxutejo FROM vinilkosmo_tabelo WHERE Noms_albums_complets_et_Titres_par_piste_unitaire='$title' AND Artistoj='$artists' AND REF NOT LIKE 'VK%' AND Ligoj_al_la_elsxutejo!='0'";
     $result=mysql_query($query_vk_mp3);
     if($result)
     {
