@@ -43,23 +43,30 @@ else {
 
     mysql_close();
 
+    $protokoldosiero="nekonata.log";
     if (empty($ligilo_vk)) {
 //       $ligilo_vk = 'http://vinilkosmo.com';
-      $myFile = "nekonata.log";
-      $fh = fopen($myFile, 'a') or die("can't open file");
-      fwrite($fh, "== ligilo_vk ne trovata ==\n");
-      fwrite($fh, $xml->track->artists . " - " . $xml->track->title . "\n");
-      fwrite($fh, $query_vk . ";\n");
-      fclose($fh);
+      $file = file_get_contents($protokoldosiero);
+      if(!strpos($file, $query_vk)) {
+        $myFile = $protokoldosiero;
+        $fh = fopen($myFile, 'a') or die("can't open file");
+        fwrite($fh, "== ligilo_vk ne trovata ==\n");
+        fwrite($fh, $xml->track->artists . " - " . $xml->track->title . "\n");
+        fwrite($fh, $query_vk . ";\n");
+        fclose($fh);
+      }
     }
     if (empty($ligilo_vk_mp3)) {
 //       $ligilo_vk_mp3 = 'http://vinilkosmo-mp3.com';
-      $myFile = "nekonata.log";
-      $fh = fopen($myFile, 'a') or die("can't open file");
-      fwrite($fh, "== ligilo_vk_mp3 ne trovata ==\n");
-      fwrite($fh, $xml->track->artists . " - " . $xml->track->title . "\n");
-      fwrite($fh, $query_vk_mp3 . ";\n");
-      fclose($fh);
+      $file = file_get_contents($protokoldosiero);
+      if(!strpos($file, $query_vk_mp3)) {
+        $myFile = $protokoldosiero;
+        $fh = fopen($myFile, 'a') or die("can't open file");
+        fwrite($fh, "== ligilo_vk_mp3 ne trovata ==\n");
+        fwrite($fh, $xml->track->artists . " - " . $xml->track->title . "\n");
+        fwrite($fh, $query_vk_mp3 . ";\n");
+        fclose($fh);
+      }
     }
 
     if ( !empty($ligilo_vk) && !empty($ligilo_vk_mp3) ) {
