@@ -51,7 +51,7 @@ function right($title='') {
 </div>
 
 <div class="right_content">
-<a href="/auxskultu"><img src="images/listen_live_eo.jpg" alt="" title="" class="listen_live" border="0" /></a>
+<a href="/auxskultu" onClick="window.open('http://www.radionomy.com/en/radio/muzaikoinfo/listen');"><img src="images/listen_live_eo.jpg" alt="" title="" class="listen_live" border="0" /></a>
 <!--<div class="title"><?=$title?></div>-->
 <div>
 Eksciu pli pri Muzaiko ĉe:
