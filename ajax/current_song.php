@@ -62,7 +62,7 @@ else {
       fclose($fh);
     }
 
-    echo '</br><a target="_blank" href="' . $ligilo_vk . '">Fizikan albumon</a> - <a target="_blank" href="' . $ligilo_vk_mp3 . '">MP3</a>';
+    echo '</br><a target="_blank" href="' . $ligilo_vk . '">Fizika albumo</a> - <a target="_blank" href="' . $ligilo_vk_mp3 . '">MP3</a>';
   }
 }
 ?>

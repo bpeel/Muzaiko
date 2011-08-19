@@ -27,7 +27,7 @@ kaj poste tiuj tri horoj ripetiĝos dum la tuta tago.
 <li>01:00-02:00 UTC: <i>TEJO Tutmonde</i> prezentas intervjuon de Dan Mrázek kun la novelektita prezidento de TEJO, Łukasz Żebrowski</li>
 <li>02:00-03:00 UTC: <i>Universitataj sistemoj tra la mondo</i> prezentas la valonan sistemon en Belgio</li>
 </ul>
-kaj poste tiuj tri horoj ripetiĝos dum la tuta tago.</li>
+kaj poste tiuj tri horoj ripetiĝis dum la tuta tago.</li>
 <li>07/08/2011 - 15/08/2011: Tria provelsendo:
 <ul>
 <li>00:00-01:00 UTC: <i>Raportoj el eventoj</i> prezentas raportojn pri IJK, JuSKA kaj TAKE</li>
