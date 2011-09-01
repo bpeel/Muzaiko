@@ -10,9 +10,9 @@ exec rsync \
     --exclude=/.gitignore \
     --exclude=/drupal7 \
     --exclude=/datumbazensalutiloj.php \
+    --exclude=/ajax/nekonata.log \
     --rsh=ssh \
     --delete \
     "$@" \
     . \
     root@muzaiko.info:/var/www
-

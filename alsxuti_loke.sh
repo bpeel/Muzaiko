@@ -12,6 +12,7 @@ rsync \
     --exclude=/.gitignore \
     --exclude=/drupal7 \
     --exclude=/datumbazensalutiloj.php \
+    --exclude=/ajax/nekonata.log \
     --rsh=ssh \
     --delete \
     "$@" \
@@ -19,4 +20,3 @@ rsync \
     /var/www
 
 chown -R www-data:www-data /var/www/ 
-

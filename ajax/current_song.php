@@ -20,7 +20,7 @@ else {
     $title = trim(addslashes(malcxapeligu($xml->track->title)));
 
     mysql_connect($servilo,$username,$password);
-    @mysql_select_db($database) or die( "Unable to select database");
+    @mysql_select_db($database) or die( "Neebla elekti la datumbazon");
 
     $ligilo_vk='';
     $ligilo_vk_mp3='';
