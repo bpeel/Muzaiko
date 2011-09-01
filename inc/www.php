@@ -24,9 +24,13 @@ function dodates() {
 <div id="header">
 <div id="logo"><a href="/"><img src="images/logo.gif" alt="" title="" border="0" /></a></div>
 	<div class="on_air">
-	<?php include('ajax/onair.php'); ?>
+	  <?php include('ajax/onair.php'); ?>
 	</div>
+<!--	<div class="on_air">
+	  <php include('ajax/nombro_da_auxskultantoj_ajax.php'); ?> 
+	</div>-->
 </div>
+
 <div id="menu">
 <ul>
 	<li><a class="current" href="/" title="">hejmo</a></li>
