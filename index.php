@@ -8,8 +8,22 @@ page_header('Bonvenon al Muzaiko!', '');
 </p>
 <p>Nia retejo ankoraŭ ne tute pretas - sed se vi volas scii pli aŭ ŝatus kunlabori, bonvolu kontakti nun ĉe <b>info (ĉe) muzaiko.info</b>!</p>
 <div class="title">La hodiaŭa programo</div>
+
 <div>
-Ekde hodiaŭ (17/08/2011) aŭskulteblas la kvara provelsendo kun noveta enhavo:
+La hodiaŭa elsendo (01/09/2011):
+<ul>
+<li>00:00-01:00 UTC: <i>Raportoj el eventoj</i> prezentas raportojn pri IJK, JuSKA kaj TAKE</li>
+<li>01:00-02:00 UTC: <i>Saluton, Radiemuloj!</i> prezentas la Polan retradion en Esperanto</li>
+<li>02:00-03:00 UTC: <i>Universitataj sistemoj tra la mondo</i> prezentas la valonan sistemon en Belgio</li>
+</ul>
+kaj poste tiuj tri horoj ripetiĝos dum la tuta tago.
+</div>
+
+<div class="title">Antaŭaj programoj</div>
+
+<ul>
+
+<li>17/08/2011-01/09/2011: 5a provelsendo:
 <ul>
 <li>00:00-01:00 UTC: <i>Esperantistoj aktivas</i> prezentas Céline Bernard, kiu
 rakontos al ni pri la grupo en la urbo de Orange, en Francio</li>
@@ -17,24 +31,24 @@ rakontos al ni pri la grupo en la urbo de Orange, en Francio</li>
 <li>02:00-03:00 UTC: En la kadro de la programo Bibliotekoj tra la mondo radio
 Muzaiko vizitas la Britan Bibliotekon</li>
 </ul>
-kaj poste tiuj tri horoj ripetiĝos dum la tuta tago.
-</div>
-<div class="title">Antaŭaj programoj</div>
-<ul>
-<li>16/08/2011: aŭskulteblas la kvara provelsendo kun noveta enhavo:
+kaj poste tiuj tri horoj ripetiĝis dum la tuta tago.
+
+<li>16/08/2011: 4a provelsendo:
 <ul>
 <li>00:00-01:00 UTC: <i>Raportoj el eventoj</i> prezentas raportojn pri IJK, JuSKA kaj TAKE</li>
 <li>01:00-02:00 UTC: <i>TEJO Tutmonde</i> prezentas intervjuon de Dan Mrázek kun la novelektita prezidento de TEJO, Łukasz Żebrowski</li>
 <li>02:00-03:00 UTC: <i>Universitataj sistemoj tra la mondo</i> prezentas la valonan sistemon en Belgio</li>
 </ul>
 kaj poste tiuj tri horoj ripetiĝis dum la tuta tago.</li>
-<li>07/08/2011 - 15/08/2011: Tria provelsendo:
+
+<li>07/08/2011 - 15/08/2011: 3a provelsendo:
 <ul>
 <li>00:00-01:00 UTC: <i>Raportoj el eventoj</i> prezentas raportojn pri IJK, JuSKA kaj TAKE</li>
 <li>01:00-02:00 UTC: <i>Saluton, Radiemuloj!</i> prezentas la Polan retradion en Esperanto</li>
 <li>02:00-03:00 UTC: <i>Universitataj sistemoj tra la mondo</i> prezentas la valonan sistemon en Belgio</li>
 </ul>
 kaj poste tiuj tri horoj ripetiĝis dum la tuta tago.</li>
+
 </ul>
 
 <?php
