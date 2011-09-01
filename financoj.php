@@ -20,20 +20,20 @@ Bedaŭrinde kreante Muzaikon oni ja devas pensi pri kelkaj financaj aferoj. Se v
 </tr>
 
 <tr>
-<td> £ 200 </td>
 <td> ĵingloj </td>
+<td> £ 200 </td>
 <td>  </td>
 </tr>
 
 <tr>
-<td> £ 28 </td>
 <td> domajnoj </td>
+<td> £ 28 </td>
 <td> Neil </td>
 </tr>
 
 <tr>
-<td> £ 180 </td>
 <td> servilo </td>
+<td> £ 180 </td>
 <td> Neil </td>
 </tr>
 
