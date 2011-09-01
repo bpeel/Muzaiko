@@ -13,6 +13,7 @@ rsync \
     --exclude=/drupal7 \
     --exclude=/datumbazensalutiloj.php \
     --exclude=/ajax/nekonata.log \
+    --exclude=/sengit \
     --rsh=ssh \
     --delete \
     "$@" \
