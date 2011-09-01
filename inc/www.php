@@ -35,6 +35,7 @@ function dodates() {
 	<!--<li><a href="/muziko" title="">muziko</a></li>-->
 	<li><a href="/subtenu" title="">subtenu</a></li>
 	<li><a href="/reklamu" title="">reklamu</a></li>
+	<li><a href="/financoj" title="">financoj</a></li>
 	<li><a href="/partoprenu" title="">partoprenu</a></li>
 	<li><a href="/kontaktu" title="">kontaktu</a></li>
 </ul>
@@ -128,6 +129,7 @@ function page_footer($homelink=true) {
 <!-- <a href="/muziko" title="">muziko</a> -->
 <a href="/subtenu" title="">subtenu</a>
 <a href="/reklamu" title="">reklamu</a>
+<a href="/financoj" title="">financoj</a>
 <a href="/partoprenu" title="">partoprenu</a>
 <a href="/kontaktu" title="">kontaktu</a>
 </div>
