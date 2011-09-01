@@ -11,7 +11,7 @@ Bedaŭrinde kreante Muzaikon oni ja devas pensi pri kelkaj financaj aferoj. Se v
 
 <div class="title">Pagita</div>
 
-<table border="1" cellspacing="0" cellpadding="10">
+<table border="1" cellspacing="0" cellpadding="10" width="100%">
 
 <tr>
 <td> por kio </td>
@@ -40,7 +40,7 @@ Bedaŭrinde kreante Muzaikon oni ja devas pensi pri kelkaj financaj aferoj. Se v
 </table> 
 
 <div class="title">Pagota</div>
-<table border="1" cellspacing="0" cellpadding="10">
+<table border="1" cellspacing="0" cellpadding="10" width="100%">
 
 <tr>
 <td> por kio </td>
