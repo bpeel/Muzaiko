@@ -14,9 +14,9 @@ Bedaŭrinde kreante Muzaikon oni ja devas pensi pri kelkaj financaj aferoj. Se v
 <table border="1" cellspacing="0" cellpadding="10" width="100%">
 
 <tr>
-<td> por kio </td>
-<td> kiom </td>
-<td> kiu </td>
+<td WIDTH="40%"> por kio </td>
+<td WIDTH="30%"> kiom </td>
+<td WIDTH="30%"> kiu </td>
 </tr>
 
 <tr>
@@ -43,9 +43,9 @@ Bedaŭrinde kreante Muzaikon oni ja devas pensi pri kelkaj financaj aferoj. Se v
 <table border="1" cellspacing="0" cellpadding="10" width="100%">
 
 <tr>
-<td> por kio </td>
-<td> kiom </td>
-<td> kiu </td>
+<td WIDTH="40%"> por kio </td>
+<td WIDTH="30%"> kiom </td>
+<td WIDTH="30%"> kiu </td>
 </tr>
 
 </table> 
