@@ -52,7 +52,9 @@ Bedaŭrinde kreante Muzaikon oni ja devas pensi pri kelkaj financaj aferoj. Se v
 
 </br>
 
-Nun ne estas urĝa pagindaĵo, tamen, se vi emas finance kontribui, estus tre valora se vi povus aĉeti registrilojn al nepagipovaj sed kunlaboremaj Muzaik-anoj (taŭgaj registriloj kostas inter € 50-200). Por pliaj informoj skribu al <a href="mailto:info@muzaiko.info">info@muzaiko.info</a> aŭ aliĝu al la <a target="_blank" href="https://groups.google.com/group/retradio-projekto">dissendolisto</a>.
+Nun ne estas urĝa pagindaĵo, tamen, se vi emas finance kontribui, estus tre valora se vi povus aĉeti registrilojn al nepagipovaj sed kunlaboremaj Muzaik-anoj (taŭgaj registriloj kostas inter € 50-200). Por pliaj informoj skribu al <b>info (ĉe) muzaiko.info</b>
+<!-- <a href="mailto:info@muzaiko.info">info@muzaiko.info</a> -->
+ aŭ aliĝu al la <a target="_blank" href="https://groups.google.com/group/retradio-projekto">dissendolisto</a>.
 
 <?php
 right();
