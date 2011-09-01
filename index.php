@@ -10,7 +10,7 @@ page_header('Bonvenon al Muzaiko!', '');
 <div class="title">La hodiaŭa programo</div>
 
 <div>
-La hodiaŭa elsendo (01/09/2011):
+La hodiaŭa elsendo (02/09/2011):
 <ul>
 <li>00:00-01:00 UTC: <i>Raportoj el eventoj</i> prezentas raportojn pri IJK, JuSKA kaj TAKE</li>
 <li>01:00-02:00 UTC: <i>Saluton, Radiemuloj!</i> prezentas la Polan retradion en Esperanto</li>
@@ -22,6 +22,16 @@ kaj poste tiuj tri horoj ripetiĝos dum la tuta tago.
 <div class="title">Antaŭaj programoj</div>
 
 <ul>
+
+<div>
+01/09/2011:
+<ul>
+<li>00:00-01:00 UTC: <i>Raportoj el eventoj</i> prezentas raportojn pri IJK, JuSKA kaj TAKE</li>
+<li>01:00-02:00 UTC: <i>Saluton, Radiemuloj!</i> prezentas la Polan retradion en Esperanto</li>
+<li>02:00-03:00 UTC: <i>Universitataj sistemoj tra la mondo</i> prezentas la valonan sistemon en Belgio</li>
+</ul>
+kaj poste tiuj tri horoj ripetiĝis dum la tuta tago.
+</div>
 
 <li>17/08/2011-01/09/2011: 5a provelsendo:
 <ul>
