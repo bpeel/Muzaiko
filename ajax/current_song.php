@@ -14,7 +14,7 @@ else {
   if (!empty($xml->track->artists) && !empty($xml->track->title)) {
     echo $xml->track->artists . " - " . $xml->track->title;
 
-    include('/etc/datumbazensalutiloj.php');
+    include('/var/muzaiko/datumbazensalutiloj.php');
 
     $artists = trim(addslashes(malcxapeligu($xml->track->artists)));
     $title = trim(addslashes(malcxapeligu($xml->track->title)));
