@@ -19,6 +19,7 @@ Novaĵoj el la tuta mondo por la tuta mondo, kiun redaktas por vi nia teamo ĉe 
 <li>Saluton, Radiemuloj!</li>
 <li>Universitataj sistemoj tra la mondo</li>
 <li>TEJO Tutmonde</li>
+<li>Bibliotekoj tra la mondo</li>
 </ul>
 
 <div class="title">Reklamoj</div>
