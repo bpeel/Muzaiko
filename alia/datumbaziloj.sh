@@ -99,3 +99,21 @@ function muzaiko_nombru
   # nombru la linioj
   mysql -u $USER -p$PASSWORD -e "SELECT COUNT(*) FROM $TABLENAME" $DATABASENAME
 }
+
+function muzaiko_root_sekurkopiu
+{
+  # kreu sekurkopion
+  DATABASENAME=$1
+  mysqldump -u $ADMIN -p$ADMIN_PASSWORD $DATABASENAME
+}
+
+function muzaiko_root_konektu()
+{
+  # konektu al la datumbazo
+  mysql -u $ADMIN -p$ADMIN_PASSWORD
+}
+
+function muzaiko_root_listu_datumbazojn()
+{
+  mysql -u $ADMIN -p$ADMIN_PASSWORD -e 'SHOW DATABASES'
+}
