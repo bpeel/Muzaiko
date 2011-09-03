@@ -4,7 +4,7 @@ page_header('Kontaktu');
 ?>
 <p>
 Se vi havas demandon rilate al iu ajn pri Muzaiko, kaj vi ne certas, kiun
-demandi, simple skribu al info ĉe muzaiko punkto info. Ni klopodos respondi
+demandi, simple skribu al <b>info (ĉe) muzaiko.info</b>. Ni klopodos respondi
 ĉiujn viajn demandojn, aŭ kontaktigi vin kun la taŭga homo.
 </p>
 <p>
