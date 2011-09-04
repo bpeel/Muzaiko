@@ -12,7 +12,7 @@ if (empty($xml->track->artists)) {
 }
 else {
   if (!empty($xml->track->artists) && !empty($xml->track->title)) {
-    echo $xml->track->artists . " - " . $xml->track->title;
+    echo cxapeligu($xml->track->artists . " - " . $xml->track->title);
 
     include('/var/muzaiko/datumbazensalutiloj.php');
 
