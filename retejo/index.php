@@ -13,9 +13,9 @@ page_header('Bonvenon al Muzaiko!', '');
 <div>
 	2011/09/04:
   <ul>
-	<li>00:00-01:00 <i>Kulturaj minutoj</i> prezentas projekton pri nova antologio en Britio kaj la internacian koruson Interkant'</li>
-	<li>01:00-02:00 <i>Saluton, Radiemuloj!</i> prezentas la Polan retradion en Esperanto</li>
-	<li>02:00-03:00 <i>Vegetaranismo tra la mondo</i> vizitas Brition</li>
+	<li>00:00-01:00 UTC: <i>Kulturaj minutoj</i> prezentas projekton pri nova antologio en Britio kaj la internacian koruson Interkant'</li>
+	<li>01:00-02:00 UTC: <i>Saluton, Radiemuloj!</i> prezentas la Polan retradion en Esperanto</li>
+	<li>02:00-03:00 UTC: <i>Vegetaranismo tra la mondo</i> vizitas Brition</li>
   </ul>
   kaj poste tiuj tri horoj ripetiĝos dum la tuta tago.
 </div>
@@ -30,9 +30,9 @@ page_header('Bonvenon al Muzaiko!', '');
     <li>
 	   2011/09/03:
       <ul>
-	     <li>00:00-01:00: <i>Gramatikaĵo</i>; La programo de <i>Esperantistaj muzikistoj</i> prezentas intervjuon kun ĴomArt kaj Nataŝa</li>
-	     <li>01:00-02:00: <i>Raportoj el eventoj</i> prezentas IREM, JuSKA kaj Café Esperanto en Parizo</li>
-	     <li>02:00-03:00: <i>Esperantistoj aktivas</i> prezentas intervjuon kun Chuck Smith pri blogado ĉe <a target="_blank" href="http://www.transparent.com/esperanto/">transparent.com/esperanto</a>; <i>Fabeloj</i>: <a target="_blank" href="http://eo.wikipedia.org/wiki/Julia_Noe">Julia Noe</a> laŭtlegas fabelon "La fabelo kaj la vero"</li>
+	     <li>00:00-01:00 UTC: <i>Gramatikaĵo</i>; La programo de <i>Esperantistaj muzikistoj</i> prezentas intervjuon kun ĴomArt kaj Nataŝa</li>
+	     <li>01:00-02:00 UTC: <i>Raportoj el eventoj</i> prezentas IREM, JuSKA kaj Café Esperanto en Parizo</li>
+	     <li>02:00-03:00 UTC: <i>Esperantistoj aktivas</i> prezentas intervjuon kun Chuck Smith pri blogado ĉe <a target="_blank" href="http://www.transparent.com/esperanto/">transparent.com/esperanto</a>; <i>Fabeloj</i>: <a target="_blank" href="http://eo.wikipedia.org/wiki/Julia_Noe">Julia Noe</a> laŭtlegas fabelon "La fabelo kaj la vero"</li>
       </ul>
       kaj poste tiuj tri horoj ripetiĝis dum la tuta tago.
     </li>
