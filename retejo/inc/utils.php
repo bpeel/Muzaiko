@@ -65,4 +65,32 @@ function malcxapeligu($signocxeno) {
   return $signocxeno;
 }
 
+// vidu http://php.net/manual/en/function.date-default-timezone-set.php
+function setTimezoneByOffset($offset)
+    {
+      $testTimestamp = time();
+        date_default_timezone_set('UTC');
+        $testLocaltime = localtime($testTimestamp,true);
+        $testHour = $testLocaltime['tm_hour'];       
+
+     
+    $abbrarray = timezone_abbreviations_list();
+    foreach ($abbrarray as $abbr)
+    {
+        //echo $abbr."<br>";
+      foreach ($abbr as $city)
+      {
+                date_default_timezone_set($city['timezone_id']);
+                $testLocaltime     = localtime($testTimestamp,true);
+                $hour                     = $testLocaltime['tm_hour'];       
+                $testOffset =  $hour - $testHour;
+                if($testOffset == $offset)
+                {
+                    return true;
+                }
+      }
+    }
+    return false;
+    } 
+    
 ?>

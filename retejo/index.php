@@ -8,32 +8,39 @@ page_header('Bonvenon al Muzaiko!', '');
 </p>
 <p>Nia retejo ankoraŭ ne tute pretas - sed se vi volas scii pli aŭ ŝatus kunlabori, bonvolu kontakti nun ĉe <b>info (ĉe) muzaiko.info</b>!</p>
 
+<?php
+// preparu la hodiauxan daton laux UTC por poste
+date_default_timezone_set('UTC');
+//echo date('H:i:s d/m/Y').'<br>';
+$hodiaux = strtotime(date('Y-m-d'));
+//$hodiaux = strtotime(date('2011-09-03'));
+?>
+
 <div class="title">La hodiaŭa programo</div>
 
 <div>
-<!-- 	   2011/09/06:
-      <ul>
+
+<?php echo date('Y/m/d').':'; ?>
+	  <ul>
+<?php	if ($hodiaux == strtotime(date('2011-09-06'))) { ?>
 			<li>00:00-01:00 UTC: <i>Esperantistoj aktivas</i> prezentas Céline Bernard, kiu rakontos al ni pri la grupo en la urbo de Orange, en Francio</li>
 			<li>01:00-02:00 UTC: <i>TEJO Tutmonde</i> prezentas intervjuon de Dan Mrázek kun la novelektita prezidento de TEJO, Łukasz Żebrowski</li>
 			<li>02:00-03:00 UTC: En la kadro de la programo <i>Bibliotekoj tra la mondo</i>, radio Muzaiko vizitas la Britan Bibliotekon</li>
-      </ul>
-      kaj poste tiuj tri horoj ripetiĝos dum la tuta tago.
- -->
-<!-- 	   2011/09/05:
-      <ul>
+<?php	} ?>
+<?php	if ($hodiaux == strtotime(date('2011-09-05'))) { ?>
 			<li>00:00-01:00 UTC: <i>Raportoj el eventoj</i> prezentas raportojn pri IJK, JuSKA kaj TAKE</li>
 			<li>01:00-02:00 UTC: <i>Saluton, Radiemuloj!</i> prezentas la Polan retradion en Esperanto</li>
 			<li>02:00-03:00 UTC: <i>Universitataj sistemoj tra la mondo</i> prezentas la valonan sistemon en Belgio</li>
-      </ul>
-      kaj poste tiuj tri horoj ripetiĝos dum la tuta tago.
- -->
-	  2011/09/04:
-	  <ul>
+<?php	} ?>
+<?php	if ($hodiaux == strtotime(date('2011-09-04'))) { ?>
 			<li>00:00-01:00 UTC: <i>Kulturaj minutoj</i> prezentas projekton pri nova antologio en Britio kaj la internacian koruson Interkant'</li>
 			<li>01:00-02:00 UTC: <i>Saluton, Radiemuloj!</i> prezentas la Polan retradion en Esperanto</li>
 			<li>02:00-03:00 UTC: <i>Vegetaranismo tra la mondo</i> vizitas Brition</li>
+<?php	} ?>
+	  <!-- komuna al cxiu programo: -->
 	  </ul>
 	  kaj poste tiuj tri horoj ripetiĝos dum la tuta tago.
+
 </div>
 
 <div class="title">Antaŭaj programoj</div>
@@ -43,7 +50,8 @@ page_header('Bonvenon al Muzaiko!', '');
 <div>
   <ul>
 
-<!--     <li>
+<?php	if ($hodiaux > strtotime(date('2011-09-06'))) { ?>
+     <li>
 	   2011/09/06:
       <ul>
 			<li>00:00-01:00 UTC: <i>Esperantistoj aktivas</i> prezentas Céline Bernard, kiu rakontos al ni pri la grupo en la urbo de Orange, en Francio</li>
@@ -53,8 +61,9 @@ page_header('Bonvenon al Muzaiko!', '');
       kaj poste tiuj tri horoj ripetiĝis dum la tuta tago.
     </li>
     <br>
- -->
-<!--     <li>
+<?php	} ?>
+<?php	if ($hodiaux > strtotime(date('2011-09-05'))) { ?>
+     <li>
 	   2011/09/05:
       <ul>
 			<li>00:00-01:00 UTC: <i>Raportoj el eventoj</i> prezentas raportojn pri IJK, JuSKA kaj TAKE</li>
@@ -64,8 +73,9 @@ page_header('Bonvenon al Muzaiko!', '');
       kaj poste tiuj tri horoj ripetiĝis dum la tuta tago.
     </li>
     <br>
- -->
-<!--     <li>
+<?php	} ?>
+<?php	if ($hodiaux > strtotime(date('2011-09-04'))) { ?>
+     <li>
 	   2011/09/04:
       <ul>
 			<li>00:00-01:00 UTC: <i>Kulturaj minutoj</i> prezentas projekton pri nova antologio en Britio kaj la internacian koruson Interkant'</li>
@@ -75,7 +85,8 @@ page_header('Bonvenon al Muzaiko!', '');
       kaj poste tiuj tri horoj ripetiĝis dum la tuta tago.
     </li>
     <br>
- -->
+<?php	} ?>
+
     <li>
 	   2011/09/03:
       <ul>
