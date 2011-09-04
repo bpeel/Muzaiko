@@ -21,6 +21,7 @@ Novaĵoj el la tuta mondo por la tuta mondo, kiun redaktas por vi nia teamo ĉe 
 <li>TEJO Tutmonde</li>
 <li>Bibliotekoj tra la mondo</li>
 <li>Gramatikaĵo</li>
+<li>Kulturaj minutoj</li>
 </ul>
 
 <div class="title">Reklamoj</div>
