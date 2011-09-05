@@ -4,9 +4,9 @@ page_header('Bonvenon al Muzaiko!', '');
 ?>
 <p>
 <img src="images/earphones.gif" alt="" title="" class="left_img" />
-<b>Muzaiko estas tuttempa tutmojosa tutesperanta radio!</b> Ni ludas por vi 24 horojn en tago muzikon, programerojn, novaĵojn, informojn, raportojn, arkivaĵojn kaj multe pli!
+<b>Muzaiko estas tuttempa tutmonda tutmojosa tutesperanta radio!</b> Ni ludas por vi 24 horojn en tago muzikon, programerojn, novaĵojn, informojn, raportojn, arkivaĵojn kaj multe pli!
 </p>
-<p>Nia retejo ankoraŭ ne tute pretas - sed se vi volas scii pli aŭ ŝatus kunlabori, bonvolu kontakti nun ĉe <b>info (ĉe) muzaiko.info</b>!</p>
+<p>Nia retejo ankoraŭ ne tute pretas - sed se vi volas scii pli aŭ ŝatus kunlabori, bonvolu kontakti nin ĉe <b>info (ĉe) muzaiko.info</b>!</p>
 
 <?php
 // preparu la hodiauxan daton laux UTC por poste
