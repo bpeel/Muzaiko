@@ -22,6 +22,11 @@ $hodiaux = strtotime(date('Y-m-d'));
 
 <?php echo date('Y/m/d').':'; ?>
 	  <ul>
+<?php	if ($hodiaux == strtotime(date('2011-09-09'))) { ?>
+			<li>00:00-01:00 UTC: Intervjuo de Aleks Kadar kun Bertrand Hugon pri la seminario "Kaj nun ni estu eŭropanoj"</li>
+			<li>01:00-02:00 UTC: El la arĥivejo de <a target="_blank" href="http://www.podkasto.net/2011/07/03/la-72a-elsendo/">Varsovia Vento</a> Platano kunmetis por vi intervjuon pri la Kinofestivalo</li>
+			<li>02:00-03:00 UTC: <i>Vegetaranismo tra la mondo</i> vizitas Brition</li>
+<?php	} ?>
 <?php	if ($hodiaux == strtotime(date('2011-09-08'))) { ?>
 			<li>00:00-01:00 UTC: <i>Kulturaj minutoj</i> prezentas projekton pri nova antologio en Britio kaj la internacian koruson Interkant'</li>
 			<li>01:00-02:00 UTC: <i>Saluton, Radiemuloj!</i> prezentas la Polan retradion en Esperanto</li>
@@ -60,6 +65,18 @@ $hodiaux = strtotime(date('Y-m-d'));
 <div>
   <ul>
 
+<?php	if ($hodiaux > strtotime(date('2011-09-09'))) { ?>
+     <li>
+	   2011/09/09:
+      <ul>
+			<li>00:00-01:00 UTC: Intervjuo de Aleks Kadar kun Bertrand Hugon pri la seminario "Kaj nun ni estu eŭropanoj"</li>
+			<li>01:00-02:00 UTC: El la arĥivejo de <a target="_blank" href="http://www.podkasto.net/2011/07/03/la-72a-elsendo/">Varsovia Vento</a> Platano kunmetis por vi intervjuon pri la Kinofestivalo</li>
+			<li>02:00-03:00 UTC: <i>Vegetaranismo tra la mondo</i> vizitas Brition</li>
+      </ul>
+      kaj poste tiuj tri horoj ripetiĝis dum la tuta tago.
+    </li>
+    <br>
+<?php	} ?>
 <?php	if ($hodiaux > strtotime(date('2011-09-08'))) { ?>
      <li>
 	   2011/09/08:
