@@ -29,7 +29,7 @@ $hodiaux = strtotime(date('Y-m-d'));
 <?php	} ?>
 <?php	if ($hodiaux == strtotime(date('2011-09-10'))) { ?>
 			<li>00:00-01:00 UTC: Intervjuo de Aleks Kadar kun Bertrand Hugon pri la seminario "Kaj nun ni estu eŭropanoj"</li>
-			<li>01:00-02:00 UTC: El la arĥivejo de Radio Verda Jessica Grasso elektis por vi interesaĵojn pri bicikloj</li>
+			<li>01:00-02:00 UTC: El la arĥivejo de <a href="http://radioverda.com/" target="_blank">Radio Verda</a> Jessica Grasso elektis por vi interesaĵojn pri bicikloj</li>
 			<li>02:00-03:00 UTC: TEJO Tutmonde prezentas intervjuon de Dan Mrázek kun la novelektita prezidento de TEJO, Łukasz Żebrowski</li>
 <?php	} ?>
 <?php	if ($hodiaux == strtotime(date('2011-09-09'))) { ?>
@@ -92,7 +92,7 @@ $hodiaux = strtotime(date('Y-m-d'));
 	   2011/09/10:
       <ul>
 			<li>00:00-01:00 UTC: Intervjuo de Aleks Kadar kun Bertrand Hugon pri la seminario "Kaj nun ni estu eŭropanoj"</li>
-			<li>01:00-02:00 UTC: El la arĥivejo de Radio Verda Jessica Grasso elektis por vi interesaĵojn pri bicikloj</li>
+			<li>01:00-02:00 UTC: El la arĥivejo de <a href="http://radioverda.com/" target="_blank">Radio Verda</a> Jessica Grasso elektis por vi interesaĵojn pri bicikloj</li>
 			<li>02:00-03:00 UTC: TEJO Tutmonde prezentas intervjuon de Dan Mrázek kun la novelektita prezidento de TEJO, Łukasz Żebrowski</li>
       </ul>
       kaj poste tiuj tri horoj ripetiĝis dum la tuta tago.
