@@ -92,6 +92,7 @@ width:345px;
 float:left;
 padding:10px 0 30px 30px;
 }
+
 img.listen_live{
 padding:20px 0 0 0px;
 }
@@ -107,12 +108,30 @@ padding:50px 0 0 100px;
 text-align:center;
 color:#FFFFFF;
 }
+
 .title{
 font-size:20px;
 color:#a90329;
 clear:both;
 padding:10px 0 10px 0px;
 }
+
+.dekstra_titolo{
+font-size:15px;
+color:#a90329;
+clear:both;
+padding:1px 0 1px 0px;
+margin:1px 0 0 0px;
+}
+
+.dekstra_teksto{
+/*font-size:15px;*/
+/*color:#a90329;*/
+clear:both;
+padding:1px 0 1px 0px;
+margin:1px 0 0 0px;
+}
+
 img.left_img{
 float:left;
 padding:0 10px 0 0;

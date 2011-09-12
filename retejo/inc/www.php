@@ -59,14 +59,16 @@ function right($title='') {
 <a href="/auxskultu" onClick="window.open('http://www.radionomy.com/en/radio/muzaikoinfo/listen');"><img src="images/listen_live_eo.jpg" alt="" title="" class="listen_live" border="0" /></a>
 <!--<div class="title"><?=$title?></div>-->
 
-<div>
+<div class="dekstra_titolo">Aŭskultu:</div>
+<div class="dekstra_teksto">
+<ul>
+	<li>Per <a target="_blank" href="http://www.radionomy.com/en/radio/muzaikoinfo/listen#">Radionomy</a></li>
+	<li>Per via preferata <a href="http://listen.radionomy.com/muzaikoinfo.m3u">muzikludilo</a></li>
+</ul>
+</div>
 
-<p>
-Aŭskultu per <a target="_blank" href="http://www.radionomy.com/en/radio/muzaikoinfo/listen#">Radionomy</a> aux per via preferata muzikludilo kun tiu <a href="http://listen.radionomy.com/muzaikoinfo.m3u">.m3u dosiero</a>.
-</p>
-
-<p>
-Eksciu pli pri Muzaiko ĉe:
+<div class="dekstra_titolo">Eksciu pli pri Muzaiko ĉe:</div>
+<div class="dekstra_teksto">
 <ul>
 	<li><a href="http://www.esperanto-junularo.hu/2011/06/nova-projekto-kreos-tuttempan-radion-en.html">la retpaĝo de HEJ</a></li>
 	<li><a href="http://tejo.org/tejo-aktuale/index.php?num=2011-06-15">TEJO-aktuale</a></li>
@@ -74,13 +76,17 @@ Eksciu pli pri Muzaiko ĉe:
 	<li><a href="http://www.tejo.org/eo/node/1249">La blogo de TEJO Tutmonde</a></li>
 	<li><a href="http://www.liberafolio.org/2011/muzaiko-planas-sendi-retradion-en-esperanto-senpauze">Libera Folio</a></li>
 </ul>
-aŭ vervive dum aranĝoj kiel
+</div>
+
+</div>
+
+<!-- aŭ vervive dum aranĝoj kiel
 <a href="http://www.kongreso2011.org/">TAKE</a>,
 <a href="http://www.ijk-67.retejo.info/">IJK</a>,
 <a href="http://eo.lernu.net/pri_lernu/renkontighoj/SES/2011/index.php">SES</a>,
 <a href="http://www.festo.lautre.net/">FESTO</a>
-aŭ <a href="http://ijs.hu/eo">IJS</a>.
-</p>
+aŭ <a href="http://ijs.hu/eo">IJS</a> -->.
+
 
 </div>
 
