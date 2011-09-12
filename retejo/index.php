@@ -22,6 +22,16 @@ $hodiaux = strtotime(date('Y-m-d'));
 
 <?php echo date('Y/m/d').':'; ?>
 	  <ul>
+<?php	if ($hodiaux == strtotime(date('2011-09-13'))) { ?>
+			<li>00:00-01:00 UTC: <i>Esperantistoj aktivas</i> prezentas Céline Bernard, kiu rakontos al ni pri la grupo en la urbo de Orange, en Francio</li>
+			<li>01:00-02:00 UTC: <i>TEJO Tutmonde</i> prezentas intervjuon de Dan Mrázek kun la novelektita prezidento de TEJO, Łukasz Żebrowski</li>
+			<li>02:00-03:00 UTC: En la kadro de la programo <i>Bibliotekoj tra la mondo</i>, radio Muzaiko vizitas la Britan Bibliotekon</li>
+<?php	} ?>
+<?php	if ($hodiaux == strtotime(date('2011-09-12'))) { ?>
+			<li>00:00-01:00 UTC: <i>Raportoj el eventoj</i> prezentas raportojn pri IJK, JuSKA kaj TAKE</li>
+			<li>01:00-02:00 UTC: <i>Saluton, Radiemuloj!</i> prezentas la Polan retradion en Esperanto</li>
+			<li>02:00-03:00 UTC: <i>Universitataj sistemoj tra la mondo</i> prezentas la valonan sistemon en Belgio</li>
+<?php	} ?>
 <?php	if ($hodiaux == strtotime(date('2011-09-11'))) { ?>
 			<li>00:00-01:00 UTC: <i>Kulturaj minutoj</i> prezentas projekton pri nova antologio en Britio kaj la internacian koruson Interkant'</li>
 			<li>01:00-02:00 UTC: El la arĥivejo de <a href="http://radioverda.com/" target="_blank">Radio Verda</a> Jessica Grasso elektis por vi interesaĵojn pri bicikloj</li>
@@ -75,6 +85,30 @@ $hodiaux = strtotime(date('Y-m-d'));
 <div>
   <ul>
 
+<?php	if ($hodiaux > strtotime(date('2011-09-13'))) { ?>
+     <li>
+	   2011/09/13:
+      <ul>
+			<li>00:00-01:00 UTC: <i>Esperantistoj aktivas</i> prezentas Céline Bernard, kiu rakontos al ni pri la grupo en la urbo de Orange, en Francio</li>
+			<li>01:00-02:00 UTC: <i>TEJO Tutmonde</i> prezentas intervjuon de Dan Mrázek kun la novelektita prezidento de TEJO, Łukasz Żebrowski</li>
+			<li>02:00-03:00 UTC: En la kadro de la programo <i>Bibliotekoj tra la mondo</i>, radio Muzaiko vizitas la Britan Bibliotekon</li>
+      </ul>
+      kaj poste tiuj tri horoj ripetiĝis dum la tuta tago.
+    </li>
+    <br>
+<?php	} ?>
+<?php	if ($hodiaux > strtotime(date('2011-09-12'))) { ?>
+     <li>
+	   2011/09/12:
+      <ul>
+			<li>00:00-01:00 UTC: <i>Raportoj el eventoj</i> prezentas raportojn pri IJK, JuSKA kaj TAKE</li>
+			<li>01:00-02:00 UTC: <i>Saluton, Radiemuloj!</i> prezentas la Polan retradion en Esperanto</li>
+			<li>02:00-03:00 UTC: <i>Universitataj sistemoj tra la mondo</i> prezentas la valonan sistemon en Belgio</li>
+      </ul>
+      kaj poste tiuj tri horoj ripetiĝis dum la tuta tago.
+    </li>
+    <br>
+<?php	} ?>
 <?php	if ($hodiaux > strtotime(date('2011-09-11'))) { ?>
      <li>
 	   2011/09/11:
