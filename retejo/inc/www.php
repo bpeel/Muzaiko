@@ -60,6 +60,12 @@ function right($title='') {
 <!--<div class="title"><?=$title?></div>-->
 
 <div>
+
+<p>
+Aŭskultu per <a target="_blank" href="http://www.radionomy.com/en/radio/muzaikoinfo/listen#">Radionomy</a> aux per via preferata muzikludilo kun tiu <a href="http://listen.radionomy.com/muzaikoinfo.m3u">.m3u dosiero</a>.
+</p>
+
+<p>
 Eksciu pli pri Muzaiko ĉe:
 <ul>
 	<li><a href="http://www.esperanto-junularo.hu/2011/06/nova-projekto-kreos-tuttempan-radion-en.html">la retpaĝo de HEJ</a></li>
@@ -74,6 +80,8 @@ aŭ vervive dum aranĝoj kiel
 <a href="http://eo.lernu.net/pri_lernu/renkontighoj/SES/2011/index.php">SES</a>,
 <a href="http://www.festo.lautre.net/">FESTO</a>
 aŭ <a href="http://ijs.hu/eo">IJS</a>.
+</p>
+
 </div>
 
 <?php
