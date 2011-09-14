@@ -25,8 +25,8 @@ pli da informoj.
 	<ul>
 		<li><a href="http://www.radionomy.com/en/radio/muzaikoinfo" target="_blank">Muzaiko ĉe Radionomy</a></li>
 		<li><a href="ftp://muzaiko.info/" target="_blank">FTP por elŝutaĵojn</a></li>
-- 		<li><a href="http://muzaiko.info/sengit/mediawiki/" target="_blank">Vikio</a></li>
-- 		<li><a href="http://cimoj.muzaiko.info/" target="_blank">Cimŝpurilo</a></li>
+ 		<li><a href="http://muzaiko.info/sengit/mediawiki/" target="_blank">Vikio</a></li>
+ 		<li><a href="http://cimoj.muzaiko.info/" target="_blank">Cimŝpurilo</a></li>
 <!-- 		<li><a href="http://muzaiko.info/sengit/drupal7/" target="_blank">Provpaĝo kun Drupalo</a></li>
 		<li><a href="https://github.com/bpeel/Muzaiko" target="_blank">git deponejo por la kodo de la retpaĝo kaj aliaj aĵoj</a></li>
  --> 	</ul>
