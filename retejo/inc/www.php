@@ -56,15 +56,16 @@ function right($title='') {
 </div>
 
 <div class="right_content">
-<a href="/auxskultu" onClick="window.open('http://www.radionomy.com/en/radio/muzaikoinfo/listen');"><img src="images/auxskultu_radionomy.png" alt="Klaku tie por aŭskulti radio muzaiko per Radionomy" title="" class="listen_live" border="0" /></a>
-<a href="/auxskultu" onClick="window.open('http://listen.radionomy.com/muzaikoinfo.m3u');"><img src="images/auxskultu_muzikludilo.png" alt="Klaku tie por aŭskulti radio muzaiko per via muzikludilo" title="" class="listen_live" border="0" /></a>
+<a href="/auxskultu" onClick="window.open('http://www.radionomy.com/en/radio/muzaikoinfo/listen');"><img src="images/auxskultu_radionomy.png" alt="Klaku tie por aŭskulti radio Muzaiko per Radionomy" title="" class="listen_live" border="0" /></a>
+<a href="/auxskultu" onClick="window.open('http://listen.radionomy.com/muzaikoinfo.m3u');"><img src="images/auxskultu_muzikludilo.png" alt="Klaku tie por aŭskulti radio Muzaiko per via muzikludilo" title="" class="listen_live" border="0" /></a>
 <!--<div class="title"><?=$title?></div>-->
-
+<br>
 <div class="dekstra_titolo">Aŭskultu:</div>
 <div class="dekstra_teksto">
 <ul>
 	<li>Per <a target="_blank" href="http://www.radionomy.com/en/radio/muzaikoinfo/listen#">Radionomy</a></li>
 	<li>Per via preferata <a href="http://listen.radionomy.com/muzaikoinfo.m3u">muzikludilo</a></li>
+	<li>Rekte en via retumilo per <a href="http://listen.radionomy.com/muzaikoinfo">muzikluda kromprogramo</a></li>
 </ul>
 </div>
 
