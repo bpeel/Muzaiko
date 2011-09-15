@@ -9,7 +9,7 @@ include_once($_SERVER["DOCUMENT_ROOT"] . '/inc/inc.php');
 // echo cxapeligu('cx gx hx jx sx ux Cx Gx Hx Jx Sx Ux</br>');
 
 if (empty($xml->track->artists)) {
-  echo $xml->track->title;
+  echo cxapeligu($xml->track->title);
 }
 else {
   if (!empty($xml->track->artists) && !empty($xml->track->title)) {
