@@ -3,10 +3,15 @@ include('inc/inc.php');
 page_header('Bonvenon al Muzaiko!', '');
 ?>
 <p>
-<img src="images/earphones.gif" alt="" title="" class="left_img" />
-<b>Muzaiko estas tuttempa tutmonda tutmojosa tutesperanta radio!</b> Ni ludas por vi 24 horojn en tago muzikon, programerojn, novaĵojn, informojn, raportojn, arkivaĵojn kaj multe pli!
+	<img src="images/earphones.gif" alt="" title="" class="left_img" />
+	<b>Muzaiko estas tuttempa tutmonda tutmojosa tutesperanta radio!</b> Ni ludas por vi 24 horojn en tago muzikon, programerojn, novaĵojn, informojn, raportojn, arkivaĵojn kaj multe pli!
 </p>
-<p>Nia retejo ankoraŭ ne tute pretas - sed se vi volas scii pli aŭ ŝatus kunlabori, bonvolu kontakti nin ĉe <b>info (ĉe) muzaiko.info</b>!</p>
+<p>
+	Nun aŭskulteblas la provelsendo, kaj tio signifas, ke malkiel en la estonteco (laux niaj planoj), nun la programo ne nur ripetiĝas dum la tago, sed ankaux dum la semajno/monato.
+</p>
+<p>
+	Nia retejo ankoraŭ ne tute pretas - sed se vi volas scii pli aŭ ŝatus kunlabori, bonvolu kontakti nin ĉe <b>info (ĉe) muzaiko.info</b>!
+</p>
 
 <?php
 // preparu la hodiauxan daton laux UTC por poste
