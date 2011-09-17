@@ -22,6 +22,11 @@ $hodiaux = strtotime(date('Y-m-d'));
 
 <?php echo date('Y/m/d').':'; ?>
 	  <ul>
+<?php	if ($hodiaux == strtotime(date('2011-09-17'))) { ?>
+			<li>00:00-01:00 UTC: <i>Esperantistoj aktivas prezentas</i>: Chuck Smith, la kreinto de la Esperanta Vikipedio rakontas pri la detaloj</li>
+			<li>01:00-02:00 UTC: El la arĥivejo de <a href="http://radioverda.com/" target="_blank">Radio Verda</a> Jessica Grasso elektis por vi interesaĵojn pri hundo</li>
+			<li>02:00-03:00 UTC: <i>Volontulado tra la mondo</i> prezentas: Probal Dasgupta rakontas pri siaj spertoj kiel volontulo en la Centra Oficejo</li>
+<?php	} ?>
 <?php	if ($hodiaux == strtotime(date('2011-09-16'))) { ?>
 			<li>00:00-01:00 UTC: Intervjuo de Aleks Kadar kun Bertrand Hugon pri la seminario "Kaj nun ni estu eŭropanoj"</li>
 			<li>01:00-02:00 UTC: El la arĥivejo de <a href="http://www.podkasto.net/2011/07/03/la-72a-elsendo/">Varsovia Vento</a>, Platano kunmetis por vi intervjuon pri la Kinofestivalo</li>
@@ -100,6 +105,18 @@ $hodiaux = strtotime(date('Y-m-d'));
 <div>
   <ul>
 
+<?php	if ($hodiaux > strtotime(date('2011-09-17'))) { ?>
+     <li>
+	   2011/09/17:
+      <ul>
+			<li>00:00-01:00 UTC: <i>Esperantistoj aktivas prezentas</i>: Chuck Smith, la kreinto de la Esperanta Vikipedio rakontas pri la detaloj</li>
+			<li>01:00-02:00 UTC: El la arĥivejo de <a href="http://radioverda.com/" target="_blank">Radio Verda</a> Jessica Grasso elektis por vi interesaĵojn pri hundo</li>
+			<li>02:00-03:00 UTC: <i>Volontulado tra la mondo</i> prezentas: Probal Dasgupta rakontas pri siaj spertoj kiel volontulo en la Centra Oficejo</li>
+      </ul>
+      kaj poste tiuj tri horoj ripetiĝis dum la tuta tago.
+    </li>
+    <br>
+<?php	} ?>
 <?php	if ($hodiaux > strtotime(date('2011-09-16'))) { ?>
      <li>
 	   2011/09/16:
