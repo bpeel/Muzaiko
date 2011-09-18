@@ -14,93 +14,243 @@ page_header('Bonvenon al Muzaiko!', '');
 </p>
 
 <?php
-// preparu la hodiauxan daton laux UTC por poste
-date_default_timezone_set('UTC');
-//echo date('H:i:s d/m/Y').'<br>';
-$hodiaux = strtotime(date('Y-m-d'));
-//$hodiaux = strtotime(date('2011-09-03'));
+	// preparu la hodiauxan daton laux UTC por poste
+	date_default_timezone_set('UTC');
+	//echo date('H:i:s d/m/Y').'<br>';
+	$hodiaux = strtotime(date('Y-m-d'));
+	//$hodiaux = strtotime(date('2011-09-03'));
+
+	// preparu la programcxenojn
+	$hodiauxa_programo = "";
+	$antauxa_programo = "";
+
+// $arr = array(
+// "2011/09/17"
+// =>
+// ""
+// ,
+// "2011/09/16"
+// =>
+// ""
+// );
+
+$arr = array(
+"2011/09/18"
+=>
+"
+<li>00:00-01:00 UTC: <i>Kulturaj minutoj</i> prezentas projekton pri nova antologio en Britio kaj la internacian koruson Interkant'</li>
+<li>01:00-02:00 UTC: El la arĥivejo de <a href=\"http://radioverda.com/\" target=\"_blank\">Radio Verda</a> Jessica Grasso elektis por vi interesaĵojn pri bicikloj</li>
+<li>02:00-03:00 UTC: <i>Vegetaranismo tra la mondo</i> vizitas Brition</li>
+"
+,
+"2011/09/17"
+=>
+"
+<li>00:00-01:00 UTC: <i>Esperantistoj aktivas prezentas</i>: Chuck Smith, la kreinto de la Esperanta Vikipedio rakontas pri la detaloj</li>
+<li>01:00-02:00 UTC: El la arĥivejo de <a href=\"http://radioverda.com/\" target=\"_blank\">Radio Verda</a> Jessica Grasso elektis por vi interesaĵojn pri hundo</li>
+<li>02:00-03:00 UTC: <i>Volontulado tra la mondo</i> prezentas: Probal Dasgupta rakontas pri siaj spertoj kiel volontulo en la Centra Oficejo</li>
+"
+,
+"2011/09/16"
+=>
+"
+<li>00:00-01:00 UTC: Intervjuo de Aleks Kadar kun Bertrand Hugon pri la seminario \"Kaj nun ni estu eŭropanoj\"</li>
+<li>01:00-02:00 UTC: El la arĥivejo de <a href=\"http://www.podkasto.net/2011/07/03/la-72a-elsendo/\">Varsovia Vento</a>, Platano kunmetis por vi intervjuon pri la Kinofestivalo</li>
+<li>02:00-03:00 UTC: Pri la vivo de TEJO-volontuloj rakontas Marteno Minich (elsendo el la arĥivoj de Muzaiko)
+"
+);
+
+foreach ($arr as $dato => $programo) {
+	if ($hodiaux == strtotime(date($dato))) {
+				$hodiauxa_programo = $programo;
+	}
+	else {
+		$antauxa_programo = $antauxa_programo . "<li>" . $dato . ":<ul>";
+		$antauxa_programo = $antauxa_programo . $programo;
+		$antauxa_programo = $antauxa_programo . "</ul> kaj poste tiuj tri horoj ripetiĝis dum la tuta tago. </li> <br>";
+	}
+}
+
+/*
+	if ($hodiaux == strtotime(date($arr[]))) {
+				$hodiauxa_programo = $programo; 
+	}
+	else {
+		$antauxa_programo = $antauxa_programo . "<li> 2011/09/17: <ul>";
+		$antauxa_programo = $antauxa_programo . $programo;
+		$antauxa_programo = $antauxa_programo . "</ul> kaj poste tiuj tri horoj ripetiĝis dum la tuta tago. </li> <br>";
+	}
+
+	if ($hodiaux == strtotime(date($dato))) {
+				$hodiauxa_programo = $programo; 
+	}
+	else {
+		$antauxa_programo = $antauxa_programo . "<li>" . $dato . ": <ul>";
+		$antauxa_programo = $antauxa_programo . $programo;
+		$antauxa_programo = $antauxa_programo . "</ul> kaj poste tiuj tri horoj ripetiĝis dum la tuta tago. </li> <br>";
+	}
+
+				$dato = "2011/09/15";
+				$programo = "
+			<li>00:00-01:00 UTC: <i>Kulturaj minutoj</i> prezentas projekton pri nova antologio en Britio kaj la internacian koruson Interkant'</li>
+			<li>01:00-02:00 UTC: <i>Saluton, Radiemuloj!</i> prezentas la Polan retradion en Esperanto</li>
+			<li>02:00-03:00 UTC: <i>Vegetaranismo tra la mondo</i> vizitas Brition</li>
+				";
+	if ($hodiaux == strtotime(date($dato))) {
+				$hodiauxa_programo = $programo; 
+	}
+	else {
+		$antauxa_programo = $antauxa_programo . "<li>" . $dato . ": <ul>";
+		$antauxa_programo = $antauxa_programo . $programo;
+		$antauxa_programo = $antauxa_programo . "</ul> kaj poste tiuj tri horoj ripetiĝis dum la tuta tago. </li> <br>";
+	}
+
+				$dato = "2011/09/14";
+				$programo = "
+			<li>00:00-01:00 UTC: <i>Raportoj el eventoj</i> prezentas raportojn pri IJK, JuSKA kaj TAKE</li>
+			<li>01:00-02:00 UTC: El la arĥivejo de <a href=\"http://radioverda.com/\" target=\"_blank\">Radio Verda</a> Jessica Grasso elektis por vi interesaĵojn pri bicikloj</li>
+			<li>02:00-03:00 UTC: <i>Universitataj sistemoj tra la mondo</i> prezentas la valonan sistemon en Belgio</li>
+				";
+	if ($hodiaux == strtotime(date($dato))) {
+				$hodiauxa_programo = $programo; 
+	}
+	else {
+		$antauxa_programo = $antauxa_programo . "<li>" . $dato . ": <ul>";
+		$antauxa_programo = $antauxa_programo . $programo;
+		$antauxa_programo = $antauxa_programo . "</ul> kaj poste tiuj tri horoj ripetiĝis dum la tuta tago. </li> <br>";
+	}
+
+				$programo = "
+			<li>00:00-01:00 UTC: <i>Esperantistoj aktivas</i> prezentas Céline Bernard, kiu rakontos al ni pri la grupo en la urbo de Orange, en Francio</li>
+			<li>01:00-02:00 UTC: <i>TEJO Tutmonde</i> prezentas intervjuon de Dan Mrázek kun la novelektita prezidento de TEJO, Łukasz Żebrowski</li>
+			<li>02:00-03:00 UTC: En la kadro de la programo <i>Bibliotekoj tra la mondo</i>, radio Muzaiko vizitas la Britan Bibliotekon</li>
+				";
+	if ($hodiaux == strtotime(date('2011-09-13'))) {
+				$hodiauxa_programo = $programo; 
+	}
+	else {
+		$antauxa_programo=$antauxa_programo . $programo;
+	}
+
+				$programo = "
+	     <li>00:00-01:00 UTC: <i>Gramatikaĵo</i>; La programo de <i>Esperantistaj muzikistoj</i> prezentas intervjuon kun ĴomArt kaj Nataŝa</li>
+	     <li>01:00-02:00 UTC: <i>Raportoj el eventoj</i> prezentas IREM, JuSKA kaj Café Esperanto en Parizo</li>
+	     <li>02:00-03:00 UTC: <i>Esperantistoj aktivas</i> prezentas intervjuon kun Chuck Smith pri blogado ĉe <a target=\"_blank\" href=\"http://www.transparent.com/esperanto/\">transparent.com/esperanto</a>; <i>Fabeloj</i>: <a target=\"_blank\" href=\"http://eo.wikipedia.org/wiki/Julia_Noe\">Julia Noe</a> laŭtlegas fabelon \"La fabelo kaj la vero\"</li>
+				";
+	if ($hodiaux == strtotime(date('2011-09-12'))) {
+				$hodiauxa_programo = $programo; 
+	}
+	else {
+		$antauxa_programo=$antauxa_programo . $programo;
+	}
+
+				$programo = "
+			<li>00:00-01:00 UTC: <i>Kulturaj minutoj</i> prezentas projekton pri nova antologio en Britio kaj la internacian koruson Interkant'</li>
+			<li>01:00-02:00 UTC: El la arĥivejo de <a href=\"http://radioverda.com/\" target=\"_blank\">Radio Verda</a> Jessica Grasso elektis por vi interesaĵojn pri bicikloj</li>
+			<li>02:00-03:00 UTC: <i>Vegetaranismo tra la mondo</i> vizitas Brition</li>
+				";
+	if ($hodiaux == strtotime(date('2011-09-11'))) {
+				$hodiauxa_programo = $programo; 
+	}
+	else {
+		$antauxa_programo=$antauxa_programo . $programo;
+	}
+
+				$programo = "
+			<li>00:00-01:00 UTC: Intervjuo de Aleks Kadar kun Bertrand Hugon pri la seminario \"Kaj nun ni estu eŭropanoj\"</li>
+			<li>01:00-02:00 UTC: El la arĥivejo de <a href=\"http://radioverda.com/\" target=\"_blank\">Radio Verda</a> Jessica Grasso elektis por vi interesaĵojn pri bicikloj</li>
+			<li>02:00-03:00 UTC: TEJO Tutmonde prezentas intervjuon de Dan Mrázek kun la novelektita prezidento de TEJO, Łukasz Żebrowski</li>
+				";
+	if ($hodiaux == strtotime(date('2011-09-10'))) {
+				$hodiauxa_programo = $programo; 
+	}
+	else {
+		$antauxa_programo=$antauxa_programo . $programo;
+	}
+
+				$programo = "
+			<li>00:00-01:00 UTC: Intervjuo de Aleks Kadar kun Bertrand Hugon pri la seminario \"Kaj nun ni estu eŭropanoj\"</li>
+			<li>01:00-02:00 UTC: El la arĥivejo de <a target=\"_blank\" href=\"http://www.podkasto.net/2011/07/03/la-72a-elsendo/\">Varsovia Vento</a> Platano kunmetis por vi intervjuon pri la Kinofestivalo</li>
+			<li>02:00-03:00 UTC: <i>Vegetaranismo tra la mondo</i> vizitas Brition</li>
+				";
+	if ($hodiaux == strtotime(date('2011-09-09'))) {
+				$hodiauxa_programo = $programo; 
+	}
+	else {
+		$antauxa_programo=$antauxa_programo . $programo;
+	}
+
+				$programo = "
+			<li>00:00-01:00 UTC: <i>Kulturaj minutoj</i> prezentas projekton pri nova antologio en Britio kaj la internacian koruson Interkant'</li>
+			<li>01:00-02:00 UTC: <i>Saluton, Radiemuloj!</i> prezentas la Polan retradion en Esperanto</li>
+			<li>02:00-03:00 UTC: <i>Vegetaranismo tra la mondo</i> vizitas Brition</li>
+				";
+	if ($hodiaux == strtotime(date('2011-09-08'))) {
+				$hodiauxa_programo = $programo; 
+	}
+	else {
+		$antauxa_programo=$antauxa_programo . $programo;
+	}
+
+				$programo = "
+	     <li>00:00-01:00 UTC: <i>Gramatikaĵo</i>; La programo de <i>Esperantistaj muzikistoj</i> prezentas intervjuon kun ĴomArt kaj Nataŝa</li>
+	     <li>01:00-02:00 UTC: <i>Raportoj el eventoj</i> prezentas IREM, JuSKA kaj Café Esperanto en Parizo</li>
+	     <li>02:00-03:00 UTC: <i>Esperantistoj aktivas</i> prezentas intervjuon kun Chuck Smith pri blogado ĉe <a target=\"_blank\" href=\"http://www.transparent.com/esperanto/\">transparent.com/esperanto</a>; <i>Fabeloj</i>: <a target=\"_blank\" href=\"http://eo.wikipedia.org/wiki/Julia_Noe\">Julia Noe</a> laŭtlegas fabelon \"La fabelo kaj la vero\"</li>
+				";
+	if ($hodiaux == strtotime(date('2011-09-07'))) {
+				$hodiauxa_programo = $programo; 
+	}
+	else {
+		$antauxa_programo=$antauxa_programo . $programo;
+	}
+
+				$programo = "
+			<li>00:00-01:00 UTC: <i>Esperantistoj aktivas</i> prezentas Céline Bernard, kiu rakontos al ni pri la grupo en la urbo de Orange, en Francio</li>
+			<li>01:00-02:00 UTC: <i>TEJO Tutmonde</i> prezentas intervjuon de Dan Mrázek kun la novelektita prezidento de TEJO, Łukasz Żebrowski</li>
+			<li>02:00-03:00 UTC: En la kadro de la programo <i>Bibliotekoj tra la mondo</i>, radio Muzaiko vizitas la Britan Bibliotekon</li>
+				";
+	if ($hodiaux == strtotime(date('2011-09-06'))) {
+				$hodiauxa_programo = $programo; 
+	}
+	else {
+		$antauxa_programo=$antauxa_programo . $programo;
+	}
+
+				$programo = "
+			<li>00:00-01:00 UTC: <i>Raportoj el eventoj</i> prezentas raportojn pri IJK, JuSKA kaj TAKE</li>
+			<li>01:00-02:00 UTC: <i>Saluton, Radiemuloj!</i> prezentas la Polan retradion en Esperanto</li>
+			<li>02:00-03:00 UTC: <i>Universitataj sistemoj tra la mondo</i> prezentas la valonan sistemon en Belgio</li>
+				";
+	if ($hodiaux == strtotime(date('2011-09-05'))) {
+				$hodiauxa_programo = $programo; 
+	}
+	else {
+		$antauxa_programo=$antauxa_programo . $programo;
+	}
+
+				$programo = "
+			<li>00:00-01:00 UTC: <i>Kulturaj minutoj</i> prezentas projekton pri nova antologio en Britio kaj la internacian koruson Interkant'</li>
+			<li>01:00-02:00 UTC: <i>Saluton, Radiemuloj!</i> prezentas la Polan retradion en Esperanto</li>
+			<li>02:00-03:00 UTC: <i>Vegetaranismo tra la mondo</i> vizitas Brition</li>
+				";
+	if ($hodiaux == strtotime(date('2011-09-04'))) {
+				$hodiauxa_programo = $programo; 
+	}
+	else {
+		$antauxa_programo=$antauxa_programo . $programo;
+	}
+*/
 ?>
 
 <div class="title">La hodiaŭa programo</div>
 
 <div>
-
-<?php echo date('Y/m/d').':'; ?>
+     <?php echo date('Y/m/d').':'; ?>
 	  <ul>
-<?php	if ($hodiaux == strtotime(date('2011-09-17'))) { ?>
-			<li>00:00-01:00 UTC: <i>Esperantistoj aktivas prezentas</i>: Chuck Smith, la kreinto de la Esperanta Vikipedio rakontas pri la detaloj</li>
-			<li>01:00-02:00 UTC: El la arĥivejo de <a href="http://radioverda.com/" target="_blank">Radio Verda</a> Jessica Grasso elektis por vi interesaĵojn pri hundo</li>
-			<li>02:00-03:00 UTC: <i>Volontulado tra la mondo</i> prezentas: Probal Dasgupta rakontas pri siaj spertoj kiel volontulo en la Centra Oficejo</li>
-<?php	} ?>
-<?php	if ($hodiaux == strtotime(date('2011-09-16'))) { ?>
-			<li>00:00-01:00 UTC: Intervjuo de Aleks Kadar kun Bertrand Hugon pri la seminario "Kaj nun ni estu eŭropanoj"</li>
-			<li>01:00-02:00 UTC: El la arĥivejo de <a href="http://www.podkasto.net/2011/07/03/la-72a-elsendo/">Varsovia Vento</a>, Platano kunmetis por vi intervjuon pri la Kinofestivalo</li>
-			<li>02:00-03:00 UTC: Pri la vivo de TEJO-volontuloj rakontas Marteno Minich (elsendo el la arĥivoj de Muzaiko)
-<?php	} ?>
-<?php	if ($hodiaux == strtotime(date('2011-09-15'))) { ?>
-			<li>00:00-01:00 UTC: <i>Kulturaj minutoj</i> prezentas projekton pri nova antologio en Britio kaj la internacian koruson Interkant'</li>
-			<li>01:00-02:00 UTC: <i>Saluton, Radiemuloj!</i> prezentas la Polan retradion en Esperanto</li>
-			<li>02:00-03:00 UTC: <i>Vegetaranismo tra la mondo</i> vizitas Brition</li>
-<?php	} ?>
-<?php	if ($hodiaux == strtotime(date('2011-09-14'))) { ?>
-			<li>00:00-01:00 UTC: <i>Raportoj el eventoj</i> prezentas raportojn pri IJK, JuSKA kaj TAKE</li>
-			<li>01:00-02:00 UTC: El la arĥivejo de <a href="http://radioverda.com/" target="_blank">Radio Verda</a> Jessica Grasso elektis por vi interesaĵojn pri bicikloj</li>
-			<li>02:00-03:00 UTC: <i>Universitataj sistemoj tra la mondo</i> prezentas la valonan sistemon en Belgio</li>
-<?php	} ?>
-<?php	if ($hodiaux == strtotime(date('2011-09-13'))) { ?>
-			<li>00:00-01:00 UTC: <i>Esperantistoj aktivas</i> prezentas Céline Bernard, kiu rakontos al ni pri la grupo en la urbo de Orange, en Francio</li>
-			<li>01:00-02:00 UTC: <i>TEJO Tutmonde</i> prezentas intervjuon de Dan Mrázek kun la novelektita prezidento de TEJO, Łukasz Żebrowski</li>
-			<li>02:00-03:00 UTC: En la kadro de la programo <i>Bibliotekoj tra la mondo</i>, radio Muzaiko vizitas la Britan Bibliotekon</li>
-<?php	} ?>
-<?php	if ($hodiaux == strtotime(date('2011-09-12'))) { ?>
-	     <li>00:00-01:00 UTC: <i>Gramatikaĵo</i>; La programo de <i>Esperantistaj muzikistoj</i> prezentas intervjuon kun ĴomArt kaj Nataŝa</li>
-	     <li>01:00-02:00 UTC: <i>Raportoj el eventoj</i> prezentas IREM, JuSKA kaj Café Esperanto en Parizo</li>
-	     <li>02:00-03:00 UTC: <i>Esperantistoj aktivas</i> prezentas intervjuon kun Chuck Smith pri blogado ĉe <a target="_blank" href="http://www.transparent.com/esperanto/">transparent.com/esperanto</a>; <i>Fabeloj</i>: <a target="_blank" href="http://eo.wikipedia.org/wiki/Julia_Noe">Julia Noe</a> laŭtlegas fabelon "La fabelo kaj la vero"</li>
-<?php	} ?>
-<?php	if ($hodiaux == strtotime(date('2011-09-11'))) { ?>
-			<li>00:00-01:00 UTC: <i>Kulturaj minutoj</i> prezentas projekton pri nova antologio en Britio kaj la internacian koruson Interkant'</li>
-			<li>01:00-02:00 UTC: El la arĥivejo de <a href="http://radioverda.com/" target="_blank">Radio Verda</a> Jessica Grasso elektis por vi interesaĵojn pri bicikloj</li>
-			<li>02:00-03:00 UTC: <i>Vegetaranismo tra la mondo</i> vizitas Brition</li>
-<?php	} ?>
-<?php	if ($hodiaux == strtotime(date('2011-09-10'))) { ?>
-			<li>00:00-01:00 UTC: Intervjuo de Aleks Kadar kun Bertrand Hugon pri la seminario "Kaj nun ni estu eŭropanoj"</li>
-			<li>01:00-02:00 UTC: El la arĥivejo de <a href="http://radioverda.com/" target="_blank">Radio Verda</a> Jessica Grasso elektis por vi interesaĵojn pri bicikloj</li>
-			<li>02:00-03:00 UTC: TEJO Tutmonde prezentas intervjuon de Dan Mrázek kun la novelektita prezidento de TEJO, Łukasz Żebrowski</li>
-<?php	} ?>
-<?php	if ($hodiaux == strtotime(date('2011-09-09'))) { ?>
-			<li>00:00-01:00 UTC: Intervjuo de Aleks Kadar kun Bertrand Hugon pri la seminario "Kaj nun ni estu eŭropanoj"</li>
-			<li>01:00-02:00 UTC: El la arĥivejo de <a target="_blank" href="http://www.podkasto.net/2011/07/03/la-72a-elsendo/">Varsovia Vento</a> Platano kunmetis por vi intervjuon pri la Kinofestivalo</li>
-			<li>02:00-03:00 UTC: <i>Vegetaranismo tra la mondo</i> vizitas Brition</li>
-<?php	} ?>
-<?php	if ($hodiaux == strtotime(date('2011-09-08'))) { ?>
-			<li>00:00-01:00 UTC: <i>Kulturaj minutoj</i> prezentas projekton pri nova antologio en Britio kaj la internacian koruson Interkant'</li>
-			<li>01:00-02:00 UTC: <i>Saluton, Radiemuloj!</i> prezentas la Polan retradion en Esperanto</li>
-			<li>02:00-03:00 UTC: <i>Vegetaranismo tra la mondo</i> vizitas Brition</li>
-<?php	} ?>
-<?php	if ($hodiaux == strtotime(date('2011-09-07'))) { ?>
-	     <li>00:00-01:00 UTC: <i>Gramatikaĵo</i>; La programo de <i>Esperantistaj muzikistoj</i> prezentas intervjuon kun ĴomArt kaj Nataŝa</li>
-	     <li>01:00-02:00 UTC: <i>Raportoj el eventoj</i> prezentas IREM, JuSKA kaj Café Esperanto en Parizo</li>
-	     <li>02:00-03:00 UTC: <i>Esperantistoj aktivas</i> prezentas intervjuon kun Chuck Smith pri blogado ĉe <a target="_blank" href="http://www.transparent.com/esperanto/">transparent.com/esperanto</a>; <i>Fabeloj</i>: <a target="_blank" href="http://eo.wikipedia.org/wiki/Julia_Noe">Julia Noe</a> laŭtlegas fabelon "La fabelo kaj la vero"</li>
-<?php	} ?>
-<?php	if ($hodiaux == strtotime(date('2011-09-06'))) { ?>
-			<li>00:00-01:00 UTC: <i>Esperantistoj aktivas</i> prezentas Céline Bernard, kiu rakontos al ni pri la grupo en la urbo de Orange, en Francio</li>
-			<li>01:00-02:00 UTC: <i>TEJO Tutmonde</i> prezentas intervjuon de Dan Mrázek kun la novelektita prezidento de TEJO, Łukasz Żebrowski</li>
-			<li>02:00-03:00 UTC: En la kadro de la programo <i>Bibliotekoj tra la mondo</i>, radio Muzaiko vizitas la Britan Bibliotekon</li>
-<?php	} ?>
-<?php	if ($hodiaux == strtotime(date('2011-09-05'))) { ?>
-			<li>00:00-01:00 UTC: <i>Raportoj el eventoj</i> prezentas raportojn pri IJK, JuSKA kaj TAKE</li>
-			<li>01:00-02:00 UTC: <i>Saluton, Radiemuloj!</i> prezentas la Polan retradion en Esperanto</li>
-			<li>02:00-03:00 UTC: <i>Universitataj sistemoj tra la mondo</i> prezentas la valonan sistemon en Belgio</li>
-<?php	} ?>
-<?php	if ($hodiaux == strtotime(date('2011-09-04'))) { ?>
-			<li>00:00-01:00 UTC: <i>Kulturaj minutoj</i> prezentas projekton pri nova antologio en Britio kaj la internacian koruson Interkant'</li>
-			<li>01:00-02:00 UTC: <i>Saluton, Radiemuloj!</i> prezentas la Polan retradion en Esperanto</li>
-			<li>02:00-03:00 UTC: <i>Vegetaranismo tra la mondo</i> vizitas Brition</li>
-<?php	} ?>
+	  <?php echo $hodiauxa_programo; ?>
 	  <!-- komuna al cxiu programo: -->
 	  </ul>
 	  kaj poste tiuj tri horoj ripetiĝos dum la tuta tago.
-
 </div>
 
 <div class="title">Antaŭaj programoj</div>
@@ -109,7 +259,8 @@ $hodiaux = strtotime(date('Y-m-d'));
 
 <div>
   <ul>
-
+	<?php echo $antauxa_programo; ?>
+<!--  -->
 <?php	if ($hodiaux > strtotime(date('2011-09-17'))) { ?>
      <li>
 	   2011/09/17:
@@ -120,7 +271,6 @@ $hodiaux = strtotime(date('Y-m-d'));
       </ul>
       kaj poste tiuj tri horoj ripetiĝis dum la tuta tago.
     </li>
-    <br>
 <?php	} ?>
 <?php	if ($hodiaux > strtotime(date('2011-09-16'))) { ?>
      <li>
@@ -278,6 +428,7 @@ $hodiaux = strtotime(date('Y-m-d'));
     </li>
     <br>
 <?php	} ?>
+<!--  -->
 
     <li>
 	   2011/09/03:
