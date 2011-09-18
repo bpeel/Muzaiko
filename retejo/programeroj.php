@@ -22,6 +22,7 @@ Novaĵoj el la tuta mondo por la tuta mondo, kiun redaktas por vi nia teamo ĉe 
 <li>Bibliotekoj tra la mondo</li>
 <li>Gramatikaĵo</li>
 <li>Kulturaj minutoj</li>
+<li>Volontulado tra la mondo</li>
 </ul>
 
 <div class="title">Reklamoj</div>
