@@ -9,7 +9,6 @@ page_header('Muziko');
 <div class="title">Partneroj</div>
 <a target="_blank" href="http://vinilkosmo.com"><img src="images/vinilkosmo.gif"></a>
 
-
 <!-- // <?php
 // this doesn't work because the admin files have been removed
 //	$playlist = (read_playlist('default_a'));
