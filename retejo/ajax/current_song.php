@@ -14,7 +14,7 @@ $xml=FALSE;
 
 if($xml ===  FALSE)
 {
-	echo "Neebla obteni kantinformojn el Radionomy. :(";
+	echo "Neebla ricevi la kantinformojn el Radionomy. :(";
 }
 else {
 	if (empty($xml->track->artists)) {
