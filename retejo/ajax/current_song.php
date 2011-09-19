@@ -6,11 +6,31 @@ include_once($_SERVER["DOCUMENT_ROOT"] . '/inc/inc.php');
 
 // echo cxapeligu('cx gx hx jx sx ux Cx Gx Hx Jx Sx Ux</br>');
 
-$url = 'http://api.radionomy.com/currentsong.cfm?radiouid=14694a7d-9023-4db1-86b4-d85d96cba181&type=xml';
+$url = 'http://api.radionomy.com/currentsong.cfm?radiouid=14694a7d-9023-4db1-86b4-d85d96cba181&apikey=d6b96527-acf9-4400-8026-26b373452faf&type=xml&callmeback=yes';
+$current_song_file = 'current_song.xml';
+$radionomy_access_log_file = 'radionomy_access.log';
+$right_timestamp_file = 'right_timestamp.txt';
+if (file_exists($right_timestamp_file)) {
+        $right_timestamp = file_get_contents($right_timestamp_file);
+        if (time() > $right_timestamp) {
+		if ($xml_from_radionomy = file_get_contents($url)) {
+                	file_put_contents($current_song_file, $xml_from_radionomy);
+			file_put_contents($radionomy_access_log_file, date('r') . '(' . time() . ')' . "\n", FILE_APPEND);
+                	$xml = simplexml_load_file($current_song_file);
+                	file_put_contents($right_timestamp_file, time() + $xml->track->callmeback / 1000);
+		} else {
+			$xml = FALSE;
+		}
+        } else {
+		$xml = simplexml_load_file($current_song_file);
+	}
+} else {
+        $xml = FALSE;
+}
 
 // Tempa malaktivado gxis kiam Radionomy denove akceptas niajn petojn
 // $xml = simplexml_load_file($url);
-$xml=FALSE;
+//$xml=FALSE;
 
 if($xml ===  FALSE)
 {
