@@ -6,7 +6,7 @@ include_once($_SERVER["DOCUMENT_ROOT"] . '/inc/inc.php');
 
 // echo cxapeligu('cx gx hx jx sx ux Cx Gx Hx Jx Sx Ux</br>');
 
-$url = 'http://api.radionomy.com/currentsong.cfm?radiouid=14694a7d-9023-4db1-86b4-d85d96cba181&apikey=d6b96527-acf9-4400-8026-26b373452faf&type=xml&callmeback=yes';
+$url = 'http://api.radionomy.com/currentsong.cfm?radiouid=14694a7d-9023-4db1-86b4-d85d96cba181&apikey=a3ca21ce-5d81-4162-8fda-bbe2f0aff941&type=xml&callmeback=yes';
 $current_song_file = 'current_song.xml';
 $radionomy_access_log_file = 'radionomy_access.log';
 $right_timestamp_file = 'right_timestamp.txt';
@@ -15,9 +15,15 @@ if (file_exists($right_timestamp_file)) {
         if (time() > $right_timestamp) {
 		if ($xml_from_radionomy = file_get_contents($url)) {
                 	file_put_contents($current_song_file, $xml_from_radionomy);
-			file_put_contents($radionomy_access_log_file, date('r') . '(' . time() . ')' . "\n", FILE_APPEND);
+			file_put_contents($radionomy_access_log_file, date('r') . "\n", FILE_APPEND);
                 	$xml = simplexml_load_file($current_song_file);
-                	file_put_contents($right_timestamp_file, time() + $xml->track->callmeback / 1000);
+			$callmeback = $xml->track->callmeback;
+			if ($callmeback) {
+                		file_put_contents($right_timestamp_file, time() + $callmeback / 1000);
+			} else {
+				file_put_contents($radionomy_access_log_file, "Unable to get callbackme!!! Adding 5 minutes to the timestamp\n", FILE_APPEND);
+				file_put_contents($right_timestamp_file, time() + 60 * 5);
+			}
 		} else {
 			$xml = FALSE;
 		}
