@@ -7,7 +7,10 @@ include_once($_SERVER["DOCUMENT_ROOT"] . '/inc/inc.php');
 // echo cxapeligu('cx gx hx jx sx ux Cx Gx Hx Jx Sx Ux</br>');
 
 $url = 'http://api.radionomy.com/currentsong.cfm?radiouid=14694a7d-9023-4db1-86b4-d85d96cba181&type=xml';
-$xml = simplexml_load_file($url);
+
+// Tempa malaktivado gxis kiam Radionomy denove akceptas niajn petojn
+// $xml = simplexml_load_file($url);
+$xml=FALSE;
 
 if($xml ===  FALSE)
 {
