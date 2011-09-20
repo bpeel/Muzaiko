@@ -14,6 +14,9 @@ rsync \
     --exclude=/datumbazensalutiloj.php \
     --exclude=/ajax/nekonata.log \
     --exclude=/sengit \
+    --exclude=/ajax/current_song.xml \
+    --exclude=/ajax/right_timestamp.txt \
+    --exclude=/ajax/radionomy_access.log \
     --rsh=ssh \
     --delete \
     "$@" \
