@@ -80,6 +80,10 @@ function right($title='') {
 </ul>
 </div>
 
+<div class="dekstra_titolo">Partneroj:</div>
+<a target="_blank" href="http://vinilkosmo.com"><img src="images/vinilkosmo.gif" alt="logotipo de vinilkosmo.com kun ligilo al gxi"></a>
+<a target="_blank" href="http://vinilkosmo-mp3.com"><img src="images/vinilkosmo-mp3.gif" alt="logotipo de vinilkosmo-mp3.com kun ligilo al gxi"></a>
+
 </div>
 
 <!-- aŭ vervive dum aranĝoj kiel

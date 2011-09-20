@@ -132,6 +132,18 @@ padding:0px 0 0px 0px;
 margin:0px 0 0 0px;
 }
 
+/*.partnertabelo
+{
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+}*/
+
+table.center {
+  margin-left:auto; 
+  margin-right:auto;
+}
+ 
 img.left_img{
 float:left;
 padding:0 10px 0 0;

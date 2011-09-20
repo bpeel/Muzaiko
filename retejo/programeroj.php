@@ -34,11 +34,16 @@ Novaĵoj el la tuta mondo por la tuta mondo, kiun redaktas por vi nia teamo ĉe 
 </p>
 
 <div class="title">Partneroj</div>
-
-<table border="0" cellspacing="0" cellpadding="0"><tr>
-<td><a target="_blank" href="http://vinilkosmo.com"><img src="images/vinilkosmo.gif" alt="logotipo de vinilkosmo.com kun ligilo al gxi"></a></td>
-<td><a target="_blank" href="http://vinilkosmo-mp3.com"><img src="images/vinilkosmo-mp3.gif" alt="logotipo de vinilkosmo-mp3.com kun ligilo al gxi"></a></td>
-</tr></table>
+<!-- <div class="partnertabelo"> -->
+<table class="center" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td><a target="_blank" href="http://vinilkosmo.com"><img src="images/vinilkosmo.gif" alt="logotipo de vinilkosmo.com kun ligilo al gxi"></a></td>
+	</tr>
+	<tr>
+		<td><a target="_blank" href="http://vinilkosmo-mp3.com"><img src="images/vinilkosmo-mp3.gif" alt="logotipo de vinilkosmo-mp3.com kun ligilo al gxi"></a></td>
+	</tr>
+</table>
+<!-- </div> -->
 
 <?php
 right();
