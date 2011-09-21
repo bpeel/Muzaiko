@@ -6,53 +6,51 @@ include_once($_SERVER["DOCUMENT_ROOT"] . '/inc/inc.php');
 
 // echo cxapeligu('cx gx hx jx sx ux Cx Gx Hx Jx Sx Ux</br>');
 
-$url = 'http://api.radionomy.com/currentsong.cfm?radiouid=14694a7d-9023-4db1-86b4-d85d96cba181&apikey=ebac00f6-0cfa-4dca-8f83-098c6924875a&type=xml&callmeback=yes';
+include('/var/muzaiko/datumbazensalutiloj.php');
+
+$radiouid = "14694a7d-9023-4db1-86b4-d85d96cba181";
+$apikey = $radionomy_sxlosilo;
+$cover = "no";
 $cache = './cache_api.txt';
-$expire = time() - 310;
-if(@file_exists($cache) && @filemtime($cache) > $expire) {
-	$xml = simplexml_load_file($cache);
-} else {
-        $context = stream_context_create(array('http' => array('timeout' => 30)));
-        touch($cache);
-        $xml_from_radionomy = @file_get_contents($url, 0, $context);
-        if($xml_from_radionomy) {
-		@file_put_contents($cache, $xml_from_radionomy);
-		$xml = simplexml_load_file($cache);
-	} else
-		$xml = FALSE;
+$cacheCall = './cache_callapi.txt';
+$date = "-1";
+
+if (substr(decoct(@fileperms($cacheCall)), 3, 3) != "777" && substr(decoct(@fileperms($cacheCall)), 3, 3) != "644" && !@chmod($cacheCall, 0777)) {
+	echo 'Erreur ! Vous devez autoriser en écriture le fichier cache_callapi.txt';
+	exit;
 }
 
-/*$current_song_file = 'current_song.xml';
-$radionomy_access_log_file = 'radionomy_access.log';
-$right_timestamp_file = 'right_timestamp.txt';
-if (file_exists($right_timestamp_file)) {
-        $right_timestamp = file_get_contents($right_timestamp_file);
-        if (time() > $right_timestamp) {
-		if ($xml_from_radionomy = file_get_contents($url)) {
-                	file_put_contents($current_song_file, $xml_from_radionomy);
-			file_put_contents($radionomy_access_log_file, date('r') . "\n", FILE_APPEND);
-                	$xml = simplexml_load_file($current_song_file);
-			$callmeback = $xml->track->callmeback;
-			if ($callmeback) {
-                		file_put_contents($right_timestamp_file, time() + $callmeback / 1000);
-			} else {
-				file_put_contents($radionomy_access_log_file, "Unable to get callbackme!!! Adding 5 minutes to the timestamp\n", FILE_APPEND);
-				file_put_contents($right_timestamp_file, time() + 60 * 5);
-			}
-		} else {
-			$xml = FALSE;
-		}
-        } else {
-		$xml = simplexml_load_file($current_song_file);
+if (substr(decoct(@fileperms($cache)), 3, 3) != "777" && substr(decoct(@fileperms($cache)), 3, 3) != "644" && !@chmod($cache, 0777)) {
+	echo 'Erreur ! Vous devez autoriser en écriture le fichier cache_api.txt';
+	exit;
+}
+
+if ($lines = file($cacheCall)) {
+	$date = (isset($lines[1]) ? $lines[1] : '-1');
+	$time = $lines[0];
+	$expire = time() - $time;
+} else {
+	$expire = time() - 1;
+}
+
+if (@file_exists($cache) && $date > $expire && file_get_contents($cache) != "") {
+	$xml = @simplexml_load_file($cache);
+} else {
+	@file_put_contents($cacheCall, "200"."\n".time());
+	$context = stream_context_create(array('http' => array('timeout' => 30)));
+	touch($cache);
+	$xml = @file_get_contents('http://api.radionomy.com/currentsong.cfm?radiouid='.$radiouid.'&callmeback=yes&type=xml'.(!empty($apikey) ? '&apikey='.$apikey : '').''.(!empty($cover) ? '&cover='.$cover : '').'', 0, $context);
+	if(!$xml)
+		$xml = @simplexml_load_file($cache);
+	else {
+		@file_put_contents($cache, $xml);
+		$xml = @simplexml_load_file($cache);
+		$expireNext = ($xml->track->callmeback / 1000);
+		if ($expireNext < 10)
+			$expireNext = 60;
+		@file_put_contents($cacheCall, $expireNext."\n".time());
 	}
-} else {
-        $xml = FALSE;
 }
-*/
-
-// Tempa malaktivado gxis kiam Radionomy denove akceptas niajn petojn
-// $xml = simplexml_load_file($url);
-//$xml=FALSE;
 
 if($xml ===  FALSE)
 {
@@ -65,8 +63,6 @@ else {
 	else {
 	  if (!empty($xml->track->artists) && !empty($xml->track->title)) {
 	    echo cxapeligu($xml->track->artists . " - " . $xml->track->title);
-	
-	    include('/var/muzaiko/datumbazensalutiloj.php');
 	
 	    $artists = trim(addslashes(malcxapeligu($xml->track->artists)));
 	    $title = trim(addslashes(malcxapeligu($xml->track->title)));
