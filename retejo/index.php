@@ -26,6 +26,62 @@ page_header('Bonvenon al Muzaiko!', '');
   $antauxa_programo = "";
 
 $arr = array(
+"2011/10/01"
+=>
+"
+<li>00:00-01:00 UTC: <i>Esperantistoj aktivas prezentas</i>: Chuck Smith, la kreinto de la Esperanta Vikipedio rakontas pri la detaloj</li>
+<li>01:00-02:00 UTC: El la arĥivejo de <a href=\"http://radioverda.com/\" target=\"_blank\">Radio Verda</a> Jessica Grasso elektis por vi interesaĵojn pri hundo</li>
+<li>02:00-03:00 UTC: <i>Volontulado tra la mondo</i> prezentas: Probal Dasgupta rakontas pri siaj spertoj kiel volontulo en la Centra Oficejo</li>
+"
+,
+"2011/09/30"
+=>
+"
+<li>00:00-01:00 UTC: Intervjuo de Aleks Kadar kun Bertrand Hugon pri la seminario \"Kaj nun ni estu eŭropanoj\"</li>
+<li>01:00-02:00 UTC: El la arĥivejo de <a href=\"http://www.podkasto.net/2011/07/03/la-72a-elsendo/\">Varsovia Vento</a>, Platano kunmetis por vi intervjuon pri la Kinofestivalo</li>
+<li>02:00-03:00 UTC: Pri la vivo de TEJO-volontuloj rakontas Marteno Minich (elsendo el la arĥivoj de Muzaiko)
+"
+,
+"2011/09/29"
+=>
+"
+<li>00:00-01:00 UTC: <i>Kulturaj minutoj</i> prezentas projekton pri nova antologio en Britio kaj la internacian koruson Interkant'</li>
+<li>01:00-02:00 UTC: <i>Saluton, Radiemuloj!</i> prezentas la Polan retradion en Esperanto</li>
+<li>02:00-03:00 UTC: <i>Vegetaranismo tra la mondo</i> vizitas Brition</li>
+"
+,
+"2011/09/28"
+=>
+"
+<li>00:00-01:00 UTC: <i>Raportoj el eventoj</i> prezentas raportojn pri IJK, JuSKA kaj TAKE</li>
+<li>01:00-02:00 UTC: El la arĥivejo de <a href=\"http://radioverda.com/\" target=\"_blank\">Radio Verda</a> Jessica Grasso elektis por vi interesaĵojn pri bicikloj</li>
+<li>02:00-03:00 UTC: <i>Universitataj sistemoj tra la mondo</i> prezentas la valonan sistemon en Belgio</li>
+"
+,
+"2011/09/27"
+=>
+"
+<li>00:00-01:00 UTC: <i>Esperantistoj aktivas</i> prezentas Céline Bernard, kiu rakontos al ni pri la grupo en la urbo de Orange, en Francio</li>
+<li>01:00-02:00 UTC: <i>TEJO Tutmonde</i> prezentas intervjuon de Dan Mrázek kun la novelektita prezidento de TEJO, Łukasz Żebrowski</li>
+<li>02:00-03:00 UTC: En la kadro de la programo <i>Bibliotekoj tra la mondo</i>, radio Muzaiko vizitas la Britan Bibliotekon</li>
+"
+,
+"2011/09/26"
+=>
+"
+<li>00:00-01:00 UTC: <i>Gramatikaĵo</i>; La programo de <i>Esperantistaj muzikistoj</i> prezentas intervjuon kun ĴomArt kaj Nataŝa</li>
+<li>01:00-02:00 UTC: <i>Raportoj el eventoj</i> prezentas IREM, JuSKA kaj Café Esperanto en Parizo</li>
+<li>02:00-03:00 UTC: <i>Esperantistoj aktivas</i> prezentas intervjuon kun Chuck Smith pri blogado ĉe <a target=\"_blank\" href=\"http://www.transparent.com/esperanto/\">transparent.com/esperanto</a>; <i>Fabeloj</i>: <a target=\"_blank\" href=\"http://eo.wikipedia.org/wiki/Julia_Noe\">Julia Noe</a> laŭtlegas fabelon \"La fabelo kaj la vero\"</li>
+"
+,
+"2011/09/25"
+=>
+"
+<li>00:00-01:00 UTC: <i>Kulturaj minutoj</i> prezentas projekton pri nova antologio en Britio kaj la internacian koruson Interkant'</li>
+<li>01:00-02:00 UTC: El la arĥivejo de <a href=\"http://radioverda.com/\" target=\"_blank\">Radio Verda</a> Jessica Grasso elektis por vi interesaĵojn pri bicikloj</li>
+<li>02:00-03:00 UTC: <i>Vegetaranismo tra la mondo</i> vizitas Brition</li>
+"
+,
 "2011/09/24"
 =>
 "
