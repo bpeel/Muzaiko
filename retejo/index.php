@@ -54,7 +54,7 @@ $arr = array(
 =>
 "
 <li>00:00-01:00 UTC: <i>Raportoj el eventoj</i> prezentas raportojn pri IJK, JuSKA kaj TAKE</li>
-<li>01:00-02:00 UTC: El la arĥivejo de <a href=\"http://radioverda.com/\" target=\"_blank\">Radio Verda</a> Jessica Grasso elektis por vi interesaĵojn pri bicikloj; Platano prezentas intervjuon kun Flo pri la fajro cxe <a href=\"http://vinilkosmo.com\" target=\"_blank\">Vinilkosmo</a> kaj raporteton pri la konferenco pri Fukuŝima</li>
+<li>01:00-02:00 UTC: El la arĥivejo de <a href=\"http://radioverda.com/\" target=\"_blank\">Radio Verda</a> Jessica Grasso elektis por vi interesaĵojn pri bicikloj; Platano prezentas intervjuon kun Flo pri la fajro ĉe <a href=\"http://vinilkosmo.com\" target=\"_blank\">Vinilkosmo</a> kaj raporteton pri la konferenco pri Fukuŝima</li>
 <li>02:00-03:00 UTC: <i>Universitataj sistemoj tra la mondo</i> prezentas la valonan sistemon en Belgio</li>
 "
 ,
