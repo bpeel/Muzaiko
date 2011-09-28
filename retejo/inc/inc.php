@@ -1,6 +1,6 @@
 <?php
 
-set_include_path($_SERVER["DOCUMENT_ROOT"]);
+set_include_path('/var/www');
 
 define('AUDIODIR', '/radio/audio/');
 define('PLAYLISTDIR', '/radio/playlist/');
