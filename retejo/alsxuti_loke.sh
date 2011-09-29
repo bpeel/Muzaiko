@@ -14,6 +14,7 @@ rsync \
     --exclude=/datumbazensalutiloj.php \
     --exclude=/ajax/nekonata.log \
     --exclude=/sengit \
+    --exclude=/mediawiki \
     --exclude=/ajax/cache_api.txt \
     --exclude=/ajax/cache_callapi.txt \
     --rsh=ssh \
