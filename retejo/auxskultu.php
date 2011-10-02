@@ -12,7 +12,7 @@ Muzaiko ne ankoraŭ estas tute preta (Ni daŭre prilaboras muzikajn rajtojn, ktp
 </p>
 
 <p>
-Jen pli da informoj pri <a href="https://vikio.muzaiko.info/index.php/Kiel_a%C5%ADskulti_radio_Muzaiko" target="_blank">kiel auxskulti Radio Muzaiko</a>.
+Jen pli da informoj pri <a href="http://vikio.muzaiko.info/index.php/Kiel_a%C5%ADskulti_radio_Muzaiko" target="_blank">kiel auxskulti Radio Muzaiko</a>.
 </p>
 
 <p>
