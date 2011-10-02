@@ -287,7 +287,7 @@ foreach ($arr as $dato => $programo) {
   if ($hodiaux == strtotime(date($dato))) {
     $hodiauxa_programo = $programo;
   }
-  elseif ($hodiaux >= strtotime(date($dato))) {
+  elseif ( strtotime(date("2011/10/01")) <= strtotime(date($dato)) and strtotime(date($dato)) < $hodiaux ) {
     $antauxa_programo = $antauxa_programo . "<li>" . $dato . ":<ul>";
     $antauxa_programo = $antauxa_programo . $programo;
     $antauxa_programo = $antauxa_programo . "</ul> kaj poste tiuj tri horoj ripetiĝis dum la tuta tago. </li> <br>";
@@ -312,7 +312,7 @@ foreach ($arr as $dato => $programo) {
   <ul>
     <?php echo $antauxa_programo; ?>
 
-    <li>
+<!--     <li>
       2011/09/03:
       <ul>
 	<li>00:00-01:00 UTC: <i>Gramatikaĵo</i>; La programo de <i>Esperantistaj muzikistoj</i> prezentas intervjuon kun ĴomArt kaj Nataŝa</li>
@@ -377,7 +377,7 @@ foreach ($arr as $dato => $programo) {
       kaj poste tiuj tri horoj ripetiĝis dum la tuta tago.
     </li>
     <br>
-
+ -->
   </ul>
 </div>
 
