@@ -26,6 +26,30 @@ page_header('Bonvenon al Muzaiko!', '');
   $antauxa_programo = "";
 
 $arr = array(
+"2011/10/05"
+=>
+"
+<li>00:00-01:00 UTC: <i>Raportoj el eventoj</i> prezentas raportojn pri IJK, JuSKA kaj TAKE</li>
+<li>01:00-02:00 UTC: El la arĥivejo de <a href=\"http://radioverda.com/\" target=\"_blank\">Radio Verda</a> Jessica Grasso elektis por vi interesaĵojn pri hundoj, dua parto; Platano prezentas intervjuon kun Flo pri la fajro ĉe <a href=\"http://vinilkosmo.com/\" target=\"_blank\">Vinilkosmo</a> kaj raporteton pri la konferenco pri Fukuŝima</li>
+<li>02:00-03:00 UTC: <i>Universitataj sistemoj tra la mondo</i> prezentas la valonan sistemon en Belgio</li>
+"
+,
+"2011/10/04"
+=>
+"
+<li>00:00-01:00 UTC: Aleks Kadar (sekretario) kaj Axel Rousseau (prezidanto) rakontas pri la agadoj de UFE - Espéranto-France</li>
+<li>01:00-02:00 UTC: <i>TEJO Tutmonde</i> prezentas intervjuon de Dan Mrázek kun la novelektita prezidento de TEJO, Łukasz Żebrowski</li>
+<li>02:00-03:00 UTC: En la kadro de la programo <i>Bibliotekoj tra la mondo</i>, radio Muzaiko vizitas la Britan Bibliotekon</li>
+"
+,
+"2011/10/03"
+=>
+"
+<li>00:00-01:00 UTC: <i>Gramatikaĵo</i>; La programo de Esperantistaj muzikistoj prezentas intervjuon kun ĴomArt kaj Nataŝa</li>
+<li>01:00-02:00 UTC: <i>Raportoj el eventoj</i> prezentas la Italan Kongreson. Kia estis la <a href=\"http://italakongreso.esperantoitalia.it/78/index_it.html\" target=\"_blank\">78a Itala Kongreso</a> por la partoprenantoj? Por tion ekscii, aŭskultu la spertojn de Rossana Guasconi kaj Manuel Giorgini</li>
+<li>02:00-03:00 UTC: <i>Esperantistoj aktivas</i> prezentas intervjuon kun Chuck Smith pri blogado ĉe <a href=\"http://www.transparent.com/esperanto/\" target=\"_blank\">transparent.com/esperanto</a>; Fabeloj: <a href=\"http://eo.wikipedia.org/wiki/Julia_Noe\" target=\"_blank\">Julia Noe</a> laŭtlegas fabelon \"La fabelo kaj la vero\"</li>
+"
+,
 "2011/10/02"
 =>
 "
