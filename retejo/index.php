@@ -26,6 +26,14 @@ page_header('Bonvenon al Muzaiko!', '');
   $antauxa_programo = "";
 
 $arr = array(
+"2011/10/06"
+=>
+"
+<li>00:00-01:00 UTC: Stefano Keller rakontas pri siaj agadoj kiel estrarano pri eksteraj rilatoj de UEA (unua parto)</li>
+<li>01:00-02:00 UTC: <i>Saluton, Radiemuloj!</i> prezentas la Polan retradion en Esperanto</li>
+<li>02:00-03:00 UTC: <i>Vegetaranismo tra la mondo</i> vizitas Brition</li>
+"
+,
 "2011/10/05"
 =>
 "
