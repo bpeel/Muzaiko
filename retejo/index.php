@@ -22,10 +22,18 @@ page_header('Bonvenon al Muzaiko!', '');
   //$hodiaux = strtotime(date('2011-09-03'));
 
   // preparu la programcxenojn
-  $hodiauxa_programo = "";
+  $hodiauxa_programo = "Programo ne trovita. Verŝajne la programisto dormas. Sed ne zorgu, Radio Muzaiko tamen rulas! :)";
   $antauxa_programo = "";
 
 $arr = array(
+"2011/10/07"
+=>
+"
+<li>00:00-01:00 UTC: Intervjuo kun Brunetto Casini kaj Laura Brazzabeni pri la organiza flanko de la Itala Kongreso</li>
+<li>01:00-02:00 UTC: El la arĥivejo de <a href=\"http://www.podkasto.net/2011/07/03/la-72a-elsendo/\" target=\"_blank\">Varsovia Vento</a>, Platano kunmetis por vi intervjuon pri la Kinofestivalo</li>
+<li>02:00-03:00 UTC: Pri la vivo de TEJO-volontuloj rakontas Marteno Minich (elsendo el la arĥivoj de Muzaiko)</li>
+"
+,
 "2011/10/06"
 =>
 "
