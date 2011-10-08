@@ -26,6 +26,14 @@ page_header('Bonvenon al Muzaiko!', '');
   $antauxa_programo = "";
 
 $arr = array(
+"2011/10/09"
+=>
+"
+<li>00:00-01:00 UTC: Esperantistoj aktivas prezentas intervjuon kun Katalin KOVÁTS pri la novtipaj lingvoekzamenoj de UEA-ITK, bazitaj sur la <a href=\"http://edukado.net/ekzamenoj/ker\">Komuna Eŭropa Referenckadro</a></li>
+<li>01:00-02:00 UTC: El la arĥivejo de <a href=\"http://radioverda.com/\">Radio Verda</a> Jessica Grasso elektis por vi interesaĵojn pri bicikloj</li>
+<li>02:00-03:00 UTC: La programo de Esperantistaj muzikistoj prezentas intervjuon kun ĴomArt kaj Nataŝa</li>
+"
+,
 "2011/10/08"
 =>
 "
