@@ -26,6 +26,14 @@ page_header('Bonvenon al Muzaiko!', '');
   $antauxa_programo = "";
 
 $arr = array(
+"2011/10/08"
+=>
+"
+<li>00:00-01:00 UTC: Michael Boris MANDIROLA kaj Francesco MAURELLI rakontas pri la daŭripova flanko de vegetarismo</li>
+<li>01:00-02:00 UTC: Esperantistoj aktivas prezentas intervjuon kun Chuck SMITH pri blogado ĉe <a href=\"http://transparent.com/esperanto\">transparent.com/esperanto</a>, la intervjuon muntis: RIKKER Bálint</li>
+<li>02:00-03:00 UTC: Kulturaj minutoj prezentas projekton pri nova antologio en Britio kaj la internacian koruson Interkant'</li>
+"
+,
 "2011/10/07"
 =>
 "
