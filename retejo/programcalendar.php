@@ -5,7 +5,7 @@ include('php-calendar.php');
 class ProgramCalendar extends Calendar {
 	function getCalendarLink($monato, $jaro) {
 		$s = getenv('SCRIPT_NAME');
-		return "$s?jaro=$jaro&monato=$monato";
+		return "$s?jaro=$jaro&monato=$monato#programo";
 	}
 
 	function getDateLink($tago, $monato, $jaro) {

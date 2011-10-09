@@ -49,7 +49,7 @@ $jaro = (empty($_GET['jaro']) || !ctype_digit($_GET['jaro'] )) ? 0 : $_GET['jaro
 $monato = (empty($_GET['monato']) || !ctype_digit($_GET['monato'] )) ? 0 : $_GET['monato'] ;
 $tago = (empty($_GET['tago']) || !ctype_digit($_GET['tago'] )) ? 0 : $_GET['tago'] ;
 
-printf('<div class="title">Tuttempa programo</div><div id="programa_bloko"><div id="kalendara_bloko" style="margin-bottom: 10px;">');
+printf('<div class="title" id="programo">Tuttempa programo</div><div id="programa_bloko"><div id="kalendara_bloko" style="margin-bottom: 10px;">');
 
 if ($jaro == 0 && $monato == 0)
 	echo $cal->getCurrentMonthView();
@@ -68,7 +68,7 @@ if ($jaro != 0 && $monato != 0 && $tago != 0) {
 
 	mysql_close();
 
-	printf('%s:<ul id="programo">', date('Y/m/d', mktime(0, 0, 0, $monato, $tago, $jaro)));
+	printf('%s:<ul>', date('Y/m/d', mktime(0, 0, 0, $monato, $tago, $jaro)));
 	while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
 		printf('<li>%s&ndash;%s UTC: %s</li>', $row[0], $row[1], format_programero(htmlspecialchars(stripslashes($row[2]))));
 	}
