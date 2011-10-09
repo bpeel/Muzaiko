@@ -37,7 +37,7 @@ printf('<ul>');
 while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
 	printf('<li>%s&ndash;%s UTC: %s</li>', $row[0], $row[1], format_programero(htmlspecialchars(stripslashes($row[2]))));
 }
-printf('</ul>');
+printf('</ul>kaj poste tiuj tri horoj ripetiĝas dum la tuta tago.');
 
 
 $d = getdate(time());
@@ -72,7 +72,7 @@ if ($jaro != 0 && $monato != 0 && $tago != 0) {
 	while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
 		printf('<li>%s&ndash;%s UTC: %s</li>', $row[0], $row[1], format_programero(htmlspecialchars(stripslashes($row[2]))));
 	}
-	printf('</ul></div>');
+	printf('</ul>kaj poste tiuj tri horoj ripetiĝas dum la tuta tago.</div>');
 }
 
 ?>
