@@ -16,6 +16,7 @@ function dodates() {
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title><?=$headtitle?>Muzaiko</title>
 <link rel="stylesheet" type="text/css" href="images/style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="images/style_calendar.css" media="screen" />
 </head>
 
 <body>

@@ -1,5 +1,6 @@
 <?php
 include('inc/inc.php');
+include('programcalendar.php');
 page_header('Bonvenon al Muzaiko!', '');
 ?>
 <p>
@@ -17,9 +18,75 @@ page_header('Bonvenon al Muzaiko!', '');
 <?php
   // preparu la hodiauxan daton laux UTC por poste
   date_default_timezone_set('UTC');
+
+// ************************* KALENDARO **************************************
+
+
+printf('<div class="title">Hodiaŭa programo</div>');
+
+$query = "SELECT DATE_FORMAT(date_begin, '%H:%i'), DATE_FORMAT(date_end, '%H:%i'), description FROM programero, elsendo WHERE programero.id = elsendo.programero_id AND DATE(date_begin) = CURDATE()";
+
+mysql_connect($programo_host, $programo_uzantnomo, $programo_pasvorto) or die(mysql_error());
+mysql_select_db($programo_datumbazo) or die(mysql_error());
+
+$result = mysql_query($query);
+
+mysql_close();
+
+printf('<ul>');
+while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
+	printf('<li>%s&ndash;%s UTC: %s</li>', $row[0], $row[1], format_programero(htmlspecialchars(stripslashes($row[2]))));
+}
+printf('</ul>');
+
+
+$d = getdate(time());
+
+$cal = new ProgramCalendar;
+$cal->setStartDay(1);
+
+$jaro = (empty($_GET['jaro']) || !ctype_digit($_GET['jaro'] )) ? 0 : $_GET['jaro'] ;
+$monato = (empty($_GET['monato']) || !ctype_digit($_GET['monato'] )) ? 0 : $_GET['monato'] ;
+$tago = (empty($_GET['tago']) || !ctype_digit($_GET['tago'] )) ? 0 : $_GET['tago'] ;
+
+printf('<div class="title">Tuttempa programo</div><div id="programa_bloko"><div id="kalendara_bloko" style="margin-bottom: 10px;">');
+
+if ($jaro == 0 && $monato == 0)
+	echo $cal->getCurrentMonthView();
+else
+	echo $cal->getMonthView($monato, $jaro);
+
+printf('</div>');
+
+if ($jaro != 0 && $monato != 0 && $tago != 0) {
+	$query = "SELECT DATE_FORMAT(date_begin, '%H:%i'), DATE_FORMAT(date_end, '%H:%i'), description FROM programero, elsendo WHERE programero.id = elsendo.programero_id AND YEAR(date_begin) = $jaro AND MONTH(date_begin) = $monato AND DAY(date_begin) = $tago";
+
+	mysql_connect($programo_host, $programo_uzantnomo, $programo_pasvorto) or die(mysql_error());
+	mysql_select_db($programo_datumbazo) or die(mysql_error());
+
+	$result = mysql_query($query);
+
+	mysql_close();
+
+	printf('%s:<ul>', date('Y/m/d', mktime(0, 0, 0, $monato, $tago, $jaro)));
+	while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
+		printf('<li>%s&ndash;%s UTC: %s</li>', $row[0], $row[1], format_programero(htmlspecialchars(stripslashes($row[2]))));
+	}
+	printf('</ul></div>');
+}
+
+?>
+
+<div>Trovu ĉiuj programeroj <a href="programeroj2">ĉi tie</a>!</div>
+
+<?php
+
+// *********************** / KALENDARO **************************************
+/*
   //echo date('H:i:s d/m/Y').'<br>';
   $hodiaux = strtotime(date('Y-m-d'));
   //$hodiaux = strtotime(date('2011-09-03'));
+
 
   // preparu la programcxenojn
   $hodiauxa_programo = "Programo ne trovita. Verŝajne la programisto dormas. Sed ne zorgu, Radio Muzaiko tamen rulas! :)";
@@ -326,14 +393,17 @@ foreach ($arr as $dato => $programo) {
   }
 }
 
-?>
 
+*/
+
+?>
+<!--
 <div class="title">La hodiaŭa programo</div>
 
 <div>
     <?php echo date('Y/m/d').':'; ?>
     <ul>
-      <?php echo $hodiauxa_programo; ?>
+      <?php /*echo $hodiauxa_programo;*/ ?>
     </ul>
     kaj poste tiuj tri horoj ripetiĝos dum la tuta tago.
 </div>
@@ -342,8 +412,8 @@ foreach ($arr as $dato => $programo) {
 
 <div>
   <ul>
-    <?php echo $antauxa_programo; ?>
-
+    <?php /*echo $antauxa_programo;*/ ?>
+-->
 <!--     <li>
       2011/09/03:
       <ul>

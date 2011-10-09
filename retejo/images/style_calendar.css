@@ -1,0 +1,18 @@
+.calendarHeader {
+	font-weight: bolder;
+	color: #a90329;
+	background-color: #FFFFCC;
+	font-size: 1.2em;
+}
+.calendarToday {
+	color: #FFFFFF;
+	background-color: #FFBBBB;
+	font-size: 1.2em;
+}
+.calendar {
+	background-color: #FFFFCC;
+	font-size: 1.2em;
+}
+.calendar th, .calendar td {
+	text-align: center;
+}

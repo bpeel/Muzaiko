@@ -91,6 +91,12 @@ function setTimezoneByOffset($offset)
       }
     }
     return false;
-    } 
+} 
     
+function format_programero($text) {
+	$text = preg_replace('/\[([^\]]+)\]\(([^\)]+)\)/', '<a href="$2">$1</a>', $text);
+	$text = preg_replace('/\*([^\*]+)\*/', '<i>$1</i>', $text);
+	return $text;
+}
+
 ?>
