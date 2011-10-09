@@ -236,7 +236,7 @@
 
 <?php
 
-$query = "SELECT id, description FROM programero";
+$query = "SELECT id, description FROM programero ORDER BY description ASC";
 $result = mysql_query($query);
 while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
 	printf('<tr><td>%s</td><td class="date_column"><ul>', format_programero(htmlspecialchars(stripslashes($row[1]))));
