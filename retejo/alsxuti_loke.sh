@@ -17,6 +17,7 @@ rsync \
     --exclude=/mediawiki \
     --exclude=/ajax/cache_api.txt \
     --exclude=/ajax/cache_callapi.txt \
+    --exclude=/programo/.htaccess \
     --rsh=ssh \
     --delete \
     "$@" \
