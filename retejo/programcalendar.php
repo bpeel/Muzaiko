@@ -18,7 +18,7 @@ class ProgramCalendar extends Calendar {
 		$link = '';
 		if (mysql_num_rows($result) > 0) {
 			$s = getenv('SCRIPT_NAME');
-                	$link = "$s?jaro=$jaro&monato=$monato&tago=$tago";
+                	$link = "$s?jaro=$jaro&monato=$monato&tago=$tago#programo";
 		}
 		return $link;
 	}
