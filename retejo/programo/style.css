@@ -1,0 +1,86 @@
+body {
+	margin: 0;
+	font-family: sans-serif;
+}
+#header {
+	background-image: url('images/muzaiko.png');
+	background-repeat: no-repeat;
+	height: 100px;
+	border-bottom: solid black 2px;
+}
+#header h1 {
+	padding-left: 120px;
+	padding-top: 20px;
+	color: rgb(128, 128, 128);
+}
+#header h1 a {
+	color: rgb(128, 128, 128);
+	text-decoration: none;
+}
+#content {
+	margin: 20px;
+}
+.success {
+	border: solid green 2px;
+	background-color: rgb(220, 255, 220);
+	padding: 5px;
+	margin-bottom: 20px;
+}
+.errors {
+	border: solid red 2px;
+	background-color: rgb(255, 220, 220);
+	padding: 5px;
+	margin-bottom: 20px;
+}
+.warning {
+	border: solid yellow 2px;
+	background-color: rgb(255, 255, 220);
+	padding: 5px;
+	margin-bottom: 20px;
+}
+#text_format {
+	font-size: 0.8em;
+	margin: 10px;
+}
+a {
+	color: rgb(255, 0, 0);
+}
+a:hover {
+	text-decoration: none;
+}
+a img {
+	border: 0;
+	vertical-align: middle;
+}
+.programero_input {
+	width: 600px;
+}
+.dato_input {
+	width: 150px;
+}
+input[type=text], input[type=submit], input[type=button] {
+	margin-top: 10px;
+}
+fieldset {
+	border: solid black 1px;
+}
+fieldset legend {
+	border: solid black 1px;
+	padding: 5px;
+}
+#content table {
+	border-collapse: collapse;
+}
+#content table th, #content table td {
+	border: solid black 1px;
+	padding: 5px;
+}
+#content table th.date_column, #content table td.date_column {
+	width: 350px;
+}
+#content table ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
