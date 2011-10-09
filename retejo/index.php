@@ -77,7 +77,7 @@ if ($jaro != 0 && $monato != 0 && $tago != 0) {
 
 ?>
 
-<div>Trovu ĉiuj programeroj <a href="programeroj2">ĉi tie</a>!</div>
+<div style="margin-top: 20px;"><strong>Trovu ĉiuj programeroj <a href="programeroj2">ĉi tie</a></strong>!</div>
 
 <?php
 
