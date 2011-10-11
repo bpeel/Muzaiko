@@ -33,6 +33,6 @@ class ProgramCalendar extends Calendar {
         represents January.
     */
     var $monthNames = array("Januaro", "Februaro", "Marto", "Aprilo", "Majo", "Juniu",
-                            "Julio", "Aŭgusto", "Septembro", "Octobro", "Novembro", "Decembro");
+                            "Julio", "Aŭgusto", "Septembro", "Oktobro", "Novembro", "Decembro");
 }
 
