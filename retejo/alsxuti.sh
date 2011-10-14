@@ -20,4 +20,4 @@ exec rsync \
     --delete \
     "$@" \
     . \
-    root@muzaiko.info:/var/www
+    root@muzaiko.info:/var/www/www.muzaiko.info

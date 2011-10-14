@@ -22,6 +22,6 @@ rsync \
     --delete \
     "$@" \
     . \
-    /var/www
+    /var/www/www.muzaiko.info
 
 chown -R www-data:www-data /var/www/ 
