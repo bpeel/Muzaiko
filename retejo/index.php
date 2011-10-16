@@ -8,8 +8,7 @@ page_header('Bonvenon al Muzaiko!', '');
   <b>Muzaiko estas tuttempa tutmonda tutmojosa tutesperanta radio!</b> Ni ludas por vi 24 horojn en tago muzikon, programerojn, novaĵojn, informojn, raportojn, arkivaĵojn kaj multe pli!
 </p>
 <p>
-  Nun aŭskulteblas la provelsendo, kaj tio signifas, ke malkiel en la estonteco
-  (laŭ niaj planoj), nun la programo ne nur ripetiĝas dum la tago, sed ankaŭ dum la semajno/monato.
+Nun aŭskulteblas la provelsendo, dum kio la teknika teamo laboras por sendependiĝo de Radionomy, por ebligi pli facilan aŭskultadon de Muzaiko kaj elŝutadon de la babila sonmaterialo. Dum tiu tempo ni petas vian helpon, aŭ se vi ne havas tempon por helpi, vian paciencon!
 </p>
 <p>
   Nia retejo ankoraŭ ne tute pretas - sed se vi volas scii pli aŭ ŝatus kunlabori, bonvolu kontakti nin ĉe <b>info (ĉe) muzaiko.info</b>!
