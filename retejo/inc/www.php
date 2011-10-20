@@ -23,7 +23,7 @@ function dodates() {
 <div id="main_container">
 
 <div id="header">
-<div id="logo"><a href="/"><img src="images/logo.gif" alt="" title="" border="0" /></a></div>
+<div id="logo"><a href="/"><img src="images/nova_logo.png" alt="" title="" border="0" /></a></div>
 	<div class="on_air">
 	  <?php include('ajax/onair.php'); ?>
 	</div>
