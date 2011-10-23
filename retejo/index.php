@@ -21,7 +21,7 @@ Nun aŭskulteblas la provelsendo, dum kio la teknika teamo laboras por sendepend
 // ************************* KALENDARO **************************************
 
 
-printf('<div class="title">Hodiaŭa programo</div>');
+printf('<h1>Hodiaŭa programo</h1>');
 
 $query = "SELECT DATE_FORMAT(date_begin, '%H:%i'), DATE_FORMAT(date_end, '%H:%i'), description FROM programero, elsendo WHERE programero.id = elsendo.programero_id AND DATE(date_begin) = CURDATE()";
 

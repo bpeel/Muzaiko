@@ -46,7 +46,7 @@ function dodates() {
 </ul>
 </div>
 <div class="left_content">
-<div class="title"><?=$title?></div>
+<h1><?=$title?></h1>
 <?php
 }
 

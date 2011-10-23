@@ -3,13 +3,13 @@ include('inc/inc.php');
 page_header('');
 ?>
 
-<div class="title">Financoj</div>
+<h1>Financoj</h1>
 
 Bedaŭrinde kreante Muzaikon oni ja devas pensi pri kelkaj financaj aferoj. Se vi emas helpi pri ili, organizi ilin, vi estas tre bonvena!
 </br>
 Ĝis nun la financoj estas tiel:
 
-<div class="title">Pagita</div>
+<h1>Pagita</h1>
 
 <table border="1" cellspacing="0" cellpadding="10" width="100%">
 
@@ -39,7 +39,7 @@ Bedaŭrinde kreante Muzaikon oni ja devas pensi pri kelkaj financaj aferoj. Se v
 
 </table> 
 
-<div class="title">Pagota</div>
+<h1>Pagota</h1>
 <table border="1" cellspacing="0" cellpadding="10" width="100%">
 
 <tr>

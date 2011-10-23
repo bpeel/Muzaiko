@@ -3,14 +3,14 @@ include('inc/inc.php');
 page_header('');
 ?>
 
-<div class="title">Novaĵoj</div>
+<h1>Novaĵoj</h1>
 Novaĵoj el la tuta mondo por la tuta mondo, kiun redaktas por vi nia teamo ĉe <a target="_blank" href="https://groups.google.com/group/retradio-novajxoj">Retradio-novaĵoj</a>.
 <!--<a target="_blank" href="https://docs.google.com/document/d/1tEKmKe_OTNb_ZAZ1Dm3eVEXJ3K9sNeSy_yMPbwygCWY/edit?hl=en&authkey=CK7Hq6cH">Kiel verki radio-novaĵojn</a>
 -->
 <!--artefarita acxa spaco por Avizo #3 ;) -->
 <ul></ul>
 
-<div class="title">Babilaj programeroj</div>
+<h1>Babilaj programeroj</h1>
 <ul>
 <li>Esperantistoj aktivas</li>
 <li>Fabeloj</li>
@@ -25,15 +25,15 @@ Novaĵoj el la tuta mondo por la tuta mondo, kiun redaktas por vi nia teamo ĉe 
 <li>Volontulado tra la mondo</li>
 </ul>
 
-<div class="title">Reklamoj</div>
+<h1>Reklamoj</h1>
 
-<div class="title">Muziko</div>
+<h1>Muziko</h1>
 <p>
 <img src="images/earphones.gif" alt="" title="" class="left_img" />
 <b>Muzaiko ludas la plej mojosan muzikon en Esperantujo!</b> Krom niaj muzikaj programeroj, ni ankaŭ prezentas muzikon dum niaj aliaj programeroj. Tiu muziko venas de nia <i>muzikolisto</i>, kiun redaktas por vi ĉiusemajne la muziko-teamo de Muzaiko!
 </p>
 
-<div class="title">Partneroj</div>
+<h1>Partneroj</h1>
 <!-- <div class="partnertabelo"> -->
 <table class="center" border="0" cellspacing="0" cellpadding="0">
 	<tr>

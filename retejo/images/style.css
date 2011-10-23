@@ -49,9 +49,10 @@ padding:15px 23px 0 0;
 text-align: right;
 font-weight: bold;
 }
-#now-playing h1 {
+#now-playing .titolo {
 color: #990000;
 font-size: 1.5em;
+margin: 10px;
 }
 #now-playing div {
 font-size: 1em;
@@ -109,7 +110,8 @@ text-align:center;
 color:#FFFFFF;
 }
 
-.title{
+h1 {
+font-weight: normal;
 font-size:20px;
 color:#a90329;
 clear:both;

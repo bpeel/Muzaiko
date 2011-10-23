@@ -19,7 +19,7 @@
 
 <!-- kantinformoj -->
 <div id="now-playing">
-  <h1>Nun estas ludata…</h1>
+  <div class="titolo">Nun estas ludata…</div>
   <div id="kanto"></div>
 <!--   <h1>Nombro da aŭskultantoj</h1> -->
   <div id="statistikoj"></div>
