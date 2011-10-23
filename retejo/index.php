@@ -48,7 +48,7 @@ $jaro = (empty($_GET['jaro']) || !ctype_digit($_GET['jaro'] )) ? 0 : $_GET['jaro
 $monato = (empty($_GET['monato']) || !ctype_digit($_GET['monato'] )) ? 0 : $_GET['monato'] ;
 $tago = (empty($_GET['tago']) || !ctype_digit($_GET['tago'] )) ? 0 : $_GET['tago'] ;
 
-printf('<div class="title" id="programo">Tuttempa programo</div><div id="programa_bloko"><div id="kalendara_bloko" style="margin-bottom: 10px;">');
+printf('<h1 id="programo">Tuttempa programo</h1><div id="programa_bloko"><div id="kalendara_bloko" style="margin-bottom: 10px;">');
 
 if ($jaro == 0 && $monato == 0)
 	echo $cal->getCurrentMonthView();
