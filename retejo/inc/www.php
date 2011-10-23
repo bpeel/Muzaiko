@@ -34,15 +34,15 @@ function dodates() {
 
 <div id="menu">
 <ul>
-	<li><a class="current" href="/" title="">hejmo</a></li>
-	<li><a href="/auxskultu" title="">aŭskultu</a></li>
-	<li><a href="/programeroj" title="">programeroj</a></li>
+	<li><a class="current" href="." title="">hejmo</a></li>
+	<li><a href="./auxskultu" title="">aŭskultu</a></li>
+	<li><a href="./programeroj" title="">programeroj</a></li>
 	<!--<li><a href="/muziko" title="">muziko</a></li>-->
-	<li><a href="/subtenu" title="">subtenu</a></li>
-	<li><a href="/reklamu" title="">reklamu</a></li>
-	<li><a href="/financoj" title="">financoj</a></li>
-	<li><a href="/partoprenu" title="">partoprenu</a></li>
-	<li><a href="/kontaktu" title="">kontaktu</a></li>
+	<li><a href="./subtenu" title="">subtenu</a></li>
+	<li><a href="./reklamu" title="">reklamu</a></li>
+	<li><a href="./financoj" title="">financoj</a></li>
+	<li><a href="./partoprenu" title="">partoprenu</a></li>
+	<li><a href="./kontaktu" title="">kontaktu</a></li>
 </ul>
 </div>
 <div class="left_content">
@@ -151,15 +151,15 @@ function page_footer($homelink=true) {
 
 <div id="footer">
 <div class="footer_links">                      
-<a href="/" title="">hejmo</a>
-<a href="/auxskultu" title="">aŭskultu</a>
-<a href="/programeroj" title="">programeroj</a>
+<a href="." title="">hejmo</a>
+<a href="./auxskultu" title="">aŭskultu</a>
+<a href="./programeroj" title="">programeroj</a>
 <!-- <a href="/muziko" title="">muziko</a> -->
-<a href="/subtenu" title="">subtenu</a>
-<a href="/reklamu" title="">reklamu</a>
-<a href="/financoj" title="">financoj</a>
-<a href="/partoprenu" title="">partoprenu</a>
-<a href="/kontaktu" title="">kontaktu</a>
+<a href="./subtenu" title="">subtenu</a>
+<a href="./reklamu" title="">reklamu</a>
+<a href="./financoj" title="">financoj</a>
+<a href="./partoprenu" title="">partoprenu</a>
+<a href="./kontaktu" title="">kontaktu</a>
 </div>
 <div class="copyright">
 &copy; Muzaiko 2011. Ŝablono de <a class="acopyright" href="http://csstemplatesmarket.com" target="_blank">CSS Templates Market</a>
