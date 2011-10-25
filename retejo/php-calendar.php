@@ -257,7 +257,7 @@ class Calendar
     	$s .= "<tr>\n";
     	$s .= "<td align=\"center\" valign=\"top\">" . (($prevMonth == "") ? "&nbsp;" : "<a href=\"$prevMonth\"><img src=\"images/left_arrow.png\" alt=\"antaŭa\" /></a>")  . "</td>\n";
     	$s .= "<td align=\"center\" valign=\"top\" class=\"calendarHeader\" colspan=\"5\">$header</td>\n"; 
-    	$s .= "<td align=\"center\" valign=\"top\">" . (($nextMonth == "") ? "&nbsp;" : "<a href=\"$nextMonth\"><img src=\"images/left_arrow.png\" alt=\"sekva\" /></a>")  . "</td>\n";
+    	$s .= "<td align=\"center\" valign=\"top\">" . (($nextMonth == "") ? "&nbsp;" : "<a href=\"$nextMonth\"><img src=\"images/right_arrow.png\" alt=\"sekva\" /></a>")  . "</td>\n";
     	$s .= "</tr>\n";
     	
     	$s .= "<tr>\n";
