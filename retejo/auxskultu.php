@@ -4,7 +4,7 @@ page_header('Aŭskultu Muzaikon!');
 ?>
 <div style="border: solid red 1px; background-color: #FCC; padding: 5px;">
 <strong>Averto!</strong>
-Dum la provelsenda periodo la teamo de Muzaiko elektis uzi la servojn de Radionomy. Radionomy regas la elsendmanieron, provizas radioregilon kaj pagas por la kopirajtoj, por ke oni povu libere ludi muzikon, kies kopirajto apartenas al kopirajtaj organizoj (ekzemple la muziko de Vinilkosmo apartenas al la franca kopirajtorganizo). Tio bedaŭrinde signifas, ke oni devas akcepti reklamojn, kiuj estas enmetitaj de Radionomy kaj pagas la kotizojn de Radionomy.
+Dum la provelsenda periodo la teamo de Muzaiko elektis uzi la servojn de Radionomy. Radionomy regas la elsendmanieron, provizas radioregilon kaj pagas por la kopirajtoj, por ke oni povu libere ludi muzikon, kies kopirajton administras kopirajtaj organizoj (ekzemple la muzikon de Vinilkosmo administras la franca kopirajtorganizo). Tio bedaŭrinde signifas, ke oni devas akcepti reklamojn, kiuj estas enmetitaj de Radionomy kaj pagas la kotizojn de Radionomy.
 </div>
 
 <p>
