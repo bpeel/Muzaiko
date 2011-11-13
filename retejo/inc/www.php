@@ -81,6 +81,14 @@ function right($title='') {
 </ul>
 </div>
 
+<div class="dekstra_titolo">Babilu kun ni tujmesaĝe:</div>
+<div class="dekstra_teksto">
+<ul>
+	<li>Per via IRC kliento ĉe #Muzaiko@freenode.net</li>
+	<li><a href="http://webchat.freenode.net?channels=Muzaiko&uio=d4">Per TTT IRC kliento</a> (tajpu kromnomon en la "Nickname" kampo, solvu la CAPTCHA kaj klaku sur "Connect")</li>
+</ul>
+</div>
+
 <div class="dekstra_titolo">Partneroj:</div>
 <a target="_blank" href="http://vinilkosmo.com"><img src="images/vinilkosmo.gif" alt="logotipo de vinilkosmo.com kun ligilo al gxi"></a>
 <a target="_blank" href="http://vinilkosmo-mp3.com"><img src="images/vinilkosmo-mp3.gif" alt="logotipo de vinilkosmo-mp3.com kun ligilo al gxi"></a>
