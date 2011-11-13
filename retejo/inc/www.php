@@ -85,7 +85,7 @@ function right($title='') {
 <div class="dekstra_teksto">
 <ul>
 	<li>Per via IRC kliento ĉe #Muzaiko@freenode.net</li>
-	<li><a href="http://webchat.freenode.net?channels=Muzaiko&uio=d4">Per TTT IRC kliento</a> (tajpu kromnomon en la "Nickname" kampo, solvu la CAPTCHA kaj klaku sur "Connect")</li>
+	<li><a href="http://webchat.freenode.net?channels=Muzaiko&uio=d4" target="_blank">Per TTT IRC kliento</a> (tajpu kromnomon en la "Nickname" kampo, solvu la CAPTCHA kaj klaku sur "Connect")</li>
 </ul>
 </div>
 
