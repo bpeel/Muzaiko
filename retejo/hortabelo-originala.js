@@ -70,7 +70,10 @@
      var i;
 
      var programo_elem = document.getElementById ("programo");
-     programo_elem.innerHTML = "";
+     programo_elem.innerHTML = ("\u0108iuj horoj montri\u011das la\u016d " +
+                                "via loka horzono.");
+     var ul_elem = document.createElement ("ul");
+     programo_elem.appendChild (ul_elem);
 
      /* Komenciĝu per la nuna programo */
      i = nuna_programo;
@@ -91,7 +94,7 @@
        nomelemento.innerHTML = programero[2];
        elem.appendChild (nomelemento);
 
-       programo_elem.appendChild (elem);
+       ul_elem.appendChild (elem);
 
        if (++i >= programo.length)
        {
@@ -99,10 +102,6 @@
          i = 0;
        }
      } while (i != nuna_programo);
-
-     var noto_elem = document.getElementById ("tempozononoto");
-     noto_elem.innerHTML = (" \u0108iuj horoj montri\u011das la\u016d " +
-                            "via loka tempozono.");
    };
 
    if (window.addEventListener)
