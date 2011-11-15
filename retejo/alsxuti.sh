@@ -16,6 +16,8 @@ exec rsync \
     --exclude=/ajax/cache_api.txt \
     --exclude=/ajax/cache_callapi.txt \
     --exclude=/programo/.htaccess \
+    --exclude=/hortabelo-originala.js \
+    --exclude=/mallongigi-hortabelo.sh \
     --rsh=ssh \
     --delete \
     "$@" \
