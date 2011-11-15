@@ -64,15 +64,6 @@
    if (nuna_programo === null)
      return;
 
-   /* Provu trovi la nomon de la tempozono el la nuna ĉena tempo */
-   var match;
-   var tempozono;
-   if ((match = /\(([A-Z]+)\)$/.exec (now.toString ())))
-     tempozono = match[1];
-   else
-     /* Rezignu */
-     return;
-
    /* Registru hokfunkcion por ke kiam la paĝo fine elŝutiĝas ni
     * anstataŭigos la aktualan programon per la nova */
    var hokfunkcio = function () {
@@ -91,7 +82,7 @@
        var programerofino = programero[1] - komenco + komenco_de_nuna_ripeto;
        var tempo =
          (formatTime (programerokomenco) + "\u2013" +
-          formatTime (programerofino) + " " + tempozono + ": ");
+          formatTime (programerofino) + ": ");
 
        elem.appendChild (document.createTextNode (tempo));
 
@@ -108,6 +99,10 @@
          i = 0;
        }
      } while (i != nuna_programo);
+
+     var noto_elem = document.getElementById ("tempozononoto");
+     noto_elem.innerHTML = (" \u0108iuj horoj montri\u011das la\u016d " +
+                            "via loka tempozono.");
    };
 
    if (window.addEventListener)

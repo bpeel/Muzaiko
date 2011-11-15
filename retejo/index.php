@@ -34,7 +34,8 @@ printf('<ul id="programo">');
 while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
 	printf('<li>%s&ndash;%s UTC: %s</li>', $row[0], $row[1], format_programero(htmlspecialchars(stripslashes($row[2]))));
 }
-printf('</ul>kaj poste tiuj tri horoj ripetiĝas dum la tuta tago.');
+printf('</ul>kaj poste tiuj tri horoj ripetiĝas dum la tuta tago.' .
+       '<span id="tempozononoto"></span>');
 
 // ankaux eligu la programon kiel tabelo en Javascript
 
