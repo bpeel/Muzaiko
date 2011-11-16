@@ -21,37 +21,12 @@ Nun aŭskulteblas la provelsendo, dum kio la teknika teamo laboras por sendepend
 // ************************* KALENDARO **************************************
 
 
-printf('<h1>Hodiaŭa programo</h1>');
+printf('<h1>Aktuala programo</h1>');
 
-$query = "SELECT DATE_FORMAT(date_begin, '%H:%i'), DATE_FORMAT(date_end, '%H:%i'), description FROM programero, elsendo WHERE programero.id = elsendo.programero_id AND DATE(date_begin) = CURDATE()";
-
-mysql_connect($programo_host, $programo_uzantnomo, $programo_pasvorto) or die(mysql_error());
-mysql_select_db($programo_datumbazo) or die(mysql_error());
-
-$result = mysql_query($query);
-
-printf('<div id="programo"><ul>');
-while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
-	printf('<li>%s&ndash;%s UTC: %s</li>', $row[0], $row[1], format_programero(htmlspecialchars(stripslashes($row[2]))));
-}
-printf('</ul></div>kaj poste tiuj tri horoj ripetiĝas dum la tuta tago.');
-
-// ankaux eligu la programon kiel tabelo en Javascript
-
-$query = "SELECT UNIX_TIMESTAMP(date_begin), UNIX_TIMESTAMP(date_end), description FROM programero, elsendo WHERE programero.id = elsendo.programero_id AND DATE(date_begin) = CURDATE()";
-$result = mysql_query($query);
-
-printf("<script type=\"text/javascript\">\n" .
-       "var programo = [\n");
-while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
-  printf("[%s, %s, %s],\n", $row[0], $row[1],
-         json_encode(format_programero(htmlspecialchars(stripslashes($row[2])))));
-}
-printf("];\n");
-include("hortabelo.js");
+include('aktuala-hortabelo.php');
+print("<script type=\"text/javascript\">\n");
+include('hortabelo.js');
 print("</script>\n");
-
-mysql_close();
 
 $d = getdate(time());
 
