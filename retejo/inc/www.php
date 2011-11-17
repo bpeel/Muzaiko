@@ -17,6 +17,7 @@ function dodates() {
 <title><?=$headtitle?>Muzaiko</title>
 <link rel="stylesheet" type="text/css" href="images/style.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="images/style_calendar.css" media="screen" />
+<link rel="icon" type="image/png" href="images/favicon.png" />
 </head>
 
 <body>
