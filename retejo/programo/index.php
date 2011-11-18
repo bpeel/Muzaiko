@@ -184,8 +184,8 @@
 									$counter++;
 									printf('<div id="dato%s">', $counter);
 									printf('<label for="eko%s">Dato %s</label>&nbsp;', $counter, $counter);
-									printf('<input type="text" class="dato_input" name="ekoj[]" id="eko%s" placeholder="Eko" value="%s" onclick="javascript:NewCssCal(\'eko%s\', \'yyyyMMdd\', \'arrow\', true, \'24\', true)" />&nbsp;', $counter, $redaktado_ekdatoj[$key], $counter);
-									printf('<input type="text" class="dato_input" name="finoj[]" id="fino%s" placeholder="Fino" value="%s" onclick="javascript:NewCssCal(\'fino%s\', \'yyyyMMdd\', \'arrow\', true, \'24\', true)" />&nbsp;', $counter, $redaktado_findatoj[$key], $counter);
+									printf('<input type="text" class="dato_input" name="ekoj[]" id="eko%s" placeholder="Eko" value="%s" onclick="javascript:NewCssCal(\'eko%s\', \'yyyyMMdd\', \'arrow\', true, \'24\', false)" />&nbsp;', $counter, $redaktado_ekdatoj[$key], $counter);
+									printf('<input type="text" class="dato_input" name="finoj[]" id="fino%s" placeholder="Fino" value="%s" onclick="javascript:NewCssCal(\'fino%s\', \'yyyyMMdd\', \'arrow\', true, \'24\', false)" />&nbsp;', $counter, $redaktado_findatoj[$key], $counter);
 									printf('<a href="#" title="Forigi ĉi tiun daton" onclick="javascript:forigiDaton(%s)"><img src="images/forigi_malgranda.png" alt="Forigi ĉi tiun daton" /></a>', $counter);
 									printf('</div>');
 								}
