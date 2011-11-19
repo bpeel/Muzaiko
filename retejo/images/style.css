@@ -117,6 +117,41 @@ color:#a90329;
 clear:both;
 padding:10px 0 10px 0px;
 }
+h2 {
+font-weight: normal;
+font-size:16px;
+color:#a90329;
+clear:both;
+padding:8px 0 8px 0px;
+}
+h3 {
+font-weight: normal;
+font-size:12px;
+color:#a90329;
+clear:both;
+padding:6px 0 6px 0px;
+}
+h4 {
+font-weight: normal;
+font-size:8px;
+color:#a90329;
+clear:both;
+padding:4px 0 4px 0px;
+}
+h5 {
+font-weight: normal;
+font-size:6px;
+color:#a90329;
+clear:both;
+padding:2px 0 2px 0px;
+}
+h6 {
+font-weight: normal;
+font-size:4px;
+color:#a90329;
+clear:both;
+padding:0px 0 0px 0px;
+}
 
 .dekstra_titolo{
 font-size:15px;
@@ -259,3 +294,32 @@ padding-left:10px;
 text-decoration:underline;
 color: #a90329;
 }
+
+#novajxoj .novajxo {
+	border-top: solid #DDD 1px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+#novajxoj .novajxo .novajxo_titolo {
+	margin: 0;
+	padding: 0;
+}
+#novajxoj .novajxo .novajxo_dato {
+	font-size: small;
+}
+#novajxoj .novajxo .novajxo_enhavo {
+}
+#novajxoj_pagxoj {
+	border-top: solid #DDD 1px;
+	padding-top: 10px;
+}
+#novajxoj_pagxoj ol {
+	margin: 0;
+	padding: 0;
+}
+#novajxoj_pagxoj ol li {
+	display: inline;
+	margin: 10px;
+	text-align: center;
+}
+

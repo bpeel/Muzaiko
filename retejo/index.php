@@ -2,6 +2,8 @@
 include('./inc/inc.php');
 include('./programcalendar.php');
 page_header('Bonvenon al Muzaiko!', '');
+// preparu la hodiauxan daton laux UTC por poste
+date_default_timezone_set('UTC');
 ?>
 <p>
   <img src="images/earphones.gif" alt="" title="" class="left_img" />
@@ -14,9 +16,49 @@ Nun aŭskulteblas la provelsendo, dum kio la teknika teamo laboras por sendepend
   Nia retejo ankoraŭ ne tute pretas - sed se vi volas scii pli aŭ ŝatus kunlabori, bonvolu kontakti nin ĉe <b>info (ĉe) muzaiko.info</b>!
 </p>
 
+
+<h1>Novaĵoj</h1>
 <?php
-  // preparu la hodiauxan daton laux UTC por poste
-  date_default_timezone_set('UTC');
+
+include_once "markdown.php";
+
+mysql_connect($novajxoj_host, $novajxoj_uzantnomo, $novajxoj_pasvorto) or die(mysql_error());
+mysql_select_db($novajxoj_datumbazo) or die(mysql_error());
+
+$query = "SELECT COUNT(*) FROM novajxo";
+$result = mysql_query($query);
+$row = mysql_fetch_array($result, MYSQL_NUM);
+$news_count = $row[0];
+$news_display_limit = 3;
+$news_pages_count = ceil($news_count / $news_display_limit);
+$current_page = (isset($_GET['p']) && ctype_digit($_GET['p'])) ? $_GET['p'] : 1;
+
+$query = "SELECT titolo, enhavo, DATE_FORMAT(dato, '%Y/%m/%d %H:%i') FROM novajxo ORDER BY dato DESC LIMIT ".(($current_page - 1) * $news_display_limit).', '.$news_display_limit;
+$result = mysql_query($query);
+
+mysql_close();
+
+/* montri novaĵoj */
+echo '<div id="novajxoj">';
+while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
+	        printf('<div class="novajxo"><h2 class="novajxo_titolo">%s</h2><div class="novajxo_dato">Publikigita la %s UTC</div><div class="novajxo_enhavo">%s</div></div>', htmlspecialchars(stripslashes($row[0])), $row[2], Markdown(stripslashes($row[1])));
+}
+echo '</div>';
+
+
+/* montri paĝojn */
+if ($news_pages_count > 1) {
+	echo '<div id="novajxoj_pagxoj"><ol>';
+	if ($current_page > 1)
+		echo '<li><a href="./?p='.($current_page-1).'#novajxoj" title="">antaŭaj novaĵoj</a></li>';
+	for ($i = 1; $i < ($news_pages_count + 1); $i++) {
+		echo '<li><a href="./?p='.$i.'#novajxoj"'.(($current_page == $i) ? 'class="elektita_pagxo"' : '').'>'.$i.'</a></li>';
+	}
+	if ($current_page < $news_pages_count)
+		echo '<li><a href="./?p='.($current_page+1).'#novajxoj" title="">postaj novaĵoj</a></li>';
+	echo '</ol></div>';
+}
+
 
 // ************************* KALENDARO **************************************
 
