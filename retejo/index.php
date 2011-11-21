@@ -33,7 +33,7 @@ $news_display_limit = 3;
 $news_pages_count = ceil($news_count / $news_display_limit);
 $current_page = (isset($_GET['p']) && ctype_digit($_GET['p'])) ? $_GET['p'] : 1;
 
-$query = "SELECT titolo, enhavo, DATE_FORMAT(dato, '%Y/%m/%d %H:%i') FROM novajxo ORDER BY dato DESC LIMIT ".(($current_page - 1) * $news_display_limit).', '.$news_display_limit;
+$query = "SELECT titolo, enhavo, DATE_FORMAT(dato, '%Y/%m/%d %H:%i'), IF(redaktado_dato > (dato + 120), DATE_FORMAT(redaktado_dato, '%Y/%m/%d %H:%i'), NULL)  FROM novajxo ORDER BY dato DESC LIMIT ".(($current_page - 1) * $news_display_limit).', '.$news_display_limit;
 $result = mysql_query($query);
 
 mysql_close();
@@ -41,7 +41,7 @@ mysql_close();
 /* montri novaĵoj */
 echo '<div id="novajxoj">';
 while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
-	        printf('<div class="novajxo"><h2 class="novajxo_titolo">%s</h2><div class="novajxo_dato">Publikigita la %s UTC</div><div class="novajxo_enhavo">%s</div></div>', htmlspecialchars(stripslashes($row[0])), $row[2], Markdown(stripslashes($row[1])));
+	        printf('<div class="novajxo"><h2 class="novajxo_titolo">%s</h2><div class="novajxo_dato">Publikigita je la %s UTC%s</div><div class="novajxo_enhavo">%s</div></div>', htmlspecialchars(stripslashes($row[0])), $row[2], (($row[3] == NULL) ? '' : " (redaktita je la $row[3] UTC)"), Markdown(stripslashes($row[1])));
 }
 echo '</div>';
 
