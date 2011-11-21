@@ -40,6 +40,9 @@ mysql_close();
 
 /* montri novaĵoj */
 echo '<div id="novajxoj">';
+if (mysql_num_rows($result) == 0) {
+	echo 'Neniu publikigita novaĵo.';
+}
 while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
 	        printf('<div class="novajxo"><h2 class="novajxo_titolo">%s</h2><div class="novajxo_dato">Publikigita je la %s UTC%s</div><div class="novajxo_enhavo">%s</div></div>', htmlspecialchars(stripslashes($row[0])), $row[2], (($row[3] == NULL) ? '' : " (redaktita je la $row[3] UTC)"), Markdown(stripslashes($row[1])));
 }
