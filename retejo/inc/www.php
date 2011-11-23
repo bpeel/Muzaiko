@@ -71,6 +71,14 @@ function right($title='') {
 </ul>
 </div>
 
+<div class="dekstra_titolo">Kunlaboru</div>
+<div class="dekstra_teksto">
+<ul>
+	<li><a href="./partoprenu">Partoprenu</a></li>
+	<li><a href="./partoprenu#verku-novajxojn">Verku novaĵojn</a></li>
+</ul>
+</div>
+
 <div class="dekstra_titolo">Eksciu pli pri Muzaiko ĉe:</div>
 <div class="dekstra_teksto">
 <ul>
