@@ -56,7 +56,7 @@ pli da informoj.
         <li><label for="retposxtadresokonfirmo">Retajpu vian retpoŝtadreson</label><input type="text" name="retposxtadresokonfirmo" id="retposxtadresokonfirmo"<?php echo (empty($_GET['retposxtadresokonfirmo']) ? '' : ' value="'.htmlspecialchars($_GET['retposxtadresokonfirmo']).'"') ?> /></li>
         <li><label for="titolo">Titolo de la novaĵo</label><input type="text" name="titolo" id="titolo"<?php echo (empty($_GET['titolo']) ? '' : ' value="'.htmlspecialchars($_GET['titolo']).'"') ?> /></li>
         <li><label for="enhavo">Enhavo de la novaĵo</label><textarea cols="50" rows="20" name="enhavo" id="enhavo"><?php echo (empty($_GET['enhavo']) ? '' : htmlspecialchars($_GET['enhavo'])) ?></textarea></li>
-        <li id="kontrauxspamo"><label for="kontrauxspamo">Ne plenigu tiun kampon</label><input type="text" name="kontrauxspamo" id="kontrauxspamo" /></li>
+        <li id="kontrauxspamajxo"><label for="kontrauxspamo">Ne plenigu tiun kampon</label><input type="text" name="kontrauxspamo" id="kontrauxspamo" /></li>
         <li><input type="submit" name="novajxo" value="Sendi" /></li>
       </ol>
     </fieldset>
