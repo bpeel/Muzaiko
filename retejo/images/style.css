@@ -322,4 +322,46 @@ color: #a90329;
 	margin: 10px;
 	text-align: center;
 }
+#verku-novajxon-content fieldset {
+	margin-top:20px;
+}
+#verku-novajxon-content fieldset ol {
+	list-style-type: none;
+	padding: 0;
+	margin: 5px;
+}
+#verku-novajxon-content fieldset ol li {
+	padding: 5px;
+	vertical-align: top;
+}
+#verku-novajxon-content fieldset ol li#kontrauxspamo {
+	display: none;
+}
+#verku-novajxon-content fieldset ol li label {
+	display: inline-block;
+	margin-top: 5px;
+	line-height: auto;
+	width: 100px;
+	margin-right: 10px;
+	vertical-align: top;
+}
+#verku-novajxon-content fieldset ol li input[type=text] {
+	width: 320px;
+}
+#verku-novajxon-content fieldset ol li input[type=submit] {
+	margin-left: 110px;
+}
+#verku-novajxon-content fieldset ol li textarea {
+	width: 320px;
+}
+div.sukceso {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border: solid green 1px; background-color: #CFC; padding: 5px;
+}
+div.eraro {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border: solid red 1px; background-color: #FCC; padding: 5px;
+}
 
