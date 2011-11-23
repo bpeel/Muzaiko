@@ -35,8 +35,8 @@ pli da informoj.
 <h1 id="verku-novajxojn">Verku novaĵojn</h1>
 
 <div id="verku-novajxon-content">
-	<p>Se vi emas, vi povas verki novaĵojn, kiuj eble estos laŭtlegata de Muzaiko. La reguloj por ĝuste verki novaĵojn troviĝas <a href="http://vikio.muzaiko.info/index.php/Novaĵo">ĉe la vikio</a>.</p> 
-	<p>Pensu ke la novaĵoj devu esti koncizaj, facilkompreneblaj, kaj laŭeble neŭtralaj. Ĉiam menciu la fonton, bonvolu!</p>
+	<p>Se vi emas, vi povas verki novaĵojn, kiuj eble estos laŭtlegataj en Muzaiko. La reguloj por ĝuste verki novaĵojn troviĝas <a href="http://vikio.muzaiko.info/index.php/Novaĵo">ĉe la vikio</a>.</p> 
+	<p>Pensu ke la novaĵoj devas esti koncizaj, facilkompreneblaj, kaj laŭeble neŭtralaj. Ĉiam menciu la fonton, bonvolu!</p>
 
   <?php
   	if (!empty($_GET['eraro'])) {
