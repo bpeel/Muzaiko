@@ -5,7 +5,7 @@ include_once '/var/muzaiko/novajxalisto.php';
 
 if (empty($_POST['kontrauxspamo'])) {
 	if (empty($_POST['nomo']) || empty($_POST['retposxtadreso']) || empty($_POST['retposxtadresokonfirmo']) || empty($_POST['titolo']) || empty($_POST['enhavo'])) {
-		header('Location: http://localhost/retejo/partoprenu?eraro=1&nomo='.urlencode($_POST['nomo']).'&retposxtadreso='.urlencode($_POST['retposxtadreso']).'&retposxtadresokonfirmo='.urlencode($_POST['retposxtadresokonfirmo']).'&titolo='.urlencode($_POST['titolo']).'&enhavo='.urlencode($_POST['enhavo']).'#verku-novajxojn');
+		header('Location: http://muzaiko.info/partoprenu?eraro=1&nomo='.urlencode($_POST['nomo']).'&retposxtadreso='.urlencode($_POST['retposxtadreso']).'&retposxtadresokonfirmo='.urlencode($_POST['retposxtadresokonfirmo']).'&titolo='.urlencode($_POST['titolo']).'&enhavo='.urlencode($_POST['enhavo']).'#verku-novajxojn');
 		exit();
 	}
 	if ($_POST['retposxtadreso'] != $_POST['retposxtadresokonfirmo']) {
