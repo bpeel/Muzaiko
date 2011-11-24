@@ -3,16 +3,35 @@ include('inc/inc.php');
 
 include_once '/var/muzaiko/novajxalisto.php';
 
+function eraro($n) {
+	header('Location: http://muzaiko.info/partoprenu?eraro='.$n.'&nomo='.urlencode($_POST['nomo']).'&retposxtadreso='.urlencode($_POST['retposxtadreso']).'&retposxtadresokonfirmo='.urlencode($_POST['retposxtadresokonfirmo']).'&titolo='.urlencode($_POST['titolo']).'&enhavo='.urlencode($_POST['enhavo']).'&fontoj='.urlencode($_POST['fontoj']).'#verku-novajxojn');
+	exit();
+}
+
+function valida_retadreso($email) {
+	$atom   = '[-a-z0-9!#$%&\'*+\\/=?^_`{|}~]';
+	$domain = '([a-z0-9]([-a-z0-9]*[a-z0-9]+)?)';
+	                               
+	$regex = '/^' . $atom . '+' .
+		'(\.' . $atom . '+)*' .
+		'@' .
+		'(' . $domain . '{1,63}\.)+' .
+		$domain . '{2,63}$/i';
+
+	return preg_match($regex, $email);
+}
+
 if (empty($_POST['kontrauxspamo'])) {
-	if (empty($_POST['nomo']) || empty($_POST['retposxtadreso']) || empty($_POST['retposxtadresokonfirmo']) || empty($_POST['titolo']) || empty($_POST['enhavo'])) {
-		header('Location: http://muzaiko.info/partoprenu?eraro=1&nomo='.urlencode($_POST['nomo']).'&retposxtadreso='.urlencode($_POST['retposxtadreso']).'&retposxtadresokonfirmo='.urlencode($_POST['retposxtadresokonfirmo']).'&titolo='.urlencode($_POST['titolo']).'&enhavo='.urlencode($_POST['enhavo']).'#verku-novajxojn');
-		exit();
+	if (empty($_POST['nomo']) || empty($_POST['retposxtadreso']) || empty($_POST['retposxtadresokonfirmo']) || empty($_POST['titolo']) || empty($_POST['enhavo']) || empty($_POST['fontoj'])) {
+		eraro(1);
 	}
 	if ($_POST['retposxtadreso'] != $_POST['retposxtadresokonfirmo']) {
-		header('Location: http://localhost/retejo/partoprenu?eraro=2&nomo='.urlencode($_POST['nomo']).'&retposxtadreso='.urlencode($_POST['retposxtadreso']).'&retposxtadresokonfirmo='.urlencode($_POST['retposxtadresokonfirmo']).'&titolo='.urlencode($_POST['titolo']).'&enhavo='.urlencode($_POST['enhavo']).'#verku-novajxojn');
-		exit();
+		eraro(2);
 	}
-	$ret = mail($recipient, 'Proponita novaĵo: '.$_POST['titolo'], 'Tiu ĉi novaĵo estas proponita de '.$_POST['nomo'].' <'.$_POST['retposxtadreso'].">.\n\n".$_POST['enhavo'], 'From: '.$_POST['nomo'].' <'.$_POST['retposxtadreso'].">\r\nContent-type: text/plain; charset=utf-8");
+	if (!valida_retadreso($_POST['retposxtadreso'])) {
+		eraro(3);
+	}
+	$ret = mail($recipient, 'Proponita novaĵo: '.$_POST['titolo'], 'Tiu ĉi novaĵo estas proponita de '.$_POST['nomo'].' <'.$_POST['retposxtadreso'].">.\n\n".$_POST['enhavo']."\n\nFonto(j):\n".$_POST['fontoj'], 'From: '.$_POST['nomo'].' <'.$_POST['retposxtadreso'].">\r\nContent-type: text/plain; charset=utf-8");
 	page_header('Sendi novaĵon');
 	if ($ret)
 		echo '<div class="sukceso"><p>Via novaĵo estis sukcese sendita. Vi ricevos respondon baldaŭ. Dankon!</p><p>Eble vi emas <a href="./partoprenu#verku-novajxojn">verki plian novaĵon</a>? :-)</p></div>';
