@@ -10,11 +10,11 @@
   function updateCurrentSong(){
           $('#kanto').load('ajax/current_song.php');
   }
-  setInterval("updateCurrentSong()", 5000);
+  setInterval("updateCurrentSong()", 10000);
   function updateCurrentListeners(){
           $('#statistikoj').load('ajax/nombro_da_auxskultantoj.php');
   }
-  setInterval("updateCurrentListeners()", 1000);
+  setInterval("updateCurrentListeners()", 10000);
 </script>
 
 <!-- kantinformoj -->

@@ -10,7 +10,7 @@
   function updateCurrentListeners(){
           $('#statistikoj').load('ajax/nombro_da_auxskultantoj.php');
   }
-  setInterval("updateCurrentListeners()", 1000);
+  setInterval("updateCurrentListeners()", 10000);
 </script>
 
 <div id="now-playing">
