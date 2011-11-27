@@ -364,4 +364,21 @@ div.eraro {
 	margin-bottom: 10px;
 	border: solid red 1px; background-color: #FCC; padding: 5px;
 }
+#reklambendoj {
+	list-style-type: none;
+	padding: 0;
+	margin: 5px;
+}
+#reklambendoj li {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-bottom: solid #CCC 1px;
+}
+#reklambendoj textarea {
+	width: 470px;
+	height: 50px;
+}
+#reklambendoj .reklambendo .reklambendo-rezultato {
+	margin-bottom: 20px;
+}
 
