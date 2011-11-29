@@ -101,6 +101,58 @@ function SelectAll(id)
       <textarea id="reklambendobbcode1" onclick="SelectAll('reklambendobbcode1');">[url=http://www.muzaiko.info/][img]http://www.muzaiko.info/reklambendoj/rb1.png[/img][/url]</textarea>
     </div>
   </li>
+  <li class="reklambendo">
+    <div class="reklambendo-rezultato">
+      <a href="http://www.muzaiko.info/" title="Mojoseco kaj Muziko: Muzaiko!"><img src="reklambendoj/rb8.png" alt="Muzaiko - tuttempa esperanta retradio" style="border:0" /></a>
+    </div>
+    <div class="reklambendo-kodo-html">
+      <label for="reklambendohtml8">HTML</label>
+      <textarea id="reklambendohtml8" onclick="SelectAll('reklambendohtml8');">&lt;a href="http://www.muzaiko.info/" title="Mojoseco kaj Muziko: Muzaiko!"&gt;&lt;img src="http://www.muzaiko.info/reklambendoj/rb8.png" alt="Muzaiko - tuttempa esperanta retradio" style="border:0" /&gt;&lt;/a&gt;</textarea>
+    </div>
+    <div class="reklambendo-kodo-bbcode">
+      <label for="reklambendobbcode8">BBCode</label>
+      <textarea id="reklambendobbcode8" onclick="SelectAll('reklambendobbcode8');">[url=http://www.muzaiko.info/][img]http://www.muzaiko.info/reklambendoj/rb8.png[/img][/url]</textarea>
+    </div>
+  </li>
+  <li class="reklambendo">
+    <div class="reklambendo-rezultato">
+      <a href="http://www.muzaiko.info/" title="Mojoseco kaj Muziko: Muzaiko!"><img src="reklambendoj/rb9.png" alt="Muzaiko - tuttempa esperanta retradio" style="border:0" /></a>
+    </div>
+    <div class="reklambendo-kodo-html">
+      <label for="reklambendohtml9">HTML</label>
+      <textarea id="reklambendohtml9" onclick="SelectAll('reklambendohtml9');">&lt;a href="http://www.muzaiko.info/" title="Mojoseco kaj Muziko: Muzaiko!"&gt;&lt;img src="http://www.muzaiko.info/reklambendoj/rb9.png" alt="Muzaiko - tuttempa esperanta retradio" style="border:0" /&gt;&lt;/a&gt;</textarea>
+    </div>
+    <div class="reklambendo-kodo-bbcode">
+      <label for="reklambendobbcode9">BBCode</label>
+      <textarea id="reklambendobbcode9" onclick="SelectAll('reklambendobbcode9');">[url=http://www.muzaiko.info/][img]http://www.muzaiko.info/reklambendoj/rb9.png[/img][/url]</textarea>
+    </div>
+  </li>
+  <li class="reklambendo">
+    <div class="reklambendo-rezultato">
+      <a href="http://www.muzaiko.info/" title="Mojoseco kaj Muziko: Muzaiko!"><img src="reklambendoj/rb10.png" alt="Muzaiko - tuttempa esperanta retradio" style="border:0" /></a>
+    </div>
+    <div class="reklambendo-kodo-html">
+      <label for="reklambendohtml10">HTML</label>
+      <textarea id="reklambendohtml10" onclick="SelectAll('reklambendohtml10');">&lt;a href="http://www.muzaiko.info/" title="Mojoseco kaj Muziko: Muzaiko!"&gt;&lt;img src="http://www.muzaiko.info/reklambendoj/rb10.png" alt="Muzaiko - tuttempa esperanta retradio" style="border:0" /&gt;&lt;/a&gt;</textarea>
+    </div>
+    <div class="reklambendo-kodo-bbcode">
+      <label for="reklambendobbcode10">BBCode</label>
+      <textarea id="reklambendobbcode10" onclick="SelectAll('reklambendobbcode10');">[url=http://www.muzaiko.info/][img]http://www.muzaiko.info/reklambendoj/rb10.png[/img][/url]</textarea>
+    </div>
+  </li>
+  <li class="reklambendo">
+    <div class="reklambendo-rezultato">
+      <a href="http://www.muzaiko.info/" title="Mojoseco kaj Muziko: Muzaiko!"><img src="reklambendoj/rb11.png" alt="Muzaiko - tuttempa esperanta retradio" style="border:0" /></a>
+    </div>
+    <div class="reklambendo-kodo-html">
+      <label for="reklambendohtml11">HTML</label>
+      <textarea id="reklambendohtml11" onclick="SelectAll('reklambendohtml11');">&lt;a href="http://www.muzaiko.info/" title="Mojoseco kaj Muziko: Muzaiko!"&gt;&lt;img src="http://www.muzaiko.info/reklambendoj/rb11.png" alt="Muzaiko - tuttempa esperanta retradio" style="border:0" /&gt;&lt;/a&gt;</textarea>
+    </div>
+    <div class="reklambendo-kodo-bbcode">
+      <label for="reklambendobbcode11">BBCode</label>
+      <textarea id="reklambendobbcode11" onclick="SelectAll('reklambendobbcode11');">[url=http://www.muzaiko.info/][img]http://www.muzaiko.info/reklambendoj/rb11.png[/img][/url]</textarea>
+    </div>
+  </li>
 </ul>
 <?php
 right();
