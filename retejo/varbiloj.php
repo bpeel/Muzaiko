@@ -12,19 +12,6 @@ function SelectAll(id)
 <ul id="reklambendoj">
   <li class="reklambendo">
     <div class="reklambendo-rezultato">
-      <a href="http://www.muzaiko.info/" title="Mojoseco kaj Muziko: Muzaiko!"><img src="reklambendoj/rb1.png" alt="Muzaiko - tuttempa esperanta retradio" style="border:0" /></a>
-    </div>
-    <div class="reklambendo-kodo-html">
-      <label for="reklambendohtml1">HTML</label>
-      <textarea id="reklambendohtml1" onclick="SelectAll('reklambendohtml1');">&lt;a href="http://www.muzaiko.info/" title="Mojoseco kaj Muziko: Muzaiko!"&gt;&lt;img src="http://www.muzaiko.info/reklambendoj/rb1.png" alt="Muzaiko - tuttempa esperanta retradio" style="border:0" /&gt;&lt;/a&gt;</textarea>
-    </div>
-    <div class="reklambendo-kodo-bbcode">
-      <label for="reklambendobbcode1">BBCode</label>
-      <textarea id="reklambendobbcode1" onclick="SelectAll('reklambendobbcode1');">[url=http://www.muzaiko.info/][img]http://www.muzaiko.info/reklambendoj/rb1.png[/img][/url]</textarea>
-    </div>
-  </li>
-  <li class="reklambendo">
-    <div class="reklambendo-rezultato">
       <a href="http://www.muzaiko.info/" title="Mojoseco kaj Muziko: Muzaiko!"><img src="reklambendoj/rb2.png" alt="Muzaiko - tuttempa esperanta retradio" style="border:0" /></a>
     </div>
     <div class="reklambendo-kodo-html">
@@ -99,6 +86,19 @@ function SelectAll(id)
     <div class="reklambendo-kodo-bbcode">
       <label for="reklambendobbcode7">BBCode</label>
       <textarea id="reklambendobbcode7" onclick="SelectAll('reklambendobbcode7');">[url=http://www.muzaiko.info/][img]http://www.muzaiko.info/reklambendoj/rb7.png[/img][/url]</textarea>
+    </div>
+  </li>
+  <li class="reklambendo">
+    <div class="reklambendo-rezultato">
+      <a href="http://www.muzaiko.info/" title="Mojoseco kaj Muziko: Muzaiko!"><img src="reklambendoj/rb1.png" alt="Muzaiko - tuttempa esperanta retradio" style="border:0" /></a>
+    </div>
+    <div class="reklambendo-kodo-html">
+      <label for="reklambendohtml1">HTML</label>
+      <textarea id="reklambendohtml1" onclick="SelectAll('reklambendohtml1');">&lt;a href="http://www.muzaiko.info/" title="Mojoseco kaj Muziko: Muzaiko!"&gt;&lt;img src="http://www.muzaiko.info/reklambendoj/rb1.png" alt="Muzaiko - tuttempa esperanta retradio" style="border:0" /&gt;&lt;/a&gt;</textarea>
+    </div>
+    <div class="reklambendo-kodo-bbcode">
+      <label for="reklambendobbcode1">BBCode</label>
+      <textarea id="reklambendobbcode1" onclick="SelectAll('reklambendobbcode1');">[url=http://www.muzaiko.info/][img]http://www.muzaiko.info/reklambendoj/rb1.png[/img][/url]</textarea>
     </div>
   </li>
 </ul>
