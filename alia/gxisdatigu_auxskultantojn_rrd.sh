@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+RRD_FILE_NAME='/var/muzaiko/auxskultantoj.rdd'
+RRDTOOL='rrdtool'
+
+if [ ! -f ${RRD_FILE_NAME} ]
+then
+	STEP=60
+	VARIABLE_NAME='auxskultantoj'
+	DATA_SOURCE_TYPE='GAUGE'
+	HEARTBEAT=$STEP
+	MIN_VALUE=0
+	MAX_VALUE=1000000000
+
+	DAY_CONSOLIDATION_FUNCTION='AVERAGE'
+	DAY_XFF=0.5
+	DAY_STEP=$((3600 / STEP))
+	DAY_ROWS=24
+
+	MONTH_CONSOLIDATION_FUNCTION='AVERAGE'
+	MONTH_XFF=0.5
+	MONTH_STEP=$(((24 * 3600) / STEP))
+	MONTH_ROWS=31
+
+	CURRENT_TIMESTAMP=$(date '+%s')
+
+	${RRDTOOL} create "${RRD_FILE_NAME}" \
+		--start "${CURRENT_TIMESTAMP}" \
+		--step "${STEP}" \
+		"DS:${VARIABLE_NAME}:${DATA_SOURCE_TYPE}:${HEARTBEAT}:${MIN_VALUE}:${MAX_VALUE}" \
+		"RRA:${DAY_CONSOLIDATION_FUNCTION}:${DAY_XFF}:${DAY_STEP}:${DAY_ROWS}" \
+		"RRA:${MONTH_CONSOLIDATION_FUNCTION}:${MONTH_XFF}:${MONTH_STEP}:${MONTH_ROWS}"
+fi
+
+[ -w "${RRD_FILE_NAME}" ] || exit 1
+
+CURL='curl'
+
+URL="http://api.radionomy.com/currentaudience.cfm?radiouid=14694a7d-9023-4db1-86b4-d85d96cba181"
+
+AUXSKULTANTOJ=$(${CURL} --silent "${URL}")
+
+${RRDTOOL} update "${RRD_FILE_NAME}" N:${AUXSKULTANTOJ}
+
