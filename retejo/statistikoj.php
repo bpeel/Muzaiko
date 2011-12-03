@@ -24,7 +24,7 @@ create_graph("lasta-jaro.png", "-1y");
 
 ?>
 
-<h1>Lasta hoto</h1>
+<h1>Lasta horo</h1>
 <div><img src="lasta-horo.png" /></div>
 <h1>Lasta tago</h1>
 <div><img src="lasta-tago.png" /></div>
