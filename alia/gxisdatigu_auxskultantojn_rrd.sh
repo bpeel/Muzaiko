@@ -35,7 +35,6 @@ then
 	DAY_ROWS=3660 # high resolution decade
 
 	${RRDTOOL} create "${RRD_FILE_NAME}" \
-		--start 1322882810 \
 		--step "${STEP}" \
 		"DS:${VARIABLE_NAME}:${DATA_SOURCE_TYPE}:${HEARTBEAT}:${MIN_VALUE}:${MAX_VALUE}" \
 		"RRA:${AVERAGE_AUXSKULTANTOJ_CF}:${XFF}:${MINUTE_STEP}:${MINUTE_ROWS}" \
@@ -63,5 +62,5 @@ URL="http://api.radionomy.com/currentaudience.cfm?radiouid=14694a7d-9023-4db1-86
 
 AUXSKULTANTOJ=$(${CURL} --silent "${URL}")
 
-#${RRDTOOL} update "${RRD_FILE_NAME}" ${CURRENT_TIMESTAMP}:${AUXSKULTANTOJ}
+${RRDTOOL} update "${RRD_FILE_NAME}" ${CURRENT_TIMESTAMP}:${AUXSKULTANTOJ}
 
