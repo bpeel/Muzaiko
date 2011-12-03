@@ -19,19 +19,25 @@ function create_graph($output, $start) {
 
 create_graph("lasta-horo.png", "-1h");
 create_graph("lasta-tago.png", "-1d");
+create_graph("lasta-semajno.png", "-1w");
 create_graph("lasta-monato.png", "-1m");
 create_graph("lasta-jaro.png", "-1y");
+create_graph("lasta-jardeko.png", "-10y");
 
 ?>
 
-<h1>Lasta horo</h1>
+<h2>Lasta horo</h2>
 <div><img src="lasta-horo.png" /></div>
-<h1>Lasta tago</h1>
+<h2>Lasta tago</h2>
 <div><img src="lasta-tago.png" /></div>
-<h1>Lasta monato</h1>
+<h2>Lasta semajno</h2>
+<div><img src="lasta-semajno.png" /></div>
+<h2>Lasta monato</h2>
 <div><img src="lasta-monato.png" /></div>
-<h1>Lasta jaro</h1>
+<h2>Lasta jaro</h2>
 <div><img src="lasta-jaro.png" /></div>
+<h2>Lasta jardeko</h2>
+<div><img src="lasta-jardeko.png" /></div>
 
 <?
 
