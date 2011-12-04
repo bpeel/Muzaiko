@@ -21,7 +21,7 @@ rsync \
     --exclude=/novajxoj/.htaccess \
     --exclude=/hortabelo-originala.js \
     --exclude=/mallongigi-hortabelo.sh \
-    --exclude=/grafoj \
+    --exclude=/diagramoj \
     --rsh=ssh \
     --delete \
     "$@" \
