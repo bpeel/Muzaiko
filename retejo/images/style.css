@@ -74,13 +74,13 @@ list-style:none;padding:0 0 0 30px;margin:0px;display:block;
 list-style:none;display:inline;float:left;width:auto;padding:0px; font-size:15px; line-height:39px; 
 }
 #menu ul li a{
-float:left;text-decoration:none;padding:0px 10px 0 30px; margin:0px;color:#fff;text-align:center;
+float:left;text-decoration:none;padding:0px 15px 0 15px; margin:0px;color:#fff;text-align:center;
 }
 #menu ul li a:hover{
-text-decoration:underline;color: #fff;padding:0px 10px 0 30px;
+text-decoration:underline;color: #fff;padding:0px 15px 0 15px;
 }
 #menu ul li a.current{
-float:left;text-decoration:none;padding:0px 10px 0 30px;color: #fff;margin:0px;
+float:left;text-decoration:none;padding:0px 15px 0 15px;color: #fff;margin:0px;
 }
 
 .left_content{
