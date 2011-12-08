@@ -16,7 +16,7 @@ $cacheCall = './cache_callapi.txt';
 $date = "-1";
 
 // plej granda nombro de literoj antaux ol trancxi la cxenon
-$maxlen = 45;
+$maxlen = 60;
 
 if (substr(decoct(@fileperms($cacheCall)), 3, 3) != "777" && substr(decoct(@fileperms($cacheCall)), 3, 3) != "644" && !@chmod($cacheCall, 0777)) {
 	$teksto = 'Erreur ! Vous devez autoriser en écriture le fichier cache_callapi.txt';
