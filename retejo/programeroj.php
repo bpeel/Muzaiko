@@ -1,9 +1,10 @@
 <?php
 include('inc/inc.php');
-page_header('');
+page_header('Novaĵoj');
 ?>
 
-<h1>Novaĵoj</h1>
+<!-- <h1>Novaĵoj</h1> -->
+
 Novaĵoj el la tuta mondo por la tuta mondo, kiun redaktas por vi nia teamo ĉe <a target="_blank" href="https://groups.google.com/group/retradio-novajxoj">Retradio-novaĵoj</a>.
 <!--<a target="_blank" href="https://docs.google.com/document/d/1tEKmKe_OTNb_ZAZ1Dm3eVEXJ3K9sNeSy_yMPbwygCWY/edit?hl=en&authkey=CK7Hq6cH">Kiel verki radio-novaĵojn</a>
 -->

@@ -14,6 +14,7 @@ pli da informoj.
 	<ul>
 		<li><a href="https://groups.google.com/group/retradio-projekto" target="_blank" name="retradio-projekto">retradio-projekto</a></li>
 		<li><a href="https://groups.google.com/group/retradio-novajxoj" target="_blank" name="retradio-novajxoj">retradio-novaĵoj</a></li>
+		<li><a href="https://groups.google.com/group/retradio-babilaj-programeroj" target="_blank" name="retradio-babilaj-programeroj">retradio-babilaj-programeroj</a></li>
 		<li><a href="https://groups.google.com/group/varbado-pri-retradio" target="_blank" name="varbado-pri-retradio">varbado-pri-retradio</a></li>
 		<li><a href="https://groups.google.com/group/retradio-retpagxo" target="_blank" name="retradio-retpagxo">retradio-retpagxo</a></li>
 		<li><a href="https://groups.google.com/group/retradio-legxaj-kaj-budgxetaj-aferoj" target="_blank" name="retradio-legxaj-kaj-budgxetaj-aferoj">retradio-leĝaj-kaj-budĝetaj-aferoj</a></li>
@@ -24,7 +25,7 @@ pli da informoj.
 	Diversaj retpaĝoj rilatitaj al muzaiko.info:
 	<ul>
 		<li><a href="http://www.radionomy.com/en/radio/muzaikoinfo" target="_blank">Muzaiko ĉe Radionomy</a></li>
-		<li><a href="ftp://muzaiko.info/" target="_blank">FTP por elŝutaĵojn</a></li>
+		<li><a href="ftp://muzaiko.info/" target="_blank">FTP por elŝutaĵoj</a></li>
  		<li><a href="http://vikio.muzaiko.info/" target="_blank">Vikio</a></li>
  		<li><a href="http://cimoj.muzaiko.info/" target="_blank">Cimŝpurilo</a></li>
 <!-- 		<li><a href="http://muzaiko.info/sengit/drupal7/" target="_blank">Provpaĝo kun Drupalo</a></li>

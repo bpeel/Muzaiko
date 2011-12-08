@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<div id="header">
-			<h1><a href=".">Administrado de la novaĵoj</a></h1>
+			<h1><a href=".">Administrado de la novaĵoj pri muzaiko</a></h1>
 		</div>
 		<div id="content">
 		<?php
@@ -18,7 +18,7 @@
 			$errors = array();
 
 			mysql_connect($novajxoj_host, $novajxoj_uzantnomo, $novajxoj_pasvorto) or die(mysql_error());
-			mysql_select_db($novajxoj_datumbazo) or die(mysql_error());
+			mysql_select_db($novajxoj_pri_datumbazo) or die(mysql_error());
 
 			if (isset($_POST['registrado'])) {
 				$update = false;

@@ -11,6 +11,13 @@ demandi, simple skribu al <b>info (ĉe) muzaiko.info</b>. Ni klopodos respondi
 La teamo de Muzaiko tre ĝojos pro via mesaĝo, ĉar unu el la ĉefaj celoj de
 la projekto estas kunligi esperantistojn. :)
 </p>
+
+Vi povas ankaŭ babili kun ni tujmesaĝe:
+<ul>
+	<li>Per via IRC kliento ĉe #Muzaiko@freenode.net</li>
+	<li><a href="http://webchat.freenode.net?channels=Muzaiko&uio=d4" target="_blank">Per TTT IRC kliento</a> (tajpu kromnomon en la "Nickname" kampo, solvu la CAPTCHA kaj klaku sur "Connect")</li>
+</ul>
+
 <?php
 right();
 right_contents();

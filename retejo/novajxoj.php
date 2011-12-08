@@ -1,9 +1,9 @@
 <?php
 include('inc/inc.php');
-page_header('');
+page_header('Novaĵoj pri Muzaiko');
 ?>
 
-<h1 id="verku-novajxojn">Novaĵoj pri Muzaiko</h1>
+<!-- <h1 id="verku-novajxojn">Novaĵoj pri Muzaiko</h1> -->
 
 <!-- ================= -->
 <?php
@@ -11,7 +11,7 @@ page_header('');
 include_once "markdown.php";
 
 mysql_connect($novajxoj_host, $novajxoj_uzantnomo, $novajxoj_pasvorto) or die(mysql_error());
-mysql_select_db($novajxoj_datumbazo) or die(mysql_error());
+mysql_select_db($novajxoj_pri_datumbazo) or die(mysql_error());
 
 $query = "SELECT COUNT(*) FROM novajxo";
 $result = mysql_query($query);
@@ -53,14 +53,14 @@ if ($news_pages_count > 1) {
 ?>
 
 <!-- ================= -->
-<h1 id="verku-novajxojn">Novaĵoj de Muzaiko</h1>
+<h1 id="verku-novajxojn">Novaĵoj el la tuta mondo, por la tuta mondo</h1>
 
 <?php
 
 include_once "markdown.php";
 
 mysql_connect($novajxoj_host, $novajxoj_uzantnomo, $novajxoj_pasvorto) or die(mysql_error());
-mysql_select_db($novajxoj_datumbazo) or die(mysql_error());
+mysql_select_db($novajxoj_de_datumbazo) or die(mysql_error());
 
 $query = "SELECT COUNT(*) FROM novajxo";
 $result = mysql_query($query);

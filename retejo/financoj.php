@@ -1,9 +1,9 @@
 <?php
 include('inc/inc.php');
-page_header('');
+page_header('Financoj');
 ?>
 
-<h1>Financoj</h1>
+<!-- <h1>Financoj</h1> -->
 
 Bedaŭrinde kreante Muzaikon oni ja devas pensi pri kelkaj financaj aferoj. Se vi emas helpi pri ili, organizi ilin, vi estas tre bonvena!
 </br>
