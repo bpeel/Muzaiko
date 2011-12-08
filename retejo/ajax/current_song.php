@@ -126,16 +126,14 @@ else {
 	    }
 	
 	    if ( !empty($ligilo_vk) && !empty($ligilo_vk_mp3) ) {
-	      $teksto = '</br><a target="_blank" href="' . $ligilo_vk . '">Fizika albumo</a> - <a target="_blank" href="' . $ligilo_vk_mp3 . '">MP3</a>';
-         echo wordwrap ( $teksto ,  $maxlen , "<br>" , true);
+	      echo '</br><a target="_blank" href="' . $ligilo_vk . '">Fizika albumo</a> - <a target="_blank" href="' . $ligilo_vk_mp3 . '">MP3</a>';
+         
 	    }
 	    if ( !empty($ligilo_vk) && empty($ligilo_vk_mp3) ) {
-	      $teksto = '</br><a target="_blank" href="' . $ligilo_vk . '">Fizika albumo</a>';
-         echo wordwrap ( $teksto ,  $maxlen , "<br>" , true);
+	      echo '</br><a target="_blank" href="' . $ligilo_vk . '">Fizika albumo</a>';
 	    }
 	    if ( empty($ligilo_vk) && !empty($ligilo_vk_mp3) ) {
-	      $teksto = '</br><a target="_blank" href="' . $ligilo_vk_mp3 . '">MP3</a>';
-         echo wordwrap ( $teksto ,  $maxlen , "<br>" , true);
+	      echo '</br><a target="_blank" href="' . $ligilo_vk_mp3 . '">MP3</a>';
 	    }
 	
 	  }
