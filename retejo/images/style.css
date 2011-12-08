@@ -33,6 +33,11 @@ background:url(./header_bg.jpg) no-repeat top center;
 padding:17px 0 0 60px;
 float:left;
 }
+#kanto {
+clear:both;
+word-wrap: break-word;
+overflow: hidden;
+}
 .showtitle {
 text-align:right;
 font-weight:bold;
