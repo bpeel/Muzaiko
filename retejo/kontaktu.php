@@ -20,7 +20,7 @@ Vi povas ankaŭ babili kun ni tujmesaĝe:
 
 <h1>Sociaj retoj</h1>
 <ul>
-	<li><a href="http://eo-eo.facebook.com/pages/Muzaiko/205933802764796?_fb_noscript=1" target="_blank" name="Muzaiko ĉe vizaĝlibro">Muzaiko ĉe vizaĝlibro</a></li>
+	<li><a href="http://www.facebook.com/pages/Muzaiko/205933802764796" target="_blank" name="Muzaiko ĉe vizaĝlibro">Muzaiko ĉe vizaĝlibro</a></li>
 	<li><a href="https://twitter.com/Muzaiko" target="_blank" name="Muzaiko ĉe Twitter">Muzaiko ĉe Twitter</a></li>
 <ul>
 
