@@ -16,7 +16,8 @@ exec rsync \
     --exclude=/ajax/cache_api.txt \
     --exclude=/ajax/cache_callapi.txt \
     --exclude=/programo/.htaccess \
-    --exclude=/novajxoj/.htaccess \
+    --exclude=/novajxoj_de_muzaiko/.htaccess \
+    --exclude=/novajxoj_pri_muzaiko/.htaccess \
     --exclude=/hortabelo-originala.js \
     --exclude=/mallongigi-hortabelo.sh \
     --exclude=/diagramoj \
