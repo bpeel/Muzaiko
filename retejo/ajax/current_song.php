@@ -15,13 +15,18 @@ $cache = './cache_api.txt';
 $cacheCall = './cache_callapi.txt';
 $date = "-1";
 
+// plej granda nombro de literoj antaux ol trancxi la cxenon
+$maxlen = 45;
+
 if (substr(decoct(@fileperms($cacheCall)), 3, 3) != "777" && substr(decoct(@fileperms($cacheCall)), 3, 3) != "644" && !@chmod($cacheCall, 0777)) {
-	echo 'Erreur ! Vous devez autoriser en écriture le fichier cache_callapi.txt';
+	$teksto = 'Erreur ! Vous devez autoriser en écriture le fichier cache_callapi.txt';
+   echo wordwrap ( $teksto ,  $maxlen , "<br>" , true);
 	exit;
 }
 
 if (substr(decoct(@fileperms($cache)), 3, 3) != "777" && substr(decoct(@fileperms($cache)), 3, 3) != "644" && !@chmod($cache, 0777)) {
-	echo 'Erreur ! Vous devez autoriser en écriture le fichier cache_api.txt';
+	$teksto = 'Erreur ! Vous devez autoriser en écriture le fichier cache_api.txt';
+   echo wordwrap ( $teksto ,  $maxlen , "<br>" , true);
 	exit;
 }
 
@@ -54,15 +59,18 @@ if (@file_exists($cache) && $date > $expire && file_get_contents($cache) != "") 
 
 if($xml ===  FALSE)
 {
-	echo "Neebla ricevi la kantinformojn el Radionomy. :(";
+	$teksto = "Neebla ricevi la kantinformojn el Radionomy. :(";
+   echo wordwrap ( $teksto ,  $maxlen , "<br>" , true);
 }
 else {
 	if (empty($xml->track->artists)) {
-	  echo cxapeligu($xml->track->title);
+	  $teksto = cxapeligu($xml->track->title);
+     echo wordwrap ( $teksto ,  $maxlen , "<br>" , true);
 	}
 	else {
 	  if (!empty($xml->track->artists) && !empty($xml->track->title)) {
-	    echo cxapeligu($xml->track->artists . " - " . $xml->track->title);
+	    $teksto = cxapeligu($xml->track->artists . " - " . $xml->track->title);
+       echo wordwrap ( $teksto ,  $maxlen , "<br>" , true);
 	
 	    $artists = trim(addslashes(malcxapeligu($xml->track->artists)));
 	    $title = trim(addslashes(malcxapeligu($xml->track->title)));
@@ -118,13 +126,16 @@ else {
 	    }
 	
 	    if ( !empty($ligilo_vk) && !empty($ligilo_vk_mp3) ) {
-	      echo '</br><a target="_blank" href="' . $ligilo_vk . '">Fizika albumo</a> - <a target="_blank" href="' . $ligilo_vk_mp3 . '">MP3</a>';
+	      $teksto = '</br><a target="_blank" href="' . $ligilo_vk . '">Fizika albumo</a> - <a target="_blank" href="' . $ligilo_vk_mp3 . '">MP3</a>';
+         echo wordwrap ( $teksto ,  $maxlen , "<br>" , true);
 	    }
 	    if ( !empty($ligilo_vk) && empty($ligilo_vk_mp3) ) {
-	      echo '</br><a target="_blank" href="' . $ligilo_vk . '">Fizika albumo</a>';
+	      $teksto = '</br><a target="_blank" href="' . $ligilo_vk . '">Fizika albumo</a>';
+         echo wordwrap ( $teksto ,  $maxlen , "<br>" , true);
 	    }
 	    if ( empty($ligilo_vk) && !empty($ligilo_vk_mp3) ) {
-	      echo '</br><a target="_blank" href="' . $ligilo_vk_mp3 . '">MP3</a>';
+	      $teksto = '</br><a target="_blank" href="' . $ligilo_vk_mp3 . '">MP3</a>';
+         echo wordwrap ( $teksto ,  $maxlen , "<br>" , true);
 	    }
 	
 	  }
