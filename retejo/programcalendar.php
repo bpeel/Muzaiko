@@ -1,6 +1,7 @@
 <?php
 
 include('php-calendar.php');
+include_once('inc/programo.php');
 
 class ProgramCalendar extends Calendar {
 	function getCalendarLink($monato, $jaro) {
@@ -10,9 +11,7 @@ class ProgramCalendar extends Calendar {
 
 	function getDateLink($tago, $monato, $jaro) {
 		$query = "SELECT * FROM elsendo WHERE YEAR(date_begin) = $jaro AND MONTH(date_begin) = $monato AND DAY(date_begin) = $tago";
-		include('/var/muzaiko/programdatumbazensalutiloj.php');
-		mysql_connect($programo_host, $programo_uzantnomo, $programo_pasvorto) or die(mysql_error());
-		mysql_select_db($programo_datumbazo) or die(mysql_error());
+		konektu_al_programo();
 		$result = mysql_query($query);
 		mysql_close();
 		$link = '';

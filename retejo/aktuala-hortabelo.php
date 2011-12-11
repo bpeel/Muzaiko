@@ -1,4 +1,6 @@
 <?php
+include_once ("inc/programo.php");
+
 function sercxu_programon_por_dato ($dato)
 {
   $rezulto = mysql_query ("select unix_timestamp(`date_begin`), " .
@@ -81,9 +83,7 @@ function eligu_hortabelon ()
   global $programo_host, $programo_uzantnomo, $programo_pasvorto;
   global $programo_datumbazo;
 
-  mysql_connect ($programo_host, $programo_uzantnomo, $programo_pasvorto)
-    or die (mysql_error ());
-  mysql_select_db ($programo_datumbazo) or die (mysql_error ());
+  konektu_al_programo ();
 
   /* Serĉu la programeron kiu komenciĝos plej proksime al la nuna horo
      sen komenci post nun */

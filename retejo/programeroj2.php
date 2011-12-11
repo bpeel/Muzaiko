@@ -1,9 +1,9 @@
 <?php
 include('inc/inc.php');
+include('inc/programo.php');
 page_header('Programeroj');
 
-mysql_connect($programo_host, $programo_uzantnomo, $programo_pasvorto) or die(mysql_error());
-mysql_select_db($programo_datumbazo) or die(mysql_error());
+konektu_al_programo ();
 
 $query = "SELECT id, description FROM programero";
 $result = mysql_query($query);

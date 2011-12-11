@@ -1,5 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
+<?php
+include_once('../inc/programo.php');
+?>
+
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="eo">
 	<head>
 		<title>Verki la programon</title>
@@ -48,8 +52,7 @@
 					return false;
 			}
 
-			mysql_connect($programo_host, $programo_uzantnomo, $programo_pasvorto) or die(mysql_error());
-			mysql_select_db($programo_datumbazo) or die(mysql_error());
+			konektu_al_programo();
 
 			if (isset($_POST['registrado'])) {
 				$update = false;

@@ -1,5 +1,6 @@
 <?php
 include('./inc/inc.php');
+include_once('./inc/programo.php');
 include('./programcalendar.php');
 page_header('Bonvenon al Muzaiko!', '');
 // preparu la hodiauxan daton laux UTC por poste
@@ -98,8 +99,7 @@ printf('</div>');
 if ($jaro != 0 && $monato != 0 && $tago != 0) {
 	$query = "SELECT DATE_FORMAT(date_begin, '%H:%i'), DATE_FORMAT(date_end, '%H:%i'), description FROM programero, elsendo WHERE programero.id = elsendo.programero_id AND YEAR(date_begin) = $jaro AND MONTH(date_begin) = $monato AND DAY(date_begin) = $tago";
 
-	mysql_connect($programo_host, $programo_uzantnomo, $programo_pasvorto) or die(mysql_error());
-	mysql_select_db($programo_datumbazo) or die(mysql_error());
+	konektu_al_programo();
 
 	$result = mysql_query($query);
 
