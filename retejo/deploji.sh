@@ -23,6 +23,7 @@ rsync \
     --exclude=/hortabelo-originala.js \
     --exclude=/mallongigi-hortabelo.sh \
     --exclude=/diagramoj \
+    --exclude=/podkasto \
     --rsh=ssh \
     --delete \
     "$@" \
