@@ -35,10 +35,10 @@ def faru_titolon(titolo, priskribo):
 
     return titolo
 
-db = MySQLdb.connect(passwd = pkagordoj.db_passwd,
-                     db = pkagordoj.db_db,
-                     host = pkagordoj.db_host,
-                     user = pkagordoj.db_user,
+db = MySQLdb.connect(passwd = pkagordoj.get("db_passwd"),
+                     db = pkagordoj.get("db_db"),
+                     host = pkagordoj.get("db_host"),
+                     user = pkagordoj.get("db_user"),
                      charset = "utf8")
 
 cur = db.cursor()
@@ -50,12 +50,12 @@ for row in cur:
     titolo = faru_titolon(titolo, priskribo)
 
     subprocess.call(["espeak", "-v", "eo",
-                     "-w", (pkagordoj.loko_de_programeroj +
+                     "-w", (pkagordoj.get("loko_de_programeroj") +
                             "/programero-" + str(id) + "-1.wav"),
                      (u"Programero " + str(id) + u"." +
                       u"la titolo estas \"" + titolo + u"\"").encode("utf-8")])
     subprocess.call(["espeak", "-v", "eo",
-                     "-w", (pkagordoj.loko_de_programeroj +
+                     "-w", (pkagordoj.get("loko_de_programeroj") +
                             "/programero-" + str(id) + "-2.wav"),
                      "Jen la dua sondosiero de la programero " + str(id)])
 
