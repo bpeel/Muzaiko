@@ -60,12 +60,13 @@ def faru_item(cur, dato):
 
     ET.SubElement(item, "description").text = priskribo
 
-    url = pkagordoj.url_radiko + "/podkasto-" + cxendato + ".mp3"
+    url = pkagordoj.get("url_radiko") + "/podkasto-" + cxendato + ".mp3"
     enc = ET.SubElement(item, "enclosure")
     enc.set("url", url)
     enc.set("type", "audio/mpeg")
-    enc.set("length", str(os.path.getsize(pkagordoj.loko_de_podkastajxoj +
-                                          "/podkasto-" + cxendato + ".mp3")))
+    enc.set("length",
+            str(os.path.getsize(pkagordoj.get("loko_de_podkastajxoj") +
+                                "/podkasto-" + cxendato + ".mp3")))
 
     return item
 
@@ -87,10 +88,10 @@ hodiaux_tempo = datetime.datetime(hodiaux_dato.year,
                                   12)
 hodiaux = hodiaux_tempo.strftime("%Y-%m-%d")
 
-db = MySQLdb.connect(passwd = pkagordoj.db_passwd,
-                     db = pkagordoj.db_db,
-                     host = pkagordoj.db_host,
-                     user = pkagordoj.db_user,
+db = MySQLdb.connect(passwd = pkagordoj.get("db_passwd"),
+                     db = pkagordoj.get("db_db"),
+                     host = pkagordoj.get("db_host"),
+                     user = pkagordoj.get("db_user"),
                      charset = "utf8")
 
 cur = db.cursor()
@@ -105,7 +106,7 @@ cur.execute("select `sondosiero`.`nomo` "
             "`sondosiero`.`nomo`",
             hodiaux)
 
-dosieroj = [pkagordoj.loko_de_programeroj + "/" + row[0] for row in cur]
+dosieroj = [pkagordoj.get("loko_de_programeroj") + "/" + row[0] for row in cur]
 
 if len(dosieroj) < 1:
     print >> sys.stderr, "neniuj programeroj troviĝis por " + hodiaux
@@ -117,7 +118,7 @@ res = subprocess.call(["sox"] + dosieroj +
                       ["-c", "1",
                        "-r", "44100",
                        "-V1",
-                       pkagordoj.loko_de_podkastajxoj +
+                       pkagordoj.get("loko_de_podkastajxoj") +
                        "/podkasto-" + hodiaux + ".wav"])
 
 if res != 0:
@@ -127,9 +128,9 @@ if res != 0:
 # Malgrandigu per lame
 
 res = subprocess.call(["lame", "--quiet",
-                       pkagordoj.loko_de_podkastajxoj +
+                       pkagordoj.get("loko_de_podkastajxoj") +
                        "/podkasto-" + hodiaux + ".wav",
-                       pkagordoj.loko_de_podkastajxoj +
+                       pkagordoj.get("loko_de_podkastajxoj") +
                        "/podkasto-" + hodiaux + ".mp3"])
 
 if res != 0:
@@ -139,9 +140,9 @@ if res != 0:
 # Kaj per oggenc
 
 res = subprocess.call(["oggenc", "--quiet",
-                       "-o", (pkagordoj.loko_de_podkastajxoj +
+                       "-o", (pkagordoj.get("loko_de_podkastajxoj") +
                               "/podkasto-" + hodiaux + ".ogg"),
-                       pkagordoj.loko_de_podkastajxoj +
+                       pkagordoj.get("loko_de_podkastajxoj") +
                        "/podkasto-" + hodiaux + ".wav"])
 
 # Serĉu jam ekzistantajn podkasterojn
@@ -150,7 +151,7 @@ pkre = re.compile(r"^podkasto-([0-9]{4})-([0-9]{2})-([0-9]{2})\.([a-z0-9]+)$")
 
 datoj = []
 
-for fn in os.listdir(pkagordoj.loko_de_podkastajxoj):
+for fn in os.listdir(pkagordoj.get("loko_de_podkastajxoj")):
     match = pkre.match(fn)
 
     if match:
@@ -160,7 +161,7 @@ for fn in os.listdir(pkagordoj.loko_de_podkastajxoj):
         ext = match.group(4)
         # Se la dosiero tro malnovas, forigu ĝin
         if (hodiaux_dato - dato).days >= MAKSIMUMA_AGXO:
-            os.remove(pkagordoj.loko_de_podkastajxoj + "/" + fn)
+            os.remove(pkagordoj.get("loko_de_podkastajxoj") + "/" + fn)
         elif ext == "mp3":
             datoj.append(dato)
 
@@ -192,4 +193,4 @@ for dato in datoj:
 
 # Eligu la RSS-dosieron
 arbo = ET.ElementTree(rss)
-arbo.write(pkagordoj.rss_dosiero)
+arbo.write(pkagordoj.get("rss_dosiero"))
