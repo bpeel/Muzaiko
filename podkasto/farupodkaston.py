@@ -165,7 +165,7 @@ for fn in os.listdir(pkagordoj.get("loko_de_podkastajxoj")):
         elif ext == "mp3":
             datoj.append(dato)
 
-datoj.sort()
+datoj.sort(reverse = True)
 
 # Kreu la arbon por la RSS-dosiero
 rss = ET.Element("rss")
