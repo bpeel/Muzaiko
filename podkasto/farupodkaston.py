@@ -61,7 +61,7 @@ def faru_item(cur, dato):
 
     ET.SubElement(item, "description").text = priskribo
 
-    url = pkagordoj.get("url_radiko") + "/podkasto-" + cxendato + ".mp3"
+    url = pkagordoj.get("pk_url_radiko") + "/podkasto-" + cxendato + ".mp3"
     enc = ET.SubElement(item, "enclosure")
     enc.set("url", url)
     enc.set("type", "audio/mpeg")
@@ -215,4 +215,4 @@ for dato in datoj:
 
 # Eligu la RSS-dosieron
 arbo = ET.ElementTree(rss)
-arbo.write(pkagordoj.get("rss_dosiero"))
+arbo.write(pkagordoj.get("pk_rss_dosiero"))
