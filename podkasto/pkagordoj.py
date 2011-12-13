@@ -4,7 +4,7 @@
 import ConfigParser
 
 _conf = ConfigParser.RawConfigParser()
-_conf.read("/var/muzaiko/podkasto-agordoj.ini")
+_conf.read("/var/muzaiko/programagordoj.ini")
 
 def get(nomo):
     return _conf.get("agordoj", nomo)

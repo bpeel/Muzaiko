@@ -17,8 +17,6 @@ include_once('../inc/programo.php');
 		</div>
 		<div id="content">
 		<?php
-			require_once('/var/muzaiko/programdatumbazensalutiloj.php');
-
 			$success = array();
 			$errors = array();
 
