@@ -11,6 +11,7 @@ import xml.etree.ElementTree as ET
 import os
 import cgi
 import string
+import tempfile
 
 # Maksimuma aĝo en tagoj post kiu dosiero foriĝos
 MAKSIMUMA_AGXO = 7
@@ -112,24 +113,44 @@ if len(dosieroj) < 1:
     print >> sys.stderr, "neniuj programeroj troviĝis por " + hodiaux
     exit(1)
 
-# Kunigu la dosierojn kaj ŝanĝi ilin al MP3 per SoX
+# Kunigu la dosierojn per SoX. Per SoX ne eblas kunigi dosierojn kiuj
+# havas malsamajn poecojn do ni devas unue ŝanĝi ilin en portempajn
+# dosierojn
 
-res = subprocess.call(["sox"] + dosieroj +
-                      ["-c", "1",
-                       "-r", "44100",
-                       "-V1",
-                       pkagordoj.get("loko_de_podkastajxoj") +
-                       "/podkasto-" + hodiaux + ".wav"])
+temp_files = []
 
-if res != 0:
-    print >> sys.stderr, "sox malsukcesis"
-    exit(res)
+for dosiero in dosieroj:
+    temp_file = tempfile.NamedTemporaryFile(delete = True)
+    temp_files.append(temp_file)
+
+    res = subprocess.call(["sox",
+                           dosiero,
+                           "-c", "1",
+                           "-r", "44100",
+                           "-V1",
+                           "-t", "wav",
+                           temp_file.name])
+
+    if res != 0:
+        print >> sys.stderr, "sox malsukcesis"
+        exit(res)
+
+kunigita_dosiero = tempfile.NamedTemporaryFile(delete = True)
+
+res = subprocess.call(["sox"] +
+                      [item for sublist in [["-t", "wav", x.name]
+                                            for x in temp_files]
+                       for item in sublist] +
+                      ["-t", "wav",
+                       kunigita_dosiero.name])
+
+for dosiero in temp_files:
+    dosiero.close()
 
 # Malgrandigu per lame
 
 res = subprocess.call(["lame", "--quiet",
-                       pkagordoj.get("loko_de_podkastajxoj") +
-                       "/podkasto-" + hodiaux + ".wav",
+                       kunigita_dosiero.name,
                        pkagordoj.get("loko_de_podkastajxoj") +
                        "/podkasto-" + hodiaux + ".mp3"])
 
@@ -142,8 +163,9 @@ if res != 0:
 res = subprocess.call(["oggenc", "--quiet",
                        "-o", (pkagordoj.get("loko_de_podkastajxoj") +
                               "/podkasto-" + hodiaux + ".ogg"),
-                       pkagordoj.get("loko_de_podkastajxoj") +
-                       "/podkasto-" + hodiaux + ".wav"])
+                       kunigita_dosiero.name])
+
+kunigita_dosiero.close()
 
 # Serĉu jam ekzistantajn podkasterojn
 
