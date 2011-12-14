@@ -381,4 +381,10 @@ div.eraro {
 #reklambendoj .reklambendo .reklambendo-rezultato {
 	margin-bottom: 20px;
 }
-
+ul.sociaj-retoj {
+    padding: 0;
+}
+ul.sociaj-retoj li {
+    list-style-type: none;
+    display: inline;
+}

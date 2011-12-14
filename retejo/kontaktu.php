@@ -19,9 +19,9 @@ Vi povas ankaŭ babili kun ni tujmesaĝe:
 </ul>
 
 <h1>Sociaj retoj</h1>
-<ul>
-	<li><a href="http://www.facebook.com/pages/Muzaiko/205933802764796" target="_blank" name="Muzaiko ĉe vizaĝlibro">Muzaiko ĉe vizaĝlibro</a></li>
-	<li><a href="https://twitter.com/Muzaiko" target="_blank" name="Muzaiko ĉe Twitter">Muzaiko ĉe Twitter</a></li>
+<ul class="sociaj-retoj">
+	<li><a href="http://www.facebook.com/pages/Muzaiko/205933802764796" target="_blank" title="Muzaiko ĉe vizaĝlibro"><img src="./images/facebook.png" alt="Muzaiko ĉe vizaĝlibro" /></a></li>
+	<li><a href="https://twitter.com/Muzaiko" target="_blank" title="Muzaiko ĉe Twitter"><img src="./images/twitter.png" alt="Muzaiko ĉe Twitter" /></a></li>
 <ul>
 
 <?php
