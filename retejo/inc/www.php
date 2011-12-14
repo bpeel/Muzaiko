@@ -113,6 +113,14 @@ function right($title='') {
 </ul>
 </div>
 
+<div class="dekstra_titolo">Sociaj retoj</div>
+<div class="dekstra_teksto">
+<ul class="sociaj-retoj">
+	<li><a href="http://www.facebook.com/pages/Muzaiko/205933802764796" target="_blank" title="Muzaiko ĉe vizaĝlibro"><img src="./images/facebook.png" alt="Muzaiko ĉe vizaĝlibro" /></a></li>
+	<li><a href="https://twitter.com/Muzaiko" target="_blank" title="Muzaiko ĉe Twitter"><img src="./images/twitter.png" alt="Muzaiko ĉe Twitter" /></a></li>
+<ul>
+</div>
+
 <div class="dekstra_titolo">Partneroj:</div>
 <a target="_blank" href="http://vinilkosmo.com"><img src="images/vinilkosmo.gif" alt="logotipo de vinilkosmo.com kun ligilo al gxi"></a>
 <a target="_blank" href="http://vinilkosmo-mp3.com"><img src="images/vinilkosmo-mp3.gif" alt="logotipo de vinilkosmo-mp3.com kun ligilo al gxi"></a>
