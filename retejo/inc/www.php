@@ -1,6 +1,6 @@
 <?php
 
-function page_header($title, $headtitle=NULL) {
+function page_header($title, $headtitle=NULL, $extra_head=NULL) {
 	if ($headtitle===NULL) $headtitle = $title;
 	if ($headtitle!='') $headtitle .= ' - ';
 
@@ -18,6 +18,7 @@ function dodates() {
 <link rel="stylesheet" type="text/css" href="images/style.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="images/style_calendar.css" media="screen" />
 <link rel="icon" type="image/png" href="images/favicon.png" />
+<?php if (isset($extra_head)) { print($extra_head); } ?>
 </head>
 
 <body>
