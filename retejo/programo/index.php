@@ -2,6 +2,143 @@
 
 <?php
 include_once('../inc/programo.php');
+
+function is_in_sorted_array($needle, $haystack)
+{
+  /* Binary search for the file assuming the haystack is sorted */
+  $min = 0;
+  $max = count($haystack);
+
+  while ($max > $min)
+    {
+      $mid = floor(($max + $min) / 2);
+
+      if ($haystack[$mid] == $needle)
+        return TRUE;
+      else if ($haystack[$mid] < $needle)
+        $min = $mid + 1;
+      else
+        $max = $mid;
+    }
+
+  return FALSE;
+}
+
+function get_unused_files($jes_dosieroj)
+{
+  global $programagordoj;
+
+  /* Get a sorted list of all the files already used */
+  $result = mysql_query("select `nomo` from `sondosiero` order by `nomo` " .
+                        "collate utf8_bin");
+  $used_files = array();
+  while ($row = mysql_fetch_array($result, MYSQL_NUM))
+    $used_files[] = stripslashes($row[0]);
+  mysql_free_result($result);
+
+  /* Get a list of all the files on the system but filter out all the
+     ones that are already used */
+  $unused_files = array();
+  $dir = opendir($programagordoj["loko_de_programeroj"])
+    or die("failed to list sound files");
+  while (($fn = readdir($dir)) !== FALSE)
+    if ($fn[0] != "." &&
+        !is_in_sorted_array($fn, $used_files) &&
+        !is_in_sorted_array($fn, $jes_dosieroj))
+      $unused_files[] = $fn;
+  closedir($dir);
+
+  sort($unused_files);
+
+  return $unused_files;
+}
+
+function get_files_for_program($program_id)
+{
+  $result = mysql_query("select `nomo` from `sondosiero` " .
+                        "where `programero` = " . $program_id . " " .
+                        "order by `nomo` collate utf8_bin")
+    or die("mysql error " . mysql_error());
+  $files = array();
+  while ($row = mysql_fetch_array($result, MYSQL_NUM))
+    $files[] = stripslashes($row[0]);
+  mysql_free_result($result);
+
+  return $files;
+}
+
+function generate_file_selection($redaktado, $redaktado_id)
+{
+  print("<script type=\"text/javascript\">\n");
+  include("programo-js.php");
+  print("</script>\n");
+
+  if ($redaktado)
+    {
+      if (isset($_POST["sondosieroj"]))
+        $jes_dosieroj = $_POST["sondosieroj"];
+      else
+        $jes_dosieroj = get_files_for_program($redaktado_id);
+    }
+  else
+    $jes_dosieroj = array();
+
+  print("<p>Sondosieroj por la podkasto:</p>\n" .
+        "<div>\n" .
+        "<div style=\"display:inline-block;padding-left:20px\">\n" .
+        "Neinkluzivotaj dosieroj:<br />\n" .
+        "<select id=\"nedosieroj\" multiple=\"multiple\" size=\"8\" " .
+        "style=\"width:300px\">\n");
+
+  foreach (get_unused_files($jes_dosieroj) as $file)
+    print("<option>" . htmlentities($file) . "</option>\n");
+
+  print("</select>\n" .
+        "</div>\n" .
+        "<div style=\"display:inline-block;padding-left:20px;" .
+        "vertical-align:top\">\n" .
+        "<button onclick=\"inkluzivuDosierojn()\" " .
+        "type=\"button\">→</button><br />\n" .
+        "<button onclick=\"malinkluzivuDosierojn()\" " .
+        "type=\"button\">←</button>\n" .
+        "</div>\n" .
+        "<div style=\"display:inline-block;padding-left:20px\">\n" .
+        "Inkluzivotaj dosieroj:<br />" .
+        "<select id=\"jesdosieroj\" multiple=\"multiple\" size=\"8\" " .
+        "style=\"width:300px\">\n");
+
+  foreach ($jes_dosieroj as $file)
+    print("<option>" . htmlentities($file) . "</option>\n");
+
+  print("</select>\n" .
+        "</div>\n" .
+        "</div>\n");
+}
+
+function konservu_sondosierojn($programero_id, &$success, &$errors)
+{
+  mysql_query("delete from `sondosiero` where `programero` = '" .
+              addslashes($programero_id) . "'");
+
+  if (empty($_POST['sondosieroj']))
+    return;
+
+  foreach ($_POST['sondosieroj'] as $dosiero)
+    {
+      $res = mysql_query("insert into `sondosiero` (`programero`, `nomo`) " .
+                         "values ('" . addslashes($programero_id) . "', '" .
+                         addslashes($dosiero) . "')");
+
+      if ($res)
+        array_push($success,
+                   "Dosiero \"" . htmlentities($dosiero) .
+                   "\" sukcese registrita");
+      else
+        array_push($errors,
+                   "Dosiero \"" . htmlentities($dosiero) .
+                   "\" malsukcese registrita");
+    }
+}
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="eo">
@@ -89,6 +226,8 @@ include_once('../inc/programo.php');
 							} else
 								array_push($errors, 'Ekdato "'.htmlspecialchars($_POST['ekoj'][$key]).'" kaj findato "'.htmlspecialchars($_POST['finoj'][$key]).'" ne registreblaj. Ĉu ili estas validaj?');
 						}
+
+                                                konservu_sondosierojn($programero_id, $success, $errors);
 					}
 
 
@@ -168,7 +307,7 @@ include_once('../inc/programo.php');
 		?>
 		<fieldset>
 			<legend><?php echo ($redaktado ? 'Redakti' : 'Aldoni novan') ?> programeron</legend>
-			<form action="." method="post">
+			<form action="." method="post" id="redaktkamparo">
 				<input type="hidden" name="update" value="<?php echo ($redaktado ? $redaktado_id : '') ?>" />
 				<label for="programero">Programero</label>
 				<input type="text" name="programero" class="programero_input" placeholder="Titolo de la programero" value="<?php echo (isset($_GET['redakti']) ? htmlspecialchars(stripslashes($redaktado_titolo)) : '') ?>" /><br />
@@ -203,7 +342,8 @@ include_once('../inc/programo.php');
 						?>
 				</div>
 				<input type="button" value="Aldoni daton" onclick="aldoniDaton();" /><br />
-				<input type="submit" name="registrado" value="<?php echo ($redaktado ? 'Registri la ŝanĝojn' : 'Registri tiun novan programeron') ?>" />
+				<?php generate_file_selection($redaktado, $redaktado_id); ?>
+				<input type="submit" name="registrado" value="<?php echo ($redaktado ? 'Registri la ŝanĝojn' : 'Registri tiun novan programeron') ?>" onclick="gxisdatiguSondosierojn();" />
 				<input type="submit" name="nuligi" value="Nuligi" />
 			</form>
 		</fieldset>
