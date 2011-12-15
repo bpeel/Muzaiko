@@ -32,6 +32,11 @@ def faru_ligilojn(cxen):
 
     return cxen
 
+def phpigu_cxenon(cxeno, cgi_escape = False):
+    if cgi_escape:
+        cxeno = cgi.escape(cxeno)
+    return re.sub(r"[\\\"]", lambda(match): "\\" + match.group(0), cxeno)
+
 def faru_item(cur, dato):
     item = ET.Element("item")
 
@@ -56,20 +61,27 @@ def faru_item(cur, dato):
     for row in cur:
         programeroj.append(faru_ligilojn(row[0]))
 
-    priskribo = ("<p>La programo por " + cxendato + " estas:</p>" +
-                 string.join(["<p>" + x + "</p>" for x in programeroj]))
+    priskribo = string.join(["<p>" + x + "</p>" for x in programeroj])
 
     ET.SubElement(item, "description").text = priskribo
 
-    url = pkagordoj.get("pk_url_radiko") + "/podkasto-" + cxendato + ".mp3"
+    baza_adreso = pkagordoj.get("pk_url_radiko") + "/podkasto-" + cxendato
+    mp3_url = baza_adreso + ".mp3"
+    ogg_url = baza_adreso + ".ogg"
+
     enc = ET.SubElement(item, "enclosure")
-    enc.set("url", url)
+    enc.set("url", mp3_url)
     enc.set("type", "audio/mpeg")
     enc.set("length",
             str(os.path.getsize(pkagordoj.get("loko_de_podkastajxoj") +
                                 "/podkasto-" + cxendato + ".mp3")))
 
-    return item
+    html = ("array(\"dato\" => \"" + phpigu_cxenon(cxendato) + "\", " +
+            "\"mp3\" => \"" + phpigu_cxenon(mp3_url) + "\", " +
+            "\"ogg\" => \"" + phpigu_cxenon(ogg_url) + "\", " +
+            "\"priskribo\" => \"" + phpigu_cxenon(priskribo, False) + "\"),")
+
+    return [item, html]
 
 if len(sys.argv) > 1:
     match = re.match(r"^([0-9]{4})-([0-9]{1,2})-([0-9]{1,2})$", sys.argv[1])
@@ -209,10 +221,20 @@ ET.SubElement(image, "url").text = "http://muzaiko.info/reklambendoj/rb7.png"
 ET.SubElement(image, "title").text = "Muzaiko"
 ET.SubElement(image, "link").text = "http://muzaiko.info/"
 
+html = ["<?php $podkastajxoj = array("]
+
 for dato in datoj:
     # Faru 'item' por la dato
-    channel.append(faru_item(cur, dato))
+    (item, item_html) = faru_item(cur, dato)
+    channel.append(item)
+    html.append(item_html)
+
+html.append(");?>")
 
 # Eligu la RSS-dosieron
 arbo = ET.ElementTree(rss)
 arbo.write(pkagordoj.get("pk_rss_dosiero"))
+
+out = open(pkagordoj.get("loko_de_podkastajxoj") + "/podkastajxoj.php", "w")
+out.write(string.join(html, "").encode("utf-8"))
+out.close()
