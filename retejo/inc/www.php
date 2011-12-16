@@ -95,7 +95,7 @@ function right($title='') {
 <div class="dekstra_titolo">Babilu kun ni tujmesaĝe:</div>
 <div class="dekstra_teksto">
 <ul>
-	<li>Per via IRC kliento ĉe #Muzaiko@freenode.net</li>
+	<li>Per via IRC kliento ĉe #Muzaiko@freenode.net (<a href="https://vikio.muzaiko.info/index.php/IRC">klarigoj ĉe la vikio</a>)</li>
 	<li><a href="http://webchat.freenode.net?channels=Muzaiko&uio=d4" target="_blank">Per TTT IRC kliento</a> (tajpu kromnomon en la "Nickname" kampo, solvu la CAPTCHA kaj klaku sur "Connect")</li>
 </ul>
 </div>
