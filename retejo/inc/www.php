@@ -97,7 +97,6 @@ function right($title='') {
 <ul>
 	<li>Per via IRC kliento ĉe #Muzaiko@freenode.net (<a href="https://vikio.muzaiko.info/index.php/IRC">klarigoj ĉe la vikio</a>)</li>
 	<li><a href="http://webchat.freenode.net?channels=Muzaiko&uio=d4" target="_blank">Per TTT IRC kliento</a> (tajpu kromnomon en la "Nickname" kampo, solvu la CAPTCHA kaj klaku sur "Connect")</li>
-        <li>Estos renkontiĝo por ĉiuj hodiaŭ je <a href="http://www.thetimezoneconverter.com/?t=21:30&tz=UTC">21:30 UTC</a> ĉe la IRC-kanalo.</li>
 </ul>
 </div>
 
