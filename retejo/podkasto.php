@@ -14,9 +14,10 @@ page_header('Podkasto', NULL,
 </a>
 </div>
 <p>
-La podkasto estas ĉiutaga muntaĵo de la parolaj partoj de Muzaiko. Ĝi
-ĝisdatiĝas je la 3a laŭ UTC ĉiumatene. Por aŭskulti la podkaston per
-via podkastilo (ekzemple per iTunes), klaku la dekstran oranĝan bildon.
+La podkasto estas ĉiutaga muntaĵo de la parolaj partoj de
+Muzaiko. Ĉiumatene je la 3a laŭ UTC, la programo de la pasinta tago
+aŭtomate aperos. Por aŭskulti la podkaston per via podkastilo
+(ekzemple per iTunes), klaku la dekstran oranĝan bildon.
 </p>
 <?php
 foreach ($podkastajxoj as $pk)

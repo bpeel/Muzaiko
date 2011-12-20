@@ -16,6 +16,9 @@ import tempfile
 # Maksimuma aĝo en tagoj post kiu dosiero foriĝos
 MAKSIMUMA_AGXO = 7
 
+# Malfruo en tagoj post kio la podkasto haveblos
+ELDONMALFRUO = 1
+
 def kiel_rfc822(tempo):
     return tempo.strftime("%a, %d %b %Y %H:%M:%S UTC")
 
@@ -48,7 +51,8 @@ def faru_item(cur, dato):
                                    dato.month,
                                    dato.day,
                                    3)
-    ET.SubElement(item, "pubDate").text = kiel_rfc822(dato_tempo)
+    ET.SubElement(item, "pubDate").text = \
+        kiel_rfc822(dato_tempo + datetime.timedelta(days = ELDONMALFRUO))
 
     # Serĉu ĉiujn priskribojn de tiu tago
     programeroj = []
@@ -93,7 +97,7 @@ if len(sys.argv) > 1:
         print >> sys.stderr, "uzado: farupodkaston.py [JJJJ-MM-TT]"
         exit(1)
 else:
-    hodiaux_dato = datetime.date.today()
+    hodiaux_dato = datetime.date.today() - datetime.timedelta(days = ELDONMALFRUO)
 
 hodiaux_tempo = datetime.datetime(hodiaux_dato.year,
                                   hodiaux_dato.month,
