@@ -11,7 +11,7 @@ function eraro($n) {
 function valida_retadreso($email) {
 	$atom   = '[-a-z0-9!#$%&\'*+\\/=?^_`{|}~]';
 	$domain = '([a-z0-9]([-a-z0-9]*[a-z0-9]+)?)';
-	                               
+
 	$regex = '/^' . $atom . '+' .
 		'(\.' . $atom . '+)*' .
 		'@' .
@@ -31,7 +31,7 @@ if (empty($_POST['kontrauxspamo'])) {
 	if (!valida_retadreso($_POST['retposxtadreso'])) {
 		eraro(3);
 	}
-	$ret = mail($recipient, 'Proponita novaĵo: '.$_POST['titolo'], 'Tiu ĉi novaĵo estas proponita de '.$_POST['nomo'].' <'.$_POST['retposxtadreso'].">.\n\n".$_POST['enhavo']."\n\nFonto(j):\n".$_POST['fontoj'], 'From: '.$_POST['nomo'].' <'.$_POST['retposxtadreso'].">\r\nContent-type: text/plain; charset=utf-8");
+	$ret = mail($recipient, 'Proponita novaĵo: '.$_POST['titolo'], 'Tiu ĉi novaĵo estas proponita de '.$_POST['nomo'].' <'.$_POST['retposxtadreso'].">.\n\n".$_POST['enhavo']."\n\nFonto(j):\n".$_POST['fontoj'], "From: Proponitaj novaĵoj <proponitaj-novajxoj@muzaiko.info>\r\nContent-type: text/plain; charset=utf-8");
 	page_header('Sendi novaĵon');
 	if ($ret)
 		echo '<div class="sukceso"><p>Via novaĵo estis sukcese sendita. Vi ricevos respondon baldaŭ. Dankon!</p><p>Eble vi emas <a href="./partoprenu#verku-novajxojn">verki plian novaĵon</a>? :-)</p></div>';
