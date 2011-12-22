@@ -8,7 +8,7 @@ date_default_timezone_set('UTC');
 ?>
 <p>
   <img src="images/earphones.gif" alt="" title="" class="left_img" />
-  <b>Muzaiko estas tuttempa tutmonda tutmojosa tutesperanta radio!</b> Ni ludas por vi 24 horojn en tago muzikon, programerojn, novaĵojn, informojn, raportojn, arkivaĵojn kaj multe pli!
+  <b>Muzaiko estas tuttempa tutmonda tutmojosa tutesperanta retradio!</b> Ni ludas por vi 24 horojn en tago muzikon, programerojn, novaĵojn, informojn, raportojn, arkivaĵojn kaj multe pli!
 </p>
 <p>
 Nun aŭskulteblas la provelsendo, dum kio la teknika teamo laboras por sendependiĝo de Radionomy, por ebligi pli facilan aŭskultadon de Muzaiko kaj elŝutadon de la babila sonmaterialo. Dum tiu tempo ni petas vian helpon, aŭ se vi ne havas tempon por helpi, vian paciencon!
