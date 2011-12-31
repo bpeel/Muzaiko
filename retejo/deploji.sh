@@ -24,6 +24,7 @@ rsync \
     --exclude=/mallongigi-hortabelo.sh \
     --exclude=/diagramoj \
     --exclude=/podkasto \
+    --exclude=/Veronika.jpg \
     --rsh=ssh \
     --delete \
     "$@" \
