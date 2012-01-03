@@ -52,6 +52,7 @@ create_graph("diagramoj/lasta-jardeko.png", "-10y", $emo, 400, 3660);
 ?>
 
 <div>
+  <p><strong>Averto!</strong> La nombro da aŭskultantoj estas provizata de Radionomy. Ŝajnas, ke ĝi kelkfoje ne estas tute preciza. Sed ni ne povas helpi tiun misprecizecon antaŭ la finpretigo de la estonta nova radiosistemo. Dumtempe, bonvole eltenu eventualan misprecizecon.</p>
   <p>La nombro da aŭskultantoj estas registrita ĉiuminute. Krom tiu pri la lasta horo, la diagramoj estas montritaj laŭ malgranda rezolucio, forigante la detalojn. La mezo de pluraj mezuroj estas kalkulita por fari unu mezuron, kiu estas montrita kiel unu kolumno, kies larĝo estas unu rastrumero. Tio signifas, ke la maksimuma nombro da aŭskultintoj povas ne esti videbla.</p>
   <p>Tamen, la diagramoj povas esti desegnitaj, ne laŭ la mezo, sed laŭ la maksimumo aŭ laŭ la minimumo, uzante la sekvajn ligilojn.</p>
   <ul>
