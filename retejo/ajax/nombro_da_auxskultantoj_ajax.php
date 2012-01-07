@@ -14,7 +14,7 @@
 </script>
 
 <div id="now-playing">
-  <h1>Nombro da aŭskultantoj</h1>
+  <h1>Nombro de aŭskultantoj</h1>
   <div id="statistikoj"></div>
 </div>
 
