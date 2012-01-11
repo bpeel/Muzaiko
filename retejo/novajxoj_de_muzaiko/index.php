@@ -5,6 +5,7 @@
 		<title>Verki novaĵon</title>
 		<link rel="stylesheet" href="style.css" type="text/css" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script src="../cxapeligado.js"></script>
 	</head>
 	<body>
 		<div id="header">
