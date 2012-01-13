@@ -70,6 +70,7 @@ function right($title='') {
 	<li>Per <a target="_blank" href="http://www.radionomy.com/en/radio/muzaikoinfo/listen#">Radionomy</a></li>
 	<li>Per via preferata <a href="http://listen.radionomy.com/muzaikoinfo.m3u">muzikludilo</a></li>
 	<li>Rekte en via retumilo per <a target="_blank" href="http://listen.radionomy.com/muzaikoinfo">muzikluda kromprogramo</a></li>
+	<li>Per <a target="_blank" href="https://market.android.com/details?id=dk.nordfalk.esperanto.radio">Android-aparato</a></li>
 </ul>
 </div>
 
