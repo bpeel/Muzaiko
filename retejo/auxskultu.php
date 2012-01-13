@@ -8,7 +8,7 @@ Dum la provelsenda periodo la teamo de Muzaiko elektis uzi la servojn de Radiono
 </div>
 
 <p>
-Muzaiko ne ankoraŭ estas tute preta (Ni daŭre prilaboras muzikajn rajtojn, ktp), tamen vi jam povas aŭskulti <a target="_blank" href="http://www.radionomy.com/en/radio/muzaikoinfo/listen#">provelsendon ĉe radionomy</a> aŭ rekte kun <a href="http://listen.radionomy.com/muzaikoinfo.m3u">via preferata muzikludilo</a>.
+Muzaiko ne ankoraŭ estas tute preta (Ni daŭre prilaboras muzikajn rajtojn, ktp), tamen vi jam povas aŭskulti <a target="_blank" href="http://www.radionomy.com/en/radio/muzaikoinfo/listen#">provelsendon ĉe radionomy</a>, rekte kun <a href="http://listen.radionomy.com/muzaikoinfo.m3u">via preferata muzikludilo</a> aŭ per <a href="https://market.android.com/details?id=dk.nordfalk.esperanto.radio">Android-aparato</a>.
 </p>
 
 <p>
