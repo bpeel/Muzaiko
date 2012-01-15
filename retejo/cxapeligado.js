@@ -1,3 +1,4 @@
+/*
 function cxapeligado(event) {
     this.value = this.value.replace(/c[xX]/g, 'ĉ');
     this.value = this.value.replace(/C[xX]/g, 'Ĉ');
@@ -20,4 +21,4 @@ window.onload = function() {
         nodes[i].addEventListener('keyup', cxapeligado, false);
     }
 }
-
+*/
