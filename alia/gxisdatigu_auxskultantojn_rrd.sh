@@ -60,7 +60,12 @@ CURL='curl'
 
 URL="http://api.radionomy.com/currentaudience.cfm?radiouid=14694a7d-9023-4db1-86b4-d85d96cba181"
 
-AUXSKULTANTOJ=$(${CURL} --silent "${URL}")
+AUXSKULTANTOJ=$(${CURL} --silent --max-time 60 "${URL}")
 
-${RRDTOOL} update "${RRD_FILE_NAME}" ${CURRENT_TIMESTAMP}:${AUXSKULTANTOJ}
+echo "$AUXSKULTANTOJ" >> /var/log/auxskultantoj.log
+
+if [[ $(echo $AUXSKULTANTOJ) =~ ^[0-9]+$ ]]
+then
+	${RRDTOOL} update "${RRD_FILE_NAME}" ${CURRENT_TIMESTAMP}:${AUXSKULTANTOJ}
+fi
 
