@@ -12,6 +12,7 @@ import os
 import cgi
 import string
 import tempfile
+import random
 
 # Maksimuma aĝo en tagoj post kiu dosiero foriĝos
 MAKSIMUMA_AGXO = 7
@@ -90,21 +91,24 @@ def faru_item(cur, dato):
 
     return [item, html]
 
+def sercxu_dosierojn_laux_regexp(subdosierujo, regexp):
+    dosieroj = []
+    path = pkagordoj.get("loko_de_programeroj") + "/" + subdosierujo
+
+    if os.path.exists(path):
+        for dn in os.listdir(path):
+            if regexp.match(dn):
+                dosieroj.append(path + "/" + dn)
+
+    return dosieroj
+
 def sercxu_kromdosierojn(dato):
     # Serĉu kromdosierojn por hodiaŭ
-    kromdosieroj = []
-    kromdosieroj_path = pkagordoj.get("loko_de_programeroj") + "/kromdosieroj"
-    
-    if os.path.exists(kromdosieroj_path):
-        cxendato = dato.strftime("%Y%m%d")
-        regexp = re.compile(re.escape(cxendato) + r'.*\.(mp3|ogg|flac|wav)\Z',
-                            re.IGNORECASE)
-
-        for dn in os.listdir(kromdosieroj_path):
-            if regexp.match(dn):
-                kromdosieroj.append(kromdosieroj_path + "/" + dn)
-            
-    return kromdosieroj
+    cxendato = dato.strftime("%Y%m%d")
+    regexp = re.compile('\A' + re.escape(cxendato) +
+                        r'.*\.(mp3|ogg|flac|wav)\Z',
+                        re.IGNORECASE)
+    return sercxu_dosierojn_laux_regexp('kromdosieroj', regexp)
     
 def aldonu_kromdosierojn(programeroj, kromdosieroj):
     aldonloko = 1
@@ -113,6 +117,25 @@ def aldonu_kromdosierojn(programeroj, kromdosieroj):
     for kd in kromdosieroj:
         programeroj.insert(aldonloko, [ kd ])
         aldonloko += 2
+
+def sercxu_jxinglojn():
+    regexp = re.compile(r'.*\.(mp3|ogg|flac|wav)\Z', re.IGNORECASE)
+    return sercxu_dosierojn_laux_regexp('jxingloj', regexp)
+
+def aldonu_jxinglojn(dosieroj, jxingloj):
+    # Se ne ekzistas ĵingloj, rezignu jam
+    if len(jxingloj) < 1:
+        return
+    # Elektu hazardan ĵinglon por komenci
+    jxinglo = random.randrange(len(jxingloj))
+
+    lok = 0
+    while lok <= len(dosieroj):
+        dosieroj.insert(lok, jxingloj[jxinglo])
+        jxinglo += 1
+        if jxinglo >= len(jxingloj):
+            jxinglo = 0
+        lok += 2
 
 if len(sys.argv) > 1:
     match = re.match(r"^([0-9]{4})-([0-9]{1,2})-([0-9]{1,2})$", sys.argv[1])
@@ -167,6 +190,8 @@ kromdosieroj = sercxu_kromdosierojn(hodiaux_tempo)
 aldonu_kromdosierojn(programeroj, sercxu_kromdosierojn(hodiaux_tempo))
 
 dosieroj = [dosiero for sublisto in programeroj for dosiero in sublisto]
+
+aldonu_jxinglojn(dosieroj, sercxu_jxinglojn())
 
 # Kunigu la dosierojn per SoX. Per SoX ne eblas kunigi dosierojn kiuj
 # havas malsamajn poecojn do ni devas unue ŝanĝi ilin en portempajn
