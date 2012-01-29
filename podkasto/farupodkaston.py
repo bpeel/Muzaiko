@@ -87,6 +87,30 @@ def faru_item(cur, dato):
 
     return [item, html]
 
+def sercxu_kromdosierojn(dato):
+    # Serĉu kromdosierojn por hodiaŭ
+    kromdosieroj = []
+    kromdosieroj_path = pkagordoj.get("loko_de_programeroj") + "/kromdosieroj"
+    
+    if os.path.exists(kromdosieroj_path):
+        cxendato = dato.strftime("%Y%m%d")
+        regexp = re.compile(re.escape(cxendato) + r'.*\.(mp3|ogg|flac|wav)\Z',
+                            re.IGNORECASE)
+
+        for dn in os.listdir(kromdosieroj_path):
+            if regexp.match(dn):
+                kromdosieroj.append(kromdosieroj_path + "/" + dn)
+            
+    return kromdosieroj
+    
+def aldonu_kromdosierojn(programeroj, kromdosieroj):
+    aldonloko = 1
+    
+    # Aldonu la kromdosierojn ekde post la unua programo
+    for kd in kromdosieroj:
+        programeroj.insert(aldonloko, [ kd ])
+        aldonloko += 2
+
 if len(sys.argv) > 1:
     match = re.match(r"^([0-9]{4})-([0-9]{1,2})-([0-9]{1,2})$", sys.argv[1])
     if match:
@@ -115,7 +139,7 @@ cur = db.cursor()
 
 # Serĉu la dosierojn por la hodiaŭa programo
 
-cur.execute("select `sondosiero`.`nomo` "
+cur.execute("select `sondosiero`.`nomo`, `elsendo`.`programero_id` "
             "from `elsendo` inner join `sondosiero` "
             "on `elsendo`.`programero_id` = `sondosiero`.`programero` "
             "where date(`elsendo`.`date_begin`) = %s"
@@ -123,11 +147,23 @@ cur.execute("select `sondosiero`.`nomo` "
             "`sondosiero`.`nomo`",
             hodiaux)
 
-dosieroj = [pkagordoj.get("loko_de_programeroj") + "/" + row[0] for row in cur]
+programeroj = []
+last_id = -1
+for row in cur:
+    if last_id != row[1]:
+        programeroj.append([])
+        last_id = row[1]
+    programeroj[-1].append(pkagordoj.get("loko_de_programeroj") + "/" + row[0])
 
-if len(dosieroj) < 1:
+if len(programeroj) < 1:
     print >> sys.stderr, "neniuj programeroj troviĝis por " + hodiaux
     exit(1)
+
+kromdosieroj = sercxu_kromdosierojn(hodiaux_tempo)
+
+aldonu_kromdosierojn(programeroj, sercxu_kromdosierojn(hodiaux_tempo))
+
+dosieroj = [dosiero for sublisto in programeroj for dosiero in sublisto]
 
 # Kunigu la dosierojn per SoX. Per SoX ne eblas kunigi dosierojn kiuj
 # havas malsamajn poecojn do ni devas unue ŝanĝi ilin en portempajn
