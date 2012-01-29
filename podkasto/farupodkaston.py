@@ -59,7 +59,10 @@ def faru_item(cur, dato):
     cur.execute("select `programero`.`description` "
                 "from `programero` inner join `elsendo` "
                 "on `elsendo`.`programero_id` = `programero`.`id` "
+                "inner join `sondosiero` "
+                "on `programero`.`id` = `sondosiero`.`programero` "
                 "where date(`elsendo`.`date_begin`) = %s "
+                "group by `programero`.`id` "
                 "order by `elsendo`.`date_begin`",
                 cxendato)
     for row in cur:
