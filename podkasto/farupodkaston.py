@@ -100,7 +100,7 @@ def sercxu_dosierojn_laux_regexp(subdosierujo, regexp):
             if regexp.match(dn):
                 dosieroj.append(path + "/" + dn)
 
-    return dosieroj
+    return sorted(dosieroj)
 
 def sercxu_kromdosierojn(dato):
     # Serĉu kromdosierojn por hodiaŭ
