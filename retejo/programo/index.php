@@ -39,10 +39,12 @@ function get_unused_files($jes_dosieroj)
   /* Get a list of all the files on the system but filter out all the
      ones that are already used */
   $unused_files = array();
-  $dir = opendir($programagordoj["loko_de_programeroj"])
+  $dirname = $programagordoj["loko_de_programeroj"];
+  $dir = opendir($dirname)
     or die("failed to list sound files");
   while (($fn = readdir($dir)) !== FALSE)
     if ($fn[0] != "." &&
+        !is_dir($dirname . "/" . $fn) &&
         !is_in_sorted_array($fn, $used_files) &&
         !is_in_sorted_array($fn, $jes_dosieroj))
       $unused_files[] = $fn;
