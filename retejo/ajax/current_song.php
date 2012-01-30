@@ -15,6 +15,8 @@ $cache = './cache_api.txt';
 $cacheCall = './cache_callapi.txt';
 $date = "-1";
 
+$tabelo = 'muzaiko_datumbazo';
+
 // plej granda nombro de literoj antaux ol trancxi la cxenon
 $maxlen = 60;
 
@@ -94,7 +96,7 @@ else {//xml true
     $artists = trim(addslashes(malcxapeligu($xml->track->artists)));
     $title = trim(addslashes(malcxapeligu($xml->track->title)));
 
-    $query_vk="SELECT Ligoj_al_diskoservo FROM vinilkosmo_tabelo WHERE Titolo='$title' AND Artistoj='$artists' AND REF NOT LIKE 'VK%' AND Ligoj_al_diskoservo!='0'";
+    $query_vk="SELECT Ligoj_al_diskoservo FROM $tabelo WHERE Titolo='$title' AND Artistoj='$artists' AND REF NOT LIKE 'VK%' AND Ligoj_al_diskoservo!='0'";
     $result=mysql_query($query_vk);
     if($result)
     {
@@ -102,7 +104,7 @@ else {//xml true
       $ligilo_vk = $ligilo_vk[0]; // mysql_fetch_row returns an array. we only want the Name so we just set it excluseively.
     }
 
-    $query_vk_mp3="SELECT Ligoj_al_la_elsxutejo FROM vinilkosmo_tabelo WHERE Titolo='$title' AND Artistoj='$artists' AND REF NOT LIKE 'VK%' AND Ligoj_al_la_elsxutejo!='0'";
+    $query_vk_mp3="SELECT Ligoj_al_la_elsxutejo FROM $tabelo WHERE Titolo='$title' AND Artistoj='$artists' AND REF NOT LIKE 'VK%' AND Ligoj_al_la_elsxutejo!='0'";
     $result=mysql_query($query_vk_mp3);
     if($result)
     {
@@ -110,7 +112,7 @@ else {//xml true
       $ligilo_vk_mp3 = $ligilo_vk_mp3[0]; // mysql_fetch_row returns an array. we only want the Name so we just set it excluseively.
     }
 
-    $query_muzikteksto="SELECT Ligoj_al_muzikteksto FROM vinilkosmo_tabelo WHERE Titolo='$title' AND Artistoj='$artists' AND REF NOT LIKE 'VK%' AND Ligoj_al_muzikteksto!='0'";
+    $query_muzikteksto="SELECT Ligoj_al_muzikteksto FROM $tabelo WHERE Titolo='$title' AND Artistoj='$artists' AND REF NOT LIKE 'VK%' AND Ligoj_al_muzikteksto!='0'";
     $result=mysql_query($query_muzikteksto);
     if($result)
     {
@@ -118,7 +120,7 @@ else {//xml true
       $ligilo_muzikteksto = $ligilo_muzikteksto[0]; // mysql_fetch_row returns an array. we only want the Name so we just set it excluseively.
     }
 
-    $query_retpagxo="SELECT Ligoj_al_retpagxo FROM vinilkosmo_tabelo WHERE Titolo='$title' AND Artistoj='$artists' AND REF NOT LIKE 'VK%' AND Ligoj_al_retpagxo!='0'";
+    $query_retpagxo="SELECT Ligoj_al_retpagxo FROM $tabelo WHERE Titolo='$title' AND Artistoj='$artists' AND REF NOT LIKE 'VK%' AND Ligoj_al_retpagxo!='0'";
     $result=mysql_query($query_retpagxo);
     if($result)
     {
@@ -131,7 +133,7 @@ else {//xml true
 
     $title = trim(addslashes(malcxapeligu($xml->track->title)));
 
-    $query_vk="SELECT Ligoj_al_diskoservo FROM vinilkosmo_tabelo WHERE Titolo='$title' AND REF NOT LIKE 'VK%' AND Ligoj_al_diskoservo!='0'";
+    $query_vk="SELECT Ligoj_al_diskoservo FROM $tabelo WHERE Titolo='$title' AND REF NOT LIKE 'VK%' AND Ligoj_al_diskoservo!='0'";
     $result=mysql_query($query_vk);
     if($result)
     {
@@ -139,7 +141,7 @@ else {//xml true
       $ligilo_vk = $ligilo_vk[0]; // mysql_fetch_row returns an array. we only want the Name so we just set it excluseively.
     }
 
-    $query_vk_mp3="SELECT Ligoj_al_la_elsxutejo FROM vinilkosmo_tabelo WHERE Titolo='$title' AND REF NOT LIKE 'VK%' AND Ligoj_al_la_elsxutejo!='0'";
+    $query_vk_mp3="SELECT Ligoj_al_la_elsxutejo FROM $tabelo WHERE Titolo='$title' AND REF NOT LIKE 'VK%' AND Ligoj_al_la_elsxutejo!='0'";
     $result=mysql_query($query_vk_mp3);
     if($result)
     {
@@ -147,7 +149,7 @@ else {//xml true
       $ligilo_vk_mp3 = $ligilo_vk_mp3[0]; // mysql_fetch_row returns an array. we only want the Name so we just set it excluseively.
     }
 
-    $query_muzikteksto="SELECT Ligoj_al_muzikteksto FROM vinilkosmo_tabelo WHERE Titolo='$title' AND REF NOT LIKE 'VK%' AND Ligoj_al_muzikteksto!='0'";
+    $query_muzikteksto="SELECT Ligoj_al_muzikteksto FROM $tabelo WHERE Titolo='$title' AND REF NOT LIKE 'VK%' AND Ligoj_al_muzikteksto!='0'";
     $result=mysql_query($query_muzikteksto);
     if($result)
     {
@@ -155,7 +157,7 @@ else {//xml true
       $ligilo_muzikteksto = $ligilo_muzikteksto[0]; // mysql_fetch_row returns an array. we only want the Name so we just set it excluseively.
     }
 
-    $query_retpagxo="SELECT Ligoj_al_retpagxo FROM vinilkosmo_tabelo WHERE Titolo='$title' AND REF NOT LIKE 'VK%' AND Ligoj_al_retpagxo!='0'";
+    $query_retpagxo="SELECT Ligoj_al_retpagxo FROM $tabelo WHERE Titolo='$title' AND REF NOT LIKE 'VK%' AND Ligoj_al_retpagxo!='0'";
     $result=mysql_query($query_retpagxo);
     if($result)
     {

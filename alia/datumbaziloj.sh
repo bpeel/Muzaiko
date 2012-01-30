@@ -11,7 +11,14 @@
 source /var/muzaiko/datumbazensalutiloj.sh
 
 # FIELDS="Liveritaj VARCHAR(100), REF VARCHAR(100), Codes_ISRC VARCHAR(100), Noms_albums_complets_et_Titres_par_piste_unitaire VARCHAR(100), Dauxroj VARCHAR(100), Artistoj VARCHAR(100), Auteurs VARCHAR(100), Compositeurs VARCHAR(100), Arrangeurs VARCHAR(100), Adaptateurs VARCHAR(100), Producteurs_Editeurs VARCHAR(100), Jaroj VARCHAR(100), Labels VARCHAR(100), Ligoj_al_diskoservo VARCHAR(100), Ligoj_al_la_elsxutejo VARCHAR(100)"
-FIELDS="REF VARCHAR(100), Codes_ISRC VARCHAR(100), Noms_albums_complets_et_Titres_par_piste_unitaire VARCHAR(100), Dauxroj VARCHAR(100), Artistoj VARCHAR(100), Auteurs VARCHAR(100), Compositeurs VARCHAR(100), Arrangeurs VARCHAR(100), Adaptateurs VARCHAR(100), Producteurs_Editeurs VARCHAR(100), Jaroj VARCHAR(100), Labels VARCHAR(100), Ligoj_al_diskoservo VARCHAR(100), Ligoj_al_la_elsxutejo VARCHAR(100)"
+#FIELDS="REF VARCHAR(100), Codes_ISRC VARCHAR(100), Noms_albums_complets_et_Titres_par_piste_unitaire VARCHAR(100), Dauxroj VARCHAR(100), Artistoj VARCHAR(100), Auteurs VARCHAR(100), Compositeurs VARCHAR(100), Arrangeurs VARCHAR(100), Adaptateurs VARCHAR(100), Producteurs_Editeurs VARCHAR(100), Jaroj VARCHAR(100), Labels VARCHAR(100), Ligoj_al_diskoservo VARCHAR(100), Ligoj_al_la_elsxutejo VARCHAR(100)"
+
+#id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+
+FIELDS="ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY, Artistoj VARCHAR(100) DEFAULT 0, Titolo VARCHAR(100) DEFAULT 0, Ligoj_al_diskoservo VARCHAR(100) DEFAULT 0, Ligoj_al_la_elsxutejo VARCHAR(100) DEFAULT 0, Ligoj_al_muzikteksto VARCHAR(100) DEFAULT 0, Ligoj_al_retpagxo VARCHAR(100) DEFAULT 0, REF VARCHAR(100) DEFAULT 0, ISRC_Kodoj VARCHAR(100) DEFAULT 0, Dauxroj VARCHAR(100) DEFAULT 0, Verkistoj VARCHAR(100) DEFAULT 0, Komponistoj VARCHAR(100) DEFAULT 0, Arangxistoj VARCHAR(100) DEFAULT 0, Adaptistoj VARCHAR(100) DEFAULT 0, Produktistoj_kaj_redaktantoj VARCHAR(100) DEFAULT 0, Jaroj VARCHAR(100) DEFAULT 0, Eldonejo VARCHAR(100) DEFAULT 0"
+# DATABASENAME=vinilkosmo
+# TABLENAME=muzaiko_datumbazo
+# mysql -u root -p -e "CREATE TABLE $TABLENAME($FIELDS)" $DATABASENAME
 
 function muzaiko_preparuCSV()
 {
