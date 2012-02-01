@@ -37,6 +37,7 @@ function reordigu_programon ($programo)
   /* Kalkulu kiam komenciĝis la nuna ripeto */
   $komenco_de_nuna_ripeto = $komenco + $nuna_ripeto * $dauxro;
 
+  $nuna_programero = null;
   /* Trovu la nunan ludatan programeron */
   for ($i = 0; $i < count ($programo); $i++)
     {
@@ -142,7 +143,7 @@ function eligu_hortabelon ()
         }
 
       /* Kunigu ambaŭ programojn */
-      $aktuala_programo = array_merge ($aktuala_programo, $venonta_programo);
+      $aktuala_programo = $aktuala_programo + $venonta_programo;
 
       $kvanto_de_ripetotoj = count ($venonta_programo);
     }
