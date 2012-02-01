@@ -88,8 +88,9 @@ function right($title='') {
 	<li><a href="http://www.esperanto-junularo.hu/2011/06/nova-projekto-kreos-tuttempan-radion-en.html">la retpaĝo de HEJ</a></li>
 	<li><a href="http://tejo.org/tejo-aktuale/index.php?num=2011-06-15">TEJO-aktuale</a></li>
 	<li><a href="http://esperanto.cri.cn/641/2011/06/17/1s125271.htm">Ĉina Radio Internacia</a></li>
-	<li><a href="http://www.tejo.org/eo/node/1249">La blogo de TEJO Tutmonde</a></li>
+	<li><a href="http://www.tejo.org/eo/node/1249">la blogo de TEJO Tutmonde</a></li>
 	<li><a href="http://www.liberafolio.org/2011/muzaiko-planas-sendi-retradion-en-esperanto-senpauze">Libera Folio</a></li>
+	<li><a href="http://stelachiamnurkritikas.wordpress.com/2012/02/01/la-esperantistoj-de-la-jaro/">la blogo de Stela</a></li>
 </ul>
 </div>
 
