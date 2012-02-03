@@ -315,8 +315,8 @@ function konservu_sondosierojn($programero_id, &$success, &$errors)
 				<label for="programero">Programero</label>
 				<input type="text" name="programero" class="programero_input" placeholder="Titolo de la programero" value="<?php echo (isset($_GET['redakti']) ? htmlspecialchars(stripslashes($redaktado_titolo)) : '') ?>" /><br />
 				<div id="text_format">
-					<p>Por fari ligilon, faru tiel: <code>[teksto de la ligilon](adreso)</code>. Ekzemplo: <code>Bonvenon ĉe [Radio Muzaiko](http://www.muzaiko.info/)</code> produktos "Bonvenon ĉe <a href="http://www.muzaiko.info/">Radio Muzaiko</a>".</p>
-					<p>Por fari kursivan tekston, faru tiel: <code>*kursiva teksto*</code>. Ekzemplo: <code>Bonvenon ĉe *Radio Muzaiko*</code> produktos "Bonvenon ĉe <i>Radio Muzaiko</i>".</p>
+					<p>Por fari ligilon, faru tiel: <code>[teksto de la ligilo](adreso)</code>. Ekzemple, <code>Bonvenon ĉe [Radio Muzaiko](http://www.muzaiko.info/)</code> produktos "Bonvenon ĉe <a href="http://www.muzaiko.info/">Radio Muzaiko</a>".</p>
+					<p>Por fari kursivan tekston, faru tiel: <code>*kursiva teksto*</code>. Ekzemple, <code>Bonvenon ĉe *Radio Muzaiko*</code> produktos "Bonvenon ĉe <i>Radio Muzaiko</i>".</p>
 				</div>
 				<div id="datoj">
 						<?php
