@@ -89,6 +89,7 @@ else {//xml true
 
   $ligilo_vk='';
   $ligilo_vk_mp3='';
+  $ligilo_CD1D='';
   $ligilo_muzikteksto='';
   $ligilo_retpagxo='';
 
@@ -107,15 +108,24 @@ else {//xml true
     $sercxiloj="Artistoj='$artists' AND REF NOT LIKE 'VK%'";
   }
 
+  $protokolu=false;
+  $linio_ekzistas=false;
   if (!empty($sercxiloj))
   {
+    $query_gxenerala="SELECT * FROM $tabelo WHERE $sercxiloj";
+    $result=mysql_query($query_gxenerala);
+    if($result)
+    {
+      $linio_ekzistas=true;
+    } else { $protokolu=true; }
+
     $query_vk="SELECT Ligoj_al_diskoservo FROM $tabelo WHERE $sercxiloj AND Ligoj_al_diskoservo!='0'";
     $result=mysql_query($query_vk);
     if($result)
     {
       $ligilo_vk = mysql_fetch_row($result);
       $ligilo_vk = $ligilo_vk[0]; // mysql_fetch_row returns an array. we only want the Name so we just set it excluseively.
-    }
+    } else { $protokolu=true; }
 
     $query_vk_mp3="SELECT Ligoj_al_la_elsxutejo FROM $tabelo WHERE $sercxiloj AND Ligoj_al_la_elsxutejo!='0'";
     $result=mysql_query($query_vk_mp3);
@@ -123,7 +133,15 @@ else {//xml true
     {
       $ligilo_vk_mp3 = mysql_fetch_row($result);
       $ligilo_vk_mp3 = $ligilo_vk_mp3[0]; // mysql_fetch_row returns an array. we only want the Name so we just set it excluseively.
-    }
+    } else { $protokolu=true; }
+
+    $query_CD1D="SELECT Ligoj_al_la_elsxutejo FROM $tabelo WHERE $sercxiloj AND Ligoj_al_la_elsxutejo!='0'";
+    $result=mysql_query($query_CD1D);
+    if($result)
+    {
+      $ligilo_CD1D = mysql_fetch_row($result);
+      $ligilo_CD1D = $ligilo_CD1D[0]; // mysql_fetch_row returns an array. we only want the Name so we just set it excluseively.
+    } else { $protokolu=true; }
 
     $query_muzikteksto="SELECT Ligoj_al_muzikteksto FROM $tabelo WHERE $sercxiloj AND Ligoj_al_muzikteksto!='0'";
     $result=mysql_query($query_muzikteksto);
@@ -131,7 +149,7 @@ else {//xml true
     {
       $ligilo_muzikteksto = mysql_fetch_row($result);
       $ligilo_muzikteksto = $ligilo_muzikteksto[0]; // mysql_fetch_row returns an array. we only want the Name so we just set it excluseively.
-    }
+    } else { $protokolu=true; }
 
     $query_retpagxo="SELECT Ligoj_al_retpagxo FROM $tabelo WHERE $sercxiloj AND Ligoj_al_retpagxo!='0'";
     $result=mysql_query($query_retpagxo);
@@ -139,62 +157,56 @@ else {//xml true
     {
       $ligilo_retpagxo = mysql_fetch_row($result);
       $ligilo_retpagxo = $ligilo_retpagxo[0]; // mysql_fetch_row returns an array. we only want the Name so we just set it excluseively.
-    }
-  }
+    } else { $protokolu=true; }
+  } // fino de if (!empty($sercxiloj))
 
   mysql_close();
 
-  // protokolu netrovatajn ligilojn
-  $protokoldosiero="nekonata.log";
-  if (empty($ligilo_vk)) {
+  if ($protokolu)
+  {
+    // protokolu netrovatajn ligilojn
+    $protokoldosiero="nekonata.log";
     $file = file_get_contents($protokoldosiero);
-    if(!strpos($file, $query_vk)) {
-      $myFile = $protokoldosiero;
-      $fh = fopen($myFile, 'a') or die("can't open file");
-      fwrite($fh, "== ligilo_vk ne trovata ==\n");
-      fwrite($fh, $xml->track->artists . " - " . $xml->track->title . "\n");
-      fwrite($fh, $query_vk . ";\n");
+    $markilo = "==" . $xml->track->artists . " - " . $xml->track->title . "==";
+    if(!strpos($file, $markilo)) { // kontrolu cxu gxi jam ekzistas
+      $fh = fopen($protokoldosiero, 'a') or die("can't open file");
+      fwrite($fh, $markilo . "\n");
+      fwrite($fh, $query_gxenerala . ";\n");
+      if ($linio_ekzistas) {
+        if (empty($ligilo_vk)) {
+          fwrite($fh, "-->ligilo_vk ne trovata\n");
+          fwrite($fh, $query_vk . ";\n");
+        }
+        if (empty($ligilo_vk_mp3)) {
+          fwrite($fh, "-->ligilo_vk_mp3 ne trovata\n");
+          fwrite($fh, $query_vk_mp3 . ";\n");
+        }
+        if (empty($ligilo_CD1D)) {
+          fwrite($fh, "-->ligilo_CD1D ne trovata\n");
+          fwrite($fh, $query_CD1D . ";\n");
+        }
+        if (empty($ligilo_muzikteksto)) {
+          fwrite($fh, "-->ligilo_muzikteksto ne trovata\n");
+          fwrite($fh, $query_muzikteksto . ";\n");
+        }
+        if (empty($ligilo_retpagxo)) {
+          fwrite($fh, "-->ligilo_retpagxo ne trovata\n");
+          fwrite($fh, $query_retpagxo . ";\n");
+        }
+
+      }
+      else {
+        fwrite($fh, "-->Neniu tiela linio trovita en la datumbazo. :( \n");
+      }
       fclose($fh);
     }
-  }
-  if (empty($ligilo_vk_mp3)) {
-    $file = file_get_contents($protokoldosiero);
-    if(!strpos($file, $query_vk_mp3)) {
-      $myFile = $protokoldosiero;
-      $fh = fopen($myFile, 'a') or die("can't open file");
-      fwrite($fh, "== ligilo_vk_mp3 ne trovata ==\n");
-      fwrite($fh, $xml->track->artists . " - " . $xml->track->title . "\n");
-      fwrite($fh, $query_vk_mp3 . ";\n");
-      fclose($fh);
-    }
-  }
-  if (empty($ligilo_muzikteksto)) {
-    $file = file_get_contents($protokoldosiero);
-    if(!strpos($file, $query_muzikteksto)) {
-      $myFile = $protokoldosiero;
-      $fh = fopen($myFile, 'a') or die("can't open file");
-      fwrite($fh, "== ligilo_muzikteksto ne trovata ==\n");
-      fwrite($fh, $xml->track->artists . " - " . $xml->track->title . "\n");
-      fwrite($fh, $query_muzikteksto . ";\n");
-      fclose($fh);
-    }
-  }
-  if (empty($ligilo_retpagxo)) {
-    $file = file_get_contents($protokoldosiero);
-    if(!strpos($file, $query_retpagxo)) {
-      $myFile = $protokoldosiero;
-      $fh = fopen($myFile, 'a') or die("can't open file");
-      fwrite($fh, "== ligilo_retpagxo ne trovata ==\n");
-      fwrite($fh, $xml->track->artists . " - " . $xml->track->title . "\n");
-      fwrite($fh, $query_retpagxo . ";\n");
-      fclose($fh);
-    }
+
   }
 
-  // fine kreu por montru la ligiltekston
+  // fine kreu por montri la ligiltekston
   $ligiloj_trovitaj = false;
   $ligilteksto = '</br>';
-  if ( !empty($ligilo_vk) )
+  if ( !empty($ligilo_vk) and strcmp($ligilo_vk , '-1')!=0 )
   {
     if ( $ligiloj_trovitaj )
     {
@@ -203,7 +215,7 @@ else {//xml true
     $ligilteksto = $ligilteksto . '<a target="_blank" href="' . $ligilo_vk . '">Fizika albumo</a>';
     $ligiloj_trovitaj = true; 
   }
-  if ( !empty($ligilo_vk_mp3) )
+  if ( !empty($ligilo_vk_mp3) and strcmp($ligilo_vk_mp3 , '-1')!=0 )
   {
     if ( $ligiloj_trovitaj )
     {
@@ -212,7 +224,16 @@ else {//xml true
     $ligilteksto = $ligilteksto . '<a target="_blank" href="' . $ligilo_vk_mp3 . '">MP3</a>'; 
     $ligiloj_trovitaj = true; 
   }
-  if ( !empty($ligilo_muzikteksto) )
+  if ( !empty($ligilo_CD1D) and strcmp($ligilo_CD1D , '-1')!=0 )
+  {
+    if ( $ligiloj_trovitaj )
+    {
+      $ligilteksto = $ligilteksto . ' - ';
+    }
+    $ligilteksto = $ligilteksto . '<a target="_blank" href="' . $ligilo_CD1D . '">MP3</a>';
+    $ligiloj_trovitaj = true;
+  }
+  if ( !empty($ligilo_muzikteksto) and strcmp($ligilo_muzikteksto , '-1')!=0 )
   {
     if ( $ligiloj_trovitaj )
     {
@@ -221,7 +242,7 @@ else {//xml true
     $ligilteksto = $ligilteksto . '<a target="_blank" href="' . $ligilo_muzikteksto . '">Muzikteksto</a>'; 
     $ligiloj_trovitaj = true; 
   }
-  if ( !empty($ligilo_retpagxo) )
+  if ( !empty($ligilo_retpagxo) and strcmp($ligilo_retpagxo , '-1')!=0 )
   {
     if ( $ligiloj_trovitaj )
     {
