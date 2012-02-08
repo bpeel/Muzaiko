@@ -19,7 +19,7 @@ $row = mysql_fetch_array($result, MYSQL_NUM);
 $news_count = $row[0];
 $news_display_limit = 3;
 $news_pages_count = ceil($news_count / $news_display_limit);
-$current_page = (isset($_GET['p']) && ctype_digit($_GET['p'])) ? $_GET['p'] : 1;
+$current_page = (isset($_GET['pri']) && ctype_digit($_GET['pri'])) ? $_GET['pri'] : 1;
 
 $query = "SELECT titolo, enhavo, DATE_FORMAT(dato, '%Y/%m/%d %H:%i'), IF(redaktado_dato > (dato + 120), DATE_FORMAT(redaktado_dato, '%Y/%m/%d %H:%i'), NULL)  FROM novajxo ORDER BY dato DESC LIMIT ".(($current_page - 1) * $news_display_limit).', '.$news_display_limit;
 $result = mysql_query($query);
@@ -41,12 +41,12 @@ echo '</div>';
 if ($news_pages_count > 1) {
 	echo '<div id="novajxoj_pagxoj"><ol>';
 	if ($current_page > 1)
-		echo '<li><a href="./novajxoj?p=' . ($current_page-1) . '#novajxoj_pri_muzaiko" title="">antaŭaj novaĵoj</a></li>';
+		echo '<li><a href="./novajxoj?pri=' . ($current_page-1) . '#novajxoj_pri_muzaiko" title="">antaŭaj novaĵoj</a></li>';
 	for ($i = 1; $i < ($news_pages_count + 1); $i++) {
-		echo '<li><a href="./novajxoj?p=' . $i . '#novajxoj_pri_muzaiko"' . (($current_page == $i) ? 'class="elektita_pagxo"' : '') . '>' . $i . '</a></li>';
+		echo '<li><a href="./novajxoj?pri=' . $i . '#novajxoj_pri_muzaiko"' . (($current_page == $i) ? 'class="elektita_pagxo"' : '') . '>' . $i . '</a></li>';
 	}
 	if ($current_page < $news_pages_count)
-		echo '<li><a href="./novajxoj?p=' . ($current_page+1) . '#novajxoj_pri_muzaiko" title="">postaj novaĵoj</a></li>';
+		echo '<li><a href="./novajxoj?pri=' . ($current_page+1) . '#novajxoj_pri_muzaiko" title="">postaj novaĵoj</a></li>';
 	echo '</ol></div>';
 }
 
