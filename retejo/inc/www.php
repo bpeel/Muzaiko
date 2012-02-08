@@ -63,12 +63,19 @@ function page_header($title, $headtitle=NULL, $extra_head=NULL, $anchor=NULL) {
 
   <?php
   if (isset($anchor)) {
-    echo '<h1 id='$anchor'>'.$title.'</h1>';
+  ?>
+    <h1 id=<?=$anchor?> > <?=$title?> </h1>
+  <?php
   }
   else {
-    echo '<h1>'.$title.'</h1>';
+  ?>
+    <h1> <?=$title?> </h1>
+  <?php
   }
   ?>
+
+<!-- <h1>< ?=$title? ></h1> -->
+
 
   <?php
 
