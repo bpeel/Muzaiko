@@ -117,6 +117,7 @@ else {//xml true
     if($result_gxenerala)
     {
       $linio_gxenerala = mysql_fetch_row($result_gxenerala);
+      $linio_gxenerala = $linio_gxenerala[0];
 //       $linio_ekzistas=true;
     } else { $protokolu=true; }
 
