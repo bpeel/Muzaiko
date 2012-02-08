@@ -113,8 +113,8 @@ else {//xml true
   if (!empty($sercxiloj))
   {
     $query_gxenerala="SELECT * FROM $tabelo WHERE $sercxiloj";
-    $result=mysql_query($query_gxenerala);
-    if($result)
+    $result_gxenerala=mysql_query($query_gxenerala);
+    if($result_gxenerala)
     {
       $linio_ekzistas=true;
     } else { $protokolu=true; }
@@ -167,11 +167,12 @@ else {//xml true
     // protokolu netrovatajn ligilojn
     $protokoldosiero="nekonata.log";
     $file = file_get_contents($protokoldosiero);
-    $markilo = "==" . $xml->track->artists . " - " . $xml->track->title . "==";
+    $markilo = "== " . $xml->track->artists . " - " . $xml->track->title . " ==";
     if(!strpos($file, $markilo)) { // kontrolu cxu gxi jam ekzistas
       $fh = fopen($protokoldosiero, 'a') or die("can't open file");
       fwrite($fh, $markilo . "\n");
       fwrite($fh, $query_gxenerala . ";\n");
+      fwrite($fh, $result_gxenerala . ";\n");
       if ($linio_ekzistas) {
         if (empty($ligilo_vk)) {
           fwrite($fh, "-->ligilo_vk ne trovata\n");
