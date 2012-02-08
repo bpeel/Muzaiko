@@ -135,7 +135,7 @@ else {//xml true
       $ligilo_vk_mp3 = $ligilo_vk_mp3[0]; // mysql_fetch_row returns an array. we only want the Name so we just set it excluseively.
     } else { $protokolu=true; }
 
-    $query_CD1D="SELECT Ligoj_al_la_elsxutejo FROM $tabelo WHERE $sercxiloj AND Ligoj_al_la_elsxutejo!='0'";
+    $query_CD1D="SELECT Ligoj_al_CD1D FROM $tabelo WHERE $sercxiloj AND Ligoj_al_CD1D!='0'";
     $result=mysql_query($query_CD1D);
     if($result)
     {
@@ -230,7 +230,7 @@ else {//xml true
     {
       $ligilteksto = $ligilteksto . ' - ';
     }
-    $ligilteksto = $ligilteksto . '<a target="_blank" href="' . $ligilo_CD1D . '">MP3</a>';
+    $ligilteksto = $ligilteksto . '<a target="_blank" href="' . $ligilo_CD1D . '">CD1D</a>';
     $ligiloj_trovitaj = true;
   }
   if ( !empty($ligilo_muzikteksto) and strcmp($ligilo_muzikteksto , '-1')!=0 )
@@ -248,7 +248,7 @@ else {//xml true
     {
       $ligilteksto = $ligilteksto . ' - ';
     }
-    $ligilteksto = $ligilteksto . '<a target="_blank" href="' . $ligilo_retpagxo . '">Retpaĝo</a>'; 
+    $ligilteksto = $ligilteksto . '<a target="_blank" href="' . $ligilo_retpagxo . '">Retpaĝo</a>';
     $ligiloj_trovitaj = true; 
   }
   if ( $ligiloj_trovitaj )
