@@ -109,14 +109,15 @@ else {//xml true
   }
 
   $protokolu=false;
-  $linio_ekzistas=false;
+//   $linio_ekzistas=false;
   if (!empty($sercxiloj))
   {
     $query_gxenerala="SELECT * FROM $tabelo WHERE $sercxiloj";
     $result_gxenerala=mysql_query($query_gxenerala);
     if($result_gxenerala)
     {
-      $linio_ekzistas=true;
+      $linio_gxenerala = mysql_fetch_row($result_gxenerala);
+//       $linio_ekzistas=true;
     } else { $protokolu=true; }
 
     $query_vk="SELECT Ligoj_al_diskoservo FROM $tabelo WHERE $sercxiloj AND Ligoj_al_diskoservo!='0'";
@@ -162,6 +163,13 @@ else {//xml true
 
   mysql_close();
 
+  if(empty($linio_gxenerala)) { $protokolu=true; }
+  if(empty($ligilo_vk)) { $protokolu=true; }
+  if(empty($ligilo_vk_mp3)) { $protokolu=true; }
+  if(empty($ligilo_CD1D)) { $protokolu=true; }
+  if(empty($ligilo_muzikteksto)) { $protokolu=true; }
+  if(empty($ligilo_retpagxo)) { $protokolu=true; }
+
   if ($protokolu)
   {
     // protokolu netrovatajn ligilojn
@@ -172,8 +180,8 @@ else {//xml true
       $fh = fopen($protokoldosiero, 'a') or die("can't open file");
       fwrite($fh, $markilo . "\n");
       fwrite($fh, $query_gxenerala . ";\n");
-      fwrite($fh, $result_gxenerala . ";\n");
-      if ($linio_ekzistas) {
+      if (!empty($linio_gxenerala)) {
+        fwrite($fh, $linio_gxenerala . ";\n");
         if (empty($ligilo_vk)) {
           fwrite($fh, "-->ligilo_vk ne trovata\n");
           fwrite($fh, $query_vk . ";\n");
