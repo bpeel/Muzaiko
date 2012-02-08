@@ -1,6 +1,6 @@
 <?php
 include('inc/inc.php');
-page_header('Novaĵoj pri Muzaiko');
+page_header('Novaĵoj pri Muzaiko',NULL,NULL,'novajxoj_pri_muzaiko');
 ?>
 
 <!-- <h1 id="verku-novajxojn">Novaĵoj pri Muzaiko</h1> -->
@@ -41,19 +41,19 @@ echo '</div>';
 if ($news_pages_count > 1) {
 	echo '<div id="novajxoj_pagxoj"><ol>';
 	if ($current_page > 1)
-		echo '<li><a href="./?p='.($current_page-1).'#novajxoj" title="">antaŭaj novaĵoj</a></li>';
+		echo '<li><a href="./novajxoj?p=' . ($current_page-1) . '#novajxoj_pri_muzaiko" title="">antaŭaj novaĵoj</a></li>';
 	for ($i = 1; $i < ($news_pages_count + 1); $i++) {
-		echo '<li><a href="./?p='.$i.'#novajxoj"'.(($current_page == $i) ? 'class="elektita_pagxo"' : '').'>'.$i.'</a></li>';
+		echo '<li><a href="./novajxoj?p=' . $i . '#novajxoj_pri_muzaiko"' . (($current_page == $i) ? 'class="elektita_pagxo"' : '') . '>' . $i . '</a></li>';
 	}
 	if ($current_page < $news_pages_count)
-		echo '<li><a href="./?p='.($current_page+1).'#novajxoj" title="">postaj novaĵoj</a></li>';
+		echo '<li><a href="./novajxoj?p=' . ($current_page+1) . '#novajxoj_pri_muzaiko" title="">postaj novaĵoj</a></li>';
 	echo '</ol></div>';
 }
 
 ?>
 
 <!-- ================= -->
-<h1 id="verku-novajxojn">Novaĵoj el la tuta mondo, por la tuta mondo</h1>
+<h1 id="mondaj_novajxoj">Novaĵoj el la tuta mondo, por la tuta mondo</h1>
 
 <?php
 
@@ -90,12 +90,12 @@ echo '</div>';
 if ($news_pages_count > 1) {
 	echo '<div id="novajxoj_pagxoj"><ol>';
 	if ($current_page > 1)
-		echo '<li><a href="./?p='.($current_page-1).'#novajxoj" title="">antaŭaj novaĵoj</a></li>';
+		echo '<li><a href="./novajxoj?p=' . ($current_page-1) . '#mondaj_novajxoj" title="">antaŭaj novaĵoj</a></li>';
 	for ($i = 1; $i < ($news_pages_count + 1); $i++) {
-		echo '<li><a href="./?p='.$i.'#novajxoj"'.(($current_page == $i) ? 'class="elektita_pagxo"' : '').'>'.$i.'</a></li>';
+		echo '<li><a href="./novajxoj?p=' . $i . '#mondaj_novajxoj"' . (($current_page == $i) ? 'class="elektita_pagxo"' : '') . '>' . $i . '</a></li>';
 	}
 	if ($current_page < $news_pages_count)
-		echo '<li><a href="./?p='.($current_page+1).'#novajxoj" title="">postaj novaĵoj</a></li>';
+		echo '<li><a href="./novajxoj?p=' . ($current_page+1) . '#mondaj_novajxoj" title="">postaj novaĵoj</a></li>';
 	echo '</ol></div>';
 }
 
