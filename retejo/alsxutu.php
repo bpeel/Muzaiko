@@ -2,7 +2,7 @@
 include('inc/inc.php');
 page_header('Alŝuti dosieron');
 
-$target_dir = '/tmp';
+$target_dir = '/mnt/musashi.fr/ftp/htmlformularo';
 $recipient = 'admin@muzaiko.info';
 $size_limit = 30000000;
 
@@ -57,7 +57,7 @@ if (isset($_POST['submit']) && $_POST['kontrauxspamo'] == '') {
             $filename = $array[mt_rand(0, 26)].$filename;
           }
           if (move_uploaded_file($_FILES['file']['tmp_name'], $filename)) {
-            mail($recipient, 'Nova dosiero alŝutita', 'Nova dosiero estis alŝutita de '.$_POST['name'].'<'.$_POST['email'].'>. Ĝi troviĝas ĉe: '.$filename, "From: Proponitaj dosieroj <proponitaj-dosieroj@muzaiko.info>\r\nContent-type: text/plain; charset=utf-8");
+            mail($recipient, 'Nova dosiero alŝutita per la HTML-formularo', 'Nova dosiero estis alŝutita de '.$_POST['name'].' <'.$_POST['email'].'>. Ĝi troviĝas ĉe: '.$filename, "From: Alŝutitaj dosieroj <alŝutitaj-dosieroj@muzaiko.info>\r\nContent-type: text/plain; charset=utf-8");
             echo '<div class="sukceso"><p>Via dosiero estis sukcese alŝutita. Vi ricevos respondon baldaŭ. Dankon!</p><p>Vi povas alŝuti pliajn dosierojn se vi emas. :-)</p></div>';
           } else {
             echo '<div class="eraro">Via dosiero ne estis sukcese kopiita pro teknika problemo.</div>';
