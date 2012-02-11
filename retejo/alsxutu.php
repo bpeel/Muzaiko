@@ -51,11 +51,12 @@ if (isset($_POST['submit']) && $_POST['kontrauxspamo'] == '') {
                 break;
             }
         } else {
-          $filename = $target_dir . '/' . $_FILES['file']['name'];
+          $filename = $_FILES['file']['name'];
           $array = 'abcdefghijklmnopqrstuvwxyz';
-          while (file_exists($filename)) {
-            $filename = $array[mt_rand(0, 26)].$filename;
+          while (file_exists($target_dir.'/'.$filename)) {
+            $filename = $array[mt_rand(0, 26)].$_FILES['file']['name'];
           }
+          $filename = $target_dir.'/'.$filename;
           if (move_uploaded_file($_FILES['file']['tmp_name'], $filename)) {
             mail($recipient, 'Nova dosiero alŝutita per la HTML-formularo', 'Nova dosiero estis alŝutita de '.$_POST['name'].' <'.$_POST['email'].'>. Ĝi troviĝas ĉe: '.$filename, "From: Alŝutitaj dosieroj <alŝutitaj-dosieroj@muzaiko.info>\r\nContent-type: text/plain; charset=utf-8");
             echo '<div class="sukceso"><p>Via dosiero estis sukcese alŝutita. Vi ricevos respondon baldaŭ. Dankon!</p><p>Vi povas alŝuti pliajn dosierojn se vi emas. :-)</p></div>';
