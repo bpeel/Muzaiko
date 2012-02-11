@@ -322,22 +322,22 @@ color: #a90329;
 	margin: 10px;
 	text-align: center;
 }
-#verku-novajxon-content fieldset {
+.formularo fieldset {
 	margin-top:20px;
 }
-#verku-novajxon-content fieldset ol {
+.formularo fieldset ol {
 	list-style-type: none;
 	padding: 0;
 	margin: 5px;
 }
-#verku-novajxon-content fieldset ol li {
+.formularo fieldset ol li {
 	padding: 5px;
 	vertical-align: top;
 }
-#verku-novajxon-content fieldset ol li#kontrauxspamajxo {
+.formularo fieldset ol li.kontrauxspamajxo {
 	display: none;
 }
-#verku-novajxon-content fieldset ol li label {
+.formularo fieldset ol li label {
 	display: inline-block;
 	margin-top: 5px;
 	line-height: auto;
@@ -345,13 +345,13 @@ color: #a90329;
 	margin-right: 10px;
 	vertical-align: top;
 }
-#verku-novajxon-content fieldset ol li input[type=text] {
+.formularo fieldset ol li input[type=text] {
 	width: 315px;
 }
-#verku-novajxon-content fieldset ol li input[type=submit] {
+.formularo fieldset ol li input[type=submit] {
 	margin-left: 110px;
 }
-#verku-novajxon-content fieldset ol li textarea {
+.formularo fieldset ol li textarea {
 	width: 315px;
 }
 div.sukceso {

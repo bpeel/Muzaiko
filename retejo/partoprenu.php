@@ -35,7 +35,7 @@ pli da informoj.
 
 <h1 id="verku-novajxojn">Verku novaĵojn</h1>
 
-<div id="verku-novajxon-content">
+<div class="formularo">
 	<p>Verku novaĵojn por Muzaiko! (ekzemple pri via lando, aŭ pri interesaj temoj) La reguloj por verki novaĵojn troviĝas <a href="http://vikio.muzaiko.info/index.php/Novaĵo">ĉe la vikio</a>.</p>
 	<p>Atentu pri ke la novaĵoj devas esti koncizaj, facilkompreneblaj, kaj laŭeble neŭtralaj. Ĉiam menciu la fonton, bonvolu!</p>
 
@@ -60,7 +60,7 @@ pli da informoj.
         <li><label for="titolo">Titolo de la novaĵo</label><input type="text" name="titolo" id="titolo"<?php echo (empty($_GET['titolo']) ? '' : ' value="'.htmlspecialchars($_GET['titolo']).'"') ?> /></li>
         <li><label for="enhavo">Enhavo de la novaĵo</label><textarea cols="50" rows="20" name="enhavo" id="enhavo"><?php echo (empty($_GET['enhavo']) ? '' : htmlspecialchars($_GET['enhavo'])) ?></textarea></li>
         <li><label for="fontoj">Fonto(j) de la novaĵo</label><textarea cols="50" rows="5" name="fontoj" id="fontoj"><?php echo (empty($_GET['fontoj']) ? '' : htmlspecialchars($_GET['fontoj'])) ?></textarea></li>
-        <li id="kontrauxspamajxo"><label for="kontrauxspamo">Ne plenigu tiun kampon</label><input type="text" name="kontrauxspamo" id="kontrauxspamo" /></li>
+        <li class="kontrauxspamajxo"><label for="kontrauxspamo">Ne plenigu tiun kampon</label><input type="text" name="kontrauxspamo" id="kontrauxspamo" /></li>
         <li><input type="submit" name="novajxo" value="Sendi" /></li>
       </ol>
     </fieldset>
