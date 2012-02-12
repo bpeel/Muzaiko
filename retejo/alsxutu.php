@@ -72,6 +72,9 @@ if (isset($_POST['submit']) && $_POST['kontrauxspamo'] == '') {
 ?>
 
 <div class="formularo">
+  <p>Alŝutante dosieron per tiu ĉi formularo, vi publikigas ĝin laŭ
+permesilo <a href="http://creativecommons.org/licenses/by-sa/2.0/deed.eo">CC-by-sa</a>. Se vi ne konsentas, ne alŝutu sed kontaktu nin
+rekte.</p>
   <form action="" method="post" enctype="multipart/form-data">
     <fieldset>
       <legend>Alŝuti dosieron</legend>
