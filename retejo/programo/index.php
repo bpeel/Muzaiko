@@ -71,10 +71,6 @@ function get_files_for_program($program_id)
 
 function generate_file_selection($redaktado, $redaktado_id)
 {
-  print("<script type=\"text/javascript\">\n");
-  include("programo-js.php");
-  print("</script>\n");
-
   if ($redaktado)
     {
       if (isset($_POST["sondosieroj"]))
@@ -148,7 +144,8 @@ function konservu_sondosierojn($programero_id, &$success, &$errors)
 		<title>Verki la programon</title>
 		<link rel="stylesheet" href="style.css" type="text/css" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<script src="datetimepicker_css.js"></script>
+		<script src="./programo.js"></script>
+		<script src="./datetimepicker_css.js"></script>
 		<script src="../cxapeligado.js"></script>
 	</head>
 	<body>
