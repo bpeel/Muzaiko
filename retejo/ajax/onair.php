@@ -20,7 +20,7 @@
 <!-- kantinformoj -->
 <div id="now-playing">
   <div class="titolo">Nun estas ludata…</div>
-  <div id="kanto">Pro la superŝarĝo de la servilo, ni portempe malŝaltis<br />la montradon de la informoj pri la aktuale ludata kanto<br />kaj la nombro de aŭskultantoj. Ni pardonpetaspro la<br />ĝeno, kaj esperas reŝalti ilin baldaŭ.</div>
+  <div id="kanto">Pro la superŝarĝo de la servilo, ni portempe malŝaltis<br />la montradon de la informoj pri la aktuale ludata kanto<br />kaj la nombro de aŭskultantoj. Ni pardonpetas pro la<br />ĝeno, kaj esperas reŝalti ilin baldaŭ.</div>
 <!--   <h1>Nombro da aŭskultantoj</h1> -->
   <div id="statistikoj"></div>
 <!--  <h1>Nun estas ludata…</h1>
