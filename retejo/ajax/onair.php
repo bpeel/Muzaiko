@@ -7,20 +7,20 @@
 
 <!-- skriptoj -->
 <script type="text/javascript">
-  function updateCurrentSong(){
+  /*function updateCurrentSong(){
           $('#kanto').load('ajax/current_song.php');
   }
   setInterval("updateCurrentSong()", 10000);
   function updateCurrentListeners(){
           $('#statistikoj').load('ajax/nombro_da_auxskultantoj.php');
   }
-  setInterval("updateCurrentListeners()", 10000);
+  setInterval("updateCurrentListeners()", 10000);*/
 </script>
 
 <!-- kantinformoj -->
 <div id="now-playing">
   <div class="titolo">Nun estas ludata…</div>
-  <div id="kanto"></div>
+  <div id="kanto">Pro la superŝarĝo de la servilo, ni portempe malŝaltis<br />la montrado de la informoj pri la aktuale ludata kanto<br />kaj la nombro de aŭskultantoj. Ni pardonpetaspro la<br />ĝeno, kaj esperas reŝalti ilin baldaŭ.</div>
 <!--   <h1>Nombro da aŭskultantoj</h1> -->
   <div id="statistikoj"></div>
 <!--  <h1>Nun estas ludata…</h1>
