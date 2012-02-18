@@ -58,6 +58,13 @@ a img {
 .dato_input {
 	width: 150px;
 }
+div.delete_date_row {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url('images/forigi_malgranda.png');
+    cursor: pointer;
+}
 input[type=text], input[type=submit], input[type=button] {
 	margin-top: 10px;
 }

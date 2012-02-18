@@ -317,31 +317,16 @@ function konservu_sondosierojn($programero_id, &$success, &$errors)
 				</div>
 				<div id="datoj">
 						<?php
-							$counter = 1;
 							if ($redaktado) {
-								$counter = 0;
+								printf('<script type="text/javascript">');
 								foreach ($redaktado_ekdatoj as $key => $value) {
-									$counter++;
-									printf('<div id="dato%s">', $counter);
-									printf('<label for="eko%s">Dato %s</label>&nbsp;', $counter, $counter);
-									printf('<input type="text" class="dato_input" name="ekoj[]" id="eko%s" placeholder="Eko" value="%s" onclick="javascript:NewCssCal(\'eko%s\', \'yyyyMMdd\', \'arrow\', true, \'24\', false)" />&nbsp;', $counter, $redaktado_ekdatoj[$key], $counter);
-									printf('<input type="text" class="dato_input" name="finoj[]" id="fino%s" placeholder="Fino" value="%s" onclick="javascript:NewCssCal(\'fino%s\', \'yyyyMMdd\', \'arrow\', true, \'24\', false)" />&nbsp;', $counter, $redaktado_findatoj[$key], $counter);
-									printf('<a href="#" title="Forigi ĉi tiun daton" onclick="javascript:forigiDaton(%s)"><img src="images/forigi_malgranda.png" alt="Forigi ĉi tiun daton" /></a>', $counter);
-									printf('</div>');
+                                                                  printf('addDateRow(\'' . $redaktado_ekdatoj[$key] . '\', \'' . $redaktado_findatoj[$key] . '\');');
 								}
-							} else {
-						?>
-					<div id="dato1">
-						<label for="eko1">Dato 1</label>
-						<input type="text" class="dato_input" name="ekoj[]" id="eko1" placeholder="Eko"  onclick="javascript:NewCssCal('eko1', 'yyyyMMdd', 'arrow', true, '24', false)" />
-						<input type="text" class="dato_input" name="finoj[]" id="fino1" placeholder="Fino" onclick="javascript:NewCssCal('fino1', 'yyyyMMdd', 'arrow', true, '24', false)" />
-						<a href="#" title="Forigi ĉi tiun daton" onclick="javascript:forigiDaton(1)"><img src="images/forigi_malgranda.png" alt="Forigi ĉi tiun daton" /></a>
-					</div>
-						<?php
+                                                                printf('</script>');
 							}
 						?>
 				</div>
-				<input type="button" value="Aldoni daton" onclick="aldoniDaton();" /><br />
+				<input type="button" value="Aldoni daton" onclick="addDateRow();" /><br />
 				<?php generate_file_selection($redaktado, $redaktado_id); ?>
 				<input type="submit" name="registrado" value="<?php echo ($redaktado ? 'Registri la ŝanĝojn' : 'Registri tiun novan programeron') ?>" onclick="gxisdatiguSondosierojn();" />
 				<input type="submit" name="nuligi" value="Nuligi" />
@@ -350,20 +335,6 @@ function konservu_sondosierojn($programero_id, &$success, &$errors)
 		<?php
 			}
 		?>
-
-		<script type="text/javascript">
-			var counter = <?php echo $counter; ?>;
-			function aldoniDaton() {
-				counter++;
-				var newdiv = document.createElement('div');
-				newdiv.id = 'dato'+counter;
-				newdiv.innerHTML = "<label for=\"eko" + counter + "\">Dato " + counter + "</label> <input type=\"text\" class=\"dato_input\" name=\"ekoj[]\" id=\"eko" + counter + "\" placeholder=\"Eko\" onclick=\"javascript:NewCssCal('eko" + counter + "', 'yyyyMMdd', 'arrow', true, '24')\" /> <input type=\"text\" class=\"dato_input\" name=\"finoj[]\" id=\"fino" + counter + "\" placeholder=\"Fino\" onclick=\"javascript:NewCssCal('fino" + counter + "', 'yyyyMMdd', 'arrow', true, '24')\" /> <a href=\"#\" title=\"Forigi ĉi tiun daton\" onclick=\"javascript:forigiDaton(" + counter + ")\"><img src=\"images/forigi_malgranda.png\" alt=\"Forigi ĉi tiun daton\" /></a>";
-				document.getElementById('datoj').appendChild(newdiv);
-			}
-			function forigiDaton(id) {
-				document.getElementById('datoj').removeChild(document.getElementById('dato'+id));
-			}
-		</script>
 
 		<h2>Programeroj</h2>
 

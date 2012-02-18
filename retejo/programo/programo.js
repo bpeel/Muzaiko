@@ -60,3 +60,55 @@ function gxisdatiguSondosierojn()
     }
   }
 }
+
+function showCalendar(event)
+{
+    NewCssCal(this.id, 'yyyyMMdd', 'arrow', true, '24');
+}
+
+function fillEndDate(event)
+{
+    var date = this.value;
+    var dateRegexp = /(\d{4})-(\d{1,2})-(\d{1,2}) (\d{1,2}):\d{1,2}/;
+    var match = dateRegexp.exec(date);
+    if (!match)
+        return;
+    var newDate = new Date(match[1], match[2], match[3], match[4]);
+    newDate.setHours(newDate.getHours() + 1);
+    var newMonth = newDate.getMonth();
+    var newDay = newDate.getDate();
+    var newHours = newDate.getHours();
+    if (newMonth < 10) newMonth = '0' + newMonth;
+    if (newDay < 10) newDay = '0' + newDay;
+    if (newHours < 10) newHours = '0' + newHours;
+    document.getElementById(this.id.replace('eko', 'fino')).value =
+        newDate.getFullYear() + '-' + newMonth + '-' + newDay + ' '
+        + newHours + ':00';
+}
+
+function addDateRow(beginDate, endDate) {
+    if (typeof this.counter == 'undefined') {
+        this.counter = 0;
+    }
+
+    this.counter++;
+
+    var row = document.createElement('div');
+    row.id = 'dato' + this.counter;
+    html = '<label for="eko' + this.counter + '">Dato ' + this.counter + '</label> ';
+    html += '<input type="text" class="dato_input" name="ekoj[]" id="eko' + this.counter + '" placeholder="Eko" ' + (beginDate != null ? 'value="' + beginDate + '" ' : '') + '/> ';
+    html += '<input type="text" class="dato_input" name="finoj[]" id="fino' + this.counter + '" placeholder="Fino" ' + (endDate != null ? 'value="' + endDate + '" ' : '') + '/>';
+    html += '<div class="delete_date_row" id="forigu' + this.counter + '" title="Forigu ĉi tiun daton"></div>';
+    row.innerHTML = html;
+    document.getElementById('datoj').appendChild(row);
+    document.getElementById('eko' + this.counter).addEventListener('click', showCalendar, false);
+    document.getElementById('eko' + this.counter).addEventListener('blur', fillEndDate, false);
+    document.getElementById('fino' + this.counter).addEventListener('click', showCalendar, false);
+    document.getElementById('forigu' + this.counter).addEventListener('click', deleteDateRow, false);
+
+    //forigiDaton(" + counter + ")
+}
+function deleteDateRow(event) {
+    document.getElementById('datoj').removeChild(document.getElementById('dato'+this.id.replace('forigu', '')));
+}
+
