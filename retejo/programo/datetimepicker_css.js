@@ -937,7 +937,7 @@ function NewCssCal(pCtrl, pFormat, pScroller, pShowTime, pTimeMode, pShowSeconds
 	// get current date and time
 
 	dtToday = new Date();
-	dtToday.setHours(0);
+	dtToday.setHours(5);
 	dtToday.setMinutes(0);
 	dtToday.setSeconds(0);
 	dtToday.setMilliseconds(0);
