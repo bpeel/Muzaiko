@@ -93,7 +93,7 @@ function right($title='') {
 <a href="/auxskultu" onClick="window.open('http://listen.radionomy.com/muzaikoinfo.m3u');"><img src="images/auxskultu_muzikludilo.png" alt="Klaku tie por aŭskulti radio Muzaiko per via muzikludilo." title="" class="listen_live" border="0" /></a>
 -->
 
-<object width="295" height="90"><param name="allowscriptaccess" value="always" /><param name="movie" value="http://www.radionomy.com/Flash/BannerEmbed.swf?RadUID=14694a7d-9023-4db1-86b4-d85d96cba181&amp;titlesColor=FFFFFF&amp;color=9e0020&amp;autoPlay=no&amp;lang=en" /><param name="wmode" value="transparent" /><embed src="http://www.radionomy.com/Flash/BannerEmbed.swf?RadUID=14694a7d-9023-4db1-86b4-d85d96cba181&amp;titlesColor=FFFFFF&amp;color=9e0020&amp;autoPlay=no&amp;lang=en" wmode="transparent" type="application/x-shockwave-flash" allowscriptaccess="always" width="295" height="90"></embed></object>
+<object width="324" height="90"><param name="allowscriptaccess" value="always" /><param name="movie" value="http://www.radionomy.com/Flash/BannerEmbed.swf?RadUID=14694a7d-9023-4db1-86b4-d85d96cba181&amp;titlesColor=FFFFFF&amp;color=9e0020&amp;autoPlay=no&amp;lang=en" /><param name="wmode" value="transparent" /><embed src="http://www.radionomy.com/Flash/BannerEmbed.swf?RadUID=14694a7d-9023-4db1-86b4-d85d96cba181&amp;titlesColor=FFFFFF&amp;color=9e0020&amp;autoPlay=no&amp;lang=en" wmode="transparent" type="application/x-shockwave-flash" allowscriptaccess="always" width="324" height="90"></embed></object>
 
 <div class="dekstra_titolo">Aŭskultu</div>
 <div class="dekstra_teksto">
