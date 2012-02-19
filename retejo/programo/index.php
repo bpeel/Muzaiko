@@ -158,7 +158,7 @@ function konservu_sondosierojn($programero_id, &$success, &$errors)
 			$errors = array();
 
 			function format_programero($text) {
-				$text = preg_replace('/\[([^\]]+)\]\(([^\)]+)\)/', '<a href="$2">$1</a>', $text);
+				$text = preg_replace('/\[(\S+)\s+([^\]]+)\]/', '<a href="$1">$2</a>', $text);
 				$text = preg_replace('/\*([^\*]+)\*/', '<i>$1</i>', $text);
 				return $text;
 			}
