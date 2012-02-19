@@ -323,7 +323,9 @@ function konservu_sondosierojn($programero_id, &$success, &$errors)
                                                                   printf('addDateRow(\'' . $redaktado_ekdatoj[$key] . '\', \'' . $redaktado_findatoj[$key] . '\');');
 								}
                                                                 printf('</script>');
-							}
+                                                        } else if (!$forigado) {
+                                                          printf('<script type="text/javascript">addDateRow();</script>');
+                                                        }
 						?>
 				</div>
 				<input type="button" value="Aldoni daton" onclick="addDateRow();" /><br />

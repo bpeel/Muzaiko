@@ -112,5 +112,3 @@ function deleteDateRow(event) {
     document.getElementById('datoj').removeChild(document.getElementById('dato'+this.id.replace('forigu', '')));
 }
 
-window.onload = function() { addDateRow(); };
-
