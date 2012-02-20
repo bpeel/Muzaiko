@@ -27,8 +27,8 @@ def faru_ligilojn(cxen):
     cxen = cgi.escape(cxen)
 
     cxen = re.sub(r"\[(\S+)\s+([^\]]+)\]",
-                  lambda(match): ("<a href=\"" + match.group(2) + "\">" +
-                                  match.group(1) + "</a>"),
+                  lambda(match): ("<a href=\"" + match.group(1) + "\">" +
+                                  match.group(2) + "</a>"),
                   cxen)
     cxen = re.sub(r"\*([^\*]+)\*",
                   lambda(match): "<i>" + match.group(1) + "</i>",
