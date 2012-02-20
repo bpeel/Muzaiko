@@ -26,7 +26,7 @@ def kiel_rfc822(tempo):
 def faru_ligilojn(cxen):
     cxen = cgi.escape(cxen)
 
-    cxen = re.sub(r"\[([^\]]+)\]\(([^\)]+)\)",
+    cxen = re.sub(r"\[(\S+)\s+([^\]]+)\]",
                   lambda(match): ("<a href=\"" + match.group(2) + "\">" +
                                   match.group(1) + "</a>"),
                   cxen)
