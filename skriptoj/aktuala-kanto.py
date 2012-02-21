@@ -6,10 +6,21 @@ import urllib
 import cgi
 import os
 import pkagordoj
+import xml.etree.ElementTree as ET
+import xml.parsers.expat
+import MySQLdb
+import cxapeloj
+import textwrap
 
 RADIOUID = "14694a7d-9023-4db1-86b4-d85d96cba181"
 
+# Plej granda nombro de literoj antaŭ ol tranĉi la ĉenon
+LINILONGO = 60
+
 class Peto:
+    class FusxaTransformo(Exception):
+        pass
+
     def __init__(self):
         self.pasinta_gxisdatigo = 0
         self.sekva_gxisdatigo = 0
@@ -17,7 +28,7 @@ class Peto:
     def anstatauxigu_dosieron(self, datumo):
         # Unue eligu la datumon al portempa dosiero
         dosiero = open(self.DOSIERO + ".tmp", "w")
-        dosiero.write(datumo)
+        dosiero.write(datumo.encode("utf-8"))
         dosiero.close()
 
         # Renomu la originalan dosieron al la nova kiel atoma ago por ke
@@ -35,13 +46,16 @@ class Peto:
         except IOError:
             pass
         else:
-            # Transformu la datumon
-            datumo = self.transformu(datumo)
-
             try:
-                Peto.anstatauxigu_dosieron(self, datumo)
-            except IOError:
+                # Transformu la datumon
+                datumo = self.transformu(datumo)
+            except Peto.FusxaTransformo:
                 pass
+            else:
+                try:
+                    Peto.anstatauxigu_dosieron(self, datumo)
+                except IOError:
+                    pass
         finally:
             self.pasinta_gxisdatigo = time.time()
             self.sekva_gxisdatigo = self.pasinta_gxisdatigo + self.pauxzo
@@ -62,13 +76,143 @@ class NombroDeAuxskultantoj(Peto):
         self.pauxzo = 15
 
     def transformu(self, datumo):
-        return "Nombro de aŭskultantoj " \
-            "(laŭ Radionomy, eble ne tute preciza): " + \
-            cgi.escape(datumo)
+        return u"Nombro de aŭskultantoj " \
+            u"(laŭ Radionomy, eble ne tute preciza): " + \
+            cgi.escape(unicode(datumo, "utf-8"))
+
+class Ligilo:
+    def _filtru_cxenon(self, cxeno):
+        if cxeno and cxeno != '0' and cxeno != '-1':
+            return cxeno
+        else:
+            return None
+
+    def __init__(self, db, artisto, titolo):
+        self.artisto = artisto
+        self.titolo = titolo
+        self.ligilo_vk = None
+        self.ligilo_vk_mp3 = None
+        self.ligilo_CD1D = None
+        self.ligilo_muzikteksto = None
+        self.ligilo_retpagxo = None
+
+        if artisto == None and titolo == None:
+            return
+
+        sercxiloj = []
+        params = []
+
+        if artisto:
+            sercxiloj.append("`Artistoj`=%s")
+            params.append(cxapeloj.malcxapeligu(artisto))
+        if titolo:
+            sercxiloj.append("`Titolo`=%s")
+            params.append(cxapeloj.malcxapeligu(titolo))
+
+        sercxiloj.append("`REF` NOT LIKE 'VK%%'");
+
+        cur = db.cursor()
+        cur.execute("select `Ligoj_al_diskoservo`, `Ligoj_al_la_elsxutejo`, "
+                    "`Ligoj_al_CD1D`, `Ligoj_al_muzikteksto`, "
+                    "`Ligoj_al_retpagxo` "
+                    "from `muzaiko_datumbazo` "
+                    "where " + (" and ".join(sercxiloj)) +
+                    "limit 1",
+                    params)
+
+        for row in cur:
+            self.ligilo_vk = self._filtru_cxenon(row[0])
+            self.ligilo_vk_mp3 = self._filtru_cxenon(row[1])
+            self.ligilo_CD1D = self._filtru_cxenon(row[2])
+            self.ligilo_muzikteksto = self._filtru_cxenon(row[3])
+            self.ligilo_retpagxo = self._filtru_cxenon(row[4])
+
+class AktualaKanto(Peto):
+    URL = \
+        "http://api.radionomy.com/currentsong.cfm?" \
+        "radiouid=" + RADIOUID + "&" + \
+        "apikey=" + pkagordoj.get("apikey") + "&" + \
+        "callmeback=yes&" + \
+        "type=xml"
+
+    DOSIERO = \
+        pkagordoj.get("loko_de_ajax") + \
+        "/aktuala_kanto.html"
+
+    def __init__(self):
+        Peto.__init__(self)
+
+        self.db = MySQLdb.connect(passwd = pkagordoj.get("kantdb_passwd"),
+                                  db = pkagordoj.get("kantdb_db"),
+                                  host = pkagordoj.get("kantdb_host"),
+                                  user = pkagordoj.get("kantdb_user"))
+
+    def gxisdatigu(self):
+        # Defaŭlte repetu post 30 sekundoj se la peto fuŝas
+        self.pauxzo = 30
+
+        Peto.gxisdatigu(self)
+
+    def transformu(self, datumo):
+        rezulto = []
+
+        try:
+            dok = ET.fromstring(datumo)
+        except (UnicodeError, xml.parsers.expat.ExpatError):
+            raise Peto.FusxaTransformo()
+
+        titolo = dok.findtext("track/title")
+        artisto = dok.findtext("track/artists")
+        callmeback = dok.findtext("track/callmeback")
+
+        try:
+            callmeback = int(callmeback)
+        except ValueError:
+            raise Peto.FusxaTransformo()
+
+        nomo = []
+        if artisto:
+            nomo.append(cgi.escape(cxapeloj.cxapeligu(artisto)))
+        if titolo:
+            nomo.append(cgi.escape(cxapeloj.cxapeligu(titolo)))
+        rezulto.append("<br>".join(textwrap.wrap(" - ".join(nomo), LINILONGO)))
+        rezulto.append("<br>")
+
+        ligilo = Ligilo(self.db, artisto, titolo)
+
+        ligiloj =[]
+
+        if ligilo.ligilo_vk:
+            ligiloj.append('<a target="blank" href="' +
+                           cgi.escape(ligilo.ligilo_vk) + '">' +
+                           'Fizikia albumo</a>')
+        if ligilo.ligilo_vk_mp3:
+            ligiloj.append('<a target="blank" href="' +
+                           cgi.escape(ligilo.ligilo_vk_mp3) + '">' +
+                           'MP3</a>')
+        if ligilo.ligilo_CD1D:
+            ligiloj.append('<a target="blank" href="' +
+                           cgi.escape(ligilo.ligilo_CD1D) + '">' +
+                           'CD1D</a>')
+        if ligilo.ligilo_muzikteksto:
+            ligiloj.append('<a target="blank" href="' +
+                           cgi.escape(ligilo.ligilo_muzikteksto) + '">' +
+                           'Muzikteksto</a>')
+        if ligilo.ligilo_retpagxo:
+            ligiloj.append('<a target="blank" href="' +
+                           cgi.escape(ligilo.ligilo_retpagxo) + '">' +
+                           u'Retpaĝo</a>')
+
+        rezulto.append(" - ".join(ligiloj))
+
+        self.pauxzo = callmeback / 1000.0
+
+        return ''.join([(unicode(x, "utf-8") if isinstance(x, str) else x)
+                        for x in rezulto])
 
 def cxefiteracio():
     nun = 0
-    petoj = [ NombroDeAuxskultantoj() ]
+    petoj = [ AktualaKanto(), NombroDeAuxskultantoj() ]
 
     while True:
         # Ĝisdatigu ĉiujn petojn kiuj jam pretas
