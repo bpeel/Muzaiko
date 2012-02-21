@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteBase /ajax
+RewriteRule ^nombro_da_auxskultantoj\.php$ nombro_de_auxskultantoj.html
+RewriteRule ^current_song\.php$ aktuala_kanto.html
