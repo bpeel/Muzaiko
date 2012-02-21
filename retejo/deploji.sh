@@ -25,6 +25,8 @@ rsync \
     --exclude=/diagramoj \
     --exclude=/podkasto \
     --exclude=/Veronika.jpg \
+    --exclude=/ajax/aktuala_kanto.html \
+    --exclude=/ajax/nombro_de_auxskultantoj.html \
     --rsh=ssh \
     --delete \
     "$@" \
