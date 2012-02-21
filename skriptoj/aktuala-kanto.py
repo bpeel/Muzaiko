@@ -72,8 +72,9 @@ class NombroDeAuxskultantoj(Peto):
     def __init__(self):
         Peto.__init__(self)
 
-        # Atendu la sekvan ĝisdatigon dum 15 sekundoj
-        self.pauxzo = 15
+        # Atendu la sekvan ĝisdatigon dum 5 minutoj (tio estas la
+        # maksimuma laŭ Radionomy)
+        self.pauxzo = 5 * 60
 
     def transformu(self, datumo):
         return u"Nombro de aŭskultantoj " \
