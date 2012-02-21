@@ -39,7 +39,7 @@ if ($jaro != 0 && $monato != 0 && $tago != 0) {
 
 	mysql_close();
 
-	printf('%s:<ul>', date('Y/m/d', mktime(0, 0, 0, $monato, $tago, $jaro)));
+	printf('<div>%s:<ul>', date('Y/m/d', mktime(0, 0, 0, $monato, $tago, $jaro)));
 	while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
 		printf('<li>%s&ndash;%s UTC: %s</li>', $row[0], $row[1], format_programero(htmlspecialchars(stripslashes($row[2]))));
 	}
