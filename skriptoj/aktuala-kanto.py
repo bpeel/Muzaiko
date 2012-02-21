@@ -189,7 +189,7 @@ class AktualaKanto(Peto):
         if ligilo.ligilo_vk:
             ligiloj.append('<a target="blank" href="' +
                            cgi.escape(ligilo.ligilo_vk) + '">' +
-                           'Fizikia albumo</a>')
+                           'Fizika albumo</a>')
         if ligilo.ligilo_vk_mp3:
             ligiloj.append('<a target="blank" href="' +
                            cgi.escape(ligilo.ligilo_vk_mp3) + '">' +
