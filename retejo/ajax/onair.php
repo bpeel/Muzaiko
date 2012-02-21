@@ -22,7 +22,9 @@
   <div class="titolo">Nun estas ludata…</div>
   <div id="kanto"></div>
 <!--   <h1>Nombro da aŭskultantoj</h1> -->
-  <div id="statistikoj"></div>
+  <div>Nombro de aŭskultantoj (laŭ Radionomy, eble ne tute preciza):
+       <span id="statistikoj"></span>
+  </div>
 <!--  <h1>Nun estas ludata…</h1>
   <div id="kanto2"></div>-->
 </div>

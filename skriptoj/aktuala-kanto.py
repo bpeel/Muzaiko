@@ -80,9 +80,7 @@ class NombroDeAuxskultantoj(Peto):
         self.pauxzo = 5 * 60
 
     def transformu(self, datumo):
-        return u"Nombro de aŭskultantoj " \
-            u"(laŭ Radionomy, eble ne tute preciza): " + \
-            cgi.escape(unicode(datumo, "utf-8"))
+        return cgi.escape(unicode(datumo, "utf-8"))
 
 class Ligilo:
     def _filtru_cxenon(self, cxeno):
