@@ -11,6 +11,7 @@ import xml.parsers.expat
 import MySQLdb
 import cxapeloj
 import textwrap
+import httplib
 
 RADIOUID = "14694a7d-9023-4db1-86b4-d85d96cba181"
 
@@ -41,9 +42,11 @@ class Peto:
             dosiero = urllib.urlopen(self.URL)
             try:
                 datumo = dosiero.read()
+                if dosiero.getcode() != httplib.OK:
+                    raise IOError("La HTTP peto fusxis")
             finally:
                 dosiero.close()
-        except IOError:
+        except (IOError, httplib.HTTPException):
             pass
         else:
             try:
