@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 RRD_FILE_NAME='/var/muzaiko/auxskultantoj.rrd'
+NOMBRO_DE_AUXSKULTANTOJ_FILENAME='/var/www/www.muzaiko.info/ajax/nombro_de_auxskultantoj.html'
 RRDTOOL='/opt/rrdtool-1.4.5/bin/rrdtool'
 CURRENT_TIMESTAMP=$(date '+%s')
 
@@ -56,11 +57,7 @@ fi
 
 [ -w "${RRD_FILE_NAME}" ] || exit 1
 
-CURL='curl'
-
-URL="http://api.radionomy.com/currentaudience.cfm?radiouid=14694a7d-9023-4db1-86b4-d85d96cba181"
-
-AUXSKULTANTOJ=$(${CURL} --silent --max-time 60 "${URL}")
+AUXSKULTANTOJ=$(cat "${NOMBRO_DE_AUXSKULTANTOJ_FILENAME}")
 
 echo "$AUXSKULTANTOJ" >> /var/log/auxskultantoj.log
 
