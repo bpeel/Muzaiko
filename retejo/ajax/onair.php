@@ -14,7 +14,7 @@
   function updateCurrentListeners(){
           $('#statistikoj').load('ajax/nombro_de_auxskultantoj.html');
   }
-  setInterval("updateCurrentListeners()", 150000);
+  setInterval("updateCurrentListeners()", 60000);
 </script>
 
 <!-- kantinformoj -->
