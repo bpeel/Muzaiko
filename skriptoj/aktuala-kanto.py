@@ -147,7 +147,8 @@ class AktualaKanto(Peto):
         self.db = MySQLdb.connect(passwd = pkagordoj.get("kantdb_passwd"),
                                   db = pkagordoj.get("kantdb_db"),
                                   host = pkagordoj.get("kantdb_host"),
-                                  user = pkagordoj.get("kantdb_user"))
+                                  user = pkagordoj.get("kantdb_user"),
+                                  charset = "utf8")
 
     def gxisdatigu(self):
         # Defaŭlte repetu post 30 sekundoj se la peto fuŝas
