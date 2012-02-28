@@ -122,12 +122,22 @@ class Ligilo:
                     "limit 1",
                     params)
 
+        trovita = False
         for row in cur:
             self.ligilo_vk = self._filtru_cxenon(row[0])
             self.ligilo_vk_mp3 = self._filtru_cxenon(row[1])
             self.ligilo_CD1D = self._filtru_cxenon(row[2])
             self.ligilo_muzikteksto = self._filtru_cxenon(row[3])
             self.ligilo_retpagxo = self._filtru_cxenon(row[4])
+            trovita = True
+
+        if not trovita:
+            cur.execute("insert into `netrovita_kanto` "
+                        "(`artistoj`, `titolo`, `dato_de_manko`) "
+                        "values (%s, %s, now()) "
+                        "on duplicate key update `dato_de_manko` = now()",
+                        [ artisto if artisto else "",
+                          titolo if titolo else "" ])
 
 class AktualaKanto(Peto):
     URL = \
