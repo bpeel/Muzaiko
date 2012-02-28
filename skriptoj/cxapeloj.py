@@ -4,15 +4,23 @@
 import re
 
 _CXAPELOLISTO = {
-    'c': 'ĉ', 'g': 'ĝ', 'h': 'ĥ', 'j': 'ĵ', 's': 'ŝ', 'u': 'ŭ',
-    'C': 'Ĉ', 'G': 'Ĝ', 'H': 'Ĥ', 'J': 'Ĵ', 'S': 'Ŝ', 'U': 'Ŭ'
+    u'c': u'ĉ', u'g': u'ĝ', u'h': u'ĥ', u'j': u'ĵ', u's': u'ŝ', u'u': u'ŭ',
+    u'C': u'Ĉ', u'G': u'Ĝ', u'H': u'Ĥ', u'J': u'Ĵ', u'S': u'Ŝ', u'U': u'Ŭ'
    }
 
-_cxapeligu_re = re.compile(r"([cghjsu])x", re.IGNORECASE)
+_cxapeligu_re = re.compile(u"([cghjsu])x", re.IGNORECASE | re.UNICODE)
 
 def cxapeligu(cxeno):
-    return _cxapeligu_re.sub(lambda(x): _CXAPELOLISTO[x.group(1)],
-                             cxeno)
+    if isinstance(cxeno, str):
+        ucxeno = unicode(cxeno, "utf-8")
+    else:
+        ucxeno = cxeno
+    urezulto = _cxapeligu_re.sub(lambda(x): _CXAPELOLISTO[x.group(1)],
+                                 ucxeno)
+    if isinstance(cxeno, str):
+        return urezulto.encode("utf-8")
+    else:
+        return urezulto
 
 _MALCXAPELOLISTO = {
     u'ĉ': u'cx', u'ĝ': u'gx', u'ĥ': u'hx',
