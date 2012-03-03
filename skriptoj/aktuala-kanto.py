@@ -89,6 +89,10 @@ class Ligilo:
         else:
             return None
 
+    def _faru_elektilon(self, ry_kampo, kampo):
+        return ("if(isnull(" + ry_kampo + ") or " +
+                ry_kampo + " = '', " + kampo + ", " + ry_kampo + ")")
+
     def __init__(self, db, artisto, titolo):
         self.artisto = artisto
         self.titolo = titolo
@@ -105,10 +109,14 @@ class Ligilo:
         params = []
 
         if artisto:
-            sercxiloj.append("`Artistoj`=%s")
+            sercxiloj.append(self._faru_elektilon("`RY_Artistoj`",
+                                                  "`Artistoj`") +
+                             " = %s")
             params.append(cxapeloj.malcxapeligu(artisto))
         if titolo:
-            sercxiloj.append("`Titolo`=%s")
+            sercxiloj.append(self._faru_elektilon("`RY_Titolo`",
+                                                  "`Titolo`") +
+                             " = %s")
             params.append(cxapeloj.malcxapeligu(titolo))
 
         sercxiloj.append("`REF` NOT LIKE 'VK%%'");
@@ -116,7 +124,8 @@ class Ligilo:
         cur = db.cursor()
         cur.execute("select `Ligoj_al_diskoservo`, `Ligoj_al_la_elsxutejo`, "
                     "`Ligoj_al_CD1D`, `Ligoj_al_muzikteksto`, "
-                    "`Ligoj_al_retpagxo` "
+                    "`Ligoj_al_retpagxo`, "
+                    "`Artistoj`, `Titolo` "
                     "from `muzaiko_datumbazo` "
                     "where " + (" and ".join(sercxiloj)) +
                     "limit 1",
@@ -129,6 +138,8 @@ class Ligilo:
             self.ligilo_CD1D = self._filtru_cxenon(row[2])
             self.ligilo_muzikteksto = self._filtru_cxenon(row[3])
             self.ligilo_retpagxo = self._filtru_cxenon(row[4])
+            self.artisto = self._filtru_cxenon(row[5])
+            self.titolo = self._filtru_cxenon(row[6])
             trovita = True
 
         if not trovita:
@@ -183,15 +194,15 @@ class AktualaKanto(Peto):
         except ValueError:
             raise Peto.FusxaTransformo()
 
+        ligilo = Ligilo(self.db, artisto, titolo)
+
         nomo = []
         if artisto:
-            nomo.append(cgi.escape(cxapeloj.cxapeligu(artisto)))
+            nomo.append(cgi.escape(cxapeloj.cxapeligu(ligilo.artisto)))
         if titolo:
-            nomo.append(cgi.escape(cxapeloj.cxapeligu(titolo)))
+            nomo.append(cgi.escape(cxapeloj.cxapeligu(ligilo.titolo)))
         rezulto.append("<br>".join(textwrap.wrap(" - ".join(nomo), LINILONGO)))
         rezulto.append("<br>")
-
-        ligilo = Ligilo(self.db, artisto, titolo)
 
         ligiloj =[]
 
