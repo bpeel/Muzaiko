@@ -5,9 +5,9 @@ page_header('Financoj');
 
 <!-- <h1>Financoj</h1> -->
 
-Bedaŭrinde kreante Muzaikon oni ja devas pensi pri kelkaj financaj aferoj. Se vi emas helpi pri ili, organizi ilin, vi estas tre bonvena!
-</br>
-Ĝis nun la financoj estas tiel:
+<p>Kreante Muzaikon oni ja devas pensi pri kelkaj financaj aferoj. Se vi emas helpi pri ili, organizi ilin, vi estas tre bonvena! Kaj se vi emas finance kontribui, nia UEA konto estas <b>mzik-m</b>. Kiam vi kontribuas, indiku ĉu via nomo kaŭ kromnomo aperu en la retpaĝo de Muzaiko, kaj se vi emas, indiku al kio Muzaiko elspezu vian monon (ekzemple: servilo, vizitkartoj, afiŝoj, sendependiĝo, domajnoj, registriloj, por krei porteblan studion, ktp.).</p>
+
+<p>Ĝis nun la financoj estas tiel:</p>
 
 <h1>Pagita</h1>
 
@@ -50,11 +50,7 @@ Bedaŭrinde kreante Muzaikon oni ja devas pensi pri kelkaj financaj aferoj. Se v
 
 </table> 
 
-</br>
-
-Nun ne estas urĝa pagindaĵo, tamen, se vi emas finance kontribui, estus tre valora se vi povus aĉeti registrilojn al nepagipovaj sed kunlaboremaj Muzaik-anoj (taŭgaj registriloj kostas inter € 50-200). Por pliaj informoj skribu al <b>info (ĉe) muzaiko.info</b>
-<!-- <a href="mailto:info@muzaiko.info">info@muzaiko.info</a> -->
- aŭ aliĝu al la <a target="_blank" href="https://groups.google.com/group/retradio-projekto">dissendolisto</a>.
+<p>Baldaŭ, en aprilo, ni devos refoje pagi por la servilo kaj la domajno, krome ne estas urĝa pagindaĵo, Por pliaj informoj skribu al <b>financoj (ĉe) muzaiko.info</b> aŭ aliĝu al la <a target="_blank" href="https://groups.google.com/group/retradio-projekto">dissendolisto</a>.</p>
 
 <?php
 right();
