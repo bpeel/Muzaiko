@@ -37,6 +37,12 @@ page_header('Financoj');
 <td> Neil </td>
 </tr>
 
+<tr>
+<td>registrilo</td>
+<td>€ 89,99</td>
+<td>edukado.net</td>
+</tr>
+
 </table> 
 
 <h1>Pagota</h1>
