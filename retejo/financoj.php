@@ -40,7 +40,7 @@ page_header('Financoj');
 <tr>
 <td>registrilo</td>
 <td>€ 89,99</td>
-<td>edukado.net</td>
+<td><a href="http://edukado.net/">edukado.net</a></td>
 </tr>
 
 </table> 
