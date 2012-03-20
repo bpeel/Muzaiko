@@ -1,9 +1,9 @@
 <?php
 include('inc/inc.php');
+include('/var/muzaiko/alsxutilo_agordo.php');
 page_header('Alŝuti dosieron');
 
 $target_dir = '/mnt/musashi.fr/ftp/htmlformularo';
-$recipient = 'admin@muzaiko.info';
 $size_limit = 30000000;
 
 function valida_retadreso($email) {
