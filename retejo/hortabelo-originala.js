@@ -54,7 +54,7 @@
 
      var limelem = document.getElementById ("ripetlimo");
      var limo = new Date ();
-     limo.setUTCHours (4, 0);
+     limo.setUTCHours (3, 0);
      /* Se tiu dato estas en la pasinteco, aldonu unu tagon */
      if ((new Date ()) > limo)
        limo = new Date (limo.getTime () + 24 * 60 * 60 * 1000);

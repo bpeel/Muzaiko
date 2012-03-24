@@ -160,7 +160,7 @@ function eligu_hortabelon ()
   print ("</ul>\n" .
          "kaj poste la lastaj " . $kvanto_de_ripetotoj .
          " programeroj ripetiĝos ĝis <span id=\"ripetlimo\">" .
-         "la 4a UTC</span>.\n" .
+         "la 3a UTC</span>.\n" .
          "</div>\n");
 }
 
