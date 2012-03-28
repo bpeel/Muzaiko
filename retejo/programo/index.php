@@ -196,9 +196,9 @@ function konservu_sondosierojn($programero_id, &$success, &$errors)
 				if ($update && !ctype_digit($_POST['update'])) {
 					array_push($errors, 'La identigilo de la programero ne estas valida!');
 				} else if (empty($_POST['programero'])) {
-					array_push($errors, 'La titolo de la programero devu esti enmetita!');
+					array_push($errors, 'La titolo de la programero devas esti enmetita!');
 				} else if (!is_date($_POST['ekoj']) || !is_date($_POST['finoj'])) {
-					array_push($errors, 'Almenaŭ unu dato devu esti enmetita!');
+					array_push($errors, 'Almenaŭ unu dato devas esti enmetita!');
 				} else {
 					if ($update)
 						$query = "UPDATE programero SET description = '".addslashes($_POST['programero'])."' WHERE id = ".$update;
@@ -276,7 +276,7 @@ function konservu_sondosierojn($programero_id, &$success, &$errors)
 
 			if (isset($_POST['forigi_jes'])) {
 				if (empty($_POST['id'])) {
-					array_push($errors, 'La identigilo de la programero devu esti enmetita!');
+					array_push($errors, 'La identigilo de la programero devas esti enmetita!');
 				} else if (!ctype_digit($_POST['id'])) {
 					array_push($errors, 'La identigilo de la programero ne estas valida!');
 				} else {
