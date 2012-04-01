@@ -12,7 +12,14 @@
   }
   setInterval("updateCurrentSong()", 10000);
   function updateCurrentListeners(){
-          $('#statistikoj').load('ajax/nombro_de_auxskultantoj.html');
+    var statistikoj = $('#statistikoj');
+    statistikoj.load('ajax/nombro_de_auxskultantoj.html',
+                     function () {
+                       if (statistikoj.text().match(/^\s*0\s*$/))
+                         $('#statistiko-div').hide ();
+                       else
+                         $('#statistiko-div').show ();
+                     });
   }
   setInterval("updateCurrentListeners()", 60000);
 </script>
@@ -22,7 +29,7 @@
   <div class="titolo">Nun estas ludata…</div>
   <div id="kanto"></div>
 <!--   <h1>Nombro da aŭskultantoj</h1> -->
-  <div>Nombro de aŭskultantoj (laŭ Radionomy, eble ne tute preciza):
+  <div id="statistiko-div">Nombro de aŭskultantoj (laŭ Radionomy, eble ne tute preciza):
        <span id="statistikoj"></span>
   </div>
 <!--  <h1>Nun estas ludata…</h1>
