@@ -1,6 +1,18 @@
 <?php
 include_once ("inc/programo.php");
 
+function akiru_horon ()
+{
+  if (array_key_exists ("testhoro", $_GET))
+    {
+      $horo = $_GET["testhoro"];
+      if ($horo && preg_match ("/^[0-9]+$/", $horo))
+        return $horo;
+    }
+
+  return time ();
+}
+
 function sercxu_programon_por_dato ($dato)
 {
   $rezulto = mysql_query ("select unix_timestamp(`date_begin`), " .
@@ -26,7 +38,7 @@ function reordigu_programon ($programo)
   $fino = $programo[count ($programo) - 1][1];
 
   /* Kiom da sekundoj pasis ekde la komenco de la programo? */
-  $now = time ();
+  $now = akiru_horon ();
   $sekundoj_ekde_komenco = $now - $komenco;
 
   /* Kalkulu kiom da sekundoj jam pasis en la ripetata programo */
@@ -89,7 +101,8 @@ function eligu_hortabelon ()
      sen komenci post nun */
   $rezulto = mysql_query ("select `date_begin` " .
                           "from `elsendo` " .
-                          "where `date_begin` < now() " .
+                          "where `date_begin` < from_unixtime (" .
+                          akiru_horon () . ") " .
                           "order by `date_begin` desc " .
                           "limit 1");
   $vico = mysql_fetch_array ($rezulto, MYSQL_NUM)
