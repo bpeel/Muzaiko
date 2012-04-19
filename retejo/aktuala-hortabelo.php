@@ -108,11 +108,13 @@ function eligu_hortabelon ()
   $vico = mysql_fetch_array ($rezulto, MYSQL_NUM)
     or die ("Neniu programero troviĝis");
 
+  $dato = $vico[0];
+
   mysql_free_result ($rezulto);
 
   /* Serĉu ĉiujn programerojn kiuj komenciĝos dum la sama tago kiel la
      trovita programero */
-  $aktuala_programo = sercxu_programon_por_dato ($vico[0]);
+  $aktuala_programo = sercxu_programon_por_dato ($dato);
 
   /* Ŝanĝu la programon al la aktuala ripeto */
   $aktuala_programo = reordigu_programon ($aktuala_programo);
@@ -129,7 +131,10 @@ function eligu_hortabelon ()
                           "from_unixtime(" . $fino_de_aktuala_programo
                           . ") and `date_end` > " .
                           "from_unixtime(" . $komenco_de_aktuala_programo
-                          . ") limit 1");
+                          . ") and date(`date_begin`) > "
+                          . "date(\"" . mysql_real_escape_string ($dato)
+                          . "\") "
+                          . "limit 1");
 
   $vico = mysql_fetch_array ($rezulto, MYSQL_NUM);
   mysql_free_result ($rezulto);
