@@ -58,7 +58,7 @@ if (isset($_POST['submit']) && $_POST['kontrauxspamo'] == '') {
           }
           $filename = $target_dir.'/'.$filename;
           if (move_uploaded_file($_FILES['file']['tmp_name'], $filename)) {
-            mail($recipient, 'Nova dosiero alŝutita per la HTML-formularo', 'Nova dosiero estis alŝutita de '.$_POST['name'].' <'.$_POST['email'].'>. Ĝi troviĝas ĉe: '.$filename, "From: Alŝutitaj dosieroj <alŝutitaj-dosieroj@muzaiko.info>\r\nContent-type: text/plain; charset=utf-8");
+            mail($recipient, 'Nova dosiero alŝutita per la HTML-formularo', 'Nova dosiero estis alŝutita de '.$_POST['name'].' <'.$_POST['email'].">.\n\nĜi troviĝas ĉe: $filename\n\nTitolo: ".$_REQUEST['title']."\n\nKomento: ".$_REQUEST['comment'], "From: Alŝutitaj dosieroj <alŝutitaj-dosieroj@muzaiko.info>\r\nContent-type: text/plain; charset=utf-8");
             echo '<div class="sukceso"><p>Via dosiero estis sukcese alŝutita. Vi ricevos respondon baldaŭ. Dankon!</p><p>Vi povas alŝuti pliajn dosierojn se vi emas. :-)</p></div>';
           } else {
             echo '<div class="eraro">Via dosiero ne estis sukcese kopiita pro teknika problemo.</div>';
@@ -75,21 +75,31 @@ if (isset($_POST['submit']) && $_POST['kontrauxspamo'] == '') {
   <p>Alŝutante dosieron per tiu ĉi formularo, vi publikigas ĝin laŭ
 permesilo <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.eo">CC-by-sa</a>. Se vi ne konsentas, ne alŝutu sed kontaktu nin
 rekte.</p>
+  <p>La kampoj markitaj kun * estas devigaj.</p>
   <form action="" method="post" enctype="multipart/form-data">
     <fieldset>
       <legend>Alŝuti dosieron</legend>
       <ol style="">
         <li>
-          <label for="name">Via nomo</label>
+          <label for="name">Via nomo *</label>
           <input type="text" name="name" id="name" />
         </li>
         <li>
-          <label for="email">Via retpoŝtadreso</label>
+          <label for="email">Via retpoŝtadreso *</label>
           <input type="text" name="email" id="email" />
         </li>
         <li>
-          <label for="file">Via alŝutota dosiero</label>
+          <label for="file">Via alŝutota dosiero *</label>
           <input type="file" name="file" id="file" />
+        </li>
+        <li>
+          <label for="title">Titolo de la registrado</label>
+          <input type="text" name="title" id="title" />
+        </li>
+        <li>
+          <label for="title">Komento</label>
+          <textarea name="comment" id="comment" style="height: 100px"></textarea>
+        </li>
         <li class="kontrauxspamajxo">
           <label for="kontrauxspamo">Ne plenigu tiun kampon</label>
           <input type="text" name="kontrauxspamo" id="kontrauxspamo" />

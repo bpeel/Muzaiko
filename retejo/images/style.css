@@ -341,18 +341,18 @@ color: #a90329;
 	display: inline-block;
 	margin-top: 5px;
 	line-height: auto;
-	width: 100px;
+	width: 120px;
 	margin-right: 10px;
 	vertical-align: top;
 }
 .formularo fieldset ol li input[type=text] {
-	width: 315px;
+	width: 295px;
 }
 .formularo fieldset ol li input[type=submit] {
-	margin-left: 110px;
+	margin-left: 135px;
 }
 .formularo fieldset ol li textarea {
-	width: 315px;
+	width: 295px;
 }
 div.sukceso {
 	margin-top: 10px;
