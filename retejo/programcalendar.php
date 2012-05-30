@@ -31,7 +31,7 @@ class ProgramCalendar extends Calendar {
         The labels to display for the months of the year. The first entry in this array
         represents January.
     */
-    var $monthNames = array("Januaro", "Februaro", "Marto", "Aprilo", "Majo", "Juniu",
+    var $monthNames = array("Januaro", "Februaro", "Marto", "Aprilo", "Majo", "Junio",
                             "Julio", "Aŭgusto", "Septembro", "Oktobro", "Novembro", "Decembro");
 }
 
