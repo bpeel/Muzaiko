@@ -73,9 +73,9 @@ function fillEndDate(event)
     var match = dateRegexp.exec(date);
     if (!match)
         return;
-    var newDate = new Date(match[1], match[2], match[3], match[4]);
+    var newDate = new Date(parseInt(match[1]), parseInt(match[2]) - 1, parseInt(match[3]), parseInt(match[4]));
     newDate.setHours(newDate.getHours() + 1);
-    var newMonth = newDate.getMonth();
+    var newMonth = newDate.getMonth() + 1;
     var newDay = newDate.getDate();
     var newHours = newDate.getHours();
     if (newMonth < 10) newMonth = '0' + newMonth;
