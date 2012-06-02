@@ -1,0 +1,92 @@
+body {
+    font-size: 0.6em;
+}
+#helpo {
+    font-size: 1.4em;
+}
+#helpo h1 {
+    font-size: 1.1em;
+    color: rgb(160, 0, 32);
+}
+#sxargado-fono {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1000;
+    background-color: black;
+    opacity: .7;
+    cursor: wait;
+}
+#sxargado-mesagxo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1001;
+    width: 300px;
+    margin-top: -50px;
+    margin-left: -150px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: white;
+    font-size: 2em;
+    text-align: center;
+    background-color: black;
+    border-radius: 15px;
+    opacity: .9;
+    cursor: wait;
+}
+form ol, ol.datoj {
+    list-style: none;
+    padding: 0;
+}
+ul.parolantoj {
+    margin: 0;
+    padding-left: 10px;
+}
+ul.sondosieroj {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 100px;
+    overflow-x: auto;
+}
+ul.sondosieroj {
+    white-space: nowrap;
+}
+ol.datoj {
+    margin: 0;
+    max-height: 100px;
+    width: 150px;
+    overflow-x: visible;
+    overflow-y: auto;
+}
+ol.datoj li {
+    display: block;
+    white-space: nowrap;
+}
+ol.datoj li .ui-icon {
+    display: inline-block;
+    vertical-align: middle;
+}
+#formularo-programero-elsendo-datoj ol {
+    max-height: 300px;
+    overflow-y: scroll;
+}
+form ol li label {
+    display: inline-block;
+    width: 100px;
+    height: 20px;
+    vertical-align: top;
+}
+input.datelektilo {
+    width: 60px;
+}
+input.horelektilo {
+    width: 30px;
+}
+table.dataTable tr.row_selected { background-color: #FFF0AA; }
+table.dataTable tr.row_selected td.sorting_1 { background-color: #FFF0AA; }
+table.dataTable tr.row_selected td.sorting_2 { background-color: #FFF0AA; }
+table.dataTable tr.row_selected td.sorting_3 { background-color: #FFF0AA; }

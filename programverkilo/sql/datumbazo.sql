@@ -1,0 +1,52 @@
+CREATE TABLE temo(
+	id INTEGER PRIMARY KEY AUTO_INCREMENT,
+	nomo VARCHAR(255)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE sekcio(
+	id INTEGER PRIMARY KEY AUTO_INCREMENT,
+	nomo VARCHAR(255)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE permesilo(
+	id INTEGER PRIMARY KEY AUTO_INCREMENT,
+	nomo VARCHAR(255),
+	url VARCHAR(255),
+	bildo VARCHAR(255)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE produktanto(
+	id INTEGER PRIMARY KEY AUTO_INCREMENT,
+	nomo VARCHAR(255)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE parolanto(
+	id INTEGER PRIMARY KEY AUTO_INCREMENT,
+	nomo VARCHAR(255)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ALTER TABLE programero CHANGE title titolo VARCHAR(255);
+ALTER TABLE programero CHANGE description skizo TEXT;
+ALTER TABLE programero ADD COLUMN komento TEXT;
+ALTER TABLE programero ADD COLUMN produktanto_id INTEGER;
+ALTER TABLE programero ADD COLUMN temo_id INTEGER;
+ALTER TABLE programero ADD COLUMN sekcio_id INTEGER;
+ALTER TABLE programero ADD COLUMN permesilo_id INTEGER;
+ALTER TABLE programero ADD CONSTRAINT FOREIGN KEY(produktanto_id) REFERENCES produktanto(id) ON DELETE SET NULL;
+ALTER TABLE programero ADD CONSTRAINT FOREIGN KEY(temo_id) REFERENCES temo(id) ON DELETE SET NULL;
+ALTER TABLE programero ADD CONSTRAINT FOREIGN KEY(sekcio_id) REFERENCES sekcio(id) ON DELETE SET NULL;
+ALTER TABLE programero ADD CONSTRAINT FOREIGN KEY(permesilo_id) REFERENCES permesilo(id) ON DELETE SET NULL;
+CREATE TABLE programero_parolanto(
+	programero_id INTEGER,
+	parolanto_id INTEGER,
+	FOREIGN KEY(programero_id) REFERENCES programero(id) ON DELETE CASCADE,
+	FOREIGN KEY(parolanto_id) REFERENCES parolanto(id) ON DELETE CASCADE,
+	PRIMARY KEY(programero_id, parolanto_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ALTER TABLE elsendo ADD COLUMN dato date;
+ALTER TABLE elsendo ADD COLUMN komenchoro time;
+ALTER TABLE elsendo ADD COLUMN finhoro time;
+UPDATE elsendo SET dato = DATE_FORMAT(date_begin, '%Y-%m-%d');
+UPDATE elsendo SET komenchoro = DATE_FORMAT(date_begin, '%H:%i');
+UPDATE elsendo SET finhoro = DATE_FORMAT(date_end, '%H:%i');
+ALTER TABLE elsendo DROP PRIMARY KEY;
+ALTER TABLE elsendo ADD CONSTRAINT PRIMARY KEY(programero_id, dato, komenchoro);
+ALTER TABLE elsendo DROP COLUMN date_begin;
+ALTER TABLE elsendo DROP COLUMN date_end;
+ALTER TABLE sondosiero ADD CONSTRAINT FOREIGN KEY(programero) REFERENCES programero(id) ON DELETE CASCADE;
+
