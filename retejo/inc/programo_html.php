@@ -31,7 +31,7 @@ else
 printf('</div>');
 
 if ($jaro != 0 && $monato != 0 && $tago != 0) {
-	$query = "SELECT DATE_FORMAT(date_begin, '%H:%i'), DATE_FORMAT(date_end, '%H:%i'), description FROM programero, elsendo WHERE programero.id = elsendo.programero_id AND YEAR(date_begin) = $jaro AND MONTH(date_begin) = $monato AND DAY(date_begin) = $tago";
+	$query = "SELECT TIME_FORMAT(komenchoro, '%H:%i'), TIME_FORMAT(finhoro, '%H:%i'), skizo FROM programero, elsendo WHERE programero.id = elsendo.programero_id AND YEAR(dato) = $jaro AND MONTH(dato) = $monato AND DAY(dato) = $tago";
 
 	konektu_al_programo();
 

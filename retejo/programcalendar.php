@@ -10,7 +10,7 @@ class ProgramCalendar extends Calendar {
 	}
 
 	function getDateLink($tago, $monato, $jaro) {
-		$query = "SELECT * FROM elsendo WHERE YEAR(date_begin) = $jaro AND MONTH(date_begin) = $monato AND DAY(date_begin) = $tago";
+		$query = "SELECT * FROM elsendo WHERE YEAR(dato) = $jaro AND MONTH(dato) = $monato AND DAY(dato) = $tago";
 		konektu_al_programo();
 		$result = mysql_query($query);
 		mysql_close();
