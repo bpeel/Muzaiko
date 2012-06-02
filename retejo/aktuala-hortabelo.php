@@ -15,14 +15,14 @@ function akiru_horon ()
 
 function sercxu_programon_por_dato ($dato)
 {
-  $rezulto = mysql_query ("select unix_timestamp(`date_begin`), " .
-                          "unix_timestamp(`date_end`), " .
-                          "`description` " .
+  $rezulto = mysql_query ("select unix_timestamp(CONCAT_WS(' ', dato, komenchoro)), " .
+                          "unix_timestamp(CONCAT_WS(' ', dato, finhoro)), " .
+                          "`skizo` " .
                           "from `programero` inner join `elsendo` " .
                           "on `programero`.`id` = `elsendo`.`programero_id` " .
-                          "where date(`date_begin`) = date('" .
+                          "where `dato` = date('" .
                           mysql_real_escape_string ($dato) . "') " .
-                          "order by `date_begin`");
+                          "order by `komenchoro`");
   $programo = array ();
   while ($vico = mysql_fetch_array ($rezulto, MYSQL_NUM))
     array_push ($programo, array ($vico[0], $vico[1], stripslashes ($vico[2])));
@@ -99,11 +99,11 @@ function eligu_hortabelon ()
 
   /* Serĉu la programeron kiu komenciĝos plej proksime al la nuna horo
      sen komenci post nun */
-  $rezulto = mysql_query ("select `date_begin` " .
+  $rezulto = mysql_query ("select CONCAT_WS(' ', dato, komenchoro) " .
                           "from `elsendo` " .
-                          "where `date_begin` < from_unixtime (" .
+                          "where CONCAT_WS(' ', dato, komenchoro) < from_unixtime (" .
                           akiru_horon () . ") " .
-                          "order by `date_begin` desc " .
+                          "order by CONCAT_WS(' ', dato, komenchoro) desc " .
                           "limit 1");
   $vico = mysql_fetch_array ($rezulto, MYSQL_NUM)
     or die ("Neniu programero troviĝis");
@@ -125,13 +125,13 @@ function eligu_hortabelon ()
   $fino_de_aktuala_programo =
     $aktuala_programo[count ($aktuala_programo) - 1][1];
 
-  $rezulto = mysql_query ("select `date_begin` " .
+  $rezulto = mysql_query ("select CONCAT_WS(' ', dato, komenchoro) " .
                           "from `elsendo` " .
-                          "where `date_begin` < " .
+                          "where CONCAT_WS(' ', dato, komenchoro) < " .
                           "from_unixtime(" . $fino_de_aktuala_programo
-                          . ") and `date_end` > " .
+                          . ") and CONCAT_WS(' ', dato, komenchoro) > " .
                           "from_unixtime(" . $komenco_de_aktuala_programo
-                          . ") and date(`date_begin`) > "
+                          . ") and `dato` > "
                           . "date(\"" . mysql_real_escape_string ($dato)
                           . "\") "
                           . "limit 1");
