@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 RRD_FILE_NAME='/var/muzaiko/auxskultantoj.rrd'
-NOMBRO_DE_AUXSKULTANTOJ_FILENAME='/var/www/www.muzaiko.info/ajax/nombro_de_auxskultantoj.html'
+NOMBRO_DE_AUXSKULTANTOJ_FILENAME='/var/www/www.muzaiko.info/public/datumoj/nombro_de_auxskultantoj.html'
 RRDTOOL='/opt/rrdtool-1.4.5/bin/rrdtool'
 CURRENT_TIMESTAMP=$(date '+%s')
 
