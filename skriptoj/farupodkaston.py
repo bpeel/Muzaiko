@@ -57,14 +57,14 @@ def faru_item(cur, dato):
 
     # Serĉu ĉiujn priskribojn de tiu tago
     programeroj = []
-    cur.execute("select `programero`.`description` "
+    cur.execute("select `programero`.`skizo` "
                 "from `programero` inner join `elsendo` "
                 "on `elsendo`.`programero_id` = `programero`.`id` "
                 "inner join `sondosiero` "
                 "on `programero`.`id` = `sondosiero`.`programero` "
-                "where date(`elsendo`.`date_begin`) = %s "
+                "where `dato` = %s "
                 "group by `programero`.`id` "
-                "order by `elsendo`.`date_begin`",
+                "order by `elsendo`.`dato`",
                 cxendato)
     for row in cur:
         programeroj.append(faru_ligilojn(row[0]))
@@ -168,8 +168,8 @@ cur = db.cursor()
 cur.execute("select `sondosiero`.`nomo`, `elsendo`.`programero_id` "
             "from `elsendo` inner join `sondosiero` "
             "on `elsendo`.`programero_id` = `sondosiero`.`programero` "
-            "where date(`elsendo`.`date_begin`) = %s"
-            "order by `elsendo`.`date_begin`, "
+            "where `dato` = %s"
+            "order by `elsendo`.`dato`, "
             "`sondosiero`.`nomo`",
             hodiaux)
 
