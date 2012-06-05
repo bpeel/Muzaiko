@@ -285,7 +285,7 @@ ET.SubElement(channel, "pubDate").text = date_rfc822
 ET.SubElement(channel, "lastBuildDate").text = date_rfc822
 
 image = ET.SubElement(channel, "image")
-ET.SubElement(image, "url").text = "http://muzaiko.info/reklambendoj/rb7.png"
+ET.SubElement(image, "url").text = "http://muzaiko.info/public/images/reklambendoj/rb7.png"
 ET.SubElement(image, "title").text = "Muzaiko"
 ET.SubElement(image, "link").text = "http://muzaiko.info/"
 
