@@ -14,12 +14,15 @@ $(function() {
         'tabelo': 'programero',
         'kolumnoj': [
             { 'nomo': 'titolo', 'tipo': 'teksto' },
-            { 'nomo': 'skizo', 'tipo': 'arangxita_teksto' },
+            { 'nomo': 'skizo', 'tipo': 'arangxita_teksto', 'kromagordoj':
+                { 'sType': 'html' }},
             { 'nomo': 'datoj', 'tipo': 'listo_de_datoj', 'kromagordoj':
                 { 'iDataSort': lasta_elsendo_kolumno }},
             { 'nomo': 'komento', 'tipo': 'teksto' },
-            { 'nomo': 'sondosiero', 'tipo': 'duobla_listo' },
-            { 'nomo': 'parolanto', 'tipo': 'multilisto' },
+            { 'nomo': 'sondosiero', 'tipo': 'duobla_listo', 'kromagordoj':
+                { 'sType': 'html' }},
+            { 'nomo': 'parolanto', 'tipo': 'multilisto', 'kromagordoj':
+                { 'sType': 'html' }},
             { 'nomo': 'produktanto', 'tipo': 'listo' },
             { 'nomo': 'temo', 'tipo': 'listo' },
             { 'nomo': 'sekcio', 'tipo': 'listo' },
@@ -254,7 +257,6 @@ $(function() {
         var tabelo = $('#tabelo-' + agordoj.tabelo).dataTable({
             'aoColumns': kolumnoj,
             'bJQueryUI': true,
-            'sType': 'html',
             'sPaginationType': 'full_numbers',
             'sDom': '<"H"lf<"#butonoj-' + agordoj.tabelo + '">r>t<"F"ip>',
             'oLanguage': {
