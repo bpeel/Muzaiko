@@ -5,6 +5,23 @@ $(document).ready(function(){
 $.fn.exists = function () {
     return this.length !== 0;
 }
+jQuery.extend(jQuery.fn.dataTableExt.oSort, {
+    'alt-string-pre': function (a) {
+        m = a.match(/alt="(.*?)"/);
+        if (m)
+            return m[1].toLowerCase();
+        else
+            return a;
+    },
+
+    'alt-string-asc': function(a, b) {
+        return ((a < b) ? -1 : ((a > b) ? 1 : 0));
+    },
+
+    'alt-string-desc': function(a, b) {
+        return ((a < b) ? 1 : ((a > b) ? -1 : 0));
+    }
+});
 $(function() {
     $('#langetoj').tabs();
 
@@ -26,7 +43,8 @@ $(function() {
             { 'nomo': 'produktanto', 'tipo': 'listo' },
             { 'nomo': 'temo', 'tipo': 'listo' },
             { 'nomo': 'sekcio', 'tipo': 'listo' },
-            { 'nomo': 'permesilo', 'tipo': 'listo' },
+            { 'nomo': 'permesilo', 'tipo': 'listo', 'kromagordoj':
+                { 'sType': 'alt-string' }},
             { 'nomo': 'lasta_elsendo', 'tipo': 'kasxita_datumo', 'kromagordoj':
                 { 'bSearchable': false, 'bVisible': false }}
         ]
