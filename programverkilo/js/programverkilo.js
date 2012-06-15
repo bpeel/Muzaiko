@@ -157,8 +157,8 @@ $(function() {
                         function(respondo) {
                             if (respondo.rezulto == 'sukceso') {
                                 var aPos = tabelo_programeroj.fnGetPosition(event.data.tdElemento);
-                                tabelo_programeroj.fnUpdate(respondo.elsendoj, aPos[0], aPos[1]);
-                                tabelo_programeroj.fnUpdate(respondo.lasta_elsendo, aPos[0], lasta_elsendo_kolumno);
+                                tabelo_programeroj.fnUpdate(respondo.elsendoj, aPos[0], aPos[1], false);
+                                tabelo_programeroj.fnUpdate(respondo.lasta_elsendo, aPos[0], lasta_elsendo_kolumno, false);
                                 montri_rapide_aldonan_formularon($('.rapida_aldono', event.data.tdElemento));
                             } else {
                                 alert('Eraro: ' + respondo.mesagxo);
@@ -226,9 +226,9 @@ $(function() {
                         var respondo = JSON.parse(sValue, null);
                         var aPos = tabelo.fnGetPosition(this);
                         if (respondo.rezulto == 'sukceso') {
-                            tabelo.fnUpdate(respondo.mesagxo, aPos[0], aPos[1]);
+                            tabelo.fnUpdate(respondo.mesagxo, aPos[0], aPos[1], false);
                         } else {
-                            tabelo.fnUpdate(antauxa_valoro, aPos[0], aPos[1]);
+                            tabelo.fnUpdate(antauxa_valoro, aPos[0], aPos[1], false);
                             alert('Eraro: ' + respondo.mesagxo);
                         }
                     };
@@ -394,8 +394,8 @@ $(function() {
                 $.post('./ajax/gxisdatigi_elsendojn.php?opeco=pluropa&programero_id=' + formularo.data('programero_id'), $('#formularo-programero-elsendo-datoj').serialize(), function(respondo) {
                     if (respondo.rezulto == 'sukceso') {
                         var aPos = tabelo_programeroj.fnGetPosition(formularo.data('tdElemento'));
-                        tabelo_programeroj.fnUpdate(respondo.elsendoj, aPos[0], aPos[1]);
-                        tabelo_programeroj.fnUpdate(respondo.lasta_elsendo, aPos[0], lasta_elsendo_kolumno);
+                        tabelo_programeroj.fnUpdate(respondo.elsendoj, aPos[0], aPos[1], false);
+                        tabelo_programeroj.fnUpdate(respondo.lasta_elsendo, aPos[0], lasta_elsendo_kolumno, false);
                         montri_rapide_aldonan_formularon($('.rapida_aldono', formularo.data('tdElemento')));
                         formularo.dialog('close');
                     } else {
@@ -489,7 +489,7 @@ $(function() {
                 $.post('./ajax/gxisdatigi_sondosierojn.php?programero_id=' + formularo.data('programero_id'), $('#formularo-programero-sondosieroj').serialize(), function(respondo) {
                     if (respondo.rezulto == 'sukceso') {
                         var aPos = tabelo_programeroj.fnGetPosition(formularo.data('tdElemento'));
-                        tabelo_programeroj.fnUpdate(respondo.sondosieroj, aPos[0], aPos[1]);
+                        tabelo_programeroj.fnUpdate(respondo.sondosieroj, aPos[0], aPos[1], false);
                         formularo.dialog('close');
                     } else {
                         alert('Eraro: ' + respondo.mesagxo);
