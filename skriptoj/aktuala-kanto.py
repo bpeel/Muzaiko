@@ -12,6 +12,7 @@ import MySQLdb
 import cxapeloj
 import textwrap
 import httplib
+import sys
 
 RADIOUID = "14694a7d-9023-4db1-86b4-d85d96cba181"
 
@@ -201,7 +202,15 @@ class AktualaKanto(Peto):
             nomo.append(cgi.escape(cxapeloj.cxapeligu(ligilo.artisto)))
         if titolo:
             nomo.append(cgi.escape(cxapeloj.cxapeligu(ligilo.titolo)))
-        rezulto.append("<br>".join(textwrap.wrap(" - ".join(nomo), LINILONGO)))
+        try:
+            rezulto.append("<br>".join(textwrap.wrap(" - ".join(nomo), LINILONGO)))
+        except:
+	    print "Unexpected error:", sys.exc_info()[0]
+	    f = open('/var/muzaiko/datumo.txt','w')
+	    f.write(datumo)
+	    f.close()
+
+
         rezulto.append("<br>")
 
         ligiloj =[]
