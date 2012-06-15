@@ -327,8 +327,8 @@
       <div id="helpo">
         <h1>Ĝeneralaĵoj pri la programverkilo</h1>
         <p>La unua kaj defaŭlta langeto, <i>Programeroj</i>, permesas konsulti kaj mastrumi la informojn pri ĉiuj programeroj. La langetoj <i>Parolantoj</i>, <i>Produktantoj</i>, <i>Temoj</i>, <i>Sekcioj</i> kaj <i>Permesiloj</i> kolektas datumlistojn uzeblaj en ĉiu programero.</p>
-        <h1>Trovi iun elementon</h1>
-        <p>Povas esti malfacile trovi iun elementon en grandega tabelo. Por trovi iun elementon, uzu unuopan aŭ plurajn ilojn proponitajn:</p>
+        <h1>Trovi elementon</h1>
+        <p>Povas esti malfacile trovi elementon en grandega tabelo. Por trovi elementon, uzu unuopan aŭ plurajn ilo(j)n proponita(j)n:</p>
         <ul>
           <li>serĉu ŝlosilvortojn uzante la serĉilon, kiu troviĝas super la tabelo, dekstre ;</li>
           <li>klaku sur la titolo de iu kolumno por ordigi la elementojn laŭ tiu kolumno ;</li>
@@ -337,9 +337,9 @@
         La kolumno <i>Elsendoj</i> ordiĝas laŭ la lasta elsendo.
         <h1>Krei novan elementon en tabelo</h1>
         <p>Klaku sur la butono <i>Krei &lt;elementon&gt;</i>, plenigu la formularon kaj klaku sur <i>Registri</i>. Se ne estas problemo, la nova elemento estos aldonita al la tabelo. Eblas ke ĝi ne estu tuj videbla ĉar ĝi troviĝas en alia paĝo de la tabelo.</p>
-        <h1>Redakti informojn de iu elemento</h1>
+        <h1>Redakti informojn de elemento</h1>
         <p>Duoblklaku la ĉelon en kiu troviĝas la redaktota datumo, redaktu ĝin laŭvole kaj klaku sur <i>Registri</i> por konservi la ŝanĝojn. La elsendoj de la programeroj povas esti redaktataj per plia maniero, kiu estas pli rapida por simple aldoni elsendon: unuoblklaku sur la ligilo <i>Rapida aldono</i>, plenigu la kampojn kaj klaku sur <i>Registri</i>.</p>
-        <h1>Forviŝi iun elementon</h1>
+        <h1>Forviŝi elementon</h1>
         <p>Klaku sur la linio de la forviŝota elemento por ke ĝi flaviĝu, klaku sur la butono <i>Forviŝi la elektitan &lt;elementon&gt;</i> kaj konfirmu. La elemento estos tuj forviŝita.</p>
       </div>
       <?php
