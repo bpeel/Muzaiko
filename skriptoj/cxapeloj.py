@@ -12,15 +12,9 @@ _cxapeligu_re = re.compile(u"([cghjsu])x", re.IGNORECASE | re.UNICODE)
 
 def cxapeligu(cxeno):
     if isinstance(cxeno, str):
-        ucxeno = unicode(cxeno, "utf-8")
-    else:
-        ucxeno = cxeno
-    urezulto = _cxapeligu_re.sub(lambda(x): _CXAPELOLISTO[x.group(1)],
-                                 ucxeno)
-    if isinstance(cxeno, str):
-        return urezulto.encode("utf-8")
-    else:
-        return urezulto
+        cxeno = unicode(cxeno, "utf-8")
+    return _cxapeligu_re.sub(lambda(x): _CXAPELOLISTO[x.group(1)],
+                             cxeno)
 
 _MALCXAPELOLISTO = {
     u'ĉ': u'cx', u'ĝ': u'gx', u'ĥ': u'hx',
