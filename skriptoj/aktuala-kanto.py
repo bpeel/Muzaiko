@@ -120,7 +120,7 @@ class Ligilo:
                              " = %s")
             params.append(cxapeloj.malcxapeligu(titolo))
 
-        sercxiloj.append("`REF` NOT LIKE 'VK%%'");
+        sercxiloj.append("(isnull(`REF`) or `REF` NOT LIKE 'VK%%')");
 
         cur = db.cursor()
         cur.execute("select `Ligoj_al_diskoservo`, `Ligoj_al_la_elsxutejo`, "
@@ -128,7 +128,7 @@ class Ligilo:
                     "`Ligoj_al_retpagxo`, "
                     "`Artistoj`, `Titolo` "
                     "from `muzaiko_datumbazo` "
-                    "where " + (" and ".join(sercxiloj)) +
+                    "where " + (" and ".join(sercxiloj)) + " " +
                     "limit 1",
                     params)
 
