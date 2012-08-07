@@ -134,6 +134,23 @@ $(function() {
          aldoni_elsendon('', '', '');
     });
 
+    $('#filtrilo-horgrupo').on('change', function() {
+        switch ($(this).val()) {
+            case '03:00-04:00':
+                tabelo_programeroj.fnFilter('(03:', lasta_elsendo_kolumno);
+                break;
+            case '04:00-05:00':
+                tabelo_programeroj.fnFilter('(04:', lasta_elsendo_kolumno);
+                break;
+            case '05:00-06:00':
+                tabelo_programeroj.fnFilter('(05:', lasta_elsendo_kolumno);
+                break;
+            default:
+                tabelo_programeroj.fnFilter('', lasta_elsendo_kolumno);
+                break;
+        }
+    });
+
     var lasta_rapida_aldono_ujo = null;
 
     function kasxi_rapide_aldonan_formularon() {
@@ -296,12 +313,23 @@ $(function() {
             }
         });
         $('div#butonoj-' + agordoj.tabelo).html('<div style="margin-left: 160px;">'
+                                + '<div style="float: left;">'
                                 + '<input type="button" id="krebutono-'
                                 + agordoj.tabelo + '" value="Krei '
                                 + agordoj.tabelo + 'n" />'
                                 + '<input type="button" id="forvisxbutono-'
                                 + agordoj.tabelo + '" value="Forviŝi la elektitan '
-                                + agordoj.tabelo + 'n" /></div>');
+                                + agordoj.tabelo + 'n" />'
+                                + '</div>'
+                                + '<div style="text-align: right; margin-right: 180px;">'
+                                + '<select id="filtrilo-horgrupo">'
+                                + '<option>Ĉiuj horgrupoj</option>'
+                                + '<option value="03:00-04:00">03:00 &ndash; 04:00</option>'
+                                + '<option value="04:00-05:00">04:00 &ndash; 05:00</option>'
+                                + '<option value="05:00-06:00">05:00 &ndash; 06:00</option>'
+                                + '</select>'
+                                + '</div>'
+                                + '</div>');
         $.each(tabelo.fnGetNodes(), function(trIndekso, trElemento) {
             init_horizontalo(tabelo, trElemento);
         });

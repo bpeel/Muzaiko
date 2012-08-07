@@ -65,7 +65,18 @@ SELECT programero.id AS DT_RowId,
       SEPARATOR ''
     ), ''
   ) AS sondosiero,
-  IFNULL(MAX(elsendo.dato), '') AS lasta_elsendo,
+  IFNULL(
+    MAX(
+      CONCAT(
+        dato,
+        ' (',
+        TIME_FORMAT(komenchoro, '%H:%i'),
+        ' - ',
+        TIME_FORMAT(finhoro, '%H:%i'),
+        ')'
+      )
+    ), ''
+  ) AS lasta_elsendo,
   IFNULL(programero.komento, '') AS komento,
   IFNULL(produktanto.nomo, '') AS produktanto,
   IFNULL(temo.nomo, '') AS temo,
@@ -169,7 +180,18 @@ SELECT programero.id AS DT_RowId,
       SEPARATOR ''
     ), ''
   ) AS sondosiero,
-  IFNULL(MAX(elsendo.dato), '') AS lasta_elsendo,
+  IFNULL(
+    MAX(
+      CONCAT(
+        dato,
+        ' (',
+        TIME_FORMAT(komenchoro, '%H:%i'),
+        ' - ',
+        TIME_FORMAT(finhoro, '%H:%i'),
+        ')'
+      )
+    ), ''
+  ) AS lasta_elsendo,
   IFNULL(programero.komento, '') AS komento,
   IFNULL(produktanto.nomo, '') AS produktanto,
   IFNULL(temo.nomo, '') AS temo,
@@ -279,7 +301,18 @@ SELECT
       SEPARATOR ''
     ), ''
   ) AS elsendoj,
-  IFNULL(MAX(elsendo.dato), '') AS lasta_elsendo
+  IFNULL(
+    MAX(
+      CONCAT(
+        dato,
+        ' (',
+        TIME_FORMAT(komenchoro, '%H:%i'),
+        ' - ',
+        TIME_FORMAT(finhoro, '%H:%i'),
+        ')'
+      )
+    ), ''
+  ) AS lasta_elsendo,
 FROM elsendo
 WHERE programero_id = %d;
 EOF;
