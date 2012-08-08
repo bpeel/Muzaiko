@@ -136,6 +136,15 @@ $(function() {
 
     $('#filtrilo-horgrupo').on('change', function() {
         switch ($(this).val()) {
+            case '00:00-01:00':
+                tabelo_programeroj.fnFilter('(00:', lasta_elsendo_kolumno);
+                break;
+            case '01:00-02:00':
+                tabelo_programeroj.fnFilter('(01:', lasta_elsendo_kolumno);
+                break;
+            case '02:00-03:00':
+                tabelo_programeroj.fnFilter('(02:', lasta_elsendo_kolumno);
+                break;
             case '03:00-04:00':
                 tabelo_programeroj.fnFilter('(03:', lasta_elsendo_kolumno);
                 break;
@@ -144,6 +153,9 @@ $(function() {
                 break;
             case '05:00-06:00':
                 tabelo_programeroj.fnFilter('(05:', lasta_elsendo_kolumno);
+                break;
+            case '06:00-07:00':
+                tabelo_programeroj.fnFilter('(06:', lasta_elsendo_kolumno);
                 break;
             default:
                 tabelo_programeroj.fnFilter('', lasta_elsendo_kolumno);
@@ -324,9 +336,13 @@ $(function() {
                                 + '<div style="text-align: right; margin-right: 180px;">'
                                 + '<select id="filtrilo-horgrupo">'
                                 + '<option>Ĉiuj horgrupoj</option>'
+                                + '<option value="00:00-01:00">00:00 &ndash; 01:00</option>'
+                                + '<option value="01:00-02:00">01:00 &ndash; 02:00</option>'
+                                + '<option value="02:00-03:00">02:00 &ndash; 03:00</option>'
                                 + '<option value="03:00-04:00">03:00 &ndash; 04:00</option>'
                                 + '<option value="04:00-05:00">04:00 &ndash; 05:00</option>'
                                 + '<option value="05:00-06:00">05:00 &ndash; 06:00</option>'
+                                + '<option value="06:00-07:00">06:00 &ndash; 07:00</option>'
                                 + '</select>'
                                 + '</div>'
                                 + '</div>');
