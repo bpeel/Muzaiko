@@ -70,9 +70,9 @@ SELECT programero.id AS DT_RowId,
       CONCAT(
         dato,
         ' (',
-        TIME_FORMAT(komenchoro, '%H:%i'),
+        TIME_FORMAT(elsendo.komenchoro, '%H:%i'),
         ' - ',
-        TIME_FORMAT(finhoro, '%H:%i'),
+        TIME_FORMAT(elsendo.finhoro, '%H:%i'),
         ')'
       )
     ), ''
@@ -185,9 +185,9 @@ SELECT programero.id AS DT_RowId,
       CONCAT(
         dato,
         ' (',
-        TIME_FORMAT(komenchoro, '%H:%i'),
+        TIME_FORMAT(elsendo.komenchoro, '%%H:%%i'),
         ' - ',
-        TIME_FORMAT(finhoro, '%H:%i'),
+        TIME_FORMAT(elsendo.finhoro, '%%H:%%i'),
         ')'
       )
     ), ''
@@ -306,9 +306,9 @@ SELECT
       CONCAT(
         dato,
         ' (',
-        TIME_FORMAT(komenchoro, '%%H:%%i'),
+        TIME_FORMAT(elsendo.komenchoro, '%%H:%%i'),
         ' - ',
-        TIME_FORMAT(finhoro, '%%H:%%i'),
+        TIME_FORMAT(elsendo.finhoro, '%%H:%%i'),
         ')'
       )
     ), ''
