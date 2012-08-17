@@ -306,13 +306,13 @@ SELECT
       CONCAT(
         dato,
         ' (',
-        TIME_FORMAT(komenchoro, '%H:%i'),
+        TIME_FORMAT(komenchoro, '%%H:%%i'),
         ' - ',
-        TIME_FORMAT(finhoro, '%H:%i'),
+        TIME_FORMAT(finhoro, '%%H:%%i'),
         ')'
       )
     ), ''
-  ) AS lasta_elsendo,
+  ) AS lasta_elsendo
 FROM elsendo
 WHERE programero_id = %d;
 EOF;
