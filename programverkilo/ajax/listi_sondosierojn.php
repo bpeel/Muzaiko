@@ -1,5 +1,7 @@
 <?php
 
+header('Content-type: text/html; charset=utf-8');
+
 include_once('../lib/funkcioj.php');
 
 if (empty($_REQUEST['kiujn'])) {
@@ -24,6 +26,6 @@ $programero_id = $_REQUEST['programero_id'];
 $dosieroj = (($kiujn == 'uzitajn') ? get_files_for_program($programero_id) : get_unused_files());
 
 foreach ($dosieroj as $dosiero)
-  print("<option>" . htmlentities($dosiero) . "</option>\n");
+  print("<option>" . htmlentities($dosiero, 0, "UTF-8") . "</option>\n");
 
 ?>
