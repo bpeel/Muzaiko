@@ -64,6 +64,7 @@
               <th>Temo</th>
               <th>Sekcio</th>
               <th>Permesilo</th>
+              <th>Teksto</th>
               <th>Lasta elsendo</th>
           </thead>
           <tbody>
@@ -87,6 +88,7 @@
                       $horizontalo['permesilo_nomo'],
                       $horizontalo['permesilo_bildo'])
                     .'</td>'
+                  .'<td>'.$horizontalo['teksto'].'</td>'
                   .'<td>'.$horizontalo['lasta_elsendo'].'</td>'
                   .'</tr>');
               }
@@ -130,6 +132,10 @@
                   </select>
                 </div>
               </div>
+            </li>
+            <li>
+              <label for="programero-teksto">Teksto</label>
+              <textarea id="programero-teksto" name="teksto" style="width:670px;height:40px"></textarea>
             </li>
             <li>
               <label for="programero-parolanto">Parolintoj</label>

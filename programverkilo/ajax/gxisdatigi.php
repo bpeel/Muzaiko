@@ -74,6 +74,9 @@ switch ($tipo) {
   case 'arangxita_teksto':
     $rezultato = format_programero($valoro);
     break;
+  case 'longa_teksto':
+    $rezultato = strlen($valoro) > 0 ? "J" : "N";
+    break;
   case 'teksto':
   default:
     $rezultato = $valoro;

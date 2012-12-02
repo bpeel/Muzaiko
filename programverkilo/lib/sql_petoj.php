@@ -7,7 +7,8 @@ $tabeloj = array(
                         'produktanto_id' => 'nedeviga',
                         'temo_id' => 'nedeviga',
                         'sekcio_id' => 'nedeviga',
-                        'permesilo_id' => 'nedeviga'),
+                        'permesilo_id' => 'nedeviga',
+                        'teksto' => 'nedeviga'),
   'parolanto' => array('nomo' => 'deviga'),
   'produktanto' => array('nomo' => 'deviga'),
   'temo' => array('nomo' => 'deviga'),
@@ -83,7 +84,9 @@ SELECT programero.id AS DT_RowId,
   IFNULL(sekcio.nomo, '') AS sekcio,
   IFNULL(permesilo.nomo, '') AS permesilo_nomo,
   IFNULL(permesilo.url, '') AS permesilo_url,
-  IFNULL(permesilo.bildo, '') AS permesilo_bildo
+  IFNULL(permesilo.bildo, '') AS permesilo_bildo,
+  IF(programero.teksto IS NOT NULL and
+     LENGTH(programero.teksto) > 0, 'J', 'N') as teksto
 FROM programero
 LEFT OUTER JOIN elsendo
 ON elsendo.programero_id = programero.id
@@ -198,7 +201,9 @@ SELECT programero.id AS DT_RowId,
   IFNULL(sekcio.nomo, '') AS sekcio,
   IFNULL(permesilo.nomo, '') AS permesilo_nomo,
   IFNULL(permesilo.url, '') AS permesilo_url,
-  IFNULL(permesilo.bildo, '') AS permesilo_bildo
+  IFNULL(permesilo.bildo, '') AS permesilo_bildo,
+  IF(programero.teksto IS NOT NULL and
+     LENGTH(programero.teksto) > 0, 'J', 'N') as teksto
 FROM programero
 LEFT OUTER JOIN elsendo
 ON elsendo.programero_id = programero.id

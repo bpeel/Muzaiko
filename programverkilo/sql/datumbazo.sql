@@ -49,4 +49,4 @@ ALTER TABLE elsendo ADD CONSTRAINT PRIMARY KEY(programero_id, dato, komenchoro);
 ALTER TABLE elsendo DROP COLUMN date_begin;
 ALTER TABLE elsendo DROP COLUMN date_end;
 ALTER TABLE sondosiero ADD CONSTRAINT FOREIGN KEY(programero) REFERENCES programero(id) ON DELETE CASCADE;
-
+ALTER TABLE programero ADD COLUMN teksto TEXT;

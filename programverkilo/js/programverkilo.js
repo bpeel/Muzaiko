@@ -45,6 +45,7 @@ $(function() {
             { 'nomo': 'sekcio', 'tipo': 'listo' },
             { 'nomo': 'permesilo', 'tipo': 'listo', 'kromagordoj':
                 { 'sType': 'alt-string' }},
+            { 'nomo': 'teksto', 'tipo': 'longa_teksto' },
             { 'nomo': 'lasta_elsendo', 'tipo': 'kasxita_datumo', 'kromagordoj':
                 { 'bSearchable': false, 'bVisible': false }}
         ]
@@ -257,7 +258,8 @@ $(function() {
                     var redaktagordoj = {};
                     if (agordoj.kolumnoj[tdIndekso].tipo == 'teksto') {
                         redaktagordoj['type'] = 'textarea';
-                    } else if (agordoj.kolumnoj[tdIndekso].tipo == 'arangxita_teksto') {
+                    } else if (agordoj.kolumnoj[tdIndekso].tipo == 'arangxita_teksto' ||
+                               agordoj.kolumnoj[tdIndekso].tipo == 'longa_teksto') {
                         redaktagordoj['type'] = 'textarea';
                         redaktagordoj['loadurl'] = './ajax/akiri.php?tabelo=' + agordoj.tabelo + '&kolumno=' + agordoj.kolumnoj[tdIndekso].nomo + '&horizontalo=' + trElemento.id;
                     } else if (agordoj.kolumnoj[tdIndekso].tipo == 'listo') {
