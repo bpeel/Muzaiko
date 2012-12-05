@@ -83,9 +83,7 @@ $rez = mysql_query ("select `programero`.`id`, " .
 while ($linio = mysql_fetch_array ($rez, MYSQL_ASSOC))
   {
     if ($linio["titolo"])
-      echo ("<h1>" . htmlspecialchars ($linio["titolo"]) . "</h1>\n");
-    else
-      echo ("<h1>Programdetaloj</h1>\n");
+      echo ("<h2>" . htmlspecialchars ($linio["titolo"]) . "</h2>\n");
 
     echo ("<table id=\"detaltabelo\">\n");
 
