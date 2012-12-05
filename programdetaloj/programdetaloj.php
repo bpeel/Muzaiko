@@ -30,7 +30,7 @@ function kuiri_tekston ($teksto)
 
 function sonfonto ($id, $tipo)
 {
-  return ("<source src=\"../sondosieroj/programero" .
+  return ("<source src=\"/public/sondosieroj/programero" .
           $id . "." . $tipo . "\" " .
           "type=\"audio/" . $tipo . "\" />\n");
 }
