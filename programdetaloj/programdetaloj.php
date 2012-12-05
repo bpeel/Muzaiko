@@ -1,7 +1,8 @@
 <?php
 
-require_once ("inc/inc.php");
-require_once ("inc/programo.php");
+$INC_DIR = dirname (__FILE__) . "/inc";
+require_once ($INC_DIR . "/inc.php");
+require_once ($INC_DIR . "/programo.php");
 
 function montru_kampon ($linio, $kampo, $titolo, $enhavo)
 {
@@ -117,7 +118,8 @@ while ($linio = mysql_fetch_array ($rez, MYSQL_ASSOC))
               "background-color:rgb(200,200,255);" .
               "height:4em;text-align:center\"" .
               "></div>\n" .
-              "<script type=\"text/javascript\" src=\"subtitoloj.js\">\n" .
+              "<script type=\"text/javascript\" " .
+              "src=\"/public/js/subtitoloj.js\">\n" .
               "</script>\n" .
               "<div id=\"subtitoldatumo\" style=\"display:none\">" .
               htmlspecialchars ($kruda_teksto) .
