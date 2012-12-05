@@ -1,6 +1,6 @@
 <?php
 
-set_include_path('/var/www/www.muzaiko.info');
+set_include_path('/var/www/www.muzaiko.info/public/scripts');
 
 define('AUDIODIR', '/radio/audio/');
 define('PLAYLISTDIR', '/radio/playlist/');
