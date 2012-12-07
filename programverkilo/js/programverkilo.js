@@ -25,7 +25,7 @@ jQuery.extend(jQuery.fn.dataTableExt.oSort, {
 $(function() {
     $('#langetoj').tabs();
 
-    var lasta_elsendo_kolumno = 10;
+    var lasta_elsendo_kolumno = 11;
 
     var tabelo_programeroj = fari_tabelo({
         'tabelo': 'programero',
