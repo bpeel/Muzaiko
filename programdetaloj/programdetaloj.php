@@ -82,11 +82,9 @@ $rez = mysql_query ("select `programero`.`id`, " .
 
 while ($linio = mysql_fetch_array ($rez, MYSQL_ASSOC))
   {
-    if ($linio["titolo"])
-      echo ("<h2>" . htmlspecialchars ($linio["titolo"]) . "</h2>\n");
-
     echo ("<table id=\"detaltabelo\">\n");
 
+    montru_kampon ($linio, "titolo", "Titolo");
     montru_kampon ($linio, "skizo", "Skizo");
 
     $kruda_teksto = $linio["teksto"];
