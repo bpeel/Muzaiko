@@ -41,7 +41,7 @@ function format_permesilo ($nomo, $bildo, $url = null)
     {
       if ($bildo)
         $permesilo =
-          "<img src=\"images/permesiloj/" .
+          "<img src=\"/public/images/permesiloj/" .
           htmlentities ($bildo) .
           "\" alt=\"" .
           htmlentities ($nomo) . "\" title=\"" .
