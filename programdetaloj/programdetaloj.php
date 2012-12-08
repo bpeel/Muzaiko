@@ -111,13 +111,14 @@ while ($linio = mysql_fetch_array ($rez, MYSQL_ASSOC))
         if ($kruda_teksto != $kuirita_teksto)
           {
             $auxskultilo .=
-              "<div id=\"titoloj\" style=\"" .
-              "font-size:large;padding:1em;" .
-              "background-color:rgb(200,200,255);" .
-              "height:4em;text-align:center\"" .
-              "></div>\n" .
-              "<script type=\"text/javascript\" " .
-              "src=\"/public/js/subtitoloj.js\">\n" .
+              "<div id=\"plenekrandiv\">" .
+              " <div id=\"titoloj\"></div>" .
+              " <div id=\"plenekranilo\" style=\"display:none\">\n" .
+              "  <img src=\"/public/images/plenekranilo.png\" " .
+              "alt=\"Plenekranigu\" />\n" .
+              " </div>\n" .
+              "</div>\n" .
+              "<script type=\"text/javascript\" src=\"subtitoloj.js\">\n" .
               "</script>\n" .
               "<div id=\"subtitoldatumo\" style=\"display:none\">" .
               htmlspecialchars ($kruda_teksto) .

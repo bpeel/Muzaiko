@@ -4,6 +4,9 @@
    var cxiuj_titoloj;
    var auxskultilo;
    var titoloj_div;
+   var plenekranilo;
+   var plenekrandiv;
+   var plenekranilo_timeout;
 
    function akiru_tempon (a, b, c, d)
    {
@@ -110,8 +113,50 @@
        for (i = 1; i < nova_titolo.length; i++)
          titoloj_div.appendChild (nova_titolo[i]);
 
+       titoloj_div.style.top =
+         Math.round (plenekrandiv.offsetHeight / 2.0 -
+                     titoloj_div.offsetHeight / 2.0) + "px";
+
        aktuala_titolo = nova_titolo;
      }
+   }
+
+   function movo_en_plenekrandiv_cb ()
+   {
+     plenekranilo.style.display = "block";
+     if (plenekranilo_timeout)
+       window.clearTimeout (plenekranilo_timeout);
+     plenekranilo_timeout = window.setTimeout (function () {
+       plenekranilo_timeout = false;
+       plenekranilo.style.display = "none";
+     }, 1000);
+   }
+
+   function estas_plenekrana ()
+   {
+     return ((document.fullScreenElement &&
+              document.fullScreenElement !== null) ||
+             document.webkitFullScreenElement ||
+             document.mozFullScreenElement)
+   }
+
+   function plenekranilo_klako_cb ()
+   {
+     if (estas_plenekrana ())
+     {
+       if (document.exitFullScreen)
+         document.exitFullScreen ();
+       else if (document.mozCancelFullScreen)
+         document.mozCancelFullScreen ();
+       else if (document.webkitCancelFullScreen)
+         document.webkitCancelFullScreen ();
+     }
+     else if (plenekrandiv.requestFullScreen)
+       plenekrandiv.requestFullScreen ();
+     else if (plenekrandiv.mozRequestFullScreen)
+       plenekrandiv.mozRequestFullScreen ();
+     else if (plenekrandiv.webkitRequestFullScreen)
+       plenekrandiv.webkitRequestFullScreen ();
    }
 
    function komencu ()
@@ -125,6 +170,21 @@
        titoloj_div = document.getElementById ("titoloj");
        auxskultilo = document.getElementById ("auxskultilo");
        auxskultilo.addEventListener ("timeupdate", time_update_cb, false);
+
+       if (titoloj_div.requestFullScreen ||
+           titoloj_div.mozRequestFullScreen ||
+           titoloj_div.webkitRequestFullScreen)
+       {
+         plenekranilo = document.getElementById ("plenekranilo")
+         plenekranilo.addEventListener ("mousedown",
+                                        plenekranilo_klako_cb,
+                                        false);
+
+         plenekrandiv = document.getElementById ("plenekrandiv");
+         plenekrandiv.addEventListener ("mousemove",
+                                        movo_en_plenekrandiv_cb,
+                                        false);
+       }
      }
    }
 
