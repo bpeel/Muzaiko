@@ -66,6 +66,8 @@ konektu_al_programo ();
 $rez = mysql_query ("select `programero`.`id`, " .
                     "`programero`.`titolo`, " .
                     "`programero`.`skizo`, " .
+                    "`produktanto`.`nomo` as `produktanto`, " .
+                    "`temo`.`nomo` as `temo`, " .
                     "`permesilo`.`nomo` as `permesilo_nomo`, " .
                     "`permesilo`.`bildo` as `permesilo_bildo`, " .
                     "`permesilo`.`url` as `permesilo_url`, " .
@@ -76,6 +78,10 @@ $rez = mysql_query ("select `programero`.`id`, " .
                     "on `permesilo`.`id` = `programero`.`permesilo_id` " .
                     "left join `sondosiero` " .
                     "on `sondosiero`.`programero` = `programero`.`id` " .
+                    "left join `produktanto` " .
+                    "on `produktanto`.`id` = `programero`.`produktanto_id` ".
+                    "left join `temo` " .
+                    "on `temo`.`id` = `programero`.`temo_id` ".
                     "where `programero`.`id` = '" .
                     mysql_real_escape_string ($_REQUEST["id"]) ."' " .
                     "group by `programero`.`id`");
@@ -95,6 +101,9 @@ while ($linio = mysql_fetch_array ($rez, MYSQL_ASSOC))
                      format_permesilo ($linio["permesilo_nomo"],
                                        $linio["permesilo_bildo"],
                                        $linio["permesilo_url"]));
+
+    montru_kampon ($linio, "temo", "Temo");
+    montru_kampon ($linio, "produktanto", "Produktanto");
 
     if ($linio["sondosieroj"] > 0)
       {
