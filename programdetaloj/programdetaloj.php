@@ -118,7 +118,8 @@ while ($linio = mysql_fetch_array ($rez, MYSQL_ASSOC))
               "alt=\"Plenekranigu\" />\n" .
               " </div>\n" .
               "</div>\n" .
-              "<script type=\"text/javascript\" src=\"subtitoloj.js\">\n" .
+              "<script type=\"text/javascript\" " .
+              "src=\"/public/js/subtitoloj.js\">\n" .
               "</script>\n" .
               "<div id=\"subtitoldatumo\" style=\"display:none\">" .
               htmlspecialchars ($kruda_teksto) .
