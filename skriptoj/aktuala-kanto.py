@@ -192,7 +192,7 @@ class AktualaKanto(Peto):
 
         try:
             callmeback = int(callmeback)
-        except ValueError:
+        except (ValueError, TypeError):
             raise Peto.FusxaTransformo()
 
         ligilo = Ligilo(self.db, artisto, titolo)
