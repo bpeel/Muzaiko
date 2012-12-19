@@ -2,8 +2,8 @@
 // ************************* KALENDARO **************************************
 
 require_once('inc/utils.php');
-include_once('./programcalendar.php');
-include_once('./inc/programo.php');
+include_once('programcalendar.php');
+include_once('inc/programo.php');
 
 printf('<h1>Aktuala programo</h1>');
 
