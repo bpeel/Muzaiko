@@ -17,7 +17,8 @@ function sercxu_programon_por_dato ($dato)
 {
   $rezulto = mysql_query ("select unix_timestamp(CONCAT_WS(' ', dato, komenchoro)), " .
                           "unix_timestamp(CONCAT_WS(' ', dato, finhoro)), " .
-                          "`skizo` " .
+                          "`skizo`, " .
+                          "`programero`.`id` " .
                           "from `programero` inner join `elsendo` " .
                           "on `programero`.`id` = `elsendo`.`programero_id` " .
                           "where `dato` = date('" .
@@ -25,7 +26,10 @@ function sercxu_programon_por_dato ($dato)
                           "order by `komenchoro`");
   $programo = array ();
   while ($vico = mysql_fetch_array ($rezulto, MYSQL_NUM))
-    array_push ($programo, array ($vico[0], $vico[1], stripslashes ($vico[2])));
+    array_push ($programo, array ($vico[0],
+                                  $vico[1],
+                                  stripslashes ($vico[2]),
+                                  $vico[3]));
   mysql_free_result ($rezulto);
 
   return $programo;
@@ -78,7 +82,8 @@ function reordigu_programon ($programo)
       array_push ($reordigita_programo,
                   array ($programero[0] - $komenco + $komenco_de_nuna_ripeto,
                          $programero[1] - $komenco + $komenco_de_nuna_ripeto,
-                         $programero[2]));
+                         $programero[2],
+                         $programero[3]));
 
       if (++$i >= count ($programo))
         {
@@ -169,10 +174,12 @@ function eligu_hortabelon ()
 
   print ("<div id=\"aktualaprogramo\"><ul>\n");
   foreach ($aktuala_programo as $programero)
-    print ("<li><span komenctempo=\"" . $programero[0] . "\" " .
+    print ("<li><a href=\"/programdetaloj?id=" .
+           htmlspecialchars ($programero[3]) . "\" " .
+           "komenctempo=\"" . $programero[0] . "\" " .
            "fintempo=\"" . $programero[1] . "\">" .
            gmdate ('H:i', $programero[0]) . "&ndash;" .
-           gmdate ('H:i', $programero[1]) . " UTC</span>: " .
+           gmdate ('H:i', $programero[1]) . " UTC</a>: " .
            format_programero (htmlspecialchars ($programero[2])) .
            "</li>\n");
   print ("</ul>\n" .
