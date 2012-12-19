@@ -50,5 +50,3 @@ if ($jaro != 0 && $monato != 0 && $tago != 0) {
 }
 
 ?>
-
-<div style="margin-top: 20px;"><strong>Trovu ĉiujn programerojn <a href="./programeroj2">ĉi tie</a></strong>!</div>
